@@ -20,7 +20,7 @@ const buildWebpackConfig = (options: BuildOptions): Configuration => {
     },
     plugins: buildPlugins(options),
     module: {
-      rules: buildLoaders(),
+      rules: buildLoaders(options),
     },
     devServer: buildDevServer(options),
     resolve: buildResolvers(),
