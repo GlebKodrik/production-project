@@ -1,0 +1,39 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "project": "./tsconfig.json"
+  },
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "airbnb-typescript"
+  ],
+  "plugins": ["i18next"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": "off",
+    "linebreak-style": "off",
+    "no-underscore-dangle": "off",
+    "max-params": ["error", 2],
+    "react/function-component-definition": "off",
+    "import/prefer-default-export": "off",
+    "react/require-default-props": "off",
+    "react/react-in-jsx-scope": "off",
+    "import/no-cycle": "off",
+    "i18next/no-literal-string": 2,
+    "react/jsx-props-no-spreading": "off"
+  }
+}

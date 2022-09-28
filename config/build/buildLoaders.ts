@@ -9,6 +9,12 @@ const buildLoaders = ({isDev}: BuildOptions): RuleSetRule[] => {
       exclude: /node_modules/,
   }
 
+  const svgLoader = {
+    test: /\.svg$/i,
+    issuer: /\.[jt]sx?$/,
+    use: ['@svgr/webpack'],
+  }
+
   const cssLoader = {
       test: /\.s[ac]ss$/i,
       use: [
@@ -24,6 +30,7 @@ const buildLoaders = ({isDev}: BuildOptions): RuleSetRule[] => {
             modules: {
               auto: true,
               localIdentName: isDev ? "[name]__[local]" : '[hash:base64:5]',
+              exportLocalsConvention: 'camelCase',
             },
           },
         },
@@ -31,9 +38,20 @@ const buildLoaders = ({isDev}: BuildOptions): RuleSetRule[] => {
       ],
   }
 
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif)$/i,
+    use: [
+      {
+        loader: 'file-loader',
+      },
+    ],
+  }
+
   return [
     typeScriptLoader,
-    cssLoader
+    cssLoader,
+    svgLoader,
+    fileLoader
   ]
 }
 

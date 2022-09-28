@@ -1,27 +1,16 @@
-import React, { Suspense } from 'react';
-import {render} from "react-dom";
-import './index.scss';
-import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
+import './app/styles/global.scss';
 
-const AboutPage = React.lazy(() => import("./components/about-page/about-page"));
-const MainPage = React.lazy(() => import("./components/main-page/main-page"));
-
-const App = () => {
-  return (
-    <BrowserRouter>
-      <Link to={'/about'}>О странице</Link>
-      <Link to={'/'}>основная</Link>
-      <Suspense fallback={<>Loading...</>}>
-        <Routes>
-          <Route path={'/about'} element={<AboutPage />}/>
-          <Route path={'/'} element={<MainPage />}/>
-        </Routes>
-      </Suspense>
-    </BrowserRouter>
-  )
-}
+import React from 'react';
+import { render } from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import ThemeProvider from './app/provider/theme-provider/theme-provider';
+import { App } from './app';
 
 render(
-  <App />,
-  document.getElementById('root')
-)
+  <BrowserRouter>
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  </BrowserRouter>,
+  document.getElementById('root'),
+);
