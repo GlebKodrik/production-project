@@ -7,8 +7,8 @@ const classNames = (
   // eslint-disable-next-line max-params
 ): string => [
   className,
-  ...additionalClasses,
   ...Object.keys(mods).filter((key) => mods[key]),
+  ...additionalClasses,
 ].join(' ');
 
 export default classNames;
