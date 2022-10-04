@@ -17,7 +17,7 @@ export default {
     'node_modules',
   ],
   transform: {
-    '\\.svg$': '<rootDir>/config/jest/__mocks__/svgr-mock.ts',
+    '\\.svg$': '<rootDir>/config/jest/__mocks__/svgr-mock.js',
   },
   moduleNameMapper: {
     '\\.s?css$': 'identity-obj-proxy',
