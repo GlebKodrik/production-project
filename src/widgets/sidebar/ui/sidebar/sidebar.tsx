@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import cls from '../../../../shared/lib/class-names';
 import styles from './sidebar.module.scss';
 import { ThemeSwitcher } from '../../../../shared/ui/theme-switcher';
-import { LanguageSwitcher } from '../../../../shared/ui/language-switcher/language-switcher';
+import {
+  LanguageSwitcher,
+} from '../../../../shared/ui/language-switcher/language-switcher';
 
 export const Sidebar = () => {
   const [collapse, setCollapse] = useState(false);

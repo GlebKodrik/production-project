@@ -8,7 +8,9 @@ type TLanguageSwitcher = {
   className?: string
 };
 
-export const LanguageSwitcher: React.FC<TLanguageSwitcher> = ({ className }) => {
+export const LanguageSwitcher: React.FC<TLanguageSwitcher> = (
+  { className },
+) => {
   const { t, i18n } = useTranslation();
 
   const onToggleLanguage = () => {
@@ -16,7 +18,11 @@ export const LanguageSwitcher: React.FC<TLanguageSwitcher> = ({ className }) => 
   };
 
   return (
-    <Button clear onClick={onToggleLanguage} className={cls(styles.language, {}, [className])}>
+    <Button
+      clear
+      onClick={onToggleLanguage}
+      className={cls(styles.language, {}, [className])}
+    >
       {t('language')}
     </Button>
   );

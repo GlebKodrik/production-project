@@ -1,16 +1,20 @@
 import { RouteProps } from 'react-router-dom';
-import { ERoutesName, ROUTES_PATH } from '../../../../../shared/config/routers-config/routers';
+import { ROUTES_PATH } from '../../../../../shared/config/routers-config/routers';
 import { AboutPage } from '../../../../../pages/about-page';
 import { MainPage } from '../../../../../pages/main-page';
+import NotFound from '../../../../../pages/not-found';
 
-export const ROUTERS_CONFIG: Record<ERoutesName, RouteProps> = {
-  [ERoutesName.ABOUT]: {
-    path: ROUTES_PATH.about,
+export const ROUTERS_CONFIG: RouteProps[] = [
+  {
+    path: ROUTES_PATH.ABOUT,
     element: <AboutPage />,
   },
-  [ERoutesName.MAIN]: {
-    path: ROUTES_PATH.main,
+  {
+    path: ROUTES_PATH.MAIN,
     element: <MainPage />,
   },
-
-};
+  {
+    path: ROUTES_PATH.PAGE_404,
+    element: <NotFound />,
+  },
+];

@@ -8,10 +8,6 @@
     },
     "project": "./tsconfig.json"
   },
-  "env": {
-    "browser": true,
-    "jest": true
-  },
   "extends": [
     "airbnb",
     "airbnb/hooks",
@@ -34,6 +30,20 @@
     "react/react-in-jsx-scope": "off",
     "import/no-cycle": "off",
     "i18next/no-literal-string": 2,
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "max-len": ["error", {
+      "ignoreComments": true
+    }]
+  },
+  "overrides": [
+    {
+      "files": ["**/src/**/*.test.{ts,tsx}"],
+      "rules": {
+        "i18next/no-literal-string": "off"
+      }
+    }
+  ],
+  "globals": {
+    "__IS_DEV__": true
   }
 }

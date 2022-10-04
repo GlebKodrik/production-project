@@ -13,8 +13,19 @@ export const Navbar: React.FC<TProps> = ({
 }) => (
   <div className={cls(styles.navbar, {}, [classNames])}>
     <div className={cls(styles.links)}>
-      <AppLink theme={ELinkTheme.INVERTED} to="/about">О странице</AppLink>
-      <AppLink theme={ELinkTheme.INVERTED} to="/" className={cls(styles.linkRight)}>основная</AppLink>
+      <AppLink
+        theme={ELinkTheme.INVERTED}
+        to="/about"
+      >
+        О странице
+      </AppLink>
+      <AppLink
+        theme={ELinkTheme.INVERTED}
+        to="/"
+        className={cls(styles.linkRight)}
+      >
+        основная
+      </AppLink>
     </div>
   </div>
 );

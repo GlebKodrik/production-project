@@ -59,7 +59,7 @@ const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
   };
 
   return [
-    babelLoader,
+    // babelLoader,
     typeScriptLoader,
     cssLoader,
     svgLoader,
