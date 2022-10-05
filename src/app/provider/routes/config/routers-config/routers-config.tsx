@@ -1,5 +1,9 @@
 import { RouteProps } from 'react-router-dom';
-import { ROUTES_PATH } from '../../../../../shared/config/routers-config/routers';
+
+import {
+  ROUTES_PATH,
+} from '../../../../../shared/config/routers-config/routers';
+
 import { AboutPage } from '../../../../../pages/about-page';
 import { MainPage } from '../../../../../pages/main-page';
 import NotFound from '../../../../../pages/not-found';

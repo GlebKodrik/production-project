@@ -10,7 +10,9 @@ describe('classNames lib', () => {
   });
 
   test('With mods', () => {
-    expect(classNames('some', { have: true }, ['some2'])).toBe('some have some2');
+    expect(
+      classNames('some', { have: true }, ['some2']),
+    ).toBe('some have some2');
   });
 
   test('With mods disabled', () => {
@@ -18,6 +20,8 @@ describe('classNames lib', () => {
   });
 
   test('With mods undefined', () => {
-    expect(classNames('some', { have: undefined }, ['some2'])).toBe('some some2');
+    expect(
+      classNames('some', { have: undefined }, ['some2']),
+    ).toBe('some some2');
   });
 });
