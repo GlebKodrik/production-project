@@ -2,10 +2,7 @@ import React, { ButtonHTMLAttributes } from 'react';
 import cls from '../../lib/class-names';
 
 import styles from './button.module.scss';
-
-enum TThemeButton {
-
-}
+import { TThemeButton } from './types';
 
 interface TAppButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string,

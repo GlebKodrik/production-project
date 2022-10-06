@@ -8,9 +8,8 @@ import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import WebpackBar from 'webpackbar';
 import { BuildOptions } from './types/types';
-
-const WebpackBar = require('webpackbar');
 
 const buildPlugins = (
   { paths, isDev }: BuildOptions,
@@ -20,13 +19,16 @@ const buildPlugins = (
   }),
   new WebpackBar(),
   new MiniCssExtractPlugin({
-    filename: 'css/[name].css',
+    filename: 'css/[name].[contenthash:8].css',
+    chunkFilename: 'css/[name].[contenthash:8].css',
   }),
   new DefinePlugin({
     __IS_DEV__: JSON.stringify(isDev),
   }),
   new HotModuleReplacementPlugin(),
   new ReactRefreshWebpackPlugin(),
-  new BundleAnalyzerPlugin(),
+  new BundleAnalyzerPlugin({
+    openAnalyzer: false,
+  }),
 ];
 export default buildPlugins;

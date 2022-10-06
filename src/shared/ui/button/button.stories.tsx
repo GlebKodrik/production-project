@@ -1,14 +1,17 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
 import { Button } from './button';
+import { TThemeButton } from './types';
+import {
+  ETheme,
+} from '../../../app/provider/theme-provider/config/theme-context';
+import { ThemeDecorator } from '../../config/decorators/theme-decorator';
 
 export default {
-  title: 'Example/Button',
+  title: 'shared/Button',
   component: Button,
 } as ComponentMeta<typeof Button>;
 
-// eslint-disable-next-line max-len
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Clear = Template.bind({});
@@ -17,19 +20,15 @@ Clear.args = {
   clear: true,
 };
 
-// export const Secondary = Template.bind({});
-// Secondary.args = {
-//   label: 'Button',
-// };
-//
-// export const Large = Template.bind({});
-// Large.args = {
-//   size: 'large',
-//   label: 'Button',
-// };
-//
-// export const Small = Template.bind({});
-// Small.args = {
-//   size: 'small',
-//   label: 'Button',
-// };
+export const OutLine = Template.bind({});
+OutLine.args = {
+  children: 'Button',
+  theme: TThemeButton.OUTLINE,
+};
+
+export const OutLineDark = Template.bind({});
+OutLineDark.args = {
+  children: 'Button',
+  theme: TThemeButton.OUTLINE,
+};
+OutLineDark.decorators = [ThemeDecorator(ETheme.DARK)];
