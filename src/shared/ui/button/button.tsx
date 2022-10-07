@@ -25,5 +25,7 @@ export const Button: React.FC<TAppButton> = ({
       [className, styles[theme]],
     )}
     {...otherProps}
-  />
+  >
+    {children}
+  </button>
 );
