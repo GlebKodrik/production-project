@@ -6,10 +6,10 @@ on:
     branches: [ master ]
 jobs:
   build:
-  runs-on: ubuntu-latest
-  strategy:
-    matrix:
-      node-version: [17.x]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [17.x]
 
   steps:
     - uses: actions/checkout@v2
@@ -17,8 +17,11 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - name: install modules
     - run: npm ci
+    - name: build production project
     - run: npm run build:production
-    - run: npm run eslint
+    - name: tests
     - run: npm run test:unit
-    - run: npm run stylelint
+    - name: eslint
+    - run: npm run eslint
