@@ -1,4 +1,6 @@
 {
   "language": "English",
-  "notFound": "Page not found"
+  "notFound": "Page not found",
+  "aboutLink": "About page",
+  "mainLink": "Main Page"
 }

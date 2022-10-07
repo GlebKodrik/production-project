@@ -18,7 +18,7 @@ export const Sidebar = () => {
       data-testid="sidebar"
       className={cls(styles.sidebar, { [styles.collapse]: collapse })}
     >
-      <button type="button" onClick={onToggleCollapse}>Toggle</button>
+      <button type="button" onClick={onToggleCollapse}>...</button>
       <div className={cls(styles.switchers)}>
         <ThemeSwitcher />
         <LanguageSwitcher className={styles.languageSwitcher} />
