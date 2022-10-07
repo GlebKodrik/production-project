@@ -7,6 +7,7 @@
     "start": "webpack server",
     "build:dev": "webpack --env port=3000 mode=development",
     "build:production": "webpack --env port=3000 mode=production",
+    "analyzer": "webpack --env mode=development analyzer",
     "eslint": "eslint src/**/*{.ts,.tsx}",
     "eslint:fix": "eslint src/**/*{.ts,.tsx} --fix",
     "stylelint": "npx stylelint **/*.scss",

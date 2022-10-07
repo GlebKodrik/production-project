@@ -6,16 +6,16 @@ import { BuildOptions } from './types/types';
 import buildDevServer from './buildDevServer';
 
 const buildWebpackConfig = (options: BuildOptions): Configuration => {
-  const { mode, paths, isDev } = options;
+  const { MODE, PATHS, IS_DEV } = options;
 
   return {
-    mode,
+    mode: MODE,
     entry: {
-      bundle: paths.ENTRY,
+      bundle: PATHS.ENTRY,
     },
     output: {
       filename: '[name].js?[contenthash]',
-      path: paths.BUILD,
+      path: PATHS.BUILD,
       clean: true,
     },
     plugins: buildPlugins(options),
@@ -24,7 +24,7 @@ const buildWebpackConfig = (options: BuildOptions): Configuration => {
     },
     devServer: buildDevServer(),
     resolve: buildResolvers(),
-    devtool: isDev && 'inline-source-map',
+    devtool: IS_DEV && 'inline-source-map',
   };
 };
 

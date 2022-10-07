@@ -1,19 +1,21 @@
-export type BuildMode = "development" | "production"
+export type BuildMode = 'development' | 'production';
 
 export type BuildPaths = {
   BUILD: string,
   ENTRY: string,
   HTML: string,
-}
+};
 
 export type BuildOptions = {
-  mode: BuildMode,
-  paths: BuildPaths,
-  isDev: boolean,
-  port: number,
-}
+  MODE: BuildMode,
+  PATHS: BuildPaths,
+  IS_DEV: boolean,
+  PORT: number,
+  ANALYZER: boolean
+};
 
 export type BuildEvn = {
   port: number,
-  mode: BuildMode
-}
+  mode: BuildMode,
+  analyzer: boolean
+};

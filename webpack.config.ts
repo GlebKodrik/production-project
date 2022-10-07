@@ -9,14 +9,16 @@ export default (env: BuildEvn) => {
     HTML: path.resolve(__dirname, 'public', 'index.html'),
   };
 
+  const ANALYZER = env.analyzer;
   const PORT = env.port || 3000;
-  const mode: BuildMode = env.mode || 'development';
-  const isDev = mode === 'development';
+  const MODE: BuildMode = env.mode || 'development';
+  const IS_DEV = MODE === 'development';
 
   return buildWebpackConfig({
-    mode,
-    port: PORT,
-    paths: PATHS,
-    isDev,
+    MODE,
+    PORT,
+    PATHS,
+    IS_DEV,
+    ANALYZER,
   });
 };

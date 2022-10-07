@@ -2,7 +2,7 @@ import { RuleSetRule } from 'webpack';
 import { BuildOptions } from './types/types';
 import { buildStyleLoader } from '../global-loaders/build-style-loader';
 
-const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
+const buildLoaders = ({ IS_DEV }: BuildOptions): RuleSetRule[] => {
   const typeScriptLoader = {
     test: /\.tsx?$/,
     loader: 'ts-loader',
@@ -26,7 +26,7 @@ const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
     use: ['@svgr/webpack'],
   };
 
-  const cssLoader = buildStyleLoader(isDev);
+  const cssLoader = buildStyleLoader(IS_DEV);
 
   const fileLoader = {
     test: /\.(png|jpe?g|gif)$/i,
