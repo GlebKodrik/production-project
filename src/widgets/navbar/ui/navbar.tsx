@@ -23,12 +23,12 @@ export const Navbar: React.FC<TProps> = ({
         >
           {t('aboutLink')}
         </AppLink>
-        <AppLink
-          theme={ELinkTheme.INVERTED}
-          to={ROUTES_PATH.MAIN}
-          className={cls(styles.linkRight)}
-        >
-          {t('mainLink')}
+        {/*<AppLink*/}
+        {/*  theme={ELinkTheme.INVERTED}*/}
+        {/*  to={ROUTES_PATH.MAIN}*/}
+        {/*  className={cls(styles.linkRight)}*/}
+        {/*>*/}
+        {/*  {t('mainLink')}*/}
         </AppLink>
       </div>
     </div>
