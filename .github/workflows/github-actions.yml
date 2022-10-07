@@ -1,27 +1,29 @@
-name: Project CI
+name: linting, testing, building
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
 jobs:
-  build:
+  pipeline:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [17.x]
+        node-version: [ 17.x ]
 
-  steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: install modules
-    - run: npm ci
-    - name: build production project
-    - run: npm run build:production
-    - name: tests
-    - run: npm run test:unit
-    - name: eslint
-    - run: npm run eslint
+    steps:
+      - uses: actions/checkout@v2
+      - name: Staring Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: install modules
+        run: npm ci
+      - name: build production project
+        run: npm run build:prod
+      - name: unit testing
+        run: npm run test:unit
+      - name: linting typescript
+        run: npm run lint:ts
+      - name: linting css
+        run: npm run lint:scss
