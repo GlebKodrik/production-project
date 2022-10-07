@@ -14,6 +14,7 @@
     "stylelint:fix": "npx stylelint **/*.scss --fix",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:ui-loki": "loki",
+    "test:ui-loki:ci": "npm run storybook:build && loki --requireReference --reactUri file:./storybook-static",
     "test:ui-loki-approve": "loki approve",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "storybook:build": "build-storybook -c ./config/storybook"

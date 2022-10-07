@@ -23,5 +23,7 @@ jobs:
         run: npm run build:production
       - name: unit testing
         run: npm run test:unit
+      - name: ui-test
+        run: npm run test:ui-loki:ci
       - name: eslint
         run: npm run eslint
