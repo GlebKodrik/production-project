@@ -1,14 +1,8 @@
-import React, { ButtonHTMLAttributes } from 'react';
+import React from 'react';
 import cls from '../../lib/class-names';
 
 import styles from './button.module.scss';
-import { TThemeButton } from './types';
-
-interface TAppButton extends ButtonHTMLAttributes<HTMLButtonElement> {
-  className?: string,
-  clear?: boolean,
-  theme?: TThemeButton
-}
+import { TAppButton } from './types';
 
 export const Button: React.FC<TAppButton> = ({
   clear,
