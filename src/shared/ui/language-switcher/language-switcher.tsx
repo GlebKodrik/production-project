@@ -4,10 +4,6 @@ import cls from 'classnames';
 import { Button } from '../button';
 import styles from './language-switcher.module.scss';
 
-type TLanguageSwitcher = {
-  className?: string
-};
-
 export const LanguageSwitcher: React.FC<TLanguageSwitcher> = (
   { className },
 ) => {

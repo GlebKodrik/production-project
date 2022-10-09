@@ -9,10 +9,6 @@ import DarkThemeIcon from '../../../assets/icons/theme-dark.svg';
 
 import { Button } from '../../button';
 
-type TThemeSwitcher = {
-  className?: string,
-};
-
 export const ThemeSwitcher: React.FC<TThemeSwitcher> = ({ className }) => {
   const { toggleTheme, theme } = useTheme();
 
