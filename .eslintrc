@@ -24,6 +24,7 @@
     "linebreak-style": "off",
     "no-underscore-dangle": "off",
     "max-params": ["error", 2],
+    "react/button-has-type": "off",
     "react/function-component-definition": "off",
     "import/prefer-default-export": "off",
     "react/require-default-props": "off",

@@ -4,7 +4,7 @@ import {
   LOCAL_STORAGE_THEME_KEY,
   ThemeContext,
 } from '../config/theme-context';
-import { ThemeProviderProps } from '../../../types/types';
+import { ThemeProviderProps } from '../../../types/provider';
 
 const DEFAULT_THEME = (localStorage
   .getItem(LOCAL_STORAGE_THEME_KEY) as ETheme)

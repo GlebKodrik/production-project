@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import cls from 'classnames';
 import { Button } from '../button';
-import cls from '../../lib/class-names';
 import styles from './language-switcher.module.scss';
 
 type TLanguageSwitcher = {
@@ -21,7 +21,7 @@ export const LanguageSwitcher: React.FC<TLanguageSwitcher> = (
     <Button
       clear
       onClick={onToggleLanguage}
-      className={cls(styles.language, {}, [className])}
+      className={cls(styles.language, className)}
     >
       {t('language')}
     </Button>

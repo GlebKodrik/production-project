@@ -1,14 +1,7 @@
-import React, { ErrorInfo, ReactNode, Suspense } from 'react';
+import React, { ErrorInfo, Suspense } from 'react';
 import PageError from '../../../widgets/page-error';
 import Loader from '../../../shared/ui/loader';
-
-type TErrorProps = {
-  children: ReactNode;
-};
-
-type TErrorStateProps = {
-  hasError: ReactNode;
-};
+import { TErrorProps, TErrorStateProps } from './types';
 
 class ErrorBoundary extends React.Component<TErrorProps, TErrorStateProps> {
   constructor(props: TErrorProps) {

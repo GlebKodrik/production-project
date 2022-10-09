@@ -1,10 +1,9 @@
 import React, { Suspense } from 'react';
-import cls from '../shared/lib/class-names';
-
+import cls from 'classnames';
 import useTheme from './provider/theme-provider/lib/use-theme';
 import { AppRouter } from './provider/routes/ui';
 import { Navbar } from '../widgets/navbar';
-import { Sidebar } from '../widgets/sidebar/ui/sidebar';
+import { Sidebar } from '../widgets/sidebar';
 import '../shared/config/i18next/i18next';
 import PageLoader from '../widgets/page-loader';
 

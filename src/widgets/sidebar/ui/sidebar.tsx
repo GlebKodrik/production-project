@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import cls from '../../../shared/lib/class-names';
+import cls from 'classnames';
 import styles from './sidebar.module.scss';
 import { ThemeSwitcher } from '../../../shared/ui/theme-switcher';
-import {
-  LanguageSwitcher,
-} from '../../../shared/ui/language-switcher/language-switcher';
+import { LanguageSwitcher } from '../../../shared/ui/language-switcher/language-switcher';
+import { Button } from '../../../shared/ui/button';
+import { EButtonSize, EColorButton } from '../../../app/types/button';
 
 export const Sidebar = () => {
   const [collapse, setCollapse] = useState(false);
@@ -13,18 +13,22 @@ export const Sidebar = () => {
     setCollapse((prev) => !prev);
   };
 
+  const renderButtonCollapse = () => (collapse ? '>' : '<');
   return (
     <div
       data-testid="sidebar"
       className={cls(styles.sidebar, { [styles.collapse]: collapse })}
     >
-      <button
+      <Button
         type="button"
+        square
         onClick={onToggleCollapse}
         className={styles.button}
+        size={EButtonSize.LARGE}
+        color={EColorButton.INVERTED}
       >
-        {collapse ? '>' : '<'}
-      </button>
+        {renderButtonCollapse()}
+      </Button>
       <div className={cls(styles.switchers)}>
         <ThemeSwitcher />
         <LanguageSwitcher className={styles.languageSwitcher} />

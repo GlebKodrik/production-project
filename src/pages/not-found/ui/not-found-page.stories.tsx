@@ -14,13 +14,13 @@ export default {
 
 const Template: ComponentStory<typeof NotFound> = (args) => <NotFound {...args} />;
 
-export const NotFoundLight = Template.bind({});
-NotFoundLight.args = {
+export const NotFoundThemeLight = Template.bind({});
+NotFoundThemeLight.args = {
   text: 'Страница не найдена',
 };
 
-export const NotFoundDark = Template.bind({});
-NotFoundDark.args = {
+export const NotFoundThemeDark = Template.bind({});
+NotFoundThemeDark.args = {
   text: 'Страница не найдена',
 };
-NotFoundDark.decorators = [ThemeDecorator(ETheme.DARK)];
+NotFoundThemeDark.decorators = [ThemeDecorator(ETheme.DARK)];

@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { ThemeContextProps } from '../../../types/types';
+import { ThemeContextProps } from '../../../types/provider';
 
 export enum ETheme {
   'LIGHT' = 'light',

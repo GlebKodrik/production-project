@@ -1,11 +1,14 @@
 import { ButtonHTMLAttributes } from 'react';
 
-export enum TThemeButton {
-  OUTLINE = 'outline',
-}
+type TVariantButton = 'outline';
+type TColorButton = 'inverted';
+type TSizeButton = 'medium' | 'large' | 'extra-large';
 
-export interface TAppButton extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface TButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  size?: TSizeButton
   className?: string,
   clear?: boolean,
-  theme?: TThemeButton
+  color?: TColorButton
+  square?: boolean,
+  variant?: TVariantButton
 }

@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { useTranslation } from 'react-i18next';
+import cls from 'classnames';
 import styles from './page-error.module.scss';
 import { TPageErrorProps } from './types';
-import cls from '../../shared/lib/class-names';
 import { Button } from '../../shared/ui/button';
 import { LOCALES } from '../../constants/locales';
 
@@ -15,7 +15,7 @@ const PageError: React.FC<TPageErrorProps> = ({ className }) => {
   };
 
   return (
-    <div className={cls(styles.wrapper, {}, [className])}>
+    <div className={cls(styles.wrapper, className)}>
       <p>{t('errorText')}</p>
       <Button onClick={onReloadPage}>
         {t('reloadPage')}
