@@ -30,6 +30,7 @@
     "react/require-default-props": "off",
     "react/react-in-jsx-scope": "off",
     "import/no-cycle": "off",
+    "@typescript-eslint/naming-convention": "off",
     "i18next/no-literal-string": [
       "error",
       {

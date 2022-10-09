@@ -9,6 +9,7 @@ import {
   ETheme,
 } from '../../src/app/provider/theme-provider/config/theme-context';
 import { RouteDecorator } from '../../src/shared/config/decorators/route-decorator';
+import { I18NextDecorator } from '../../src/shared/config/decorators/i18next-decorator';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -20,6 +21,7 @@ export const parameters = {
   },
 };
 
+addDecorator(I18NextDecorator);
 addDecorator(StyleDecorator);
 addDecorator(ThemeDecorator(ETheme.LIGHT));
 addDecorator(RouteDecorator);
