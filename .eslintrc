@@ -34,7 +34,7 @@
       "error",
       {
         "markupOnly": true,
-        "ignoreAttribute": ["data-testid", "to"]
+        "ignoreAttribute": ["data-testid", "to", "name"]
       }
     ],
     "react/jsx-props-no-spreading": "off",

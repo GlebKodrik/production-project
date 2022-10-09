@@ -24,10 +24,9 @@ export default {
     // Обнаружил разницу между МАК ОС и ВИНДОУС!!!
     '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
   ],
-  rootDir: '../../',
   setupFilesAfterEnv: ['<rootDir>config/jest/setup.ts'],
   moduleNameMapper: {
     '\\.s?css$': 'identity-obj-proxy',
-    '\\.svg': path.resolve(__dirname, 'jest-empty-component.tsx'),
+    '\\.svg': '<rootDir>config/jest/jest-empty-component.tsx',
   },
 };
