@@ -26,6 +26,8 @@ jobs:
       - name: Unit testing
         run: npm run test:unit
         if: always()
+      - name: approvw
+        run: npm run test:ui-loki-approve
       - name: Ui-test
         run: npm run test:ui-loki:ci
         if: always()
