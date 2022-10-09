@@ -1,3 +1,0 @@
-type TLanguageSwitcher = {
-  className?: string
-};

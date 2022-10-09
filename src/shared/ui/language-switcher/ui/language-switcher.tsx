@@ -1,11 +1,15 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import cls from 'classnames';
-import { Button } from '../button';
+import { Button } from '../../button';
 import styles from './language-switcher.module.scss';
+import { TLanguageSwitcher } from './types';
 
 export const LanguageSwitcher: React.FC<TLanguageSwitcher> = (
-  { className },
+  {
+    className,
+    short,
+  },
 ) => {
   const { t, i18n } = useTranslation();
 
@@ -13,13 +17,15 @@ export const LanguageSwitcher: React.FC<TLanguageSwitcher> = (
     i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
   };
 
+  const renderLanguage = () => t(short ? 'shortLanguage' : 'language');
+
   return (
     <Button
       clear
       onClick={onToggleLanguage}
       className={cls(styles.language, className)}
     >
-      {t('language')}
+      { renderLanguage() }
     </Button>
   );
 };

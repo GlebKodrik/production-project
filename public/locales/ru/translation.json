@@ -1,5 +1,6 @@
 {
-  "language": "Русский",
+  "language": "English",
+  "shortLanguage": "en",
   "notFound": "Страница не найдена",
   "aboutLink": "О страницу",
   "mainLink": "Основная страница"

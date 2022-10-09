@@ -8,6 +8,7 @@ import LightThemeIcon from '../../../assets/icons/theme-light.svg';
 import DarkThemeIcon from '../../../assets/icons/theme-dark.svg';
 
 import { Button } from '../../button';
+import { TThemeSwitcher } from './types';
 
 export const ThemeSwitcher: React.FC<TThemeSwitcher> = ({ className }) => {
   const { toggleTheme, theme } = useTheme();

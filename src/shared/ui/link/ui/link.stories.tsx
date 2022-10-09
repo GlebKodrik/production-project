@@ -3,9 +3,9 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Link } from './link';
 import {
   ETheme,
-} from '../../../app/provider/theme-provider/config/theme-context';
-import { ThemeDecorator } from '../../config/decorators/theme-decorator';
-import { ELinkColor } from '../../../app/types/link';
+} from '../../../../app/provider/theme-provider/config/theme-context';
+import { ThemeDecorator } from '../../../config/decorators/theme-decorator';
+import { ELinkColor } from '../../../../app/types/link';
 
 export default {
   title: 'shared/Link',

@@ -1,11 +1,11 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Button } from './button';
-import { EButtonSize, EColorButton, EVariantButton } from '../../../app/types/button';
+import { EButtonSize, EColorButton, EVariantButton } from '../../../../app/types/button';
 import {
   ETheme,
-} from '../../../app/provider/theme-provider/config/theme-context';
-import { ThemeDecorator } from '../../config/decorators/theme-decorator';
+} from '../../../../app/provider/theme-provider/config/theme-context';
+import { ThemeDecorator } from '../../../config/decorators/theme-decorator';
 import { TButtonProps } from './types';
 
 export default {

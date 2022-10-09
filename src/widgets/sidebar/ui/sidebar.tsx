@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import cls from 'classnames';
 import styles from './sidebar.module.scss';
 import { ThemeSwitcher } from '../../../shared/ui/theme-switcher';
-import { LanguageSwitcher } from '../../../shared/ui/language-switcher/language-switcher';
+import { LanguageSwitcher } from '../../../shared/ui/language-switcher/ui/language-switcher';
 import { Button } from '../../../shared/ui/button';
 import { EButtonSize, EColorButton } from '../../../app/types/button';
 
@@ -27,11 +27,14 @@ export const Sidebar = () => {
         size={EButtonSize.LARGE}
         color={EColorButton.INVERTED}
       >
-        {renderButtonCollapse()}
+        { renderButtonCollapse() }
       </Button>
       <div className={cls(styles.switchers)}>
         <ThemeSwitcher />
-        <LanguageSwitcher className={styles.languageSwitcher} />
+        <LanguageSwitcher
+          className={styles.languageSwitcher}
+          short={collapse}
+        />
       </div>
     </div>
   );
