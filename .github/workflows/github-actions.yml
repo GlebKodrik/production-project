@@ -17,18 +17,18 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: install modules
+      - name: Install modules
         run: npm ci
         if: always()
-      - name: build production project
+      - name: Build production project
         run: npm run build:production
         if: always()
-      - name: unit testing
+      - name: Unit testing
         run: npm run test:unit
         if: always()
-      - name: ui-test
+      - name: Ui-test
         run: npm run test:ui-loki:ci
         if: always()
-      - name: eslint
+      - name: Eslint
         run: npm run eslint
         if: always()
