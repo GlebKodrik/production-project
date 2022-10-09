@@ -13,7 +13,7 @@
     "stylelint": "npx stylelint **/*.scss",
     "stylelint:fix": "npx stylelint **/*.scss --fix",
     "test:unit": "jest",
-    "test:ui-loki": "loki && npm run test:loki:report:json && npm run test:loki:report:html",
+    "test:ui-loki": "loki",
     "test:loki:report:json": "node scripts/generate-visual-json-report.js",
     "test:loki:report:html": "reg-cli --from .loki/report.json --report .loki/report.html",
     "test:ui-loki:ci": "npm run storybook:build && loki --requireReference --reactUri file:./storybook-static",
