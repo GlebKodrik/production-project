@@ -19,16 +19,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install modules
         run: npm ci
-        if: always()
       - name: Build production project
         run: npm run build:production
-        if: always()
       - name: Unit testing
         run: npm run test:unit
-        if: always()
       - name: Ui-test
         run: npm run test:ui-loki:ci
-        if: always()
       - name: Eslint
         run: npm run eslint
-        if: always()
