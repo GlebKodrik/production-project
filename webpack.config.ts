@@ -1,24 +1,27 @@
-import path from 'path';
-import buildWebpackConfig from './config/build/buildWebpackConfig';
-import { BuildEvn, BuildMode, BuildPaths } from './config/build/types/types';
+import { Configuration } from 'webpack';
+import buildPlugins from './config/webpack-configs/build-plugins';
+import buildLoaders from './config/webpack-configs/build-loaders';
+import buildDevServer from './config/webpack-configs/build-dev-server';
+import buildResolvers from './config/webpack-configs/build-resolvers';
+import { FLAGS, MODE, PATHS } from './config/webpack-configs/variables';
 
-export default (env: BuildEvn) => {
-  const PATHS: BuildPaths = {
-    BUILD: path.resolve(__dirname, 'dist'),
-    ENTRY: path.resolve(__dirname, 'src', 'index.tsx'),
-    HTML: path.resolve(__dirname, 'public', 'index.html'),
-  };
-
-  const ANALYZER = env.analyzer;
-  const PORT = env.port || 3000;
-  const MODE: BuildMode = env.mode || 'development';
-  const IS_DEV = MODE === 'development';
-
-  return buildWebpackConfig({
-    MODE,
-    PORT,
-    PATHS,
-    IS_DEV,
-    ANALYZER,
-  });
+const config: Configuration = {
+  mode: MODE,
+  entry: {
+    bundle: PATHS.ENTRY_FILE_IN_SRC,
+  },
+  output: {
+    filename: '[name].js',
+    path: PATHS.DIST_FOLDER,
+    clean: true,
+  },
+  plugins: buildPlugins(),
+  module: {
+    rules: buildLoaders(),
+  },
+  devServer: buildDevServer(),
+  resolve: buildResolvers(),
+  devtool: FLAGS.IS_DEVELOPMENT && 'inline-source-map',
 };
+
+export default config;

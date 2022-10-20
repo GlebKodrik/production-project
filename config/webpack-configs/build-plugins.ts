@@ -9,33 +9,31 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import WebpackBar from 'webpackbar';
-import { BuildOptions } from './types/types';
+import { FLAGS, PATHS } from './variables';
 
-const buildPlugins = (
-  { PATHS, IS_DEV, ANALYZER }: BuildOptions,
-): WebpackPluginInstance[] => {
+const buildPlugins = (): WebpackPluginInstance[] => {
   const plugins: WebpackPluginInstance[] = [
     new HtmlWebpackPlugin({
-      template: PATHS.HTML,
+      template: PATHS.INDEX_HTML_FILE,
+      hash: true,
     }),
     new WebpackBar(),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash:8].css',
-      chunkFilename: 'css/[name].[contenthash:8].css',
+      filename: 'css/[name].css',
     }),
     new DefinePlugin({
-      __IS_DEV__: JSON.stringify(IS_DEV),
+      __IS_DEV__: JSON.stringify(FLAGS.IS_DEVELOPMENT),
     }),
   ];
 
-  if (IS_DEV) {
+  if (FLAGS.IS_DEVELOPMENT) {
     plugins.push(
       new HotModuleReplacementPlugin(),
       new ReactRefreshWebpackPlugin(),
     );
   }
 
-  if (ANALYZER) {
+  if (FLAGS.IS_ANALYZER) {
     plugins.push(
       new BundleAnalyzerPlugin({
         openAnalyzer: true,
