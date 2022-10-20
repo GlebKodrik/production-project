@@ -10,7 +10,7 @@ export const buildStyleLoader = () => ({
       options: {
         modules: {
           auto: true,
-          localIdentName: !FLAGS.IS_DEVELOPMENT ? '[name]__[local]' : '[hash:base64:5]',
+          localIdentName: FLAGS.IS_DEVELOPMENT ? '[name]__[local]__[hash:base64:5]' : '[hash:base64:5]',
           exportLocalsConvention: 'camelCase',
         },
       },

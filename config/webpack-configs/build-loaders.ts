@@ -1,6 +1,5 @@
 import { RuleSetRule } from 'webpack';
 import { buildStyleLoader } from '../global-loaders/build-style-loader';
-import { FLAGS } from './variables';
 
 const buildLoaders = (): RuleSetRule[] => {
   const typeScriptLoader = {

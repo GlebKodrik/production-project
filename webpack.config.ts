@@ -21,7 +21,7 @@ const config: Configuration = {
   },
   devServer: buildDevServer(),
   resolve: buildResolvers(),
-  devtool: FLAGS.IS_DEVELOPMENT && 'inline-source-map',
+  devtool: FLAGS.IS_DEVELOPMENT && 'source-map',
 };
 
 export default config;

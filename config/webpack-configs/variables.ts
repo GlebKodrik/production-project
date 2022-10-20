@@ -8,7 +8,7 @@ const ENVIRONMENTS = {
   PRODUCTION: 'production',
 } as const;
 
-const CURRENT_ENVIRONMENT = process.env.NODE_ENV || ENVIRONMENTS.PRODUCTION;
+const CURRENT_ENVIRONMENT = process.env.NODE_ENV || ENVIRONMENTS.DEVELOPMENT;
 
 const PATHS = {
   ENTRY_FILE_IN_SRC: path.resolve(ROOT_PATH, 'src', 'index.tsx'),
@@ -23,7 +23,7 @@ const FLAGS = {
 };
 
 const MODE = FLAGS.IS_PRODUCTION ? ENVIRONMENTS.PRODUCTION : ENVIRONMENTS.DEVELOPMENT;
-console.log(FLAGS.IS_DEVELOPMENT);
+
 export {
   PATHS,
   FLAGS,
