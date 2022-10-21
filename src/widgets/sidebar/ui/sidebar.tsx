@@ -32,7 +32,7 @@ export const Sidebar = () => {
         >
           <div className={styles.item}>
             <Icon name="home" className={styles.icon} />
-            <span className={styles.linkText}>{t('aboutLink')}</span>
+            <span className={styles.linkText}>{t('sidebar.aboutLink')}</span>
           </div>
         </Link>
 
@@ -42,7 +42,7 @@ export const Sidebar = () => {
         >
           <div className={styles.item}>
             <Icon name="clarity-list" className={styles.icon} />
-            <span className={styles.linkText}>{t('mainLink')}</span>
+            <span className={styles.linkText}>{t('sidebar.mainLink')}</span>
           </div>
         </Link>
       </div>

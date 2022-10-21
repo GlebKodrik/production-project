@@ -1,7 +1,12 @@
 {
-  "language": "English",
-  "shortLanguage": "en",
+  "sidebar": {
+    "language": "English",
+    "shortLanguage": "en",
+    "aboutLink": "О страницу",
+    "mainLink": "Основная страница"
+  },
   "notFound": "Страница не найдена",
-  "aboutLink": "О страницу",
-  "mainLink": "Основная страница"
+  "navbar": {
+    "login": "Войти"
+  }
 }

@@ -1,6 +1,7 @@
 # Project exclude paths
 /dist/
 /node_modules/
+/.caches
 .idea
 /storybook-static
 .loki/report.html

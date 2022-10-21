@@ -1,5 +1,5 @@
-import { ReactChildren } from 'react';
+import { ReactNode } from 'react';
 
 export type TPortalProps = {
-  children: ReactChildren
+  children: ReactNode
 };

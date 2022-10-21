@@ -1,7 +1,12 @@
 {
-  "language": "Russian",
-  "shortLanguage": "ru",
   "notFound": "Page not found",
-  "aboutLink": "About page",
-  "mainLink": "Main Page"
+  "sidebar": {
+    "language": "Russian",
+    "shortLanguage": "ru",
+    "aboutLink": "About page",
+    "mainLink": "Main Page"
+  },
+  "navbar": {
+    "login": "Login"
+  }
 }

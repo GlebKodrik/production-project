@@ -11,7 +11,7 @@ export default {
   component: Sidebar,
 } as ComponentMeta<typeof Sidebar>;
 
-const Template: ComponentStory<typeof Sidebar> = (args) => <Sidebar {...args} />;
+const Template: ComponentStory<typeof Sidebar> = () => <Sidebar />;
 
 export const SidebarWithThemeDark = Template.bind({});
 SidebarWithThemeDark.args = {};

@@ -13,7 +13,6 @@
     "airbnb/hooks",
     "airbnb-typescript"
   ],
-  "plugins": ["i18next"],
   "settings": {
     "react": {
       "version": "detect"
@@ -34,13 +33,6 @@
     "jsx-a11y/no-static-element-interactions": "off",
     "jsx-a11y/click-events-have-key-events": "off",
     "@typescript-eslint/naming-convention": "off",
-    "i18next/no-literal-string": [
-      "error",
-      {
-        "markupOnly": true,
-        "ignoreAttribute": ["data-testid", "to", "name"]
-      }
-    ],
     "react/jsx-props-no-spreading": "off",
     "max-len": ["error", {
       "code": 120,

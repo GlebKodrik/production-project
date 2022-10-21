@@ -2,6 +2,8 @@ import path from 'path';
 
 const ROOT_PATH = path.resolve('./');
 
+const CACHE_LIFETIME = 86400;
+
 const ENVIRONMENTS = {
   DEVELOPMENT: 'development',
   ANALYZER: 'analyzer',
@@ -14,7 +16,13 @@ const PATHS = {
   ENTRY_FILE_IN_SRC: path.resolve(ROOT_PATH, 'src', 'index.tsx'),
   DIST_FOLDER: path.resolve(ROOT_PATH, 'dist'),
   INDEX_HTML_FILE: path.resolve(ROOT_PATH, 'public', 'index.html'),
+  WEBPACK_CACHE_FOLDER: path.resolve(ROOT_PATH, '.caches', '.webpack'),
+  ESLINT_CACHE_FOLDER: path.resolve(ROOT_PATH, '.caches', '.eslint'),
+  STYLELINT_CACHE_FOLDER: path.resolve(ROOT_PATH, '.caches', '.stylelint'),
 };
+
+const scriptExtensions = ['.tsx', '.ts', '.js'];
+const styleExtensions = ['.scss', '.css'];
 
 const FLAGS = {
   IS_DEVELOPMENT: CURRENT_ENVIRONMENT === ENVIRONMENTS.DEVELOPMENT,
@@ -28,4 +36,7 @@ export {
   PATHS,
   FLAGS,
   MODE,
+  CACHE_LIFETIME,
+  scriptExtensions,
+  styleExtensions,
 };

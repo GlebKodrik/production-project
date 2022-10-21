@@ -17,7 +17,7 @@ export const LanguageSwitcher: React.FC<TLanguageSwitcher> = (
     i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
   };
 
-  const renderLanguage = () => t(short ? 'shortLanguage' : 'language');
+  const renderLanguage = () => t(short ? 'sidebar.shortLanguage' : 'sidebar.language');
 
   return (
     <Button

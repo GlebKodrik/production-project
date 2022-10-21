@@ -1,16 +1,16 @@
 .sidebar {
-  width: var(--sidebar-width);
-  background-color: var(--inverted-bg-color);
   position: relative;
+  width: var(--sidebar-width);
   height: calc(100vh - var(--navbar-height));
+  background-color: var(--inverted-bg-color);
   transition: width 0.4s;
 }
 
 .link-wrapper {
-  margin-top: 20px;
-  margin-left: 30px;
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
+  margin-left: 30px;
 
   .item {
     display: flex;
@@ -33,9 +33,9 @@
 .switchers {
   position: absolute;
   bottom: 20px;
-  width: 100%;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .collapse {

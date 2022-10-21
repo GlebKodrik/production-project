@@ -2,7 +2,8 @@ import React from 'react';
 import { ETheme } from '../provider/theme-provider/config/theme-context';
 
 export type ThemeProviderProps = {
-  children: React.ReactNode
+  children: React.ReactNode,
+  theme?: ETheme
 };
 
 export type ThemeContextProps = {

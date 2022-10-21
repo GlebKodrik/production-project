@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react';
 import { Sidebar } from './sidebar';
-import { componentRender } from '../../../shared/config/provider/componentRender/componentRender';
+import { componentRender } from '../../../shared/config/provider/componentRender';
 
 jest.mock('react-i18next', () => ({
   // this mock makes sure any components using the translate hook can use it without a warning being shown

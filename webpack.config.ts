@@ -2,8 +2,13 @@ import { Configuration } from 'webpack';
 import buildPlugins from './config/webpack-configs/build-plugins';
 import buildLoaders from './config/webpack-configs/build-loaders';
 import buildDevServer from './config/webpack-configs/build-dev-server';
-import buildResolvers from './config/webpack-configs/build-resolvers';
-import { FLAGS, MODE, PATHS } from './config/webpack-configs/variables';
+import {
+  CACHE_LIFETIME,
+  FLAGS,
+  MODE,
+  PATHS,
+  scriptExtensions,
+} from './config/webpack-configs/variables';
 
 const config: Configuration = {
   mode: MODE,
@@ -20,7 +25,14 @@ const config: Configuration = {
     rules: buildLoaders(),
   },
   devServer: buildDevServer(),
-  resolve: buildResolvers(),
+  resolve: {
+    extensions: scriptExtensions,
+  },
+  cache: {
+    type: 'filesystem',
+    cacheLocation: PATHS.WEBPACK_CACHE_FOLDER,
+    maxAge: CACHE_LIFETIME,
+  },
   devtool: FLAGS.IS_DEVELOPMENT && 'source-map',
 };
 

@@ -4,18 +4,38 @@ import {
   DefinePlugin,
   HotModuleReplacementPlugin,
 } from 'webpack';
+import ESLintPlugin from 'eslint-webpack-plugin';
+import StylelintPlugin from 'stylelint-webpack-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import WebpackBar from 'webpackbar';
-import { FLAGS, PATHS } from './variables';
+import {
+  FLAGS,
+  PATHS,
+  scriptExtensions,
+  styleExtensions,
+} from './variables';
 
 const buildPlugins = (): WebpackPluginInstance[] => {
   const plugins: WebpackPluginInstance[] = [
     new HtmlWebpackPlugin({
       template: PATHS.INDEX_HTML_FILE,
       hash: true,
+    }),
+    new ESLintPlugin({
+      extensions: scriptExtensions,
+      exclude: 'node_modules',
+      context: 'src',
+      cache: true,
+      cacheLocation: PATHS.ESLINT_CACHE_FOLDER,
+    }),
+    new StylelintPlugin({
+      extensions: styleExtensions,
+      exclude: 'node_modules',
+      context: 'src',
+      cache: true,
+      cacheLocation: PATHS.STYLELINT_CACHE_FOLDER,
     }),
     new WebpackBar(),
     new MiniCssExtractPlugin({
