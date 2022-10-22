@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
-import PageError from '../../widgets/page-error';
-import Loader from '../../shared/ui/loader';
+import PageError from '../../../pages/error-page';
+import Loader from '../../../shared/ui/loader';
 import { TErrorBoundaryProps, TErrorBoundaryStateProps } from './types';
 
 class ErrorBoundary extends React.Component<TErrorBoundaryProps, TErrorBoundaryStateProps> {
@@ -19,7 +19,6 @@ class ErrorBoundary extends React.Component<TErrorBoundaryProps, TErrorBoundaryS
     const { error } = this.state;
     const { children } = this.props;
 
-    console.log(error);
     if (!error) {
       return children;
     }
