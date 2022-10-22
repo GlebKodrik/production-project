@@ -1,15 +1,15 @@
 import { addDecorator } from '@storybook/react';
 import {
   StyleDecorator,
-} from '../../src/shared/config/decorators/style-decorator';
+} from '../../src/configs/decorators/style-decorator';
 import {
   ThemeDecorator,
-} from '../../src/shared/config/decorators/theme-decorator';
+} from '../../src/configs/decorators/theme-decorator';
 import {
   ETheme,
-} from '../../src/app/provider/theme-provider/config/theme-context';
-import { RouteDecorator } from '../../src/shared/config/decorators/route-decorator';
-import { I18NextDecorator } from '../../src/shared/config/decorators/i18next-decorator';
+} from '../../src/context/theme-context';
+import { RouteDecorator } from '../../src/configs/decorators/route-decorator';
+import { I18NextDecorator } from '../../src/configs/decorators/i18next-decorator';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

@@ -1,4 +1,5 @@
 {
-  "errorText": "An error has occurred",
-  "reloadPage": "Reload page"
+  "description": "Please send the text of the error to the site administration and try refreshing the page",
+  "reloadPageButton": "Refresh the page",
+  "goBackButton": "Come back"
 }

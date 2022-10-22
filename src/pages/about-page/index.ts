@@ -1,3 +1,3 @@
-import AboutPageAsync from './ui/about-page.async';
+import AboutPage from './about-page';
 
-export { AboutPageAsync as AboutPage };
+export default AboutPage;

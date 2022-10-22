@@ -1,19 +1,23 @@
-import './app/styles/global.scss';
+import './styles/global.scss';
+import './configs/i18next';
 
-import React from 'react';
+import React, { Suspense } from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import { ThemeProvider } from './app/provider/theme-provider/ui';
-import { App } from './app/ui/app';
-import { ErrorBoundary } from './app/ui/error-boundery';
+import { ThemeProvider } from './providers/theme-provider';
+import { ErrorBoundary } from './pages/error-boundery-page';
+import Routes from './routers';
+import LoaderWithOverlay from './shared-components/loader-with-overlay';
 
 render(
   <BrowserRouter>
-    <ErrorBoundary>
-      <ThemeProvider>
-        <App />
-      </ThemeProvider>
-    </ErrorBoundary>
+    <Suspense fallback={<LoaderWithOverlay />}>
+      <ErrorBoundary>
+        <ThemeProvider>
+          <Routes />
+        </ThemeProvider>
+      </ErrorBoundary>
+    </Suspense>
   </BrowserRouter>,
 
   document.getElementById('root'),
