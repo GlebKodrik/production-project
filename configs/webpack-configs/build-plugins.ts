@@ -2,7 +2,6 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import {
   WebpackPluginInstance,
   DefinePlugin,
-  HotModuleReplacementPlugin,
 } from 'webpack';
 import ESLintPlugin from 'eslint-webpack-plugin';
 import StylelintPlugin from 'stylelint-webpack-plugin';
@@ -27,15 +26,11 @@ const buildPlugins = (): WebpackPluginInstance[] => {
       extensions: scriptExtensions,
       exclude: 'node_modules',
       context: 'src',
-      cache: true,
-      cacheLocation: PATHS.ESLINT_CACHE_FOLDER,
     }),
     new StylelintPlugin({
       extensions: styleExtensions,
       exclude: 'node_modules',
       context: 'src',
-      cache: true,
-      cacheLocation: PATHS.STYLELINT_CACHE_FOLDER,
     }),
     new WebpackBar(),
     new MiniCssExtractPlugin({
@@ -48,7 +43,6 @@ const buildPlugins = (): WebpackPluginInstance[] => {
 
   if (FLAGS.IS_DEVELOPMENT) {
     plugins.push(
-      new HotModuleReplacementPlugin(),
       new ReactRefreshWebpackPlugin(),
     );
   }

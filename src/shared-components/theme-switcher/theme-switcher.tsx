@@ -13,6 +13,7 @@ export const ThemeSwitcher: React.FC<TThemeSwitcher> = ({ className }) => {
   const { toggleTheme, theme } = useTheme();
 
   const renderSwitcherIcon = () => (theme === THEMES.LIGHT ? <DarkThemeIcon /> : <LightThemeIcon />);
+
   return (
     <Button onClick={toggleTheme} clear className={cls(className)}>
       {renderSwitcherIcon()}
