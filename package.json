@@ -18,8 +18,8 @@
     "test:loki:report:html": "reg-cli --from .loki/report.json --report .loki/report.html",
     "test:ui-loki:ci": "npm run storybook:build && loki --requireReference --reactUri file:./storybook-static",
     "test:ui-loki-approve": "loki approve",
-    "storybook": "start-storybook -p 6006 -c configs/storybook -s public",
-    "storybook:build": "build-storybook -c configs/storybook -s public"
+    "storybook": "start-storybook -p 6006 -c configs-project/storybook -s public",
+    "storybook:build": "build-storybook -c configs-project/storybook -s public"
   },
   "keywords": [],
   "author": "",
