@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import cls from 'classnames';
 import { useTranslation } from 'react-i18next';
 import styles from './sidebar.module.scss';
-import { ThemeSwitcher } from '../../../../../shared-components/theme-switcher';
-import { LanguageSwitcher } from '../../../../../shared-components/language-switcher/language-switcher';
-import { Button } from '../../../../../shared-components/button';
-import { EButtonSize, EColorButton } from '../../../../../types/button';
-import { Link } from '../../../../../shared-components/link';
-import { ELinkColor } from '../../../../../types/link';
-import { ROUTES_PATH } from '../../../../../constants/routers';
-import Icon from '../../../../../shared-components/icon';
+import { ThemeSwitcher } from '../../../../shared-components/theme-switcher';
+import { LanguageSwitcher } from '../../../../shared-components/language-switcher/language-switcher';
+import { Button } from '../../../../shared-components/button';
+import { EButtonSize, EColorButton } from '../../../../types/button';
+import { Link } from '../../../../shared-components/link';
+import { ELinkColor } from '../../../../types/link';
+import { ROUTES_PATH } from '../../../../constants/routers';
+import Icon from '../../../../shared-components/icon';
 
 export const Sidebar = () => {
   const [collapse, setCollapse] = useState(false);

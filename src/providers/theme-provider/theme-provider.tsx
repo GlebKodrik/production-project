@@ -5,9 +5,10 @@ import {
 } from '../../context/theme-context';
 import styles from './theme-provider.module.scss';
 import { ThemeProviderProps, TThemeProviderTheme } from './provider';
-import getLocalStorageValue from '../../utils/get-theme/get-theme';
+import ControlLocalStorage from '../../utils/control-local-storage/control-local-storage';
+import { LOCAL_STORAGE_THEME_KEY, TThemes } from '../../constants/themes';
 
-const DEFAULT_THEME = getLocalStorageValue<TThemeProviderTheme>();
+const DEFAULT_THEME = ControlLocalStorage.getValueLocalStorage(LOCAL_STORAGE_THEME_KEY) as TThemes;
 
 const ThemeProvider: React.FC<ThemeProviderProps> = ({ children, theme }) => {
   const [currentTheme, setCurrentTheme] = useState<TThemeProviderTheme>(theme || DEFAULT_THEME);
