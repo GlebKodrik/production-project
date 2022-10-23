@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 import { useTranslation } from 'react-i18next';
 import { TAuthProps } from './types';
-import { Button } from '../../../../../../../shared-components/button';
-import { Modal } from '../../../../../../../shared-components/modal';
+import { Button } from '../../../../../../shared-components/button';
+import { Modal } from '../../../../../../shared-components/modal';
 
 const Auth: React.FC<TAuthProps> = () => {
   const [isOpenAuthModal, setIsOpenAuthModal] = useState(false);
