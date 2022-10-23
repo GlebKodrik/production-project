@@ -1,14 +1,14 @@
 import { Configuration } from 'webpack';
-import buildPlugins from './config/webpack-configs/build-plugins';
-import buildLoaders from './config/webpack-configs/build-loaders';
-import buildDevServer from './config/webpack-configs/build-dev-server';
+import buildPlugins from './configs/webpack-configs/build-plugins';
+import buildLoaders from './configs/webpack-configs/build-loaders';
+import buildDevServer from './configs/webpack-configs/build-dev-server';
 import {
   CACHE_LIFETIME,
   FLAGS,
   MODE,
   PATHS,
   scriptExtensions,
-} from './config/webpack-configs/variables';
+} from './configs/webpack-configs/variables';
 
 const config: Configuration = {
   mode: MODE,
