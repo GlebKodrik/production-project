@@ -2,10 +2,8 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import AboutPage from './about-page';
 
-import {
-  ETheme,
-} from '../../context/theme-context';
 import { ThemeDecorator } from '../../configs/decorators/theme-decorator';
+import { THEMES } from '../../constants/themes';
 
 export default {
   title: 'page/About',
@@ -19,4 +17,4 @@ AboutPageThemeLight.args = {};
 
 export const AboutPageThemeDark = Template.bind({});
 AboutPageThemeDark.args = {};
-AboutPageThemeDark.decorators = [ThemeDecorator(ETheme.DARK)];
+AboutPageThemeDark.decorators = [ThemeDecorator(THEMES.DARK)];

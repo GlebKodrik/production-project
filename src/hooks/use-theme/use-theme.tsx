@@ -1,20 +1,15 @@
 import { useContext } from 'react';
 import {
-  ETheme,
-  LOCAL_STORAGE_THEME_KEY,
   ThemeContext,
 } from '../../context/theme-context';
-
-export type TUseTheme = {
-  toggleTheme: () => void,
-  theme: ETheme
-};
+import { LOCAL_STORAGE_THEME_KEY, THEMES } from '../../constants/themes';
+import { TUseTheme } from './types';
 
 const useTheme = (): TUseTheme => {
   const { theme, setTheme } = useContext(ThemeContext);
 
   const toggleTheme = () => {
-    const currentTheme = theme === ETheme.DARK ? ETheme.LIGHT : ETheme.DARK;
+    const currentTheme = theme === THEMES.DARK ? THEMES.LIGHT : THEMES.DARK;
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, currentTheme);
     setTheme(currentTheme);
   };

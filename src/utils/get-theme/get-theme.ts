@@ -1,6 +1,6 @@
-import { ETheme, LOCAL_STORAGE_THEME_KEY } from '../../context/theme-context';
+import { LOCAL_STORAGE_THEME_KEY, THEMES } from '../../constants/themes';
 
-const getTheme = (): string => (localStorage
-  .getItem(LOCAL_STORAGE_THEME_KEY || ETheme.LIGHT));
+const getTheme = <TTheme>(): TTheme => (localStorage
+  .getItem(LOCAL_STORAGE_THEME_KEY || THEMES.LIGHT) as TTheme);
 
 export default getTheme;

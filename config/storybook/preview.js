@@ -5,11 +5,10 @@ import {
 import {
   ThemeDecorator,
 } from '../../src/configs/decorators/theme-decorator';
-import {
-  ETheme,
-} from '../../src/context/theme-context';
+
 import { RouteDecorator } from '../../src/configs/decorators/route-decorator';
 import { I18NextDecorator } from '../../src/configs/decorators/i18next-decorator';
+import { THEMES } from '../../src/constants/themes';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -23,5 +22,5 @@ export const parameters = {
 
 addDecorator(I18NextDecorator);
 addDecorator(StyleDecorator);
-addDecorator(ThemeDecorator(ETheme.LIGHT));
+addDecorator(ThemeDecorator(THEMES.LIGHT));
 addDecorator(RouteDecorator);

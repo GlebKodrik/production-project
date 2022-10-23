@@ -2,11 +2,10 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Button } from './button';
 import { EButtonSize, EColorButton, EVariantButton } from '../../types/button';
-import {
-  ETheme,
-} from '../../context/theme-context';
+
 import { ThemeDecorator } from '../../configs/decorators/theme-decorator';
 import { TButtonProps } from './types';
+import { THEMES } from '../../constants/themes';
 
 export default {
   title: 'shared-components/Button',
@@ -32,7 +31,7 @@ VariantOutLineWithThemeDark.args = {
   children: 'Button',
   variant: EVariantButton.OUTLINE,
 };
-VariantOutLineWithThemeDark.decorators = [ThemeDecorator(ETheme.DARK)];
+VariantOutLineWithThemeDark.decorators = [ThemeDecorator(THEMES.DARK)];
 
 export const ColorInverted = Template.bind({});
 ColorInverted.args = {
@@ -45,7 +44,7 @@ ColorInvertedWithThemeDark.args = {
   children: 'Button',
   color: EColorButton.INVERTED,
 };
-ColorInvertedWithThemeDark.decorators = [ThemeDecorator(ETheme.DARK)];
+ColorInvertedWithThemeDark.decorators = [ThemeDecorator(THEMES.DARK)];
 
 export const SizeMedium = Template.bind({});
 SizeMedium.args = {

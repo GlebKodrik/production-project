@@ -1,11 +1,10 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Link } from './link';
-import {
-  ETheme,
-} from '../../context/theme-context';
+
 import { ThemeDecorator } from '../../configs/decorators/theme-decorator';
 import { ELinkColor } from '../../types/link';
+import { THEMES } from '../../constants/themes';
 
 export default {
   title: 'shared-components/Link',
@@ -40,4 +39,4 @@ ColorPrimaryWithThemeDark.args = {
   children: 'Link',
   color: ELinkColor.PRIMARY,
 };
-ColorPrimaryWithThemeDark.decorators = [ThemeDecorator(ETheme.DARK)];
+ColorPrimaryWithThemeDark.decorators = [ThemeDecorator(THEMES.DARK)];

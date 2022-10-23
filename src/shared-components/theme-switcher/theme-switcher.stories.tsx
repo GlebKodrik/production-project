@@ -2,11 +2,8 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeSwitcher } from './theme-switcher';
 
-import {
-  ETheme,
-} from '../../context/theme-context';
-
 import { ThemeDecorator } from '../../configs/decorators/theme-decorator';
+import { THEMES } from '../../constants/themes';
 
 export default {
   title: 'shared-components/Theme-switcher',
@@ -17,7 +14,7 @@ const Template: ComponentStory<typeof ThemeSwitcher> = (args) => <ThemeSwitcher 
 
 export const ThemeSwitcherWithThemeDark = Template.bind({});
 ThemeSwitcherWithThemeDark.args = {};
-ThemeSwitcherWithThemeDark.decorators = [ThemeDecorator(ETheme.DARK)];
+ThemeSwitcherWithThemeDark.decorators = [ThemeDecorator(THEMES.DARK)];
 
 export const ThemeSwitcherWithThemeLight = Template.bind({});
 ThemeSwitcherWithThemeLight.args = {};

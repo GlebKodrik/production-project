@@ -2,10 +2,8 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import NotFoundPage from './not-found-page';
 
-import {
-  ETheme,
-} from '../../context/theme-context';
 import { ThemeDecorator } from '../../configs/decorators/theme-decorator';
+import { THEMES } from '../../constants/themes';
 
 export default {
   title: 'page/Not-found',
@@ -23,4 +21,4 @@ export const NotFoundThemeDark = Template.bind({});
 NotFoundThemeDark.args = {
   text: 'Страница не найдена',
 };
-NotFoundThemeDark.decorators = [ThemeDecorator(ETheme.DARK)];
+NotFoundThemeDark.decorators = [ThemeDecorator(THEMES.DARK)];

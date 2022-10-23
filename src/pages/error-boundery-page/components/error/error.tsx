@@ -5,8 +5,9 @@ import { Button } from '../../../../shared-components/button';
 import Code from '../../../../shared-components/code';
 import styles from './error.module.scss';
 import { ThemeProvider } from '../../../../providers/theme-provider';
-import { ETheme } from '../../../../context/theme-context';
+
 import { LOCALES } from '../../../../constants/locales';
+import { THEMES } from '../../../../constants/themes';
 
 const Error: React.FC<TErrorProps> = ({ error }) => {
   const { t } = useTranslation(LOCALES.ERROR_PAGE);
@@ -23,7 +24,7 @@ const Error: React.FC<TErrorProps> = ({ error }) => {
   };
 
   return (
-    <ThemeProvider theme={ETheme.DARK}>
+    <ThemeProvider theme={THEMES.DARK}>
       <div className={styles.wrapper}>
         <div className={styles.description}>
           {t('description')}

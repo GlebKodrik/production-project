@@ -1,17 +1,16 @@
 import React, { useMemo, useState } from 'react';
 import cls from 'classnames';
 import {
-  ETheme,
   ThemeContext,
 } from '../../context/theme-context';
 import styles from './theme-provider.module.scss';
-import { ThemeProviderProps } from '../../types/provider';
-import getTheme from '../../utils/get-theme/get-theme';
+import { ThemeProviderProps, TThemeProviderTheme } from './provider';
+import getLocalStorageValue from '../../utils/get-theme/get-theme';
 
-const DEFAULT_THEME = getTheme() as ETheme;
+const DEFAULT_THEME = getLocalStorageValue<TThemeProviderTheme>();
 
 const ThemeProvider: React.FC<ThemeProviderProps> = ({ children, theme }) => {
-  const [currentTheme, setCurrentTheme] = useState<ETheme>(theme || DEFAULT_THEME);
+  const [currentTheme, setCurrentTheme] = useState<TThemeProviderTheme>(theme || DEFAULT_THEME);
 
   const settingsTheme = useMemo(() => ({
     theme: currentTheme,

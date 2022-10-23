@@ -2,10 +2,8 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Modal from './modal';
 
-import {
-  ETheme,
-} from '../../context/theme-context';
 import { ThemeDecorator } from '../../configs/decorators/theme-decorator';
+import { THEMES } from '../../constants/themes';
 
 export default {
   title: 'shared-components/Modal',
@@ -19,7 +17,7 @@ ModalWithThemeDark.args = {
   open: true,
   children: 'Привет',
 };
-ModalWithThemeDark.decorators = [ThemeDecorator(ETheme.DARK)];
+ModalWithThemeDark.decorators = [ThemeDecorator(THEMES.DARK)];
 
 export const ModalWithThemeLight = Template.bind({});
 ModalWithThemeLight.args = {

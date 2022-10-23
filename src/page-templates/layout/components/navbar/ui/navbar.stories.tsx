@@ -1,10 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Navbar } from './navbar';
-import {
-  ETheme,
-} from '../../../../../context/theme-context';
+
 import { ThemeDecorator } from '../../../../../configs/decorators/theme-decorator';
+import { THEMES } from '../../../../../constants/themes';
 
 export default {
   title: 'widgets/Navbar',
@@ -15,7 +14,7 @@ const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />;
 
 export const NavbarWithThemeDark = Template.bind({});
 NavbarWithThemeDark.args = {};
-NavbarWithThemeDark.decorators = [ThemeDecorator(ETheme.DARK)];
+NavbarWithThemeDark.decorators = [ThemeDecorator(THEMES.DARK)];
 
 export const NavbarWithThemeLight = Template.bind({});
 NavbarWithThemeLight.args = {};
