@@ -1,13 +1,12 @@
 import React from 'react';
-
-export type TThemeProviderTheme = 'light' | 'dark';
+import { TThemes } from '../../constants/themes';
 
 export type ThemeProviderProps = {
   children: React.ReactNode,
-  theme?: TThemeProviderTheme,
+  theme?: TThemes,
 };
 
 export type ThemeContextProps = {
-  theme?: TThemeProviderTheme,
-  setTheme?: (theme: TThemeProviderTheme) => void
+  theme?: TThemes,
+  setTheme?: (theme: TThemes) => void
 };

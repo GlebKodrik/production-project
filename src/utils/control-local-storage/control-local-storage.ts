@@ -1,11 +1,12 @@
-class ControlLocalStorage {
-  static getValueLocalStorage(localStorageKey: string): string {
+import { TLocalStorageKeys } from '../../types/local-storage-key';
+
+const controlLocalStorage = {
+  getValueLocalStorage(localStorageKey: TLocalStorageKeys): string {
     return JSON.parse(localStorage.getItem(localStorageKey));
-  }
-
-  static setValueLocalStorage(localStorageKey: string, value: any): void {
+  },
+  setValueLocalStorage(localStorageKey: TLocalStorageKeys, value: any): void {
     localStorage.setItem(localStorageKey, JSON.stringify(value));
-  }
-}
+  },
+};
 
-export default ControlLocalStorage;
+export default controlLocalStorage;

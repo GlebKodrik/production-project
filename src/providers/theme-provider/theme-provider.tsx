@@ -4,14 +4,15 @@ import {
   ThemeContext,
 } from '../../context/theme-context';
 import styles from './theme-provider.module.scss';
-import { ThemeProviderProps, TThemeProviderTheme } from './provider';
-import ControlLocalStorage from '../../utils/control-local-storage/control-local-storage';
-import { LOCAL_STORAGE_THEME_KEY, TThemes } from '../../constants/themes';
+import { ThemeProviderProps } from './provider';
+import controlLocalStorage from '../../utils/control-local-storage/control-local-storage';
+import { TThemes } from '../../constants/themes';
+import { LOCAL_STORAGE_KEYS } from '../../constants/local-storage-key';
 
-const DEFAULT_THEME = ControlLocalStorage.getValueLocalStorage(LOCAL_STORAGE_THEME_KEY) as TThemes;
+const DEFAULT_THEME = controlLocalStorage.getValueLocalStorage(LOCAL_STORAGE_KEYS.THEME_KEY) as TThemes;
 
 const ThemeProvider: React.FC<ThemeProviderProps> = ({ children, theme }) => {
-  const [currentTheme, setCurrentTheme] = useState<TThemeProviderTheme>(theme || DEFAULT_THEME);
+  const [currentTheme, setCurrentTheme] = useState<TThemes>(theme || DEFAULT_THEME);
 
   const settingsTheme = useMemo(() => ({
     theme: currentTheme,
