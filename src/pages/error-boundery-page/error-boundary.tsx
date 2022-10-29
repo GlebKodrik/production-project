@@ -1,6 +1,5 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import Error from './components/error';
-import Loader from '../../shared-components/loader';
 import { TErrorBoundaryProps, TErrorBoundaryStateProps } from './types';
 
 class ErrorBoundary extends React.Component<TErrorBoundaryProps, TErrorBoundaryStateProps> {
@@ -24,9 +23,7 @@ class ErrorBoundary extends React.Component<TErrorBoundaryProps, TErrorBoundaryS
     }
 
     return (
-      <Suspense fallback={Loader}>
-        <Error error={error} />
-      </Suspense>
+      <Error error={error} />
     );
   }
 }

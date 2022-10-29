@@ -1,43 +1,34 @@
 import { TLocalStorageKeys } from '../../types/local-storage-key';
 
 export class ControlLocalStorage {
-  private static isExistWindow = typeof window !== 'undefined';
-
-  private static getErrorTextWithAbsenceWindow = (
-    localStorageKey: TLocalStorageKeys,
-  ) => `Tried setting localStorage key “${localStorageKey}” even though environment is not a client`;
-
   static getValueLocalStorage(localStorageKey: TLocalStorageKeys): string {
-    if (!this.isExistWindow) {
-      throw Error(this.getErrorTextWithAbsenceWindow(localStorageKey));
-    }
-
     const valueLocalStorage = window.localStorage.getItem(localStorageKey);
 
-    if (typeof valueLocalStorage === 'string') {
-      return valueLocalStorage;
-    }
     try {
       return JSON.parse(valueLocalStorage);
     } catch (error) {
-      throw Error(`Error reading localStorage key “${localStorageKey}”:`, error);
+      return valueLocalStorage;
     }
   }
 
-  static setValueLocalStorage(localStorageKey: TLocalStorageKeys, value: string): void {
-    if (!this.isExistWindow) {
-      throw Error(this.getErrorTextWithAbsenceWindow(localStorageKey));
-    }
-
+  static setValueLocalStorage(localStorageKey: TLocalStorageKeys, value: any): void {
     if (typeof value === 'string') {
       localStorage.setItem(localStorageKey, value);
       return;
     }
 
     try {
-      localStorage.setItem(localStorageKey, JSON.parse(value));
+      localStorage.setItem(localStorageKey, JSON.stringify(value));
     } catch (error) {
       throw Error(`Error setting localStorage key “${localStorageKey}”:`, error);
+    }
+  }
+
+  static clearLocalStorage() {
+    try {
+      window.localStorage.clear();
+    } catch (error) {
+      throw Error('Error while deleting everything local storage', error);
     }
   }
 }
