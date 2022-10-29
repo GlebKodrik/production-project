@@ -4,10 +4,10 @@ import {
 } from '../../context/theme-context';
 import { THEMES, TThemes } from '../../constants/themes';
 import { TUseTheme } from './types';
-import controlLocalStorage from '../../utils/control-local-storage/control-local-storage';
+import { ControlLocalStorage } from '../../utils/control-local-storage';
 import { LOCAL_STORAGE_KEYS, TLocalStorageKeys } from '../../constants/local-storage-key';
 
-const useTheme = (): TUseTheme => {
+export const useTheme = (): TUseTheme => {
   const { theme, setTheme } = useContext(ThemeContext);
 
   const getCurrentTheme = (oldTheme: TThemes): TThemes => (oldTheme === THEMES.DARK ? THEMES.LIGHT : THEMES.DARK);
@@ -18,7 +18,7 @@ const useTheme = (): TUseTheme => {
   };
 
   const setLocalStorageTheme = (localstorageKey: TLocalStorageKeys, currentTheme: TThemes): void => {
-    controlLocalStorage.setValueLocalStorage(localstorageKey, currentTheme);
+    ControlLocalStorage.setValueLocalStorage(localstorageKey, currentTheme);
   };
 
   const toggleTheme = () => {
@@ -33,5 +33,3 @@ const useTheme = (): TUseTheme => {
     toggleTheme,
   };
 };
-
-export default useTheme;

@@ -1,5 +1,5 @@
-import controlLocalStorage from './control-local-storage';
+import { ControlLocalStorage } from './control-local-storage';
 
 export {
-  controlLocalStorage,
+  ControlLocalStorage,
 };
