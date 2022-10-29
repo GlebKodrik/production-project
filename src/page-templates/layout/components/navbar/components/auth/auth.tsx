@@ -19,24 +19,6 @@ const Auth: React.FC<TAuthProps> = () => {
       <Modal isOpen={isOpenAuthModal} onClose={setIsOpenAuthModal}>
         Привет
       </Modal>
-      <Modal isOpen={isOpenAuthModal} onClose={setIsOpenAuthModal}>
-        Привет
-      </Modal>
-      <Modal isOpen={isOpenAuthModal} onClose={setIsOpenAuthModal}>
-        Привет
-      </Modal>
-      <Modal isOpen={isOpenAuthModal} onClose={setIsOpenAuthModal}>
-        Привет
-      </Modal>
-      <Modal isOpen={isOpenAuthModal} onClose={setIsOpenAuthModal}>
-        Привет
-      </Modal>
-      <Modal isOpen={isOpenAuthModal} onClose={setIsOpenAuthModal}>
-        Привет
-      </Modal>
-      <Modal isOpen={isOpenAuthModal} onClose={setIsOpenAuthModal}>
-        Привет
-      </Modal>
       <Button clear color="inverted" onClick={onToggleAuthModal}>
         { t('navbar.login') }
       </Button>
