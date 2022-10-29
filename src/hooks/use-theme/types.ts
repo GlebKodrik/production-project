@@ -1,6 +1,6 @@
-import { TThemeProviderTheme } from '../../providers/theme-provider/provider';
+import { TThemes } from '../../constants/themes';
 
 export type TUseTheme = {
   toggleTheme: () => void,
-  theme: TThemeProviderTheme
+  theme: TThemes
 };

@@ -1,5 +1,7 @@
 import React, {
-  useCallback, useEffect, useRef, useState,
+  useEffect,
+  useRef,
+  useState,
 } from 'react';
 
 import cls from 'classnames';
@@ -12,9 +14,13 @@ const ANIMATION_TIMEOUT = 300;
 const Modal: React.FC<TModalProps> = ({
   className,
   children,
-  open,
+  isOpen,
   onClose,
 }) => {
+  if (!isOpen) {
+    return null;
+  }
+
   const [isClosing, setIsClosing] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
 
@@ -26,18 +32,18 @@ const Modal: React.FC<TModalProps> = ({
     }, ANIMATION_TIMEOUT);
   };
 
-  const onKeyDownHandler = useCallback((event: KeyboardEvent) => {
+  const onKeyDownHandler = (event: KeyboardEvent) => {
     if (event.key === 'Escape') {
       onCloseModal();
     }
-  }, []);
+  };
 
-  const onContentClick = useCallback((event: React.MouseEvent) => {
+  const onContentClick = (event: React.MouseEvent) => {
     event.stopPropagation();
-  }, []);
+  };
 
   useEffect(() => {
-    if (open) {
+    if (isOpen) {
       window.addEventListener('keydown', onKeyDownHandler);
     }
 
@@ -45,13 +51,16 @@ const Modal: React.FC<TModalProps> = ({
       window.removeEventListener('keydown', onKeyDownHandler);
       clearTimeout(timeoutRef.current);
     };
-  }, [open]);
+  }, [isOpen]);
 
   return (
     <Portal>
       <div className={cls(
         styles.modal,
-        { [styles.opened]: open, [styles.closing]: isClosing },
+        {
+          [styles.opened]: isOpen,
+          [styles.closing]: isClosing,
+        },
         className,
       )}
       >

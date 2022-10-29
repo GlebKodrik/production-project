@@ -16,7 +16,25 @@ const Auth: React.FC<TAuthProps> = () => {
 
   return (
     <>
-      <Modal open={isOpenAuthModal} onClose={setIsOpenAuthModal}>
+      <Modal isOpen={isOpenAuthModal} onClose={setIsOpenAuthModal}>
+        Привет
+      </Modal>
+      <Modal isOpen={isOpenAuthModal} onClose={setIsOpenAuthModal}>
+        Привет
+      </Modal>
+      <Modal isOpen={isOpenAuthModal} onClose={setIsOpenAuthModal}>
+        Привет
+      </Modal>
+      <Modal isOpen={isOpenAuthModal} onClose={setIsOpenAuthModal}>
+        Привет
+      </Modal>
+      <Modal isOpen={isOpenAuthModal} onClose={setIsOpenAuthModal}>
+        Привет
+      </Modal>
+      <Modal isOpen={isOpenAuthModal} onClose={setIsOpenAuthModal}>
+        Привет
+      </Modal>
+      <Modal isOpen={isOpenAuthModal} onClose={setIsOpenAuthModal}>
         Привет
       </Modal>
       <Button clear color="inverted" onClick={onToggleAuthModal}>

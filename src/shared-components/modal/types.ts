@@ -1,6 +1,6 @@
 export type TModalProps = {
   className?: string,
   children?: string,
-  open: boolean,
+  isOpen: boolean,
   onClose: (isOpen: boolean) => void;
 };
