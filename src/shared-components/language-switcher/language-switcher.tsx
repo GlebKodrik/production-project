@@ -1,9 +1,10 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import cls from 'classnames';
 import { Button } from '../button';
 import styles from './language-switcher.module.scss';
 import { TLanguageSwitcher } from './types';
+import { LANGUAGES } from '../../constants/languages';
+import { useLanguage } from '../../hooks/use-language';
 
 export const LanguageSwitcher: React.FC<TLanguageSwitcher> = (
   {
@@ -11,13 +12,12 @@ export const LanguageSwitcher: React.FC<TLanguageSwitcher> = (
     short,
   },
 ) => {
-  const { t, i18n } = useTranslation();
-
+  const { changeLanguage, language, translation } = useLanguage();
   const onToggleLanguage = () => {
-    i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
+    changeLanguage(language === LANGUAGES.RUSSIAN ? LANGUAGES.ENGLISH : LANGUAGES.RUSSIAN);
   };
 
-  const renderLanguage = () => t(short ? 'sidebar.shortLanguage' : 'sidebar.language');
+  const renderLanguage = () => translation(short ? 'sidebar.shortLanguage' : 'sidebar.language');
 
   return (
     <Button

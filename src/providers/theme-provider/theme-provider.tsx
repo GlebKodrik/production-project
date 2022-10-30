@@ -4,41 +4,47 @@ import React, {
 import cls from 'classnames';
 import {
   ThemeContext,
+  ThemeContextProps,
 } from '../../context/theme-context';
 import styles from './theme-provider.module.scss';
-import { ThemeProviderProps } from './provider';
+import { ThemeProviderProps } from './types';
 import { ControlLocalStorage } from '../../utils/control-local-storage';
 import { TThemes } from '../../constants/themes';
-import { LOCAL_STORAGE_KEYS } from '../../constants/local-storage-key';
+import { LOCAL_STORAGE_KEYS } from '../../constants/local-storage-keys';
 
 const DEFAULT_THEME = 'light' as TThemes;
 const THEME_FROM_LOCAL_STORAGE = ControlLocalStorage
   .getValueLocalStorage(LOCAL_STORAGE_KEYS.THEME_KEY) as TThemes;
 
-const ThemeProvider: React.FC<ThemeProviderProps> = ({ children, theme }) => {
+export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children, theme }) => {
   const getExistTheme = (): TThemes => theme || THEME_FROM_LOCAL_STORAGE;
 
   const [currentTheme, setCurrentTheme] = useState<TThemes>(getExistTheme() || DEFAULT_THEME);
 
-  const settingsTheme = useMemo(() => ({
+  const settingsTheme = useMemo((): ThemeContextProps => ({
     theme: currentTheme,
-    setTheme: setCurrentTheme,
+    changeTheme: setCurrentTheme,
   }), [currentTheme]);
 
   const handlerLocalStorage = useCallback((event) => {
-    if (event.oldValue && event.newValue) {
-      document.body.classList.remove(event.oldValue);
-      document.body.classList.add(event.newValue);
-      setCurrentTheme(event.newValue);
+    if (event.key === LOCAL_STORAGE_KEYS.THEME_KEY) {
+      const [oldValue, newValue] = [event.oldValue, event.newValue];
+
+      if (oldValue && newValue) {
+        document.body.classList.remove(oldValue);
+        document.body.classList.add(newValue);
+        setCurrentTheme(newValue);
+      }
     }
   }, []);
 
   useEffect(() => {
+    document.body.classList.add(currentTheme);
     window.addEventListener('storage', handlerLocalStorage);
+
     if (!getExistTheme()) {
       ControlLocalStorage.setValueLocalStorage(LOCAL_STORAGE_KEYS.THEME_KEY, currentTheme);
     }
-    document.body.classList.add(currentTheme);
 
     return () => {
       window.removeEventListener('storage', handlerLocalStorage);
@@ -53,5 +59,3 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({ children, theme }) => {
     </ThemeContext.Provider>
   );
 };
-
-export default ThemeProvider;

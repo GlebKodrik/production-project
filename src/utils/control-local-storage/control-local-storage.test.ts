@@ -1,5 +1,5 @@
 import { ControlLocalStorage } from './control-local-storage';
-import { TLocalStorageKeys } from '../../types/local-storage-key';
+import { TLocalStorageKeys } from '../../types/local-storage-keys';
 
 describe('Testing ControlLocalStorage', () => {
   beforeEach(() => {
@@ -27,6 +27,16 @@ describe('Testing ControlLocalStorage', () => {
 
     ControlLocalStorage.setValueLocalStorage('mode', true);
     expect(ControlLocalStorage.getValueLocalStorage('mode')).toBe(true);
+  });
+
+  test('Checking set value undefined, null, empty local storage', () => {
+    ControlLocalStorage.setValueLocalStorage('mode', '');
+    ControlLocalStorage.setValueLocalStorage('test1' as TLocalStorageKeys, undefined);
+    ControlLocalStorage.setValueLocalStorage('test2' as TLocalStorageKeys, null);
+
+    expect(ControlLocalStorage.getValueLocalStorage('mode')).toBeNull();
+    expect(ControlLocalStorage.getValueLocalStorage('test1' as TLocalStorageKeys)).toBeNull();
+    expect(ControlLocalStorage.getValueLocalStorage('test2' as TLocalStorageKeys)).toBeNull();
   });
 
   test('Checking clear all local storage', () => {

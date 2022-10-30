@@ -5,10 +5,10 @@ import {
 import { THEMES, TThemes } from '../../constants/themes';
 import { TUseTheme } from './types';
 import { ControlLocalStorage } from '../../utils/control-local-storage';
-import { LOCAL_STORAGE_KEYS, TLocalStorageKeys } from '../../constants/local-storage-key';
+import { LOCAL_STORAGE_KEYS, TLocalStorageKeys } from '../../constants/local-storage-keys';
 
 export const useTheme = (): TUseTheme => {
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { theme, changeTheme } = useContext(ThemeContext);
 
   const getCurrentTheme = (oldTheme: TThemes): TThemes => (oldTheme === THEMES.DARK ? THEMES.LIGHT : THEMES.DARK);
 
@@ -25,7 +25,7 @@ export const useTheme = (): TUseTheme => {
     const currentTheme = getCurrentTheme(theme);
     setClassThemeForBody(theme, currentTheme);
     setLocalStorageTheme(LOCAL_STORAGE_KEYS.THEME_KEY, currentTheme);
-    setTheme(currentTheme);
+    changeTheme(currentTheme);
   };
 
   return {

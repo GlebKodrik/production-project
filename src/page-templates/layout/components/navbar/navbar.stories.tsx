@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Navbar } from './navbar';
 
-import { ThemeDecorator } from '../../../../configs/decorators/theme-decorator';
+import { ThemeDecorator } from '../../../../decorators/theme-decorator';
 import { THEMES } from '../../../../constants/themes';
 
 export default {

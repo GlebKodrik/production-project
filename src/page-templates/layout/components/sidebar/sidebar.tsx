@@ -3,7 +3,7 @@ import cls from 'classnames';
 import { useTranslation } from 'react-i18next';
 import styles from './sidebar.module.scss';
 import { ThemeSwitcher } from '../../../../shared-components/theme-switcher';
-import { LanguageSwitcher } from '../../../../shared-components/language-switcher/language-switcher';
+import { LanguageSwitcher } from '../../../../shared-components/language-switcher';
 import { Button } from '../../../../shared-components/button';
 import { EButtonSize, EColorButton } from '../../../../types/button';
 import { Link } from '../../../../shared-components/link';

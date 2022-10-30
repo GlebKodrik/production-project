@@ -1,13 +1,13 @@
 import { addDecorator } from '@storybook/react';
 import {
   StyleDecorator,
-} from '../../src/configs/decorators/style-decorator';
+} from '../../src/decorators/style-decorator';
 import {
   ThemeDecorator,
-} from '../../src/configs/decorators/theme-decorator';
+} from '../../src/decorators/theme-decorator';
 
-import { RouteDecorator } from '../../src/configs/decorators/route-decorator';
-import { I18NextDecorator } from '../../src/configs/decorators/i18next-decorator';
+import { RouteDecorator } from '../../src/decorators/route-decorator';
+import { I18NextDecorator } from '../../src/decorators/i18next-decorator';
 import { THEMES } from '../../src/constants/themes';
 
 export const parameters = {

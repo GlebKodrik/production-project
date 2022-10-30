@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Button } from './button';
 import { EButtonSize, EColorButton, EVariantButton } from '../../types/button';
 
-import { ThemeDecorator } from '../../configs/decorators/theme-decorator';
+import { ThemeDecorator } from '../../decorators/theme-decorator';
 import { TButtonProps } from './types';
 import { THEMES } from '../../constants/themes';
 

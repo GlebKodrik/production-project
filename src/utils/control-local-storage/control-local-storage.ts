@@ -1,4 +1,4 @@
-import { TLocalStorageKeys } from '../../types/local-storage-key';
+import { TLocalStorageKeys } from '../../types/local-storage-keys';
 
 export class ControlLocalStorage {
   static getValueLocalStorage(localStorageKey: TLocalStorageKeys): string {
@@ -12,6 +12,10 @@ export class ControlLocalStorage {
   }
 
   static setValueLocalStorage(localStorageKey: TLocalStorageKeys, value: any): void {
+    if (!value) {
+      return;
+    }
+
     if (typeof value === 'string') {
       localStorage.setItem(localStorageKey, value);
       return;
