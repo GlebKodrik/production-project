@@ -17,14 +17,22 @@ const DEFAULT_THEME = 'light' as TThemes;
 const THEME_FROM_LOCAL_STORAGE = ControlLocalStorage
   .getValueLocalStorage(LOCAL_STORAGE_KEYS.THEME_KEY) as TThemes;
 
-export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children, theme }) => {
-  const getExistTheme = (): TThemes => theme || THEME_FROM_LOCAL_STORAGE;
+export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children, initialTheme }) => {
+  const getExistTheme = (): TThemes => initialTheme || THEME_FROM_LOCAL_STORAGE;
 
   const [currentTheme, setCurrentTheme] = useState<TThemes>(getExistTheme() || DEFAULT_THEME);
 
+  const changeTheme = (theme: TThemes) => {
+    const isExistTheme = Object.values(THEMES).includes(theme);
+    if (isExistTheme) {
+      setCurrentTheme(theme);
+    }
+    return DEFAULT_THEME;
+  };
+
   const settingsTheme = useMemo((): ThemeContextProps => ({
     theme: currentTheme,
-    changeTheme: setCurrentTheme,
+    changeTheme,
   }), [currentTheme]);
 
   const handlerLocalStorage = useCallback((event) => {
@@ -32,16 +40,16 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children, theme })
       const [oldValue, newValue] = [event.oldValue, event.newValue];
 
       if (oldValue && newValue) {
-        setCurrentTheme(newValue);
+        changeTheme(newValue);
       }
     }
   }, []);
 
   const handlerThemeDevices = (event: MediaQueryListEvent) => {
     if (event.matches) {
-      setCurrentTheme(THEMES.DARK);
+      changeTheme(THEMES.DARK);
     } else {
-      setCurrentTheme(THEMES.LIGHT);
+      changeTheme(THEMES.LIGHT);
     }
   };
 
@@ -52,7 +60,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children, theme })
       ControlLocalStorage.setValueLocalStorage(LOCAL_STORAGE_KEYS.THEME_KEY, currentTheme);
     }
     if (!THEME_FROM_LOCAL_STORAGE && windowMatchMediaDevices.matches) {
-      setCurrentTheme(THEMES.DARK);
+      changeTheme(THEMES.DARK);
     }
     windowMatchMediaDevices.addEventListener('change', handlerThemeDevices);
     window.addEventListener('storage', handlerLocalStorage);

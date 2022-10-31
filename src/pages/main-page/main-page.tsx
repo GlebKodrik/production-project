@@ -1,12 +1,12 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import { LOCALES } from '../../constants/locales';
+import { useLanguage } from '../../hooks/use-language';
 
 const MainPage = () => {
-  const { t } = useTranslation(LOCALES.MAIN_PAGE);
+  const { translation } = useLanguage(LOCALES.MAIN_PAGE);
   return (
     <div>
-      {t('title')}
+      {translation('title')}
     </div>
   );
 };

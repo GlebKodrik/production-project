@@ -1,13 +1,13 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import styles from './not-found-page.module.scss';
 import { TNotFoundProps } from './types';
+import { useLanguage } from '../../hooks/use-language';
 
 const NotFoundPage: React.FC<TNotFoundProps> = ({ text }) => {
-  const { t } = useTranslation();
+  const { translation } = useLanguage();
   return (
     <div className={styles.wrapper}>
-      {text || t('notFound')}
+      {text || translation('notFound')}
     </div>
   );
 };

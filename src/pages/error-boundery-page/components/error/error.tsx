@@ -1,5 +1,4 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import { TErrorProps } from './types';
 import { Button } from '../../../../shared-components/button';
 import Code from '../../../../shared-components/code';
@@ -8,9 +7,10 @@ import { ThemeProvider } from '../../../../providers/theme-provider';
 
 import { LOCALES } from '../../../../constants/locales';
 import { THEMES } from '../../../../constants/themes';
+import { useLanguage } from '../../../../hooks/use-language';
 
 const Error: React.FC<TErrorProps> = ({ error }) => {
-  const { t } = useTranslation(LOCALES.ERROR_PAGE);
+  const { translation } = useLanguage(LOCALES.ERROR_PAGE);
 
   const onReloadPage = () => {
     window.location.reload();
@@ -24,10 +24,10 @@ const Error: React.FC<TErrorProps> = ({ error }) => {
   };
 
   return (
-    <ThemeProvider theme={THEMES.DARK}>
+    <ThemeProvider initialTheme={THEMES.DARK}>
       <div className={styles.wrapper}>
         <div className={styles.description}>
-          {t('description')}
+          {translation('description')}
         </div>
 
         <div className={styles.code}>
@@ -43,7 +43,7 @@ const Error: React.FC<TErrorProps> = ({ error }) => {
               variant="outline"
               onClick={onGoBackButtonClick}
             >
-              {t('goBackButton')}
+              {translation('goBackButton')}
             </Button>
           </div>
 
@@ -53,7 +53,7 @@ const Error: React.FC<TErrorProps> = ({ error }) => {
               variant="outline"
               color="inverted"
             >
-              {t('reloadPageButton')}
+              {translation('reloadPageButton')}
             </Button>
           </div>
         </div>

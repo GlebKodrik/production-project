@@ -19,5 +19,6 @@ export const useTheme = (): TUseTheme => {
   return {
     theme,
     toggleTheme,
+    changeTheme,
   };
 };

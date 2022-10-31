@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import cls from 'classnames';
-import { useTranslation } from 'react-i18next';
 import styles from './sidebar.module.scss';
 import { ThemeSwitcher } from '../../../../shared-components/theme-switcher';
 import { LanguageSwitcher } from '../../../../shared-components/language-switcher';
@@ -10,10 +9,11 @@ import { Link } from '../../../../shared-components/link';
 import { ELinkColor } from '../../../../types/link';
 import { ROUTES_PATH } from '../../../../constants/routers';
 import Icon from '../../../../shared-components/icon';
+import { useLanguage } from '../../../../hooks/use-language';
 
 export const Sidebar = () => {
   const [collapse, setCollapse] = useState(false);
-  const { t } = useTranslation();
+  const { translation } = useLanguage();
 
   const onToggleCollapse = () => {
     setCollapse((prev) => !prev);
@@ -32,7 +32,7 @@ export const Sidebar = () => {
         >
           <div className={styles.item}>
             <Icon name="home" className={styles.icon} />
-            <span className={styles.linkText}>{t('sidebar.aboutLink')}</span>
+            <span className={styles.linkText}>{translation('sidebar.aboutLink')}</span>
           </div>
         </Link>
 
@@ -42,7 +42,7 @@ export const Sidebar = () => {
         >
           <div className={styles.item}>
             <Icon name="clarity-list" className={styles.icon} />
-            <span className={styles.linkText}>{t('sidebar.mainLink')}</span>
+            <span className={styles.linkText}>{translation('sidebar.mainLink')}</span>
           </div>
         </Link>
       </div>

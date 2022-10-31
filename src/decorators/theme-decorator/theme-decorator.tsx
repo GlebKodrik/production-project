@@ -4,7 +4,7 @@ import { ThemeProvider } from '../../providers/theme-provider';
 import { TThemes } from '../../types/themes';
 
 export const ThemeDecorator = (theme: TThemes) => (StoryComponent: Story) => (
-  <ThemeProvider theme={theme}>
+  <ThemeProvider initialTheme={theme}>
     <StoryComponent />
   </ThemeProvider>
 
