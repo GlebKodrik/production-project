@@ -9,7 +9,7 @@ import {
 import styles from './theme-provider.module.scss';
 import { ThemeProviderProps } from './types';
 import { ControlLocalStorage } from '../../utils/control-local-storage';
-import { TThemes } from '../../constants/themes';
+import { TThemes } from '../../types/themes';
 import { LOCAL_STORAGE_KEYS } from '../../constants/local-storage-keys';
 
 const DEFAULT_THEME = 'light' as TThemes;

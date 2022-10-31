@@ -3,7 +3,6 @@ import buildPlugins from './configs-project/webpack-configs/build-plugins';
 import buildLoaders from './configs-project/webpack-configs/build-loaders';
 import buildDevServer from './configs-project/webpack-configs/build-dev-server';
 import {
-  CACHE_LIFETIME,
   FLAGS,
   MODE,
   PATHS,
@@ -27,11 +26,6 @@ const config: Configuration = {
   devServer: buildDevServer(),
   resolve: {
     extensions: scriptExtensions,
-  },
-  cache: {
-    type: 'filesystem',
-    cacheLocation: PATHS.WEBPACK_CACHE_FOLDER,
-    maxAge: CACHE_LIFETIME,
   },
   devtool: FLAGS.IS_DEVELOPMENT && 'source-map',
 };

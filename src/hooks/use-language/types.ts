@@ -1,7 +1,7 @@
-import { TLanguages } from '../../constants/languages';
+import { TLanguages } from '../../types/languages';
 
 export type TUseLanguage = {
   translation?: any,
-  language?: any,
+  language?: TLanguages,
   changeLanguage?: (newLanguage: TLanguages) => void
 };

@@ -2,10 +2,12 @@ import { useContext } from 'react';
 import {
   ThemeContext,
 } from '../../context/theme-context';
-import { THEMES, TThemes } from '../../constants/themes';
+import { THEMES } from '../../constants/themes';
 import { TUseTheme } from './types';
 import { ControlLocalStorage } from '../../utils/control-local-storage';
-import { LOCAL_STORAGE_KEYS, TLocalStorageKeys } from '../../constants/local-storage-keys';
+import { LOCAL_STORAGE_KEYS } from '../../constants/local-storage-keys';
+import { TLocalStorageKeys } from '../../types/local-storage-keys';
+import { TThemes } from '../../types/themes';
 
 export const useTheme = (): TUseTheme => {
   const { theme, changeTheme } = useContext(ThemeContext);
