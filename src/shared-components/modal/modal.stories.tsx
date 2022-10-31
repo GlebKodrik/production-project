@@ -14,13 +14,13 @@ const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
 
 export const ModalWithThemeDark = Template.bind({});
 ModalWithThemeDark.args = {
-  open: true,
+  isOpen: true,
   children: 'Привет',
 };
 ModalWithThemeDark.decorators = [ThemeDecorator(THEMES.DARK)];
 
 export const ModalWithThemeLight = Template.bind({});
 ModalWithThemeLight.args = {
-  open: true,
+  isOpen: true,
   children: 'Привет',
 };

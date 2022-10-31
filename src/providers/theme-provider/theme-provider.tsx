@@ -11,6 +11,7 @@ import { ThemeProviderProps } from './types';
 import { ControlLocalStorage } from '../../utils/control-local-storage';
 import { TThemes } from '../../types/themes';
 import { LOCAL_STORAGE_KEYS } from '../../constants/local-storage-keys';
+import { THEMES } from '../../constants/themes';
 
 const DEFAULT_THEME = 'light' as TThemes;
 const THEME_FROM_LOCAL_STORAGE = ControlLocalStorage
@@ -31,30 +32,48 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children, theme })
       const [oldValue, newValue] = [event.oldValue, event.newValue];
 
       if (oldValue && newValue) {
-        document.body.classList.remove(oldValue);
-        document.body.classList.add(newValue);
         setCurrentTheme(newValue);
       }
     }
   }, []);
 
+  const handlerThemeDevices = (event: MediaQueryListEvent) => {
+    if (event.matches) {
+      setCurrentTheme(THEMES.DARK);
+    } else {
+      setCurrentTheme(THEMES.LIGHT);
+    }
+  };
+
   useEffect(() => {
-    document.body.classList.add(currentTheme);
-    window.addEventListener('storage', handlerLocalStorage);
+    const windowMatchMediaDevices = window.matchMedia?.('(prefers-color-scheme: dark)');
 
     if (!getExistTheme()) {
       ControlLocalStorage.setValueLocalStorage(LOCAL_STORAGE_KEYS.THEME_KEY, currentTheme);
     }
+    if (!THEME_FROM_LOCAL_STORAGE && windowMatchMediaDevices.matches) {
+      setCurrentTheme(THEMES.DARK);
+    }
+    windowMatchMediaDevices.addEventListener('change', handlerThemeDevices);
+    window.addEventListener('storage', handlerLocalStorage);
 
     return () => {
+      windowMatchMediaDevices.removeEventListener('change', handlerThemeDevices);
       window.removeEventListener('storage', handlerLocalStorage);
     };
   }, []);
 
+  useEffect(() => {
+    if (currentTheme) {
+      ControlLocalStorage.setValueLocalStorage(LOCAL_STORAGE_KEYS.THEME_KEY, currentTheme);
+    }
+  }, [currentTheme]);
+
   return (
     <ThemeContext.Provider value={settingsTheme}>
-      <div className={cls(styles.theme)}>
+      <div className={cls(styles.theme, `theme-${currentTheme}`)}>
         { children }
+        <div id="portal-app" />
       </div>
     </ThemeContext.Provider>
   );

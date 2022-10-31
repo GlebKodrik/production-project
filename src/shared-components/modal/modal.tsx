@@ -26,6 +26,7 @@ const Modal: React.FC<TModalProps> = ({
 
   const onCloseModal = () => {
     setIsClosing(true);
+
     timeoutRef.current = setTimeout(() => {
       setIsClosing(false);
       onClose(false);

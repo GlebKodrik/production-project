@@ -4,16 +4,17 @@ import { TPortalProps } from './types';
 
 const Portal: React.FC<TPortalProps> = ({
   children,
-  element = document.body,
-  idName = 'modal',
+  propElement,
+  propIdNameElement = 'modal',
 }) => {
   const [container] = useState(() => {
     const createdElement = document.createElement('div');
-    createdElement.setAttribute('id', `portal-${idName}`);
+    createdElement.setAttribute('id', propIdNameElement);
     return createdElement;
   });
 
   useEffect(() => {
+    const element = propElement || document.querySelector('#portal-app') || document.body;
     element.appendChild(container);
 
     return () => {
