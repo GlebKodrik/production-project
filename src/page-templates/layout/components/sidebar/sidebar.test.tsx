@@ -3,7 +3,6 @@ import { Sidebar } from './sidebar';
 import { componentRender } from '../../../../providers/component-render';
 
 jest.mock('react-i18next', () => ({
-  // this mock makes sure any components using the translate hook can use it without a warning being shown
   useTranslation: () => ({
     t: (str: string) => str,
     i18n: {
@@ -14,12 +13,14 @@ jest.mock('react-i18next', () => ({
 
 describe('Component Sidebar', () => {
   test('Sidebar in the document', () => {
-    componentRender(<Sidebar />);
+    componentRender({ component: <Sidebar /> });
     expect(screen.getByTestId('sidebar')).toBeInTheDocument();
   });
 
   test('Sidebar open', () => {
-    const { container } = componentRender(<Sidebar />);
+    const { container } = componentRender({
+      component: <Sidebar />,
+    });
     const toggleButton = container.querySelector('button[type="button"]');
 
     fireEvent.click(toggleButton);

@@ -2,8 +2,6 @@ import path from 'path';
 
 const ROOT_PATH = path.resolve('./');
 
-const CACHE_LIFETIME = 86400;
-
 const ENVIRONMENTS = {
   DEVELOPMENT: 'development',
   ANALYZER: 'analyzer',
@@ -22,7 +20,6 @@ const PATHS = {
 };
 
 const scriptExtensions = ['.tsx', '.ts', '.js'];
-const styleExtensions = ['.scss', '.css'];
 
 const FLAGS = {
   IS_DEVELOPMENT: CURRENT_ENVIRONMENT === ENVIRONMENTS.DEVELOPMENT,
@@ -36,7 +33,5 @@ export {
   PATHS,
   FLAGS,
   MODE,
-  CACHE_LIFETIME,
   scriptExtensions,
-  styleExtensions,
 };

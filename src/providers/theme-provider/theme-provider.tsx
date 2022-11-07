@@ -5,7 +5,7 @@ import cls from 'classnames';
 import {
   ThemeContext,
   ThemeContextProps,
-} from '../../context/theme-context';
+} from '../../contexts/theme-context';
 import styles from './theme-provider.module.scss';
 import { ThemeProviderProps } from './types';
 import { ControlLocalStorage } from '../../utils/control-local-storage';

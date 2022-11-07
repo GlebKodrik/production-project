@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import {
   ThemeContext,
-} from '../../context/theme-context';
+} from '../../contexts/theme-context';
 import { THEMES } from '../../constants/themes';
 import { TUseTheme } from './types';
 import { TThemes } from '../../types/themes';
