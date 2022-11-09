@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 import { TAuthProps } from './types';
 import { Button } from '../../../../../../shared-components/button';
-import { Modal } from '../../../../../../shared-components/modal';
 import { useLanguage } from '../../../../../../hooks/use-language';
+import { AuthByUsernameModal } from '../../../../../../feature/auth-by-username';
 
 const Auth: React.FC<TAuthProps> = () => {
   const [isOpenAuthModal, setIsOpenAuthModal] = useState(false);
@@ -16,10 +16,8 @@ const Auth: React.FC<TAuthProps> = () => {
 
   return (
     <>
-      <Modal isOpen={isOpenAuthModal} onClose={setIsOpenAuthModal}>
-        Привет
-      </Modal>
-      <Button clear color="inverted" onClick={onToggleAuthModal}>
+      <AuthByUsernameModal isOpen={isOpenAuthModal} onClose={setIsOpenAuthModal} />
+      <Button variant="clear" color="inverted" onClick={onToggleAuthModal}>
         { translation('navbar.login') }
       </Button>
     </>

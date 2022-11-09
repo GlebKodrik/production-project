@@ -7,22 +7,18 @@ import { TButtonProps } from './types';
 export const Button: React.FC<TButtonProps> = (
   {
     type = 'button',
-    clear,
     className,
     children,
     color,
     size,
-    square,
-    variant,
+    variant = 'clear',
     ...otherProps
   },
 ) => {
   const MODS = {
-    [styles.clearButton]: clear,
-    [styles.square]: square,
-    [styles[variant]]: Boolean(variant),
+    [styles[`variant-${variant}`]]: Boolean(variant),
     [styles[color]]: Boolean(color),
-    [styles[size]]: Boolean(size),
+    [styles[`size-${size}`]]: Boolean(size),
   };
 
   return (

@@ -4,12 +4,10 @@ import styles from './sidebar.module.scss';
 import { ThemeSwitcher } from '../../../../shared-components/theme-switcher';
 import { LanguageSwitcher } from '../../../../shared-components/language-switcher';
 import { Button } from '../../../../shared-components/button';
-import { EButtonSize, EColorButton } from '../../../../types/button';
 import { Link } from '../../../../shared-components/link';
-import { ELinkColor } from '../../../../types/link';
-import { ROUTES_PATH } from '../../../../constants/routers';
 import Icon from '../../../../shared-components/icon';
 import { useLanguage } from '../../../../hooks/use-language';
+import { LINKS } from '../constants';
 
 export const Sidebar = () => {
   const [collapse, setCollapse] = useState(false);
@@ -26,34 +24,30 @@ export const Sidebar = () => {
       className={cls(styles.sidebar, { [styles.collapse]: collapse })}
     >
       <div className={styles.linkWrapper}>
-        <Link
-          color={ELinkColor.INVERTED}
-          to={ROUTES_PATH.ABOUT}
-        >
-          <div className={styles.item}>
-            <Icon name="home" className={styles.icon} />
-            <span className={styles.linkText}>{translation('sidebar.aboutLink')}</span>
-          </div>
-        </Link>
-
-        <Link
-          color={ELinkColor.INVERTED}
-          to={ROUTES_PATH.BASE}
-        >
-          <div className={styles.item}>
-            <Icon name="clarity-list" className={styles.icon} />
-            <span className={styles.linkText}>{translation('sidebar.mainLink')}</span>
-          </div>
-        </Link>
+        <ul>
+          {LINKS.map(({ name, link, icon }) => (
+            <li key={name}>
+              <Link
+                color="inverted"
+                to={link}
+              >
+                <div className={styles.item}>
+                  <Icon name={icon} className={styles.icon} />
+                  <span className={styles.linkText}>{translation(name)}</span>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
 
       <Button
         type="button"
-        square
+        variant="square"
         onClick={onToggleCollapse}
         className={styles.button}
-        size={EButtonSize.LARGE}
-        color={EColorButton.INVERTED}
+        size="large"
+        color="inverted"
       >
         { renderButtonCollapse() }
       </Button>

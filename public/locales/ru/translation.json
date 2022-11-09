@@ -8,5 +8,8 @@
   "notFound": "Страница не найдена",
   "navbar": {
     "login": "Войти"
+  },
+  "auth": {
+    "buttonLogin": "Войти"
   }
 }

@@ -4,10 +4,12 @@ export enum EColorButton {
 
 export enum EVariantButton {
   OUTLINE = 'outline',
+  CLEAR = 'clear',
+  SQUARE = 'square',
 }
 
 export enum EButtonSize {
-  'MEDIUM' = 'medium',
-  'LARGE' = 'large',
-  'EXTRA_LARGE' = 'extra-large',
+  MEDIUM = 'medium',
+  LARGE = 'large',
+  EXTRA_LARGE = 'extra-large',
 }

@@ -8,5 +8,8 @@
   },
   "navbar": {
     "login": "Login"
+  },
+  "auth": {
+    "buttonLogin": "Login"
   }
 }
