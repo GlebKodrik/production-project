@@ -3,7 +3,7 @@ import React from 'react';
 import { TIconProps } from './types';
 import { ICONS_COMPONENT } from './constants/icon-components';
 
-const Icon: React.FC<TIconProps> = (
+export const Icon: React.FC<TIconProps> = (
   {
     name,
     fill,
@@ -25,5 +25,3 @@ const Icon: React.FC<TIconProps> = (
     />
   );
 };
-
-export default Icon;

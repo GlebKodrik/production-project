@@ -5,9 +5,9 @@ import { ThemeSwitcher } from '../../../../shared-components/theme-switcher';
 import { LanguageSwitcher } from '../../../../shared-components/language-switcher';
 import { Button } from '../../../../shared-components/button';
 import { Link } from '../../../../shared-components/link';
-import Icon from '../../../../shared-components/icon';
+import { Icon } from '../../../../shared-components/icon';
 import { useLanguage } from '../../../../hooks/use-language';
-import { LINKS } from '../constants';
+import { LINKS } from './constants';
 
 export const Sidebar = () => {
   const [collapse, setCollapse] = useState(false);

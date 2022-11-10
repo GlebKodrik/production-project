@@ -2,10 +2,19 @@
   display: flex;
   flex-direction: column;
   width: 400px;
+  caret-color: var(--inverted-primary-color);
 }
 
 .input {
   margin-bottom: 10px;
+
+  input {
+    color: var(--inverted-primary-color);
+  }
+
+  span {
+    white-space: nowrap;
+  }
 }
 
 .submit {

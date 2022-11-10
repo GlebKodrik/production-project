@@ -9,6 +9,6 @@ export const AuthByUsernameModal: React.FC<TAuthByUsernameProps> = ({
   onClose,
 }) => (
   <Modal isOpen={isOpen} onClose={onClose}>
-    <AuthByUsernameForm />
+    <AuthByUsernameForm isOpen={isOpen} />
   </Modal>
 );

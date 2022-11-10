@@ -1,3 +1,7 @@
-import Icon from './icon';
+import { Icon } from './icon';
+import { TIconNames } from './types';
 
-export default Icon;
+export {
+  Icon,
+  TIconNames,
+};

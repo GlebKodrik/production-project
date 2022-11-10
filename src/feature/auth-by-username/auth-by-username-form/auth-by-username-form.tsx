@@ -1,21 +1,44 @@
-import React from 'react';
+import React, {
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 
-// import cn from 'classnames';
-import { TAuthByUsernameProps } from './types';
+import { TProps } from './types';
 import { Button } from '../../../shared-components/button';
 import { useLanguage } from '../../../hooks/use-language';
 import styles from './auth-by-username-form.module.scss';
+import { Input } from '../../../shared-components/input';
 
-export const AuthByUsernameForm: React.FC<TAuthByUsernameProps> = () => {
+export const AuthByUsernameForm: React.FC<TProps> = () => {
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
   const { translation } = useLanguage();
+  const usernameInput = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    usernameInput?.current?.focus();
+  }, []);
 
   return (
-    <div className={styles.wrapper}>
-      <input type="text" className={styles.input} />
-      <input type="text" className={styles.input} />
+    <form className={styles.wrapper} autoComplete="off">
+      <Input
+        inputRef={usernameInput}
+        value={login}
+        onChange={setLogin}
+        className={styles.input}
+        placeholder={translation('auth.placeholder.username')}
+      />
+      <Input
+        type="password"
+        value={password}
+        onChange={setPassword}
+        className={styles.input}
+        placeholder={translation('auth.placeholder.password')}
+      />
       <div className={styles.submit}>
-        <Button color="inverted" variant="outline">{ translation('auth.buttonLogin') }</Button>
+        <Button color="inverted" variant="outline" type="submit">{ translation('auth.buttonLogin') }</Button>
       </div>
-    </div>
+    </form>
   );
 };

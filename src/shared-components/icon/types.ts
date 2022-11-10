@@ -1,7 +1,9 @@
 import { ICON_NAMES } from './constants/icon-names';
 
+export type TIconNames = typeof ICON_NAMES[keyof typeof ICON_NAMES];
+
 export type TIconProps = {
-  name: typeof ICON_NAMES[keyof typeof ICON_NAMES],
+  name: TIconNames,
   fill?: string,
   opacity?: number;
   width?: string;

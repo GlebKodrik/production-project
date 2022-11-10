@@ -10,6 +10,10 @@
     "login": "Войти"
   },
   "auth": {
+    "placeholder": {
+      "username": "Введите username",
+      "password": "Введите password"
+    },
     "buttonLogin": "Войти"
   }
 }

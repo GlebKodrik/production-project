@@ -1,1 +1,3 @@
-export type TAuthByUsernameProps = {};
+export type TProps = {
+  isOpen?: boolean
+};

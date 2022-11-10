@@ -10,6 +10,10 @@
     "login": "Login"
   },
   "auth": {
+    "placeholder": {
+      "username": "Write username",
+      "password": "Write password"
+    },
     "buttonLogin": "Login"
   }
 }
