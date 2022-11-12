@@ -1,6 +1,4 @@
 import React, {
-  useEffect,
-  useRef,
   useState,
 } from 'react';
 
@@ -10,21 +8,18 @@ import { useLanguage } from '../../../hooks/use-language';
 import styles from './auth-by-username-form.module.scss';
 import { Input } from '../../../shared-components/input';
 
-export const AuthByUsernameForm: React.FC<TProps> = () => {
+export const AuthByUsernameForm: React.FC<TProps> = ({
+  isOpen,
+}) => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const { translation } = useLanguage();
-  const usernameInput = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    usernameInput?.current?.focus();
-  }, []);
 
   return (
     <form className={styles.wrapper} autoComplete="off">
       <Input
-        inputRef={usernameInput}
         value={login}
+        autoFocus={isOpen}
         onChange={setLogin}
         className={styles.input}
         placeholder={translation('auth.placeholder.username')}

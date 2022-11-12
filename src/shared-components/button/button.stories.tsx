@@ -14,52 +14,45 @@ export default {
 
 const Template: ComponentStory<typeof Button> = (args: TButtonProps) => <Button {...args} />;
 
-export const Clear = Template.bind({});
-Clear.args = {
+export const VariantClear = Template.bind({});
+VariantClear.args = {
   children: 'Button',
-  clear: true,
+  variant: 'clear',
+};
+
+export const VariantText = Template.bind({});
+VariantText.args = {
+  children: 'Button',
+  variant: 'text',
 };
 
 export const VariantOutLine = Template.bind({});
 VariantOutLine.args = {
   children: 'Button',
-  variant: EVariantButton.OUTLINE,
+  variant: 'outline',
 };
 
 export const VariantOutLineWithThemeDark = Template.bind({});
 VariantOutLineWithThemeDark.args = {
   children: 'Button',
-  variant: EVariantButton.OUTLINE,
+  variant: 'outline',
 };
 VariantOutLineWithThemeDark.decorators = [ThemeDecorator(THEMES.DARK)];
 
-export const ColorInverted = Template.bind({});
-ColorInverted.args = {
+export const SizeMediumWithVariantClear = Template.bind({});
+SizeMediumWithVariantClear.args = {
   children: 'Button',
-  color: EColorButton.INVERTED,
+  size: 'medium',
 };
 
-export const ColorInvertedWithThemeDark = Template.bind({});
-ColorInvertedWithThemeDark.args = {
+export const SizeLargeWithVariantClear = Template.bind({});
+SizeLargeWithVariantClear.args = {
   children: 'Button',
-  color: EColorButton.INVERTED,
-};
-ColorInvertedWithThemeDark.decorators = [ThemeDecorator(THEMES.DARK)];
-
-export const SizeMedium = Template.bind({});
-SizeMedium.args = {
-  children: 'Button',
-  size: EButtonSize.MEDIUM,
+  size: 'large',
 };
 
-export const SizeLarge = Template.bind({});
-SizeLarge.args = {
+export const SizeExtraLargeWithVariantClear = Template.bind({});
+SizeExtraLargeWithVariantClear.args = {
   children: 'Button',
-  size: EButtonSize.LARGE,
-};
-
-export const SizeExtraLarge = Template.bind({});
-SizeExtraLarge.args = {
-  children: 'Button',
-  size: EButtonSize.EXTRA_LARGE,
+  size: 'extra-large',
 };

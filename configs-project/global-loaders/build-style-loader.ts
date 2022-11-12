@@ -1,5 +1,5 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { FLAGS } from '../webpack-configs/variables';
+import { FLAGS } from '../webpack-configs/constants/variables';
 
 export const buildStyleLoader = () => ({
   test: /\.s[ac]ss$/i,

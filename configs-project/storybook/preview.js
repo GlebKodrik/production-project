@@ -9,6 +9,7 @@ import {
 import { RouteDecorator } from '../../src/decorators/route-decorator';
 import { I18NextDecorator } from '../../src/decorators/i18next-decorator';
 import { THEMES } from '../../src/constants/themes';
+import { ReduxProvider } from '../../src/decorators/redux-provider';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -24,3 +25,4 @@ addDecorator(I18NextDecorator);
 addDecorator(StyleDecorator);
 addDecorator(ThemeDecorator(THEMES.LIGHT));
 addDecorator(RouteDecorator);
+addDecorator(ReduxProvider);

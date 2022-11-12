@@ -4,7 +4,7 @@ import { useLanguage } from '../../hooks/use-language';
 import Counter from '../../shared-components/counter';
 import { Input } from '../../shared-components/input';
 
-const AboutPage = () => {
+export const AboutPage = () => {
   const { translation } = useLanguage(LOCALES.ABOUT_PAGE);
   const [state, setState] = useState('');
   return (
@@ -15,5 +15,3 @@ const AboutPage = () => {
     </>
   );
 };
-
-export default AboutPage;

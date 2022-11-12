@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import AboutPage from './about-page';
+import { AboutPage } from './about-page';
 
 import { ThemeDecorator } from '../../decorators/theme-decorator';
 import { THEMES } from '../../constants/themes';

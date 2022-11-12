@@ -6,6 +6,7 @@ import { TProps } from './types';
 export const Input: React.FC<TProps> = ({
   type = 'text',
   inputRef,
+  tabIndex,
   value,
   placeholder,
   onChange,
@@ -27,6 +28,7 @@ export const Input: React.FC<TProps> = ({
       }
       <input
         ref={inputRef}
+        tabIndex={tabIndex}
         className={cn(styles.input)}
         type={type}
         value={value}

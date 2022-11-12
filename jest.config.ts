@@ -27,7 +27,4 @@ export default {
     '\\.s?css$': 'identity-obj-proxy',
     '\\.svg': '<rootDir>configs-project/jest/jest-empty-component.tsx',
   },
-  globals: {
-    __IS_DEV__: true,
-  },
 };

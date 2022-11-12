@@ -1,7 +1,6 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import {
   WebpackPluginInstance,
-  DefinePlugin,
 } from 'webpack';
 import ESLintPlugin from 'eslint-webpack-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
@@ -10,9 +9,9 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import WebpackBar from 'webpackbar';
 import {
   FLAGS,
-  PATHS,
   scriptExtensions,
-} from './variables';
+} from './constants/variables';
+import { PATHS } from './constants/path';
 
 const buildPlugins = (): WebpackPluginInstance[] => {
   const plugins: WebpackPluginInstance[] = [
@@ -28,9 +27,6 @@ const buildPlugins = (): WebpackPluginInstance[] => {
     new WebpackBar(),
     new MiniCssExtractPlugin({
       filename: 'css/[name].css',
-    }),
-    new DefinePlugin({
-      __IS_DEV__: JSON.stringify(FLAGS.IS_DEVELOPMENT),
     }),
   ];
 

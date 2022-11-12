@@ -1,7 +1,3 @@
-import path from 'path';
-
-const ROOT_PATH = path.resolve('./');
-
 const ENVIRONMENTS = {
   DEVELOPMENT: 'development',
   ANALYZER: 'analyzer',
@@ -9,15 +5,6 @@ const ENVIRONMENTS = {
 } as const;
 
 const CURRENT_ENVIRONMENT = process.env.NODE_ENV || ENVIRONMENTS.DEVELOPMENT;
-
-const PATHS = {
-  ENTRY_FILE_IN_SRC: path.resolve(ROOT_PATH, 'src', 'index.tsx'),
-  DIST_FOLDER: path.resolve(ROOT_PATH, 'dist'),
-  INDEX_HTML_FILE: path.resolve(ROOT_PATH, 'public', 'index.html'),
-  WEBPACK_CACHE_FOLDER: path.resolve(ROOT_PATH, '.caches', '.webpack'),
-  ESLINT_CACHE_FOLDER: path.resolve(ROOT_PATH, '.caches', '.eslint'),
-  STYLELINT_CACHE_FOLDER: path.resolve(ROOT_PATH, '.caches', '.stylelint'),
-};
 
 const scriptExtensions = ['.tsx', '.ts', '.js'];
 
@@ -30,7 +17,6 @@ const FLAGS = {
 const MODE = FLAGS.IS_PRODUCTION ? ENVIRONMENTS.PRODUCTION : ENVIRONMENTS.DEVELOPMENT;
 
 export {
-  PATHS,
   FLAGS,
   MODE,
   scriptExtensions,

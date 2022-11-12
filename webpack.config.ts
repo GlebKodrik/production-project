@@ -5,9 +5,9 @@ import buildDevServer from './configs-project/webpack-configs/build-dev-server';
 import {
   FLAGS,
   MODE,
-  PATHS,
   scriptExtensions,
-} from './configs-project/webpack-configs/variables';
+} from './configs-project/webpack-configs/constants/variables';
+import { PATHS } from './configs-project/webpack-configs/constants/path';
 
 const config: Configuration = {
   mode: MODE,
