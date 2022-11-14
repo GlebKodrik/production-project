@@ -21,9 +21,9 @@ export const Input: React.FC<TProps> = ({
     <div className={cn(styles.wrapper, className)}>
       {
         placeholder && (
-          <span className={styles.placeholder}>
-            {`${placeholder}>`}
-          </span>
+        <span className={styles.placeholder}>
+          {`${placeholder}>`}
+        </span>
         )
       }
       <input

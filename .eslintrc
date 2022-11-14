@@ -37,7 +37,8 @@
     "react/button-has-type": "off",
     "react-hooks/rules-of-hooks": "off",
     "react/jsx-no-useless-fragment": "off",
-    "no-param-reassign": "off"
+    "no-param-reassign": "off",
+    "jsx-a11y/mouse-events-have-key-events": "off"
   },
   "overrides": [
     {

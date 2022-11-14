@@ -1,0 +1,22 @@
+.wrapper {
+  position: fixed;
+  right: 50%;
+  bottom: 72px;
+
+  //z-index: 20000000000;
+  width: 412px;
+  max-width: calc(100% - 20px);
+  max-height: calc(100vh - 144px);
+  overflow: auto;
+  transform: translateX(50%);
+}
+
+.list {
+  margin: 0;
+  padding: 0 6px;
+  list-style: none;
+}
+
+.item:not(:last-of-type) {
+  margin-bottom: 16px;
+}

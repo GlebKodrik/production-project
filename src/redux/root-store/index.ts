@@ -1,5 +1,6 @@
-import { rootStore } from './root-store';
+import { rootStore, TAppDispatch } from './root-store';
 
 export {
   rootStore,
+  TAppDispatch,
 };

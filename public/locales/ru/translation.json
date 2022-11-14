@@ -11,8 +11,8 @@
   },
   "auth": {
     "placeholder": {
-      "username": "Введите username",
-      "password": "Введите password"
+      "username": "Введите логин",
+      "password": "Введите пароль"
     },
     "buttonLogin": "Войти"
   }

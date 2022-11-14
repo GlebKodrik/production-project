@@ -4,7 +4,8 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: -1;
+
+  //z-index: -1;
   color: var(--inverted-primary-color);
   opacity: 0;
   pointer-events: none;
@@ -29,7 +30,7 @@
 }
 
 .opened {
-  z-index: var(--z-index-modal);
+  //z-index: var(--z-index-modal);
   opacity: 1;
   pointer-events: auto;
 

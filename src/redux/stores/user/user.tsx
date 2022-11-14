@@ -1,8 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { TUserState } from './types';
+import { TUserScheme } from './types';
 
-const initialState: TUserState = {
+const initialState: TUserScheme = {
   isAuth: false,
+  error: null,
+  isLoading: false,
+  username: null,
+  password: null,
 };
 
 export const userSlice = createSlice({

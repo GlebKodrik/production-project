@@ -1,8 +1,8 @@
-import { TUserState } from './types';
+import { TUserScheme } from './types';
 import { userReducer, userActions } from './user';
 
 export {
-  TUserState,
+  TUserScheme,
   userActions,
   userReducer,
 };

@@ -65,8 +65,8 @@ const Modal: React.FC<TModalProps> = ({
         className,
       )}
       >
-        <div className={cls(styles.overlay)} onClick={onCloseModal}>
-          <div className={cls(styles.content)} onClick={onContentClick}>
+        <div className={cls(styles.overlay)} onMouseDown={onCloseModal}>
+          <div className={cls(styles.content)} onMouseDownCapture={onContentClick}>
             { children }
           </div>
         </div>

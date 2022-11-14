@@ -1,7 +1,7 @@
 import { ControlLocalStorage } from './control-local-storage';
 import { TLocalStorageKeys } from '../../types/local-storage-keys';
 
-describe('Testing ControlLocalStorage', () => {
+describe('Testing GetUniqueId', () => {
   beforeEach(() => {
     ControlLocalStorage.clearLocalStorage();
   });

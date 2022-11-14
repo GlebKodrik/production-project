@@ -39,7 +39,6 @@ const Error: React.FC<TErrorProps> = ({ error }) => {
         <div className={styles.buttons}>
           <div className={styles.button}>
             <Button
-              color="inverted"
               variant="outline"
               onClick={onGoBackButtonClick}
             >
@@ -51,7 +50,6 @@ const Error: React.FC<TErrorProps> = ({ error }) => {
             <Button
               onClick={onReloadPage}
               variant="outline"
-              color="inverted"
             >
               {translation('reloadPageButton')}
             </Button>

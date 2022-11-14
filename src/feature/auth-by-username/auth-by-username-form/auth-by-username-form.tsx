@@ -1,33 +1,49 @@
-import React, {
-  useState,
-} from 'react';
+import React from 'react';
 
+import { useSelector } from 'react-redux';
 import { TProps } from './types';
 import { Button } from '../../../shared-components/button';
 import { useLanguage } from '../../../hooks/use-language';
 import styles from './auth-by-username-form.module.scss';
 import { Input } from '../../../shared-components/input';
+import { getLoginForm } from './stores/login-form';
+import { loginFormActions } from './stores/login-form/slices/login-form-slice';
+import { requestLoginByUser } from './stores/login-form/requests/request-login-by-user';
+import { useAppDispatch } from '../../../hooks/use-app-dispatch';
 
 export const AuthByUsernameForm: React.FC<TProps> = ({
   isOpen,
 }) => {
-  const [login, setLogin] = useState('');
-  const [password, setPassword] = useState('');
+  const dispatch = useAppDispatch();
+  const { username, password } = useSelector(getLoginForm);
   const { translation } = useLanguage();
 
+  const onUsernameChange = (value: string) => {
+    dispatch(loginFormActions.setUsername(value));
+  };
+
+  const onPasswordChange = (value: string) => {
+    dispatch(loginFormActions.setPassword(value));
+  };
+
+  const onHandleSubmit = (event: React.SyntheticEvent) => {
+    event.preventDefault();
+    dispatch(requestLoginByUser({ username, password }));
+  };
+
   return (
-    <form className={styles.wrapper} autoComplete="off">
+    <form className={styles.wrapper} autoComplete="off" onSubmit={onHandleSubmit}>
       <Input
-        value={login}
+        value={username}
         autoFocus={isOpen}
-        onChange={setLogin}
+        onChange={onUsernameChange}
         className={styles.input}
         placeholder={translation('auth.placeholder.username')}
       />
       <Input
         type="password"
         value={password}
-        onChange={setPassword}
+        onChange={onPasswordChange}
         className={styles.input}
         placeholder={translation('auth.placeholder.password')}
       />
