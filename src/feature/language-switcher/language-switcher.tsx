@@ -1,6 +1,6 @@
 import React from 'react';
 import cls from 'classnames';
-import { Button } from '../button';
+import { Button } from '../../shared-components/button';
 import styles from './language-switcher.module.scss';
 import { TLanguageSwitcher } from './types';
 import { LANGUAGES } from '../../constants/languages';

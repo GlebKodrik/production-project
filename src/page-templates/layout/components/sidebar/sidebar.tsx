@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import cls from 'classnames';
 import styles from './sidebar.module.scss';
-import { ThemeSwitcher } from '../../../../shared-components/theme-switcher';
-import { LanguageSwitcher } from '../../../../shared-components/language-switcher';
+import { ThemeSwitcher } from '../../../../feature/theme-switcher';
+import { LanguageSwitcher } from '../../../../feature/language-switcher';
 import { Button } from '../../../../shared-components/button';
 import { Link } from '../../../../shared-components/link';
 import { Icon } from '../../../../shared-components/icon';
