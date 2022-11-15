@@ -14,6 +14,8 @@
       "username": "Введите логин",
       "password": "Введите пароль"
     },
-    "buttonLogin": "Войти"
+    "buttonLogin": "Войти",
+    "successfulLogin": "Вы успешно вошли!",
+    "failedLogin": "Неправильный логин или пароль!"
   }
 }

@@ -1,6 +1,8 @@
 @import "~../../node_modules/normalize.css/normalize.css";
 @import "reset";
+@import "color/color";
 @import "variables";
+@import "mixin";
 @import "themes/dark";
 @import "themes/light";
 

@@ -8,6 +8,7 @@ const initialState: TLoginFormState = {
   password: '',
   error: null,
   isLoading: false,
+  isAuth: false,
 };
 
 export const loginFormSlice = createSlice({
@@ -25,14 +26,17 @@ export const loginFormSlice = createSlice({
     builder
       .addCase(requestLoginByUser.pending, (state) => {
         state.error = null;
+        state.isAuth = false;
         state.isLoading = true;
       })
       .addCase(requestLoginByUser.fulfilled, (state, action) => {
         state.isLoading = false;
+        state.isAuth = true;
         console.log(action);
       })
       .addCase(requestLoginByUser.rejected, (state, action) => {
         state.isLoading = false;
+        state.isAuth = false;
         state.error = action.payload;
       });
   },

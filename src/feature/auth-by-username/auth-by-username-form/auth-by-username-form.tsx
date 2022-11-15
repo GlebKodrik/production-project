@@ -15,7 +15,11 @@ export const AuthByUsernameForm: React.FC<TProps> = ({
   isOpen,
 }) => {
   const dispatch = useAppDispatch();
-  const { username, password } = useSelector(getLoginForm);
+  const {
+    username,
+    password,
+    isLoading,
+  } = useSelector(getLoginForm);
   const { translation } = useLanguage();
 
   const onUsernameChange = (value: string) => {
@@ -48,7 +52,14 @@ export const AuthByUsernameForm: React.FC<TProps> = ({
         placeholder={translation('auth.placeholder.password')}
       />
       <div className={styles.submit}>
-        <Button color="inverted" variant="outline" type="submit">{ translation('auth.buttonLogin') }</Button>
+        <Button
+          color="inverted"
+          variant="outline"
+          type="submit"
+          disabled={isLoading}
+        >
+          { translation('auth.buttonLogin') }
+        </Button>
       </div>
     </form>
   );

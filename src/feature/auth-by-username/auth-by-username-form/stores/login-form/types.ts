@@ -3,4 +3,5 @@ export type TLoginFormState = {
   password: string;
   isLoading: boolean;
   error?: string;
+  isAuth?: boolean;
 };

@@ -29,7 +29,7 @@ const Modal: React.FC<TModalProps> = ({
 
     timeoutRef.current = setTimeout(() => {
       setIsClosing(false);
-      onClose(false);
+      onClose();
     }, ANIMATION_TIMEOUT);
   };
 

@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-type TSeverity = 'success' | 'warning' | 'error';
+export type TSeverity = 'success' | 'error';
 
 export type TProps = {
   onClose?: Function;

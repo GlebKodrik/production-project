@@ -9,13 +9,21 @@
   --font-size-xl: 32px;
   --font-line-xl: 40px;
   --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
+
+  // navbar
   --navbar-height: 50px;
+
+  // sidebar
   --sidebar-width: 300px;
   --sidebar-width-collapse: 80px;
 
   // z-index
   --z-index-modal: 10;
 
-  // цвета
+  // overlay
   --overlay-background-color: rgba(0 0 0 / 60%);
+
+  // notification
+  --severity-background-color-success: #2e7d32;
+  --severity-background-color-error: #d32f2f;
 }

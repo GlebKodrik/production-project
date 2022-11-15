@@ -12,10 +12,11 @@ export const Button: React.FC<TButtonProps> = (
     color,
     size,
     variant = 'clear',
+    disabled = false,
     ...otherProps
   },
 ) => {
-  const MODS = {
+  const classes = {
     [styles[`variant-${variant}`]]: Boolean(variant),
     [styles[color]]: Boolean(color),
     [styles[`size-${size}`]]: Boolean(size),
@@ -24,7 +25,8 @@ export const Button: React.FC<TButtonProps> = (
   return (
     <button
       type={type}
-      className={cls(styles.button, MODS, className)}
+      className={cls(styles.button, classes, className)}
+      disabled={disabled}
       {...otherProps}
     >
       {children}

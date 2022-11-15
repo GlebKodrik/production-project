@@ -12,7 +12,9 @@ export const AboutPage = () => {
   const dispatch = useAppDispatch();
 
   const addAlert = () => {
-    dispatch(notificationsActions.showNotification({ message: 'Как у тебя дела? ewrwer wewr werrwe we' }));
+    dispatch(notificationsActions.showNotification(
+      { message: 'Как у тебя дела? ewrwer wewr werrwe we', severity: 'error' },
+    ));
   };
   return (
     <>

@@ -14,6 +14,8 @@
       "username": "Write username",
       "password": "Write password"
     },
-    "buttonLogin": "Login"
+    "buttonLogin": "Login",
+    "successfulLogin": "You have successfully logged in!",
+    "failedLogin": "Incorrect login or password!"
   }
 }

@@ -56,6 +56,16 @@
     &:hover {
       background-color: var(--button-hover-bg-color-primary);
     }
+
+    &:disabled {
+      color: rgb(0 0 0 / 26%);
+      border: 1px solid rgb(0 0 0 / 12%);
+      cursor: not-allowed;
+
+      &:hover {
+        background: none;
+      }
+    }
   }
 
   &-square {

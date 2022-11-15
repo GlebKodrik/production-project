@@ -29,7 +29,12 @@
 .severity {
   &-success {
     color: #fff;
-    background-color: #2e7d32;
+    background-color: var(--severity-background-color-success);
+  }
+
+  &-error {
+    color: #fff;
+    background-color: var(--severity-background-color-error);
   }
 }
 
@@ -41,5 +46,4 @@
   height: 4px;
   background-color: #fff;
   border-radius: 2px;
-  transition: width 0.5s;
 }

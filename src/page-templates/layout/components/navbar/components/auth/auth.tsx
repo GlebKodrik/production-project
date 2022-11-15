@@ -14,9 +14,13 @@ const Auth: React.FC<TAuthProps> = () => {
     setIsOpenAuthModal(true);
   };
 
+  const onModalClose = () => {
+    setIsOpenAuthModal(false);
+  };
+
   return (
     <>
-      <AuthByUsernameModal isOpen={isOpenAuthModal} onClose={setIsOpenAuthModal} />
+      <AuthByUsernameModal isOpen={isOpenAuthModal} onClose={onModalClose} />
       <Button variant="clear" color="inverted" onClick={onToggleAuthModal}>
         { translation('navbar.login') }
       </Button>

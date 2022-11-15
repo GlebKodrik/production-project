@@ -8,6 +8,7 @@ import styles from './notifications-container.module.scss';
 export const NotificationsContainer: React.FC<TProps> = ({
   message,
   id,
+  severity = 'success',
 }) => {
   const [isOpen, setIsOpen] = useState(true);
   const dispatch = useAppDispatch();
@@ -20,7 +21,7 @@ export const NotificationsContainer: React.FC<TProps> = ({
   return (
     <>
       <Alert
-        severity="success"
+        severity={severity}
         autoClose
         isOpen={isOpen}
         onClose={closeAlert}

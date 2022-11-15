@@ -1,13 +1,13 @@
 import { useCallback, useEffect, useState } from 'react';
 import { TProps, TReturn } from './types';
 import useTimer from '../../../../hooks/use-timer';
+import { DEFAULT_ANIMATION_IN_SECONDS } from '../../constants';
 
 const DEFAULT_SECONDS_CLOSE_ALERT = 6;
 
 export const useAlertWithTimer = ({
   autoClose = false,
   autoHideDuration = DEFAULT_SECONDS_CLOSE_ALERT,
-  closeAlert,
 }: TProps): TReturn => {
   const {
     seconds,
@@ -16,7 +16,7 @@ export const useAlertWithTimer = ({
     clearTimer,
   } = useTimer();
 
-  const [showAlert] = useState(true);
+  const [showAlert, setShowAlert] = useState(true);
   const [percentAutoClose, setPercentAutoClose] = useState(0);
   const [onePercent] = useState(100 / autoHideDuration);
 
@@ -43,17 +43,16 @@ export const useAlertWithTimer = ({
   }, []);
 
   useEffect(() => {
-    callsFunctionForAutoClose(() => setPercentAutoClose(onePercent * seconds));
+    if (seconds > 0) {
+      setPercentAutoClose(onePercent * seconds);
+    }
 
     if (seconds === autoHideDuration) {
-      if (closeAlert) {
-        closeAlert();
-      }
       clearTimerForAutoCloseAlert();
       setPercentAutoClose(100);
-      // setTimeout(() => {
-      //   setShowAlert(false);
-      // }, 500);
+      setTimeout(() => {
+        setShowAlert(false);
+      }, DEFAULT_ANIMATION_IN_SECONDS);
     }
   }, [seconds]);
 

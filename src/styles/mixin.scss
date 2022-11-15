@@ -1,0 +1,15 @@
+@mixin custom-scrollbar() {
+  scrollbar-color: var(--color-grey-600) var(--color-grey-100);
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    background-color: var(--color-grey-100);
+    border-radius: 2px;
+
+    &-thumb {
+      background: var(--color-grey-600);
+      border-radius: 2px;
+    }
+  }
+}
