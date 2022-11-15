@@ -9,4 +9,5 @@ export type TReturn = {
   clearTimerForAutoCloseAlert?: Function;
   startTimerForAutoCloseAlert?: any;
   stopTimerForAutoCloseAlert?: Function;
+  percentAutoClose?: number;
 };

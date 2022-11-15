@@ -16,24 +16,26 @@ export const useAlertWithTimer = ({
     clearTimer,
   } = useTimer();
 
-  const [showAlert, setShowAlert] = useState(true);
+  const [showAlert] = useState(true);
+  const [percentAutoClose, setPercentAutoClose] = useState(0);
+  const [onePercent] = useState(100 / autoHideDuration);
 
-  const controlTimerInAlert = useCallback((callback: Function): void => {
+  const callsFunctionForAutoClose = useCallback((callback: Function): void => {
     if (autoClose) {
       callback();
     }
   }, [autoClose]);
 
   const startTimerForAutoCloseAlert = useCallback(() => {
-    controlTimerInAlert(startTimer);
+    callsFunctionForAutoClose(startTimer);
   }, [startTimer]);
 
   const stopTimerForAutoCloseAlert = useCallback(() => {
-    controlTimerInAlert(stopTimer);
+    callsFunctionForAutoClose(stopTimer);
   }, [stopTimer]);
 
   const clearTimerForAutoCloseAlert = useCallback(() => {
-    controlTimerInAlert(clearTimer);
+    callsFunctionForAutoClose(clearTimer);
   }, [clearTimer]);
 
   useEffect(() => {
@@ -41,12 +43,17 @@ export const useAlertWithTimer = ({
   }, []);
 
   useEffect(() => {
+    callsFunctionForAutoClose(() => setPercentAutoClose(onePercent * seconds));
+
     if (seconds === autoHideDuration) {
       if (closeAlert) {
         closeAlert();
       }
       clearTimerForAutoCloseAlert();
-      setShowAlert(false);
+      setPercentAutoClose(100);
+      // setTimeout(() => {
+      //   setShowAlert(false);
+      // }, 500);
     }
   }, [seconds]);
 
@@ -55,5 +62,6 @@ export const useAlertWithTimer = ({
     startTimerForAutoCloseAlert,
     stopTimerForAutoCloseAlert,
     clearTimerForAutoCloseAlert,
+    percentAutoClose,
   };
 };

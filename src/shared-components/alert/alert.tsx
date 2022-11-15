@@ -7,7 +7,6 @@ import { Button } from '../button';
 import { Icon } from '../icon';
 import { useAlertWithTimer } from './hooks/use-alert-with-timer';
 import { DEFAULT_TIME_IN_SECONDS_CLOSING_ALERT } from './constants';
-import Portal from '../portal';
 
 export const Alert: React.FC<TProps> = ({
   severity,
@@ -15,7 +14,7 @@ export const Alert: React.FC<TProps> = ({
   children,
   autoClose = false,
   isOpen = false,
-  isPopUp = false,
+  classNames,
   autoHideDuration = DEFAULT_TIME_IN_SECONDS_CLOSING_ALERT,
 }) => {
   const {
@@ -23,6 +22,7 @@ export const Alert: React.FC<TProps> = ({
     startTimerForAutoCloseAlert,
     stopTimerForAutoCloseAlert,
     clearTimerForAutoCloseAlert,
+    percentAutoClose,
   } = useAlertWithTimer({
     autoHideDuration,
     autoClose,
@@ -45,41 +45,27 @@ export const Alert: React.FC<TProps> = ({
   const onMouseOutAlert = () => {
     startTimerForAutoCloseAlert();
   };
-
-  const renderBody = () => {
-    const alertElement = (
-      <div
-        className={cls(styles.alert, classes)}
-        onMouseOver={onMouseOverAlert}
-        onMouseOut={onMouseOutAlert}
-      >
-        <div className={styles.iconWithChildren}>
-          <Icon name="check-circle-outline" fill="#fff" />
-          { children }
-        </div>
-        {onClose && (
-        <Button onClick={onAlertClose} className={styles.buttonClose}>
-          <Icon name="close-circle-outline" fill="#fff" />
-        </Button>
-        )}
-      </div>
-    );
-    return isPopUp
-      ? (
-        <Portal propIdNameElement="alert">
-          { alertElement }
-        </Portal>
-      )
-      : alertElement;
-  };
-
+  console.log(percentAutoClose, showAlert);
   if (!isOpen || !showAlert) {
     return null;
   }
 
   return (
-    <>
-      { renderBody() }
-    </>
+    <div
+      className={cls(styles.alert, classes, classNames)}
+      onMouseOver={onMouseOverAlert}
+      onMouseOut={onMouseOutAlert}
+    >
+      <div className={styles.iconWithChildren}>
+        <Icon name="check-circle-outline" fill="#fff" />
+        { children }
+      </div>
+      {onClose && (
+      <Button onClick={onAlertClose} className={styles.buttonClose}>
+        <Icon name="close-circle-outline" fill="#fff" />
+      </Button>
+      )}
+      <div className={styles.progressBar} style={{ width: `${percentAutoClose}%` }} />
+    </div>
   );
 };

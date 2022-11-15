@@ -13,9 +13,11 @@
 
 .icon-with-children {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  padding-right: 10px;
 
   svg {
+    flex: none;
     margin-right: 6px;
   }
 }
@@ -29,4 +31,15 @@
     color: #fff;
     background-color: #2e7d32;
   }
+}
+
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: width 0.5s;
 }

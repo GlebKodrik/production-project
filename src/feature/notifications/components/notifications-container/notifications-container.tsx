@@ -3,6 +3,7 @@ import { Alert } from '../../../../shared-components/alert';
 import { TProps } from './types';
 import { useAppDispatch } from '../../../../hooks/use-app-dispatch';
 import { notificationsActions } from '../../stores/notifications';
+import styles from './notifications-container.module.scss';
 
 export const NotificationsContainer: React.FC<TProps> = ({
   message,
@@ -20,10 +21,10 @@ export const NotificationsContainer: React.FC<TProps> = ({
     <>
       <Alert
         severity="success"
-        // autoClose
+        autoClose
         isOpen={isOpen}
-        // isPopUp
         onClose={closeAlert}
+        classNames={styles.alert}
       >
         { message }
       </Alert>

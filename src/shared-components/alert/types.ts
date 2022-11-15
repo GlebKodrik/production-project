@@ -10,4 +10,5 @@ export type TProps = {
   isOpen?: boolean;
   isPopUp?: boolean;
   autoHideDuration?: number;
+  classNames?: string;
 };
