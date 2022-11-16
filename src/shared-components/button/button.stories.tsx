@@ -1,7 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Button } from './button';
-import { EButtonSize, EColorButton, EVariantButton } from '../../types/button';
 
 import { ThemeDecorator } from '../../decorators/theme-decorator';
 import { TButtonProps } from './types';

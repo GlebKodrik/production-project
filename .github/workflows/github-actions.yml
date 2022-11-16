@@ -27,5 +27,5 @@ jobs:
         run: npm run test:unit
         if: always()
       - name: Eslint
-        run: npm run eslint
+        run: npm run test:code
         if: always()
