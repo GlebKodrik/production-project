@@ -8,7 +8,8 @@
   },
   "navbar": {
     "login": "Login",
-    "logout": "Logout"
+    "logout": "Logout",
+    "successfullyExited": "You have successfully logged out!"
   },
   "auth": {
     "form": {

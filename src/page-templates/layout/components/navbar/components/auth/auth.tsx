@@ -25,7 +25,12 @@ const Auth: React.FC<TAuthProps> = () => {
 
   const onLogout = async () => {
     await dispatch(userActions.logout());
-    dispatch(notificationsActions.showNotification({ message: 'Вы успешно вышли!', severity: 'success' }));
+    dispatch(notificationsActions.showNotification(
+      {
+        message: translation('navbar.successfullyExited'),
+        severity: 'success',
+      },
+    ));
   };
 
   const renderButtonLogout = () => (
