@@ -28,19 +28,22 @@ const Auth: React.FC<TAuthProps> = () => {
     dispatch(notificationsActions.showNotification({ message: 'Вы успешно вышли!', severity: 'success' }));
   };
 
-  if (isAuth) {
-    return (
-      <Button variant="clear" color="inverted" onClick={onLogout}>
-        { translation('navbar.goOut') }
-      </Button>
-    );
-  }
+  const renderButtonLogout = () => (
+    <Button variant="clear" color="inverted" onClick={onLogout}>
+      { translation('navbar.logout') }
+    </Button>
+  );
+
+  const renderButtonLogin = () => (
+    <Button variant="clear" color="inverted" onClick={onToggleAuthModal}>
+      { translation('navbar.login') }
+    </Button>
+  );
+
   return (
     <>
       <AuthByUsernameModal isOpen={isOpenAuthModal} onClose={onModalClose} />
-      <Button variant="clear" color="inverted" onClick={onToggleAuthModal}>
-        { translation('navbar.login') }
-      </Button>
+      {isAuth ? renderButtonLogout() : renderButtonLogin() }
     </>
   );
 };

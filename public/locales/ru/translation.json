@@ -8,7 +8,7 @@
   "notFound": "Страница не найдена",
   "navbar": {
     "login": "Войти",
-    "goOut": "Выйти"
+    "logout": "Выйти"
   },
   "auth": {
     "form": {

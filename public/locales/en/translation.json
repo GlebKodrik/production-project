@@ -8,7 +8,7 @@
   },
   "navbar": {
     "login": "Login",
-    "goOut": "Logout"
+    "logout": "Logout"
   },
   "auth": {
     "form": {

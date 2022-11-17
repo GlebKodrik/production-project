@@ -1,4 +1,4 @@
-import { loginFormSlice, loginFormReducer } from './slices/login-form-slice';
+import { loginFormSlice, loginFormReducer } from './login-form-slice';
 import { TLoginFormState } from './types';
 import { getLoginForm } from './selectors/get-login-form';
 

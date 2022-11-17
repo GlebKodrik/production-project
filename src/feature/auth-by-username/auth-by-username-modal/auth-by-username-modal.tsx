@@ -13,7 +13,9 @@ export const AuthByUsernameModal: React.FC<TAuthByUsernameProps> = ({
   const isAuth = useSelector(getUserAuth);
 
   useEffect(() => {
-    onClose();
+    if (isAuth) {
+      onClose();
+    }
   }, [isAuth]);
 
   return (

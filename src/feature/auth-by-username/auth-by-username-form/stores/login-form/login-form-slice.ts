@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { TLoginFormState } from '../types';
-import { requestLoginByUser } from '../requests/request-login-by-user';
+import { TLoginFormState } from './types';
+import { requestLoginByUser } from './requests/request-login-by-user';
 
 const initialState: TLoginFormState = {
   username: '',
