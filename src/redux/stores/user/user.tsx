@@ -1,18 +1,18 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { TUserScheme } from './types';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { TUser, TUserScheme } from './types';
 
 const initialState: TUserScheme = {
-  isAuth: false,
-  error: null,
-  isLoading: false,
-  username: null,
-  password: null,
+  userData: null,
 };
 
 export const userSlice = createSlice({
-  name: 'users',
+  name: 'user',
   initialState,
-  reducers: {},
+  reducers: {
+    setUser: (state, action: PayloadAction<TUser>) => {
+      state.userData = action.payload;
+    },
+  },
 });
 
 export const { actions: userActions } = userSlice;

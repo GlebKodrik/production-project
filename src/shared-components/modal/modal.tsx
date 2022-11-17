@@ -17,10 +17,6 @@ const Modal: React.FC<TModalProps> = ({
   isOpen,
   onClose,
 }) => {
-  if (!isOpen) {
-    return null;
-  }
-
   const [isClosing, setIsClosing] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
 
@@ -54,16 +50,21 @@ const Modal: React.FC<TModalProps> = ({
     };
   }, [isOpen]);
 
+  if (!isOpen) {
+    return null;
+  }
+
   return (
     <Portal>
-      <div className={cls(
-        styles.modal,
-        {
-          [styles.opened]: isOpen,
-          [styles.closing]: isClosing,
-        },
-        className,
-      )}
+      <div
+        className={cls(
+          styles.modal,
+          {
+            [styles.opened]: isOpen,
+            [styles.closing]: isClosing,
+          },
+          className,
+        )}
       >
         <div className={cls(styles.overlay)} onMouseDown={onCloseModal}>
           <div className={cls(styles.content)} onMouseDownCapture={onContentClick}>

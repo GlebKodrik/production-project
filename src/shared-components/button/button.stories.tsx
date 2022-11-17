@@ -31,6 +31,13 @@ VariantOutLine.args = {
   variant: 'outline',
 };
 
+export const VariantOutLineDisabled = Template.bind({});
+VariantOutLineDisabled.args = {
+  children: 'Button',
+  variant: 'outline',
+  disabled: true,
+};
+
 export const VariantOutLineWithThemeDark = Template.bind({});
 VariantOutLineWithThemeDark.args = {
   children: 'Button',

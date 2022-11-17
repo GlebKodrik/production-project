@@ -10,6 +10,9 @@
     "login": "Войти"
   },
   "auth": {
+    "form": {
+      "authorization": "Форма авторизации"
+    },
     "placeholder": {
       "username": "Введите логин",
       "password": "Введите пароль"

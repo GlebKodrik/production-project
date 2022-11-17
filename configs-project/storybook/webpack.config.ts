@@ -25,7 +25,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
     test: /\.svg$/,
     use: ['@svgr/webpack'],
   });
-  config.module.rules.push(buildStyleLoader());
+  config.module.rules.push(buildStyleLoader(true));
 
   return config;
 };

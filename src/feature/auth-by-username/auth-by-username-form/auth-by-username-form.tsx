@@ -36,31 +36,35 @@ export const AuthByUsernameForm: React.FC<TProps> = ({
   };
 
   return (
-    <form className={styles.wrapper} autoComplete="off" onSubmit={onHandleSubmit}>
-      <Input
-        value={username}
-        autoFocus={isOpen}
-        onChange={onUsernameChange}
-        className={styles.input}
-        placeholder={translation('auth.placeholder.username')}
-      />
-      <Input
-        type="password"
-        value={password}
-        onChange={onPasswordChange}
-        className={styles.input}
-        placeholder={translation('auth.placeholder.password')}
-      />
-      <div className={styles.submit}>
-        <Button
-          color="inverted"
-          variant="outline"
-          type="submit"
-          disabled={isLoading}
-        >
-          { translation('auth.buttonLogin') }
-        </Button>
-      </div>
-    </form>
+    <>
+      <h1 className={styles.title}>{ translation('auth.form.authorization') }</h1>
+      <form className={styles.wrapper} autoComplete="off" onSubmit={onHandleSubmit}>
+        <Input
+          value={username}
+          autoFocus={isOpen}
+          onChange={onUsernameChange}
+          className={styles.input}
+          placeholder={translation('auth.placeholder.username')}
+        />
+        <Input
+          type="password"
+          value={password}
+          onChange={onPasswordChange}
+          className={styles.input}
+          placeholder={translation('auth.placeholder.password')}
+        />
+        <div className={styles.submit}>
+          <Button
+            color="inverted"
+            variant="outline"
+            type="submit"
+            disabled={isLoading}
+          >
+            { translation('auth.buttonLogin') }
+          </Button>
+        </div>
+      </form>
+    </>
+
   );
 };

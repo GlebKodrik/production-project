@@ -24,7 +24,6 @@
     "storybook": "start-storybook -p 6006 -c configs-project/storybook -s public",
     "storybook:build": "build-storybook -c configs-project/storybook -s public"
   },
-  "license": "ISC",
   "dependencies": {
     "@babel/core": "^7.17.5",
     "@babel/preset-env": "^7.16.11",
