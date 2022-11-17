@@ -18,6 +18,7 @@ const Modal: React.FC<TModalProps> = ({
   onClose,
 }) => {
   const [isClosing, setIsClosing] = useState(false);
+  const [isOpenModal, setIsOpenModal] = useState(isOpen);
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
 
   const onCloseModal = () => {
@@ -25,6 +26,7 @@ const Modal: React.FC<TModalProps> = ({
 
     timeoutRef.current = setTimeout(() => {
       setIsClosing(false);
+      setIsOpenModal(false);
       onClose();
     }, ANIMATION_TIMEOUT);
   };
@@ -41,7 +43,12 @@ const Modal: React.FC<TModalProps> = ({
 
   useEffect(() => {
     if (isOpen) {
+      setIsOpenModal(isOpen);
       window.addEventListener('keydown', onKeyDownHandler);
+    }
+
+    if (isOpen === false && isOpenModal === true) {
+      onCloseModal();
     }
 
     return () => {
@@ -50,7 +57,7 @@ const Modal: React.FC<TModalProps> = ({
     };
   }, [isOpen]);
 
-  if (!isOpen) {
+  if (!isOpenModal) {
     return null;
   }
 
@@ -60,7 +67,7 @@ const Modal: React.FC<TModalProps> = ({
         className={cls(
           styles.modal,
           {
-            [styles.opened]: isOpen,
+            [styles.opened]: isOpenModal,
             [styles.closing]: isClosing,
           },
           className,

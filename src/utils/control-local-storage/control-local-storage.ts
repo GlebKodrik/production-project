@@ -1,13 +1,13 @@
 import { TLocalStorageKeys } from '../../types/local-storage-keys';
 
 export class ControlLocalStorage {
-  static getValueLocalStorage(localStorageKey: TLocalStorageKeys): string {
+  static getValueLocalStorage<T = string>(localStorageKey: TLocalStorageKeys): T {
     const valueLocalStorage = window.localStorage.getItem(localStorageKey);
 
     try {
       return JSON.parse(valueLocalStorage);
     } catch (error) {
-      return valueLocalStorage;
+      return (valueLocalStorage as T);
     }
   }
 
@@ -17,12 +17,12 @@ export class ControlLocalStorage {
     }
 
     if (typeof value === 'string') {
-      localStorage.setItem(localStorageKey, value);
+      window.localStorage.setItem(localStorageKey, value);
       return;
     }
 
     try {
-      localStorage.setItem(localStorageKey, JSON.stringify(value));
+      window.localStorage.setItem(localStorageKey, JSON.stringify(value));
     } catch (error) {
       throw Error(`Error setting localStorage key “${localStorageKey}”:`, error);
     }
@@ -31,6 +31,14 @@ export class ControlLocalStorage {
   static clearLocalStorage() {
     try {
       window.localStorage.clear();
+    } catch (error) {
+      throw Error('Error while deleting everything local storage', error);
+    }
+  }
+
+  static removeItem(localStorageKey: TLocalStorageKeys) {
+    try {
+      window.localStorage.removeItem(localStorageKey);
     } catch (error) {
       throw Error('Error while deleting everything local storage', error);
     }

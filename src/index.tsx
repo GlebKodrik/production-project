@@ -1,15 +1,29 @@
 import './styles/global.scss';
 
-import React from 'react';
+import React, { Suspense } from 'react';
 import { render } from 'react-dom';
-import Routes from './routers';
-import { AppProvider } from './providers/app-provider';
-import { Notifications } from './feature/notifications';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { App } from './app';
+import LoaderWithOverlay from './shared-components/loader-with-overlay';
+import { ErrorBoundary } from './pages/error-boundery-page';
+import { rootStore } from './redux/root-store';
+import { LanguageProvider } from './providers/language-provider';
+import { ThemeProvider } from './providers/theme-provider';
 
 render(
-  <AppProvider>
-    <Routes />
-    <Notifications />
-  </AppProvider>,
+  <BrowserRouter>
+    <Suspense fallback={<LoaderWithOverlay />}>
+      <ErrorBoundary>
+        <Provider store={rootStore}>
+          <LanguageProvider>
+            <ThemeProvider>
+              <App />
+            </ThemeProvider>
+          </LanguageProvider>
+        </Provider>
+      </ErrorBoundary>
+    </Suspense>
+  </BrowserRouter>,
   document.getElementById('root'),
 );
