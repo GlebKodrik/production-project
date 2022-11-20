@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Link } from './link';
 
-import { ThemeDecorator } from '../../decorators/theme-decorator';
+import { ThemeDecorator } from '../../../configs-project/storybook/decorators/theme-decorator';
 import { ELinkColor } from '../../types/link';
 import { THEMES } from '../../constants/themes';
 

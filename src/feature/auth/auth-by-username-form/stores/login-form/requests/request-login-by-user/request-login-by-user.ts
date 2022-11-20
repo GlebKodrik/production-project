@@ -5,7 +5,7 @@ import { notificationsActions } from '../../../../../../notifications/stores/not
 import i18n from '../../../../../../../configs/i18next';
 import { userActions } from '../../../../../../../redux/stores/user';
 import type { TUser } from '../../../../../../../redux/stores/user/types';
-import { ControlLocalStorage } from '../../../../../../../utils/control-local-storage';
+import { ControlLocalStorage } from '../../../../../../../services/control-local-storage';
 import { LOCAL_STORAGE_KEYS } from '../../../../../../../constants/local-storage-keys';
 
 export const requestLoginByUser = createAsyncThunk<TUser, TPropsThunk, { rejectValue: string }>(

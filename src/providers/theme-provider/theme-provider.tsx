@@ -8,7 +8,7 @@ import {
 } from '../../contexts/theme-context';
 import styles from './theme-provider.module.scss';
 import { ThemeProviderProps } from './types';
-import { ControlLocalStorage } from '../../utils/control-local-storage';
+import { ControlLocalStorage } from '../../services/control-local-storage';
 import { TThemes } from '../../types/themes';
 import { LOCAL_STORAGE_KEYS } from '../../constants/local-storage-keys';
 import { THEMES } from '../../constants/themes';

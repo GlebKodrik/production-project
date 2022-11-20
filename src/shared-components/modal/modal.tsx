@@ -17,7 +17,6 @@ const Modal: React.FC<TModalProps> = ({
   isOpen,
   onClose,
 }) => {
-  console.log('render modal');
   const [isClosing, setIsClosing] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(isOpen);
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>();

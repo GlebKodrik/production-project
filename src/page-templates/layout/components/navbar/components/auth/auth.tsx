@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { TAuthProps } from './types';
 import { Button } from '../../../../../../shared-components/button';
 import { useLanguage } from '../../../../../../hooks/use-language';
-import { AuthByUsernameModal } from '../../../../../../feature/auth-by-username';
+import { AuthByUsernameModal } from '../../../../../../feature/auth';
 import { getUserAuth, userActions } from '../../../../../../redux/stores/user';
 import { notificationsActions } from '../../../../../../feature/notifications/stores/notifications';
 
