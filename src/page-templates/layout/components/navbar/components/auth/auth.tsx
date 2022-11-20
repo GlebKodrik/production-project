@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { TAuthProps } from './types';
 import { Button } from '../../../../../../shared-components/button';
 import { useLanguage } from '../../../../../../hooks/use-language';
-import { AuthByUsernameModal } from '../../../../../../feature/auth';
 import { getUserAuth, userActions } from '../../../../../../redux/stores/user';
 import { notificationsActions } from '../../../../../../feature/notifications/stores/notifications';
+import Loader from '../../../../../../shared-components/loader';
+import { namedLazy } from '../../../../../../shared-components/named-lazy';
+
+export const AuthByUsernameModal = namedLazy(
+  () => import('../../../../../../feature/auth/auth-by-username-modal'),
+  'AuthByUsernameModal',
+);
 
 const Auth: React.FC<TAuthProps> = () => {
   const [isOpenAuthModal, setIsOpenAuthModal] = useState(false);
@@ -47,7 +53,9 @@ const Auth: React.FC<TAuthProps> = () => {
 
   return (
     <>
-      <AuthByUsernameModal isOpen={isOpenAuthModal} onClose={onModalClose} />
+      <Suspense fallback={<Loader />}>
+        <AuthByUsernameModal isOpen={isOpenAuthModal} onClose={onModalClose} />
+      </Suspense>
       {isAuth ? renderButtonLogout() : renderButtonLogin() }
     </>
   );
