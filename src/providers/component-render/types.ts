@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { DeepPartial } from '@reduxjs/toolkit';
-import { TReduxStateScheme } from '../../redux/types/redux-state-scheme';
+import { TReduxStateScheme } from '../../stores/types/redux-state-scheme';
 
 export type TOptions = {
   route?: string;

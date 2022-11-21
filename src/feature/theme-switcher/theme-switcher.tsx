@@ -1,13 +1,12 @@
 import React from 'react';
 import cls from 'classnames';
-import { useTheme } from '../../hooks/use-theme';
+import { useTheme } from '@hooks/use-theme';
 
-import LightThemeIcon from '../../shared-components/icon/images/theme-light.svg';
-import DarkThemeIcon from '../../shared-components/icon/images/theme-dark.svg';
+import { Button } from '@shared-components/button';
+import { THEMES } from '@constants/themes';
+import { Icon } from '@shared-components/icon';
 
-import { Button } from '../../shared-components/button';
 import { TThemeSwitcher } from './types';
-import { THEMES } from '../../constants/themes';
 
 export const ThemeSwitcher: React.FC<TThemeSwitcher> = ({ className }) => {
   const { toggleTheme, theme } = useTheme();
@@ -16,7 +15,19 @@ export const ThemeSwitcher: React.FC<TThemeSwitcher> = ({ className }) => {
     toggleTheme();
   };
 
-  const renderSwitcherIcon = () => (theme === THEMES.LIGHT ? <DarkThemeIcon /> : <LightThemeIcon />);
+  const renderSwitcherIcon = () => (theme === THEMES.LIGHT ? (
+    <Icon
+      name="theme-dark"
+      width="40px"
+      height="41px"
+    />
+  ) : (
+    <Icon
+      name="theme-light"
+      width="40px"
+      height="41px"
+    />
+  ));
 
   return (
     <Button onClick={onToggleTheme} variant="clear" className={cls(className)}>

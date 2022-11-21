@@ -2,10 +2,10 @@ import '../../configs/i18next';
 import React, {
   useCallback, useEffect,
 } from 'react';
+import { LOCAL_STORAGE_KEYS } from '@constants/local-storage-keys';
+import { useLanguage } from '@hooks/use-language';
+import { TLanguages } from '@custom-types/languages';
 import { TLanguagesProvider } from './types';
-import { LOCAL_STORAGE_KEYS } from '../../constants/local-storage-keys';
-import { useLanguage } from '../../hooks/use-language';
-import { TLanguages } from '../../types/languages';
 
 export const LanguageProvider: React.FC<TLanguagesProvider> = ({ children }: TLanguagesProvider) => {
   const { changeLanguage } = useLanguage();

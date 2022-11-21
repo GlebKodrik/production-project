@@ -1,6 +1,6 @@
 export type TReturn = {
-  startTimer: () => void;
-  stopTimer?: () => void;
+  startTimer: Function;
+  stopTimer?: Function;
   seconds: number;
-  clearTimer: () => void;
+  clearTimer: Function;
 };

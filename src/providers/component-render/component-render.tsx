@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { TReduxStateScheme } from '../../stores/types/redux-state-scheme';
+import { createStore } from '../../stores/root-store/root-store';
 import { TComponentRenderProps } from './types';
-import { TReduxStateScheme } from '../../redux/types/redux-state-scheme';
-import { createStore } from '../../redux/root-store/root-store';
 
 export const componentRender = ({ component, options = {}, initialState }: TComponentRenderProps) => {
   const {

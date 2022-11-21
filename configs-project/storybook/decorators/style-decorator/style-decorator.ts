@@ -1,4 +1,4 @@
-import '../../../../src/styles/global.scss';
+import '@styles/global.scss';
 import { Story } from '@storybook/react';
 
 export const StyleDecorator = (story: () => Story) => story();

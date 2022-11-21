@@ -1,10 +1,10 @@
 import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
+import { loginFormReducer } from '@feature/auth/auth-by-username-form/stores/login-form';
+import { notificationsReducer } from '@feature/notifications/stores/notifications/slices/notifications-slice';
 import { TReduxStateScheme } from '../types/redux-state-scheme';
 import { counterReducer } from '../stores/counter';
 import { userReducer } from '../stores/user';
 import { FLAGS } from '../../../configs-project/webpack-configs/mode';
-import { loginFormReducer } from '../../feature/auth/auth-by-username-form/stores/login-form';
-import { notificationsReducer } from '../../feature/notifications/stores/notifications/slices/notifications-slice';
 
 export const createStore = (initialState?: TReduxStateScheme) => {
   const rootReducer: ReducersMapObject<TReduxStateScheme> = {

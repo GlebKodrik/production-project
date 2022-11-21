@@ -1,6 +1,6 @@
 import { ROUTES_PATH } from '../../../../constants/routers';
 import { ICON_NAMES } from '../../../../shared-components/icon/constants/icon-names';
-import { TRoutesPath } from '../../../../types/routes';
+import { TRoutesPath } from '../../../../custom-types/routes';
 import { TIconNames } from '../../../../shared-components/icon';
 
 type TLinks = {

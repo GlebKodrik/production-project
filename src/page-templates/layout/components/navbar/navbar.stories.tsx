@@ -1,9 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { THEMES } from '@constants/themes';
 import { Navbar } from './navbar';
 
 import { ThemeDecorator } from '../../../../../configs-project/storybook/decorators/theme-decorator';
-import { THEMES } from '../../../../constants/themes';
 
 export default {
   title: 'widgets/Navbar',

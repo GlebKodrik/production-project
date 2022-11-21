@@ -1,7 +1,7 @@
+import { TLoginFormState } from '@feature/auth/auth-by-username-form/stores/login-form';
+import { TNotificationsState } from '@feature/notifications/stores/notifications';
 import { TCounterState } from '../stores/counter';
 import { TUserScheme } from '../stores/user';
-import { TLoginFormState } from '../../feature/auth/auth-by-username-form/stores/login-form';
-import { TNotificationsState } from '../../feature/notifications/stores/notifications';
 
 export type TReduxStateScheme = {
   counter: TCounterState,

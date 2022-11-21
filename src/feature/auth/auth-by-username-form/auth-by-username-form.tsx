@@ -1,15 +1,15 @@
 import React from 'react';
 
 import { useSelector } from 'react-redux';
+import { Button } from '@shared-components/button';
+import { useLanguage } from '@hooks/use-language';
+import { Input } from '@shared-components/input';
+import { useAppDispatch } from '@hooks/use-app-dispatch';
 import { TProps } from './types';
-import { Button } from '../../../shared-components/button';
-import { useLanguage } from '../../../hooks/use-language';
 import styles from './auth-by-username-form.module.scss';
-import { Input } from '../../../shared-components/input';
 import { getLoginForm } from './stores/login-form';
 import { loginFormActions } from './stores/login-form/login-form-slice';
 import { requestLoginByUser } from './stores/login-form/requests/request-login-by-user';
-import { useAppDispatch } from '../../../hooks/use-app-dispatch';
 
 export const AuthByUsernameForm: React.FC<TProps> = ({
   isOpen,

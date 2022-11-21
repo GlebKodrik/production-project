@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import cls from 'classnames';
+import { ThemeSwitcher } from '@feature/theme-switcher';
+import { LanguageSwitcher } from '@feature/language-switcher';
+import { Button } from '@shared-components/button';
+import { Link } from '@shared-components/link';
+import { Icon } from '@shared-components/icon';
+import { useLanguage } from '@hooks/use-language';
 import styles from './sidebar.module.scss';
-import { ThemeSwitcher } from '../../../../feature/theme-switcher';
-import { LanguageSwitcher } from '../../../../feature/language-switcher';
-import { Button } from '../../../../shared-components/button';
-import { Link } from '../../../../shared-components/link';
-import { Icon } from '../../../../shared-components/icon';
-import { useLanguage } from '../../../../hooks/use-language';
 import { LINKS } from './constants';
 
 export const Sidebar = () => {

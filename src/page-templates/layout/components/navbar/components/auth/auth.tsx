@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { TAuthProps } from './types';
 import { Button } from '../../../../../../shared-components/button';
 import { useLanguage } from '../../../../../../hooks/use-language';
-import { getUserAuth, userActions } from '../../../../../../redux/stores/user';
+import { getUserAuth, userActions } from '../../../../../../stores/stores/user';
 import { notificationsActions } from '../../../../../../feature/notifications/stores/notifications';
 import Loader from '../../../../../../shared-components/loader';
 import { namedLazy } from '../../../../../../shared-components/named-lazy';

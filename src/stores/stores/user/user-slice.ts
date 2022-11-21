@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { ControlLocalStorage } from '@services/control-local-storage';
+import { LOCAL_STORAGE_KEYS } from '@constants/local-storage-keys';
 import { TUser, TUserScheme } from './types';
-import { ControlLocalStorage } from '../../../services/control-local-storage';
-import { LOCAL_STORAGE_KEYS } from '../../../constants/local-storage-keys';
 
 const initialState: TUserScheme = {
   userData: null,

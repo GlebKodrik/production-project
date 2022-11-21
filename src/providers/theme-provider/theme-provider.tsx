@@ -5,13 +5,13 @@ import cls from 'classnames';
 import {
   ThemeContext,
   ThemeContextProps,
-} from '../../contexts/theme-context';
-import styles from './theme-provider.module.scss';
+} from '@contexts/theme-context';
+import { ControlLocalStorage } from '@services/control-local-storage';
+import { TThemes } from '@custom-types/themes';
+import { LOCAL_STORAGE_KEYS } from '@constants/local-storage-keys';
+import { THEMES } from '@constants/themes';
 import { ThemeProviderProps } from './types';
-import { ControlLocalStorage } from '../../services/control-local-storage';
-import { TThemes } from '../../types/themes';
-import { LOCAL_STORAGE_KEYS } from '../../constants/local-storage-keys';
-import { THEMES } from '../../constants/themes';
+import styles from './theme-provider.module.scss';
 
 const DEFAULT_THEME = 'light' as TThemes;
 const THEME_FROM_LOCAL_STORAGE = ControlLocalStorage

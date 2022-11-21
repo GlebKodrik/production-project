@@ -1,4 +1,4 @@
-import { TLanguages } from '../../types/languages';
+import { TLanguages } from '@custom-types/languages';
 
 export type TUseLanguage = {
   translation?: any,

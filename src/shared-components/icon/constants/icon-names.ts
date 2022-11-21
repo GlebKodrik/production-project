@@ -4,4 +4,6 @@ export const ICON_NAMES = {
   CHECK_CIRCLE_OUTLINE: 'check-circle-outline',
   CLOSE_CIRCLE_OUTLINE: 'close-circle-outline',
   ERROR_OUTLINE: 'error-outline',
+  THEME_LIGHT: 'theme-light',
+  THEME_DARK: 'theme-dark',
 } as const;

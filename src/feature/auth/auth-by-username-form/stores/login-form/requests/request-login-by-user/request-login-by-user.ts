@@ -3,8 +3,8 @@ import axios from 'axios';
 import { TPropsThunk } from './types';
 import { notificationsActions } from '../../../../../../notifications/stores/notifications';
 import i18n from '../../../../../../../configs/i18next';
-import { userActions } from '../../../../../../../redux/stores/user';
-import type { TUser } from '../../../../../../../redux/stores/user/types';
+import { userActions } from '../../../../../../../stores/stores/user';
+import type { TUser } from '../../../../../../../stores/stores/user/types';
 import { ControlLocalStorage } from '../../../../../../../services/control-local-storage';
 import { LOCAL_STORAGE_KEYS } from '../../../../../../../constants/local-storage-keys';
 

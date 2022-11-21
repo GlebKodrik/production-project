@@ -1,5 +1,5 @@
+import { TLocalStorageKeys } from '@custom-types/local-storage-keys';
 import { ControlLocalStorage } from './control-local-storage';
-import { TLocalStorageKeys } from '../../types/local-storage-keys';
 
 describe('Testing GetUniqueId', () => {
   beforeEach(() => {

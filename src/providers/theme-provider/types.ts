@@ -1,5 +1,5 @@
 import React from 'react';
-import { TThemes } from '../../types/themes';
+import { TThemes } from '@custom-types/themes';
 
 export type ThemeProviderProps = {
   children: React.ReactNode,
