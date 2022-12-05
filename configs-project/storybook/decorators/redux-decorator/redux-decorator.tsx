@@ -1,8 +1,8 @@
 import { Story } from '@storybook/react';
 import { Provider } from 'react-redux';
-import { rootStore } from '../../../../src/stores/root-store';
+import { rootStore } from '@stores/root-store';
 
-export const ReduxProvider = (StoryComponent: Story) => (
+export const ReduxDecorator = (StoryComponent: Story) => (
   <Provider store={rootStore}>
     <StoryComponent />
   </Provider>
