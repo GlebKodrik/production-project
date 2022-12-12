@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { TCounterProps } from './types';
-import { counterActions, getCount } from '../../stores/stores/counter';
+import { counterActions, getCount } from '../../stores/redux-stores/counter';
 
 const Counter: React.FC<TCounterProps> = () => {
   const dispatch = useDispatch();

@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Modal } from '@shared-components/modal';
 
-import { getUserAuth } from '../../../stores/stores/user';
+import { getUserAuth } from '@stores/redux-stores/user';
 import { AuthByUsernameForm } from '../auth-by-username-form';
 import { TAuthByUsernameProps } from './types';
 

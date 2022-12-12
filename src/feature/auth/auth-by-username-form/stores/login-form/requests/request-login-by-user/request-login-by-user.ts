@@ -1,12 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { notificationsActions } from '@feature/notifications/stores/notifications';
+import i18n from '@configs/i18next';
+import { userActions } from '@stores/redux-stores/user';
+import type { TUser } from '@stores/redux-stores/user/types';
+import { ControlLocalStorage } from '@services/control-local-storage';
+import { LOCAL_STORAGE_KEYS } from '@constants/local-storage-keys';
 import { TPropsThunk } from './types';
-import { notificationsActions } from '../../../../../../notifications/stores/notifications';
-import i18n from '../../../../../../../configs/i18next';
-import { userActions } from '../../../../../../../stores/stores/user';
-import type { TUser } from '../../../../../../../stores/stores/user/types';
-import { ControlLocalStorage } from '../../../../../../../services/control-local-storage';
-import { LOCAL_STORAGE_KEYS } from '../../../../../../../constants/local-storage-keys';
 
 export const requestLoginByUser = createAsyncThunk<TUser, TPropsThunk, { rejectValue: string }>(
   'login/requestLoginByUser',

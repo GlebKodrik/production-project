@@ -5,9 +5,11 @@ import { Button } from '@shared-components/button';
 import { useLanguage } from '@hooks/use-language';
 import { Input } from '@shared-components/input';
 import { useAppDispatch } from '@hooks/use-app-dispatch';
+import { getPassword } from './stores/login-form/selectors/get-password';
+import { getIsLoading } from './stores/login-form/selectors/get-is-loading';
+import { getUsername } from './stores/login-form/selectors/get-username';
 import { TProps } from './types';
 import styles from './auth-by-username-form.module.scss';
-import { getLoginForm } from './stores/login-form';
 import { loginFormActions } from './stores/login-form/login-form-slice';
 import { requestLoginByUser } from './stores/login-form/requests/request-login-by-user';
 
@@ -15,11 +17,9 @@ export const AuthByUsernameForm: React.FC<TProps> = ({
   isOpen,
 }) => {
   const dispatch = useAppDispatch();
-  const {
-    username,
-    password,
-    isLoading,
-  } = useSelector(getLoginForm);
+  const username = useSelector(getUsername);
+  const password = useSelector(getPassword);
+  const isLoading = useSelector(getIsLoading);
   const { translation } = useLanguage();
 
   const onUsernameChange = (value: string) => {

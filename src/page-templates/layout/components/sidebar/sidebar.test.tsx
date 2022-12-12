@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react';
+import { componentRender } from '@providers/component-render';
 import { Sidebar } from './sidebar';
-import { componentRender } from '../../../../providers/component-render';
 
 jest.mock('react-i18next', () => ({
   useTranslation: () => ({

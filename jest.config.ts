@@ -40,4 +40,5 @@ export default {
     '\\.s?css$': 'identity-obj-proxy',
     '\\.svg': '<rootDir>configs-project/jest/jest-empty-component.tsx',
   },
+  transformIgnorePatterns: ['node_modules/(?!axios)'],
 };
