@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { THEMES } from '@constants/themes';
-import NotFoundPage from './not-found-page';
+import { NotFoundPage } from './not-found-page';
 
 import { ThemeDecorator } from '../../../configs-project/storybook/decorators/theme-decorator';
 

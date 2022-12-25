@@ -3,8 +3,11 @@
   "sidebar": {
     "language": "Russian",
     "shortLanguage": "ru",
-    "aboutLink": "About page",
-    "mainLink": "Main Page"
+    "links": {
+      "aboutLink": "About page",
+      "mainLink": "Main Page",
+      "profile": "My profile"
+    }
   },
   "navbar": {
     "login": "Login",

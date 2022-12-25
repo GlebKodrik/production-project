@@ -2,8 +2,11 @@
   "sidebar": {
     "language": "English",
     "shortLanguage": "en",
-    "aboutLink": "О страницу",
-    "mainLink": "Основная страница"
+    "links": {
+      "aboutLink": "О страницу",
+      "mainLink": "Основная страница",
+      "profile": "Мой профиль"
+    }
   },
   "notFound": "Страница не найдена",
   "navbar": {

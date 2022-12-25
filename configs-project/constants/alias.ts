@@ -12,7 +12,7 @@ export const ALIAS = {
   '@page-templates': path.resolve(PATHS.SRC_FOLDER, 'page-templates'),
   '@pages': path.resolve(PATHS.SRC_FOLDER, 'pages'),
   '@providers': path.resolve(PATHS.SRC_FOLDER, 'providers'),
-  '@stores': path.resolve(PATHS.SRC_FOLDER, 'redux-stores'),
+  '@stores': path.resolve(PATHS.SRC_FOLDER, 'stores'),
   '@services': path.resolve(PATHS.SRC_FOLDER, 'services'),
   '@shared-components': path.resolve(PATHS.SRC_FOLDER, 'shared-components'),
   '@styles': path.resolve(PATHS.SRC_FOLDER, 'styles'),

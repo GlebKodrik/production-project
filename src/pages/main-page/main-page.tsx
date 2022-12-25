@@ -2,7 +2,7 @@ import React from 'react';
 import { LOCALES } from '@constants/locales';
 import { useLanguage } from '@hooks/use-language';
 
-const MainPage = () => {
+export const MainPage = () => {
   const { translation } = useLanguage(LOCALES.MAIN_PAGE);
   return (
     <div>
@@ -10,5 +10,3 @@ const MainPage = () => {
     </div>
   );
 };
-
-export default MainPage;

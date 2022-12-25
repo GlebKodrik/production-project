@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, ReactNode } from 'react';
 
 type TVariantButton = 'outline' | 'text' | 'clear' | 'square';
 type TColorButton = 'inverted';
@@ -10,4 +10,5 @@ export interface TButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   color?: TColorButton;
   variant?: TVariantButton;
   disabled?: boolean;
+  children: ReactNode;
 }

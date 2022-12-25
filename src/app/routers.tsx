@@ -2,20 +2,10 @@ import React, { Suspense } from 'react';
 import { useRoutes } from 'react-router-dom';
 import { ROUTES_PATH } from '@constants/routers';
 import { LoaderWithOverlay } from '@shared-components/loader-with-overlay';
-import { namedLazy } from '@shared-components/named-lazy';
 import { Layout as PageTemplateLayout } from '@page-templates/layout';
+import { PAGES_COMPONENTS, PAGES_PATH_WITH_COMPONENTS } from './constants/pages';
 
-const AboutPage = namedLazy(() => import('@pages/about-page'), 'AboutPage');
-const MainPage = React.lazy(() => import('@pages/main-page'));
-const NotFoundPage = React.lazy(() => import('@pages/not-found-page'));
-
-const PAGES = {
-  [ROUTES_PATH.ABOUT]: AboutPage,
-  [ROUTES_PATH.BASE]: MainPage,
-  [ROUTES_PATH.PAGE_404]: NotFoundPage,
-};
-
-const getPages = (pages: typeof PAGES) => (
+const getPages = (pages: typeof PAGES_PATH_WITH_COMPONENTS) => (
   Object.entries(pages).map(([path, PageComponent]) => ({
     path,
     element: (
@@ -31,12 +21,12 @@ const Routes = () => useRoutes([
     path: ROUTES_PATH.BASE,
     element: <PageTemplateLayout />,
     children: [
-      ...getPages(PAGES),
+      ...getPages(PAGES_PATH_WITH_COMPONENTS),
     ],
   },
   {
     path: ROUTES_PATH.PAGE_404,
-    element: <NotFoundPage />,
+    element: PAGES_COMPONENTS.NOT_FOUND,
   },
 ]);
 

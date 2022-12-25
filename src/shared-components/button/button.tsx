@@ -4,7 +4,7 @@ import cls from 'classnames';
 import styles from './button.module.scss';
 import { TButtonProps } from './types';
 
-export const Button: React.FC<TButtonProps> = (
+export const Button = React.memo((
   {
     type = 'button',
     className,
@@ -14,7 +14,7 @@ export const Button: React.FC<TButtonProps> = (
     variant = 'clear',
     disabled = false,
     ...otherProps
-  },
+  }: TButtonProps,
 ) => {
   const classes = {
     [styles[`variant-${variant}`]]: Boolean(variant),
@@ -32,4 +32,4 @@ export const Button: React.FC<TButtonProps> = (
       {children}
     </button>
   );
-};
+});

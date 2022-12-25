@@ -4,13 +4,13 @@ import cls from 'classnames';
 import style from './link.module.scss';
 import { TLinkProps } from './types';
 
-export const Link: React.FC<TLinkProps> = ({
+export const Link = React.memo(({
   className,
   color,
   to,
   children,
   ...otherProps
-}) => (
+}: TLinkProps) => (
   <ReactLink
     to={to}
     className={cls(
@@ -22,4 +22,4 @@ export const Link: React.FC<TLinkProps> = ({
   >
     {children}
   </ReactLink>
-);
+));

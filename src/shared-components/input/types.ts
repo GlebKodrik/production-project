@@ -5,5 +5,5 @@ export interface TProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'val
   onChange: (value: string) => void,
   className?: string,
   inputRef?: any,
-  tabIndex?: number
+  tabIndex?: number,
 }

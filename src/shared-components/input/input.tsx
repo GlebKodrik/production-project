@@ -3,7 +3,7 @@ import cn from 'classnames';
 import styles from './input.module.scss';
 import { TProps } from './types';
 
-export const Input: React.FC<TProps> = ({
+export const Input = React.memo(({
   type = 'text',
   inputRef,
   tabIndex,
@@ -12,7 +12,7 @@ export const Input: React.FC<TProps> = ({
   onChange,
   className,
   ...otherProps
-}) => {
+}: TProps) => {
   const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
   };
@@ -37,4 +37,4 @@ export const Input: React.FC<TProps> = ({
       />
     </div>
   );
-};
+});

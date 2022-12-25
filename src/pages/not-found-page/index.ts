@@ -1,3 +1,1 @@
-import NotFoundPage from './not-found-page';
-
-export default NotFoundPage;
+export { NotFoundPage } from './not-found-page';

@@ -3,42 +3,25 @@ import cls from 'classnames';
 import { ThemeSwitcher } from '@feature/theme-switcher';
 import { LanguageSwitcher } from '@feature/language-switcher';
 import { Button } from '@shared-components/button';
-import { Link } from '@shared-components/link';
-import { Icon } from '@shared-components/icon';
-import { useLanguage } from '@hooks/use-language';
+import { SidebarLinks } from '@page-templates/layout/components/sidebar/components';
 import styles from './sidebar.module.scss';
-import { LINKS } from './constants';
 
 export const Sidebar = () => {
   const [collapse, setCollapse] = useState(false);
-  const { translation } = useLanguage();
 
   const onToggleCollapse = () => {
     setCollapse((prev) => !prev);
   };
 
   const renderButtonCollapse = () => (collapse ? '>' : '<');
+
   return (
     <div
       data-testid="sidebar"
       className={cls(styles.sidebar, { [styles.collapse]: collapse })}
     >
       <div className={styles.linkWrapper}>
-        <ul>
-          {LINKS.map(({ name, link, icon }) => (
-            <li key={name}>
-              <Link
-                color="inverted"
-                to={link}
-              >
-                <div className={styles.item}>
-                  <Icon name={icon} className={styles.icon} />
-                  <span className={styles.linkText}>{translation(name)}</span>
-                </div>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <SidebarLinks />
       </div>
 
       <Button

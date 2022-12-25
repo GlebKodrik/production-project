@@ -3,7 +3,7 @@ import React from 'react';
 import { TIconProps } from './types';
 import { ICONS_COMPONENT } from './constants/icon-components';
 
-export const Icon: React.FC<TIconProps> = (
+export const Icon = React.memo((
   {
     name,
     fill,
@@ -11,7 +11,7 @@ export const Icon: React.FC<TIconProps> = (
     width = '24px',
     height = '24px',
     className,
-  },
+  }: TIconProps,
 ) => {
   const IconComponent = ICONS_COMPONENT[name];
 
@@ -24,4 +24,4 @@ export const Icon: React.FC<TIconProps> = (
       className={className}
     />
   );
-};
+});

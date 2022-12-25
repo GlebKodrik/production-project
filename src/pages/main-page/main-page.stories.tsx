@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import MainPage from './main-page';
+import { MainPage } from './main-page';
 
 import { ThemeDecorator } from '../../../configs-project/storybook/decorators/theme-decorator';
 import { THEMES } from '../../constants/themes';

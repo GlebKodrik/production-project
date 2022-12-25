@@ -3,7 +3,7 @@ import { useLanguage } from '@hooks/use-language';
 import styles from './not-found-page.module.scss';
 import { TNotFoundProps } from './types';
 
-const NotFoundPage: React.FC<TNotFoundProps> = ({ text }) => {
+export const NotFoundPage: React.FC<TNotFoundProps> = ({ text }) => {
   const { translation } = useLanguage();
   return (
     <div className={styles.wrapper}>
@@ -11,5 +11,3 @@ const NotFoundPage: React.FC<TNotFoundProps> = ({ text }) => {
     </div>
   );
 };
-
-export default NotFoundPage;

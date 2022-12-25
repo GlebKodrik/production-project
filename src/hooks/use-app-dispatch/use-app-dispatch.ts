@@ -1,4 +1,4 @@
 import { useDispatch } from 'react-redux';
-import { TAppDispatch } from '../../stores/root-store';
+import { TAppDispatch } from '@stores/root-store';
 
-export const useAppDispatch = (): TAppDispatch => useDispatch<TAppDispatch>();
+export const useAppDispatch = () => useDispatch<TAppDispatch>();

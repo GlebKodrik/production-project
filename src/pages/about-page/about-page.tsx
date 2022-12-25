@@ -7,7 +7,7 @@ import { notificationsActions } from '@feature/notifications/stores/notification
 import { useAppDispatch } from '@hooks/use-app-dispatch';
 
 export const AboutPage = () => {
-  const { translation } = useLanguage(LOCALES.ABOUT_PAGE);
+  const { translation } = useLanguage(LOCALES.ABOUT);
   const [state, setState] = useState('');
   const dispatch = useAppDispatch();
 
