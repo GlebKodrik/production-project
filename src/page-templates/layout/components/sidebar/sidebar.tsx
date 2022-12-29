@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import cls from 'classnames';
-import { ThemeSwitcher } from '@feature/theme-switcher';
-import { LanguageSwitcher } from '@feature/language-switcher';
-import { Button } from '@shared-components/button';
-import { SidebarLinks } from '@page-templates/layout/components/sidebar/components';
+import { ThemeSwitcher } from 'feature/theme-switcher';
+import { LanguageSwitcher } from 'feature/language-switcher';
+import { Button } from 'shared-components/button';
+import { SidebarLinks } from 'page-templates/layout/components/sidebar/components';
 import styles from './sidebar.module.scss';
 
 export const Sidebar = () => {

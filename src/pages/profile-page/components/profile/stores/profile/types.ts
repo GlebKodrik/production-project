@@ -1,5 +1,5 @@
-import { TCurrency } from '@constants/currency';
-import { TCountry } from '@constants/country';
+import { TCurrency } from 'constants/currency';
+import { TCountry } from 'constants/country';
 
 export type TProfile = {
   first: string;

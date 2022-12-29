@@ -1,5 +1,5 @@
 import React from 'react';
-import { createReduxStore } from '@stores/root-store';
+import { createReduxStore } from 'redux-stores/root-store';
 import { Provider } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 

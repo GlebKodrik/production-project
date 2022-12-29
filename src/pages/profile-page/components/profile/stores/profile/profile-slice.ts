@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { TProfileSchema } from '@pages/profile-page/components/profile/stores/profile/types';
+import { TProfileSchema } from 'pages/profile-page/components/profile/stores/profile/types';
 
 const initialState: TProfileSchema = {
   readonly: true,

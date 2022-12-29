@@ -1,10 +1,10 @@
 import React from 'react';
 import cls from 'classnames';
-import { useTheme } from '@hooks/use-theme';
+import { useTheme } from 'hooks/use-theme';
 
-import { Button } from '@shared-components/button';
-import { THEMES } from '@constants/themes';
-import { Icon } from '@shared-components/icon';
+import { Button } from 'shared-components/button';
+import { THEMES } from 'constants/themes';
+import { Icon } from 'shared-components/icon';
 
 import { TThemeSwitcher } from './types';
 

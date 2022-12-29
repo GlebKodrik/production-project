@@ -1,4 +1,4 @@
-import { TReduxStateScheme } from '@stores/types/redux-state-scheme';
+import { TReduxStateScheme } from 'redux-stores/types/redux-state-scheme';
 import { NavigateOptions } from 'react-router';
 import { To } from 'react-router-dom';
 

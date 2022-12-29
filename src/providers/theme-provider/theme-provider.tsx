@@ -5,11 +5,11 @@ import cls from 'classnames';
 import {
   ThemeContext,
   ThemeContextProps,
-} from '@contexts/theme-context';
-import { ControlLocalStorage } from '@services/control-local-storage';
-import { TThemes } from '@custom-types/themes';
-import { LOCAL_STORAGE_KEYS } from '@constants/local-storage-keys';
-import { THEMES } from '@constants/themes';
+} from 'contexts/theme-context';
+import { ControlLocalStorage } from 'services/control-local-storage';
+import { TThemes } from 'custom-types/themes';
+import { LOCAL_STORAGE_KEYS } from 'constants/local-storage-keys';
+import { THEMES } from 'constants/themes';
 import { ThemeProviderProps } from './types';
 import styles from './theme-provider.module.scss';
 

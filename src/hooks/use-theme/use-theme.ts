@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import {
   ThemeContext,
-} from '@contexts/theme-context';
-import { THEMES } from '@constants/themes';
-import { TThemes } from '@custom-types/themes';
+} from 'contexts/theme-context';
+import { THEMES } from 'constants/themes';
+import { TThemes } from 'custom-types/themes';
 import { TUseTheme } from './types';
 
 export const useTheme = (): TUseTheme => {

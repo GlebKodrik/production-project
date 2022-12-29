@@ -1,9 +1,9 @@
 import React from 'react';
-import { LINKS } from '@page-templates/layout/components/sidebar/constants';
-import { Link } from '@shared-components/link';
-import styles from '@page-templates/layout/components/sidebar/sidebar.module.scss';
-import { Icon } from '@shared-components/icon';
-import { useLanguage } from '@hooks/use-language';
+import { LINKS } from 'page-templates/layout/components/sidebar/constants';
+import { Link } from 'shared-components/link';
+import styles from 'page-templates/layout/components/sidebar/sidebar.module.scss';
+import { Icon } from 'shared-components/icon';
+import { useLanguage } from 'hooks/use-language';
 
 export const SidebarLinks: React.FC = () => {
   const { translation } = useLanguage();

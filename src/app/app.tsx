@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { useAppDispatch } from '@hooks/use-app-dispatch';
-import { Notifications } from '@feature/notifications';
-import { userActions } from '../stores/redux-stores/user';
+import { useAppDispatch } from 'hooks/use-app-dispatch';
+import { Notifications } from 'feature/notifications';
+import { userActions } from '../redux-stores/redux-stores/user';
 import Routes from './routers';
 
 export const App = () => {

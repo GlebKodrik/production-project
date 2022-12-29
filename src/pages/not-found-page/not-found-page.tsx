@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLanguage } from '@hooks/use-language';
+import { useLanguage } from 'hooks/use-language';
 import styles from './not-found-page.module.scss';
 import { TNotFoundProps } from './types';
 

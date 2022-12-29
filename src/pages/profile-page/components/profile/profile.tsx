@@ -1,8 +1,8 @@
 import React from 'react';
-import { useLanguage } from '@hooks/use-language';
-import { LOCALES } from '@constants/locales';
-import { DynamicModuleLoader, TReducersList } from '@stores/components/dynamic-module-loader';
-import { profileReducer } from '@pages/profile-page/components/profile/stores/profile';
+import { useLanguage } from 'hooks/use-language';
+import { LOCALES } from 'constants/locales';
+import { profileReducer } from 'pages/profile-page/components/profile/stores/profile';
+import { DynamicModuleLoader, TReducersList } from 'redux-stores/components/dynamic-module-loader';
 
 const reducerList: TReducersList[] = [
   { name: 'profile', reducer: profileReducer },

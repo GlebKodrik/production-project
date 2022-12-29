@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
-import { TReduxStoreWithManager } from '@stores/reducer-menager/types/reducer-menager';
+import { TReduxStoreWithManager } from 'redux-stores/reducer-menager/types/reducer-menager';
 import {
   TDynamicModuleLoaderProps,
   TReducersList,
-} from '@stores/components/dynamic-module-loader/types/dynamic-module-loader';
+} from 'redux-stores/components/dynamic-module-loader/types/dynamic-module-loader';
 
 export const DynamicModuleLoader: React.FC<TDynamicModuleLoaderProps> = ({
   children,

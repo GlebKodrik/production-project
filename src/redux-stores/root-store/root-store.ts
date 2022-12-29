@@ -1,9 +1,9 @@
 import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
-import { loginFormReducer } from '@feature/auth/auth-by-username-form/stores/login-form';
-import { notificationsReducer } from '@feature/notifications/stores/notifications/slices/notifications-slice';
-import { createReducerManager } from '@stores/reducer-menager/reducer-menager';
-import { axiosInterceptors } from '@services/axios-interceptors/axios-interceptors';
-import { TCreateReduxStore } from '@stores/root-store/types';
+import { loginFormReducer } from 'feature/auth/auth-by-username-form/stores/login-form';
+import { notificationsReducer } from 'feature/notifications/stores/notifications/slices/notifications-slice';
+import { createReducerManager } from 'redux-stores/reducer-menager/reducer-menager';
+import { axiosInterceptors } from 'services/axios-interceptors/axios-interceptors';
+import { TCreateReduxStore } from 'redux-stores/root-store/types';
 import { TReduxStateScheme } from '../types/redux-state-scheme';
 import { counterReducer } from '../redux-stores/counter';
 import { userReducer } from '../redux-stores/user';

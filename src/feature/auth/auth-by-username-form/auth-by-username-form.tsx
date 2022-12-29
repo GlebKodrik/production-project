@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { useSelector } from 'react-redux';
-import { Button } from '@shared-components/button';
-import { useLanguage } from '@hooks/use-language';
-import { Input } from '@shared-components/input';
-import { useAppDispatch } from '@hooks/use-app-dispatch';
+import { Button } from 'shared-components/button';
+import { useLanguage } from 'hooks/use-language';
+import { Input } from 'shared-components/input';
+import { useAppDispatch } from 'hooks/use-app-dispatch';
 import { getPassword } from './stores/login-form/selectors/get-password';
 import { getIsLoading } from './stores/login-form/selectors/get-is-loading';
 import { getUsername } from './stores/login-form/selectors/get-username';

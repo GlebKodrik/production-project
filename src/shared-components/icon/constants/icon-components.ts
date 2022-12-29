@@ -1,4 +1,4 @@
-import { TIconNames } from '@shared-components/icon';
+import { TIconNames } from 'shared-components/icon';
 import React from 'react';
 import Home from '../images/home.svg';
 import ClarityList from '../images/clarity-list.svg';

@@ -1,11 +1,11 @@
 import axios from 'axios';
-import { userActions } from '@stores/redux-stores/user';
-import { TUser } from '@stores/redux-stores/user/types';
-import { ControlLocalStorage } from '@services/control-local-storage';
-import { LOCAL_STORAGE_KEYS } from '@constants/local-storage-keys';
-import { notificationsActions } from '@feature/notifications/stores/notifications';
-import i18n from '@configs/i18next';
-import { TestAsyncThunk } from '@services/test-async-thunk';
+import { userActions } from 'redux-stores/redux-stores/user';
+import { TUser } from 'redux-stores/redux-stores/user/types';
+import { ControlLocalStorage } from 'services/control-local-storage';
+import { LOCAL_STORAGE_KEYS } from 'constants/local-storage-keys';
+import { notificationsActions } from 'feature/notifications/stores/notifications';
+import i18n from 'configs/i18next';
+import { TestAsyncThunk } from 'services/test-async-thunk';
 import { requestLoginByUser } from './stores/login-form/requests/request-login-by-user';
 
 jest.mock('axios');

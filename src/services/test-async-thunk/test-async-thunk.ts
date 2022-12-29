@@ -1,6 +1,6 @@
 import { Dispatch } from '@reduxjs/toolkit';
-import { TReduxStateScheme } from '@stores/types/redux-state-scheme';
-import { TActionCreate } from '@services/test-async-thunk/types';
+import { TReduxStateScheme } from 'redux-stores/types/redux-state-scheme';
+import { TActionCreate } from 'services/test-async-thunk/types';
 
 export class TestAsyncThunk<Result, Arg, RejectValue> {
   dispatch: Dispatch;
