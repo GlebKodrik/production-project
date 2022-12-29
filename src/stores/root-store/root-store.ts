@@ -2,12 +2,17 @@ import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
 import { loginFormReducer } from '@feature/auth/auth-by-username-form/stores/login-form';
 import { notificationsReducer } from '@feature/notifications/stores/notifications/slices/notifications-slice';
 import { createReducerManager } from '@stores/reducer-menager/reducer-menager';
+import { axiosInterceptors } from '@services/axios-interceptors/axios-interceptors';
+import { TCreateReduxStore } from '@stores/root-store/types';
 import { TReduxStateScheme } from '../types/redux-state-scheme';
 import { counterReducer } from '../redux-stores/counter';
 import { userReducer } from '../redux-stores/user';
 import { FLAGS } from '../../../configs-project/webpack-configs/mode';
 
-export const createReduxStore = (initialState?: TReduxStateScheme) => {
+export const createReduxStore = ({
+  initialState,
+  navigation,
+}: TCreateReduxStore) => {
   const rootReducer: ReducersMapObject<TReduxStateScheme> = {
     counter: counterReducer,
     user: userReducer,
@@ -17,10 +22,18 @@ export const createReduxStore = (initialState?: TReduxStateScheme) => {
 
   const reducerManager = createReducerManager(rootReducer);
 
-  const store = configureStore<TReduxStateScheme>({
+  const store = configureStore({
     reducer: reducerManager.reduce,
     devTools: FLAGS.IS_DEVELOPMENT,
     preloadedState: initialState,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+      thunk: {
+        extraArgument: {
+          api: axiosInterceptors,
+          navigation,
+        },
+      },
+    }),
   });
 
   // @ts-ignore
@@ -29,5 +42,4 @@ export const createReduxStore = (initialState?: TReduxStateScheme) => {
   return store;
 };
 
-export const rootStore = createReduxStore();
 export type TAppDispatch = ReturnType<typeof createReduxStore>['dispatch'];

@@ -10,7 +10,7 @@ export const componentRender = ({ component, options = {}, initialState }: TComp
     route = '/',
   } = options;
 
-  const store = createReduxStore(initialState as TReduxStateScheme);
+  const store = createReduxStore({ initialState: initialState as TReduxStateScheme });
 
   return render(
     <Provider store={store}>

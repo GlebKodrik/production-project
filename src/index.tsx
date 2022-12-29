@@ -3,25 +3,24 @@ import '@styles/global.scss';
 
 import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
 import { App } from '@app';
 import { LoaderWithOverlay } from '@shared-components/loader-with-overlay';
 import { ErrorBoundary } from '@pages/error-boundery-page';
 import { LanguageProvider } from '@providers/language-provider';
 import { ThemeProvider } from '@providers/theme-provider';
-import { rootStore } from '@stores/root-store';
+import { ReduxProvider } from '@providers/redux-provider';
 
 render(
   <BrowserRouter>
     <Suspense fallback={<LoaderWithOverlay />}>
       <ErrorBoundary>
-        <Provider store={rootStore}>
+        <ReduxProvider>
           <LanguageProvider>
             <ThemeProvider>
               <App />
             </ThemeProvider>
           </LanguageProvider>
-        </Provider>
+        </ReduxProvider>
       </ErrorBoundary>
     </Suspense>
   </BrowserRouter>,

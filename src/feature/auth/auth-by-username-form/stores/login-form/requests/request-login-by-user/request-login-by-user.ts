@@ -1,33 +1,33 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 import { notificationsActions } from '@feature/notifications/stores/notifications';
 import i18n from '@configs/i18next';
 import { userActions } from '@stores/redux-stores/user';
 import type { TUser } from '@stores/redux-stores/user/types';
 import { ControlLocalStorage } from '@services/control-local-storage';
 import { LOCAL_STORAGE_KEYS } from '@constants/local-storage-keys';
+import { TThunkConfig } from '@stores/types/thunk-config';
 import { TPropsThunk } from './types';
 
-export const requestLoginByUser = createAsyncThunk<TUser, TPropsThunk, { rejectValue: string }>(
+export const requestLoginByUser = createAsyncThunk<TUser, TPropsThunk, TThunkConfig<string>>(
   'login/requestLoginByUser',
-  async (loginData, thunkAPI) => {
+  async (loginData, { extra, dispatch, rejectWithValue }) => {
     const ERROR_MESSAGE_LOGIN = i18n.t('auth.failedLogin');
 
     try {
-      const response = await axios.post<TUser>('http://localhost:8000/login', loginData);
+      const response = await extra.api.post<TUser>('/login', loginData);
       ControlLocalStorage.setValueLocalStorage(LOCAL_STORAGE_KEYS.AUTH, response.data);
-      thunkAPI.dispatch(userActions.setUser(response.data));
-      thunkAPI.dispatch(notificationsActions.showNotification({
+      dispatch(userActions.setUser(response.data));
+      dispatch(notificationsActions.showNotification({
         severity: 'success',
         message: i18n.t('auth.successfulLogin'),
       }));
       return response.data;
     } catch (error) {
-      thunkAPI.dispatch(notificationsActions.showNotification({
+      dispatch(notificationsActions.showNotification({
         severity: 'error',
         message: ERROR_MESSAGE_LOGIN,
       }));
-      return thunkAPI.rejectWithValue(ERROR_MESSAGE_LOGIN);
+      return rejectWithValue(ERROR_MESSAGE_LOGIN);
     }
   },
 );

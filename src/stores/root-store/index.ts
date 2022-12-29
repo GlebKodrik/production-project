@@ -1,6 +1,6 @@
-import { rootStore, TAppDispatch } from './root-store';
+import { createReduxStore, TAppDispatch } from './root-store';
 
 export {
-  rootStore,
+  createReduxStore,
   TAppDispatch,
 };
