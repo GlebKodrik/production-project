@@ -2,7 +2,6 @@ import path from 'path';
 import { PATHS } from '../webpack-configs/constants/path';
 
 export const ALIAS = {
-  'configs-project': path.resolve(PATHS.ROOT_PATH, 'configs-project'),
   app: path.resolve(PATHS.SRC_FOLDER, 'app'),
   configs: path.resolve(PATHS.SRC_FOLDER, 'configs'),
   constants: path.resolve(PATHS.SRC_FOLDER, 'constants'),
