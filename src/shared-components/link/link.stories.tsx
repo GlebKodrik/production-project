@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Link } from './link';
 
 import { ThemeDecorator } from '../../../configs-project/storybook/decorators/theme-decorator';
-import { ELinkColor } from '../../custom-types/link';
+import { ELinkColor } from '../../types/link';
 import { THEMES } from '../../constants/themes';
 
 export default {

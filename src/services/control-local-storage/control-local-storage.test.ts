@@ -1,4 +1,4 @@
-import { TLocalStorageKeys } from 'custom-types/local-storage-keys';
+import { TLocalStorageKeys } from 'types/local-storage-keys';
 import { ControlLocalStorage } from './control-local-storage';
 
 describe('Testing GetUniqueId', () => {

@@ -4,7 +4,7 @@ import React, {
 } from 'react';
 import { LOCAL_STORAGE_KEYS } from 'constants/local-storage-keys';
 import { useLanguage } from 'hooks/use-language';
-import { TLanguages } from 'custom-types/languages';
+import { TLanguages } from 'types/languages';
 import { TLanguagesProvider } from './types';
 
 export const LanguageProvider: React.FC<TLanguagesProvider> = ({ children }: TLanguagesProvider) => {

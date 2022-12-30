@@ -26,7 +26,7 @@ export default {
     '^@configs(.*)$': '<rootDir>/src/configs$1',
     '^@constants(.*)$': '<rootDir>/src/constants$1',
     '^@contexts(.*)$': '<rootDir>/src/contexts$1',
-    '^@custom-types(.*)$': '<rootDir>/src/custom-types$1',
+    '^@custom-types(.*)$': '<rootDir>/src/types$1',
     '^@feature(.*)$': '<rootDir>/src/feature$1',
     '^@hooks(.*)$': '<rootDir>/src/hooks$1',
     '^@page-templates(.*)$': '<rootDir>/src/page-templates$1',

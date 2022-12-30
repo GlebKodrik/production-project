@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { TLocales } from 'custom-types/locales';
-import { TLanguages } from 'custom-types/languages';
+import { TLocales } from 'types/locales';
+import { TLanguages } from 'types/languages';
 import { TUseLanguage } from './types';
 
 export const useLanguage = (namePageWithTranslate?: TLocales): TUseLanguage => {

@@ -1,6 +1,6 @@
 import { namedLazy } from 'shared-components/named-lazy';
 import { ROUTES_PATH } from 'constants/routers';
-import { TRoutesPath } from 'custom-types/routes';
+import { TRoutesPath } from 'types/routes';
 import { ReactNode } from 'react';
 
 export const PAGES_COMPONENTS: Record<string, ReactNode> = {

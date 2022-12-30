@@ -1,4 +1,4 @@
-import { TThemes } from 'custom-types/themes';
+import { TThemes } from 'types/themes';
 
 export type ThemeContextProps = {
   theme?: TThemes,
