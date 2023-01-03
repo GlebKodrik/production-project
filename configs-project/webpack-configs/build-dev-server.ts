@@ -5,7 +5,10 @@ const buildDevServer = (): DevServerConfiguration => ({
   historyApiFallback: true,
   hot: true,
   client: {
-    overlay: false,
+    overlay: {
+      errors: true,
+      warnings: false,
+    },
   },
 });
 

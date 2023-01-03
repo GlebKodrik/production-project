@@ -32,7 +32,9 @@ const buildPlugins = (): WebpackPluginInstance[] => {
 
   if (FLAGS.IS_DEVELOPMENT) {
     plugins.push(
-      new ReactRefreshWebpackPlugin(),
+      new ReactRefreshWebpackPlugin({
+        overlay: false,
+      }),
     );
   }
 
