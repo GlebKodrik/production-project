@@ -1,4 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {
+  useEffect, useRef, useState,
+} from 'react';
 import ReactDOM from 'react-dom';
 import { TPortalProps } from './types';
 
@@ -13,7 +15,7 @@ const Portal: React.FC<TPortalProps> = ({
     return createdElement;
   });
   const [mounted, setMounted] = useState(false);
-  const ref = useRef(null);
+  const ref = useRef(null) as React.MutableRefObject<any>;
 
   useEffect(() => {
     const element = propElement || document.querySelector('#portal-app') || document.body;

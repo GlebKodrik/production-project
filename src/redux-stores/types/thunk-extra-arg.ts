@@ -4,5 +4,5 @@ import { NavigateOptions } from 'react-router';
 
 export type TThunkExtraArg = {
   api: AxiosInstance,
-  navigation: (to: To, options?: NavigateOptions) => void;
+  navigation?: (to: To, options?: NavigateOptions) => void;
 };

@@ -69,17 +69,51 @@
   }
 }
 
-.inverted {
-  color: var(--inverted-primary-color);
-  background-color: var(--inverted-bg-color);
+.color {
+  &-inverted {
+    color: var(--inverted-primary-color);
+    background-color: var(--inverted-bg-color);
 
-  &.variant {
-    &-outline {
-      border-color: var(--inverted-primary-color);
+    &.variant {
+      &-outline {
+        border-color: var(--inverted-primary-color);
 
-      &:disabled {
-        color: var(--button-disabled-color);
-        border: 1px solid var(--button-disabled-color);
+        &:disabled {
+          color: var(--button-disabled-color);
+          border: 1px solid var(--button-disabled-color);
+        }
+      }
+    }
+  }
+
+  &-primary {
+    color: var(--primary-color);
+    background-color: var(--bg-color);
+
+    &.variant {
+      &-outline {
+        border-color: var(--inverted-primary-color);
+
+        &:disabled {
+          color: var(--button-disabled-color);
+          border: 1px solid var(--button-disabled-color);
+        }
+      }
+    }
+  }
+
+  &-transparent {
+    color: var(--primary-color);
+    background-color: transparent;
+
+    &.variant {
+      &-outline {
+        border-color: var(--inverted-primary-color);
+
+        &:disabled {
+          color: var(--button-disabled-color);
+          border: 1px solid var(--button-disabled-color);
+        }
       }
     }
   }

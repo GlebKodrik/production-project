@@ -32,7 +32,7 @@ export const DynamicModuleLoader: React.FC<TDynamicModuleLoaderProps> = ({
 
   return (
     <>
-      {children}
+      { children }
     </>
   );
 };

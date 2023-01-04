@@ -12,8 +12,8 @@ export const useTheme = (): TUseTheme => {
   const getCurrentTheme = (oldTheme: TThemes): TThemes => (oldTheme === THEMES.DARK ? THEMES.LIGHT : THEMES.DARK);
 
   const toggleTheme = () => {
-    const currentTheme = getCurrentTheme(theme);
-    changeTheme(currentTheme);
+    const currentTheme = getCurrentTheme(theme || 'light');
+    changeTheme?.(currentTheme);
   };
 
   return {

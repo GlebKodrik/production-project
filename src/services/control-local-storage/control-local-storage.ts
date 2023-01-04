@@ -5,7 +5,7 @@ export class ControlLocalStorage {
     const valueLocalStorage = window.localStorage.getItem(localStorageKey);
 
     try {
-      return JSON.parse(valueLocalStorage);
+      return valueLocalStorage && JSON.parse(valueLocalStorage);
     } catch (error) {
       return (valueLocalStorage as T);
     }
@@ -24,7 +24,7 @@ export class ControlLocalStorage {
     try {
       window.localStorage.setItem(localStorageKey, JSON.stringify(value));
     } catch (error) {
-      throw Error(`Error setting localStorage key “${localStorageKey}”:`, error);
+      throw Error(`Error setting localStorage key “${localStorageKey}”`);
     }
   }
 
@@ -32,7 +32,7 @@ export class ControlLocalStorage {
     try {
       window.localStorage.clear();
     } catch (error) {
-      throw Error('Error while deleting everything local storage', error);
+      throw Error('Error while deleting everything local storage');
     }
   }
 
@@ -40,7 +40,7 @@ export class ControlLocalStorage {
     try {
       window.localStorage.removeItem(localStorageKey);
     } catch (error) {
-      throw Error('Error while deleting everything local storage', error);
+      throw Error('Error while deleting everything local storage');
     }
   }
 }

@@ -14,7 +14,9 @@ export const LanguageSwitcher: React.FC<TLanguageSwitcher> = (
 ) => {
   const { changeLanguage, language, translation } = useLanguage();
   const onToggleLanguage = () => {
-    changeLanguage(language === LANGUAGES.RUSSIAN ? LANGUAGES.ENGLISH : LANGUAGES.RUSSIAN);
+    if (changeLanguage) {
+      changeLanguage(language === LANGUAGES.RUSSIAN ? LANGUAGES.ENGLISH : LANGUAGES.RUSSIAN);
+    }
   };
 
   const renderLanguage = () => translation(short ? 'sidebar.shortLanguage' : 'sidebar.language');
@@ -24,6 +26,7 @@ export const LanguageSwitcher: React.FC<TLanguageSwitcher> = (
       variant="clear"
       onClick={onToggleLanguage}
       className={cls(styles.language, className)}
+      color="inverted"
     >
       { renderLanguage() }
     </Button>

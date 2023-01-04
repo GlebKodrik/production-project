@@ -1,3 +1,4 @@
+import React, { Suspense } from 'react';
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
@@ -13,10 +14,12 @@ export const componentRender = ({ component, options = {}, initialState }: TComp
   const store = createReduxStore({ initialState: initialState as TReduxStateScheme });
 
   return render(
-    <Provider store={store}>
-      <MemoryRouter initialEntries={[route]}>
-        {component}
-      </MemoryRouter>
-    </Provider>,
+    <Suspense fallback={<div>Loading... </div>}>
+      <Provider store={store}>
+        <MemoryRouter initialEntries={[route]}>
+          {component}
+        </MemoryRouter>
+      </Provider>
+    </Suspense>,
   );
 };

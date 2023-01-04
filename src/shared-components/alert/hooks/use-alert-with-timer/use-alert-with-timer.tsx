@@ -31,7 +31,9 @@ export const useAlertWithTimer = ({
   }, [startTimer]);
 
   const stopTimerForAutoCloseAlert = useCallback(() => {
-    callsFunctionForAutoClose(stopTimer);
+    if (stopTimer) {
+      callsFunctionForAutoClose(stopTimer);
+    }
   }, [stopTimer]);
 
   const clearTimerForAutoCloseAlert = useCallback(() => {

@@ -1,7 +1,7 @@
 import { TSeverity } from '../../../../shared-components/alert';
 
 export type TNotification = {
-  id?: number | string;
+  id: number | string;
   message: string;
   severity: TSeverity;
 };

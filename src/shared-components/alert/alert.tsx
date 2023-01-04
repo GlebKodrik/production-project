@@ -10,7 +10,7 @@ import { DEFAULT_ANIMATION_IN_SECONDS, DEFAULT_TIME_IN_SECONDS_CLOSING_ALERT, IC
 
 export const Alert: React.FC<TProps> = ({
   severity,
-  onClose,
+  onClose = () => {},
   children,
   autoClose = false,
   isOpen,
@@ -36,7 +36,9 @@ export const Alert: React.FC<TProps> = ({
 
   const onAlertClose = () => {
     onClose();
-    clearTimerForAutoCloseAlert();
+    if (clearTimerForAutoCloseAlert) {
+      clearTimerForAutoCloseAlert();
+    }
   };
 
   const classes = useMemo(() => ({
@@ -44,7 +46,9 @@ export const Alert: React.FC<TProps> = ({
   }), [severity, isOpen]);
 
   const onMouseOverAlert = () => {
-    stopTimerForAutoCloseAlert();
+    if (stopTimerForAutoCloseAlert) {
+      stopTimerForAutoCloseAlert();
+    }
   };
 
   const onMouseOutAlert = () => {

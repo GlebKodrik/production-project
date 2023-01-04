@@ -4,7 +4,7 @@ import { LOCAL_STORAGE_KEYS } from 'constants/local-storage-keys';
 import { TUser, TUserScheme } from './types';
 
 const initialState: TUserScheme = {
-  userData: null,
+  userData: undefined,
   isAuth: false,
 };
 

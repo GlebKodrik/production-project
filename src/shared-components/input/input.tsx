@@ -26,15 +26,17 @@ export const Input = React.memo(({
         </span>
         )
       }
-      <input
-        ref={inputRef}
-        tabIndex={tabIndex}
-        className={cn(styles.input)}
-        type={type}
-        value={value}
-        onChange={onChangeHandler}
-        {...otherProps}
-      />
+      <div>
+        <input
+          ref={inputRef}
+          tabIndex={tabIndex}
+          className={cn(styles.input)}
+          type={type}
+          value={value}
+          onChange={onChangeHandler}
+          {...otherProps}
+        />
+      </div>
     </div>
   );
 });

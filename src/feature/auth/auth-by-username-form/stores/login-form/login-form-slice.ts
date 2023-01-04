@@ -6,7 +6,7 @@ import { requestLoginByUser } from './requests/request-login-by-user';
 const initialState: TLoginFormState = {
   username: '',
   password: '',
-  error: null,
+  error: undefined,
   isLoading: false,
   isAuth: false,
 };
@@ -25,7 +25,7 @@ export const loginFormSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(requestLoginByUser.pending, (state) => {
-        state.error = null;
+        state.error = undefined;
         state.isAuth = false;
         state.isLoading = true;
       })

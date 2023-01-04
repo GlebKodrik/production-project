@@ -1,3 +1,9 @@
 {
-  "title": "profile"
+  "title": "Profile",
+  "failedGetProfile": "Error get profile",
+  "form": {
+    "editProfile": "Edit profile",
+    "name": "Your name",
+    "surname": "Your surname"
+  }
 }

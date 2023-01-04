@@ -6,7 +6,7 @@ import { TLinkProps } from './types';
 
 export const Link = React.memo(({
   className,
-  color,
+  color = 'primary',
   to,
   children,
   ...otherProps

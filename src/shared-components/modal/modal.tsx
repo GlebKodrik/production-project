@@ -46,7 +46,7 @@ const Modal: React.FC<TModalProps> = ({
       window.addEventListener('keydown', onKeyDownHandler);
     }
 
-    if (isOpen === false && isOpenModal === true) {
+    if (!isOpen && isOpenModal) {
       onCloseModal();
     }
 

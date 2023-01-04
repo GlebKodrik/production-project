@@ -12,7 +12,9 @@ export const LanguageProvider: React.FC<TLanguagesProvider> = ({ children }: TLa
 
   const handlerLocalStorage = useCallback((event: StorageEvent) => {
     if (event.key === LOCAL_STORAGE_KEYS.LANG) {
-      changeLanguage(event.newValue as TLanguages);
+      if (changeLanguage) {
+        changeLanguage(event.newValue as TLanguages);
+      }
     }
   }, []);
 

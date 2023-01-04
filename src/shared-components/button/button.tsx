@@ -18,7 +18,7 @@ export const Button = React.memo((
 ) => {
   const classes = {
     [styles[`variant-${variant}`]]: Boolean(variant),
-    [styles[color]]: Boolean(color),
+    [styles[`color-${color || 'transparent'}`]]: Boolean(color),
     [styles[`size-${size}`]]: Boolean(size),
   };
 
