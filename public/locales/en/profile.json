@@ -1,9 +1,17 @@
 {
   "title": "Profile",
+  "editTitle": "Edit profile",
   "failedGetProfile": "Error get profile",
   "form": {
     "editProfile": "Edit profile",
+    "failedPutProfile": "Error at change profile",
+    "cancelEditProfile": "Cancel edit",
+    "saveProfile": "Save profile",
+    "age": "Age",
+    "city": "City",
     "name": "Your name",
-    "surname": "Your surname"
+    "surname": "Your surname",
+    "username": "Input name user",
+    "avatar": "Insert a link to a new avatar"
   }
 }

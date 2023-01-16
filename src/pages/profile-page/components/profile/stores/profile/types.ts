@@ -1,20 +1,21 @@
-import { TCurrency } from 'constants/currency';
-import { TCountry } from 'constants/country';
+import { TCurrency } from 'shared-components/currency/types';
+import { TCountry } from '../../../../../../shared-components/country/types';
 
 export type TProfile = {
-  first: string;
-  lastname: string;
-  age: 22,
-  currency: TCurrency,
-  country: TCountry;
-  city: string,
-  username: string;
-  avatar: string;
+  first?: string;
+  lastname?: string;
+  age?: number;
+  currency?: TCurrency;
+  country?: TCountry;
+  city?: string;
+  username?: string;
+  avatar?: string;
 };
 
 export type TProfileSchema = {
   data?: TProfile;
   isLoading: boolean;
   error?: string;
-  readonly: boolean;
+  isReadOnly: boolean;
+  editForm?: TProfile
 };

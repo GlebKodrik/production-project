@@ -21,9 +21,9 @@ export const Input = React.memo(({
     <div className={cn(styles.wrapper, className)}>
       {
         placeholder && (
-        <span className={styles.placeholder}>
+        <div className={styles.placeholder}>
           {`${placeholder}>`}
-        </span>
+        </div>
         )
       }
       <div>

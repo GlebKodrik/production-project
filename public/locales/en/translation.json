@@ -25,5 +25,7 @@
     "buttonLogin": "Login",
     "successfulLogin": "You have successfully logged in!",
     "failedLogin": "Incorrect login or password!"
-  }
+  },
+  "selectCurrency": "Select currency",
+  "selectCounter": "Select country"
 }

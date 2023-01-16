@@ -1,0 +1,35 @@
+.wrapper {
+  position: relative;
+  z-index: 100;
+}
+
+.avatar {
+  position: relative;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.wrapper::after {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  bottom: 0;
+  left: -6px;
+  z-index: -1;
+  padding: 0;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  border-radius: 50%;
+  box-shadow: 0 5px 10px 2px rgb(34 60 80 / 20%);
+  animation: avatar-animation 3s linear infinite;
+  content: "";
+}
+
+@keyframes avatar-animation {
+  from {
+    transform: rotate(180deg) rotate(180deg);
+  }
+
+  to {
+    transform: rotate(540deg) rotate(540deg);
+  }
+}

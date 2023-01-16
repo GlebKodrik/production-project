@@ -1,9 +1,15 @@
 .wrapper {
+  min-height: 508px;
   padding: 20px;
   border: 2px solid var(--inverted-bg-color);
 
   &Button {
     text-align: right;
+  }
+
+  &-avatar {
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -11,4 +17,38 @@
   margin-bottom: 20px;
   font: var(--font-m);
   font-size: 24px;
+}
+
+.button {
+  &-cancel {
+    margin-right: 20px;
+    color: white;
+    background: red;
+    border: none;
+
+    &:hover {
+      background: #b12828;
+    }
+  }
+}
+
+.edit-input {
+  input {
+    color: black;
+    background: white;
+    border: 2px solid black;
+    border-radius: 4px;
+  }
+}
+
+.input {
+  margin-bottom: 5px;
+
+  input {
+    border: 2px solid transparent;
+  }
+}
+
+.currency {
+  margin-bottom: 7px;
 }

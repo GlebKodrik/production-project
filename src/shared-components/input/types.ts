@@ -1,7 +1,7 @@
 import { InputHTMLAttributes } from 'react';
 
 export interface TProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'> {
-  value: string,
+  value: string | number,
   onChange: (value: string) => void,
   className?: string,
   inputRef?: any,

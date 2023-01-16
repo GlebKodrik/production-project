@@ -25,5 +25,7 @@
     "buttonLogin": "Войти",
     "successfulLogin": "Вы успешно вошли!",
     "failedLogin": "Неправильный логин или пароль!"
-  }
+  },
+  "selectCurrency": "Выберите валюту",
+  "selectCounter": "Выберите страну"
 }

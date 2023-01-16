@@ -1,15 +1,21 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { notificationsActions } from 'feature/notifications/stores/notifications';
 import { TThunkConfig } from 'redux-stores/types/thunk-config';
-import i18n from 'configs/i18next';
 import { LOCALES } from 'constants/locales';
+import i18n from 'i18next';
 import { TProfile } from '../../types';
 
 export const requestGetProfileData = createAsyncThunk<TProfile, void, TThunkConfig<string>>(
   'profile/requestGetProfileData',
   async (_, { extra, dispatch, rejectWithValue }) => {
-    const profileTranslate = i18n.getFixedT(null, LOCALES.PROFILE);
-    const ERROR_GET_PROFILE = profileTranslate('failedGetProfile');
+    let ERROR_GET_PROFILE: string;
+    try {
+      await i18n.loadNamespaces([LOCALES.PROFILE]);
+      const profileTranslate = i18n.getFixedT(null, LOCALES.PROFILE);
+      ERROR_GET_PROFILE = profileTranslate('failedGetProfile');
+    } catch (error) {
+      ERROR_GET_PROFILE = 'Error loading profile';
+    }
 
     try {
       const response = await extra.api.get<TProfile>('/profile');

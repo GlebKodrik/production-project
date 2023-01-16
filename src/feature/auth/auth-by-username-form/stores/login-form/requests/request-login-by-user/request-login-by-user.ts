@@ -10,7 +10,7 @@ import { batch } from 'react-redux';
 import { TPropsThunk } from './types';
 
 export const requestLoginByUser = createAsyncThunk<TUser, TPropsThunk, TThunkConfig<string>>(
-  'login/requestGetProfileData',
+  'login/saveProfileData',
   async (loginData, { extra, dispatch, rejectWithValue }) => {
     const ERROR_MESSAGE_LOGIN = i18n.t('auth.failedLogin');
 
