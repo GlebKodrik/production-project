@@ -17,4 +17,8 @@
   &:focus {
     outline: none;
   }
+
+  &-error {
+    color: red;
+  }
 }

@@ -15,6 +15,7 @@ export const Currency = ({
   onChange,
   isReadOnly = false,
   className,
+  name,
 }: TCurrencyProps) => {
   const { translation } = useLanguage();
   return (
@@ -25,6 +26,7 @@ export const Currency = ({
       options={OPTIONS}
       isReadOnly={isReadOnly}
       className={className}
+      name={name}
     />
   );
 };

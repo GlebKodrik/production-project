@@ -11,6 +11,7 @@ export const Select = React.memo((
     options,
     value,
     onChange,
+    name,
   }: TSelectProps,
 ) => {
   const onSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
@@ -32,6 +33,7 @@ export const Select = React.memo((
         className={styles.select}
         value={value}
         onChange={onSelectChange}
+        name={name}
       >
         {options.map((item) => (
           <option

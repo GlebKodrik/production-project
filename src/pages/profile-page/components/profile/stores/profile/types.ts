@@ -4,7 +4,7 @@ import { TCountry } from '../../../../../../shared-components/country/types';
 export type TProfile = {
   first?: string;
   lastname?: string;
-  age?: number;
+  age?: string;
   currency?: TCurrency;
   country?: TCountry;
   city?: string;

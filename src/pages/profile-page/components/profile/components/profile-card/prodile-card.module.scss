@@ -1,4 +1,5 @@
 .wrapper {
+  position: relative;
   min-height: 508px;
   padding: 20px;
   border: 2px solid var(--inverted-bg-color);
@@ -13,6 +14,13 @@
   }
 }
 
+.loader {
+  position: absolute;
+  top: 0;
+  right: 18px;
+  bottom: 0;
+}
+
 .title {
   margin-bottom: 20px;
   font: var(--font-m);
@@ -23,21 +31,13 @@
   &-cancel {
     margin-right: 20px;
     color: white;
-    background: red;
-    border: none;
+    background: #f61818;
+    border: 1px solid #f61818;
 
     &:hover {
       background: #b12828;
+      border: 1px solid #b12828;
     }
-  }
-}
-
-.edit-input {
-  input {
-    color: black;
-    background: white;
-    border: 2px solid black;
-    border-radius: 4px;
   }
 }
 
@@ -46,6 +46,15 @@
 
   input {
     border: 2px solid transparent;
+    border-radius: 4px;
+  }
+
+  &-edit {
+    input {
+      color: black;
+      background: white;
+      border: 2px solid black;
+    }
   }
 }
 

@@ -11,6 +11,8 @@ export const Input = React.memo(({
   placeholder,
   onChange,
   className,
+  error,
+  name,
   ...otherProps
 }: TProps) => {
   const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
@@ -30,10 +32,11 @@ export const Input = React.memo(({
         <input
           ref={inputRef}
           tabIndex={tabIndex}
-          className={cn(styles.input)}
+          className={cn(styles.input, { [styles.inputError]: Boolean(error) })}
           type={type}
           value={value}
           onChange={onChangeHandler}
+          name={name}
           {...otherProps}
         />
       </div>

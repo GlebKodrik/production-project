@@ -4,7 +4,8 @@ export type TSelectProps = {
   isReadOnly?: boolean,
   onChange: (value: any) => void,
   value: string,
-  options: TOptions[]
+  options: TOptions[],
+  name?: string
 };
 
 export type TOptions = {

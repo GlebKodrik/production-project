@@ -2,7 +2,8 @@ export type TCurrencyProps = {
   value: TCurrency,
   onChange: (value: TCurrency) => void,
   isReadOnly?: boolean,
-  className?: string
+  className?: string,
+  name?: string,
 };
 
 export const CURRENCY = {

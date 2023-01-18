@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { TCurrency } from 'shared-components/currency/types';
 import { TCountry } from 'shared-components/country/types';
 import { requestGetProfileData } from './stores/profile/requests/request-get-profile-data';
-import { ProfileCard } from './components';
+import { ProfileCard } from './components/profile-card';
 import styles from './styles.modules.scss';
 import {
   getIsLoading, getEditForm, getReadOnly, getError,
@@ -33,7 +33,7 @@ export const Profile = () => {
   };
 
   const onInputAgeChange = (value: string) => {
-    dispatch(profileActions.updateProfileData({ age: Number(value) }));
+    dispatch(profileActions.updateProfileData({ age: value }));
   };
 
   const onInputCityChange = (value: string) => {
