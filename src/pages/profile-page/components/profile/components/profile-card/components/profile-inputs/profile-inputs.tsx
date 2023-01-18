@@ -17,6 +17,7 @@ export const ProfileInputs = ({
   onInputAvatarChange,
   setValue,
   errors,
+  isLoading,
 }: TProfileInputProps) => {
   const { translation } = useLanguage(LOCALES.PROFILE);
   const INPUTS = useMemo<TInput[]>(() => [
@@ -62,6 +63,7 @@ export const ProfileInputs = ({
           error={Boolean(errors[name])}
           variant={isReadOnly ? 'plain' : 'outline'}
           color="secondary"
+          disabled={isLoading}
         />
       ))}
     </>

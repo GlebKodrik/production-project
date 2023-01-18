@@ -10,15 +10,17 @@ export interface TInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>,
 | 'name'
 | 'size'
 | 'color'
+| 'disabled'
 > {
   value: string | number,
   onChange: (value: string) => void,
   className?: string,
   inputRef?: any,
   tabIndex?: number,
-  name?: string
-  error?: boolean
-  size?: TSizeInput
-  color?: TColorInput
-  variant?: TVariantInput
+  name?: string,
+  error?: boolean,
+  size?: TSizeInput,
+  color?: TColorInput,
+  variant?: TVariantInput,
+  disabled?: boolean
 }

@@ -37,4 +37,5 @@ export type TProfileInputProps = {
   onInputAgeChange: (value: string) => void;
   onInputAvatarChange: (value: string) => void;
   isReadOnly?: boolean;
+  isLoading?: boolean;
 };

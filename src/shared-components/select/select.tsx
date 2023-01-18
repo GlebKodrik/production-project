@@ -7,11 +7,11 @@ export const Select = React.memo((
   {
     placeholder,
     className,
-    isReadOnly,
     options,
     value,
     onChange,
     name,
+    disabled,
   }: TSelectProps,
 ) => {
   const onSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
@@ -29,7 +29,7 @@ export const Select = React.memo((
         )
       }
       <select
-        disabled={isReadOnly}
+        disabled={disabled}
         className={styles.select}
         value={value}
         onChange={onSelectChange}

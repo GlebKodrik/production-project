@@ -15,7 +15,7 @@ const OPTIONS: TOptions[] = [
 export const Country = ({
   value,
   onChange,
-  isReadOnly = false,
+  disabled,
   className,
 }: TCountryProps) => {
   const { translation } = useLanguage();
@@ -25,7 +25,7 @@ export const Country = ({
       onChange={onChange}
       placeholder={translation('selectCounter')}
       options={OPTIONS}
-      isReadOnly={isReadOnly}
+      disabled={disabled}
       className={className}
     />
   );

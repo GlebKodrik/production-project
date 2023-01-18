@@ -1,8 +1,8 @@
 export type TCountryProps = {
   className?: string,
-  isReadOnly?: boolean,
   value: TCountry,
   onChange: (value: TCountry) => void
+  disabled?: boolean,
 };
 export type TOptions = {
   value: TCountry,

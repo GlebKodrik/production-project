@@ -19,6 +19,10 @@
   &-error {
     color: red;
   }
+
+  &:disabled {
+    opacity: var(--disabled-opacity);
+  }
 }
 
 .color {

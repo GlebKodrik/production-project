@@ -15,6 +15,7 @@ export const Input = React.memo(({
   size = 'medium',
   color = 'primary',
   name,
+  disabled,
   variant = 'plain',
   ...otherProps
 }: TInputProps) => {
@@ -46,6 +47,7 @@ export const Input = React.memo(({
           value={value}
           onChange={onChangeHandler}
           name={name}
+          disabled={disabled}
           {...otherProps}
         />
       </div>

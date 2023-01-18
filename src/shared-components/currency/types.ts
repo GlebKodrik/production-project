@@ -4,6 +4,7 @@ export type TCurrencyProps = {
   isReadOnly?: boolean,
   className?: string,
   name?: string,
+  disabled?: boolean,
 };
 
 export const CURRENCY = {

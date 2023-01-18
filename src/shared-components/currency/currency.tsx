@@ -13,9 +13,9 @@ const OPTIONS: TOptions[] = [
 export const Currency = ({
   value,
   onChange,
-  isReadOnly = false,
   className,
   name,
+  disabled,
 }: TCurrencyProps) => {
   const { translation } = useLanguage();
   return (
@@ -24,9 +24,9 @@ export const Currency = ({
       onChange={onChange}
       placeholder={translation('selectCurrency')}
       options={OPTIONS}
-      isReadOnly={isReadOnly}
       className={className}
       name={name}
+      disabled={disabled}
     />
   );
 };

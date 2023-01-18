@@ -86,18 +86,20 @@ export const ProfileCard = ({
         onInputCityChange={onInputCityChange}
         setValue={setValue}
         errors={errors}
+        isLoading={isLoading}
       />
       <Currency
         onChange={onChangeCurrencyValue}
         value={profileData?.currency || 'RUB'}
         isReadOnly={isReadOnly}
         className={styles.currency}
+        disabled={isReadOnly || isLoading}
       />
       <Country
         value={profileData?.country || 'Russia'}
         onChange={onChangeCountryValue}
-        isReadOnly={isReadOnly}
         className={styles.country}
+        disabled={isReadOnly || isLoading}
       />
       <div className={styles.wrapperButton}>
         <ProfileButton
