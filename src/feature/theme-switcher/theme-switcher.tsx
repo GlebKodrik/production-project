@@ -32,7 +32,7 @@ export const ThemeSwitcher: React.FC<TThemeSwitcher> = ({ className }) => {
   ));
 
   return (
-    <Button onClick={onToggleTheme} variant="clear" className={cls(className)} color="inverted">
+    <Button onClick={onToggleTheme} variant="clear" className={cls(className)}>
       {renderSwitcherIcon()}
     </Button>
   );

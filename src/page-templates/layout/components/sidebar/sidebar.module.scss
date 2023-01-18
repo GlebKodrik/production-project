@@ -2,7 +2,7 @@
   position: relative;
   width: var(--sidebar-width);
   height: calc(100vh - var(--navbar-height));
-  background-color: var(--inverted-bg-color);
+  background-color: var(--secondary-color);
   transition: width 0.4s;
 }
 
@@ -23,7 +23,7 @@
     }
 
     .icon {
-      fill: var(--inverted-primary-color);
+      fill: var(--primary-color);
     }
   }
 
@@ -64,5 +64,7 @@
   position: absolute;
   right: -31px;
   bottom: 32px;
+  z-index: 2;
+  background: var(--secondary-color);
   border-radius: initial;
 }

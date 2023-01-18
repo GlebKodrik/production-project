@@ -40,7 +40,7 @@
 
   &-square {
     padding: 0;
-    background-color: var(--inverted-bg-color);
+    background-color: var(--secondary-color);
 
     &.size {
       &-medium {
@@ -63,12 +63,12 @@
 
 .color {
   &-inverted {
-    color: var(--inverted-primary-color);
-    background-color: var(--inverted-bg-color);
+    color: var(--secondary-color);
+    background-color: var(--secondary-color);
 
     &.variant {
       &-outline {
-        border-color: var(--inverted-primary-color);
+        border-color: var(--secondary-color);
       }
     }
   }
@@ -79,7 +79,7 @@
 
     &.variant {
       &-outline {
-        border-color: var(--inverted-primary-color);
+        border-color: var(--primary-color);
       }
     }
   }
@@ -90,7 +90,7 @@
 
     &.variant {
       &-outline {
-        border-color: var(--inverted-secondary-color);
+        border-color: var(--secondary-color);
       }
     }
   }
@@ -101,7 +101,7 @@
 
     &.variant {
       &-outline {
-        border-color: var(--inverted-primary-color);
+        border-color: var(--secondary-color);
       }
     }
   }

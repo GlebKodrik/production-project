@@ -97,6 +97,7 @@ export const ProfileCard = ({
         value={profileData?.country || 'Russia'}
         onChange={onChangeCountryValue}
         isReadOnly={isReadOnly}
+        className={styles.country}
       />
       <div className={styles.wrapperButton}>
         <ProfileButton

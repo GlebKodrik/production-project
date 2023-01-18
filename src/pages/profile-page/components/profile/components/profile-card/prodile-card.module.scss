@@ -2,9 +2,11 @@
   position: relative;
   min-height: 508px;
   padding: 20px;
-  border: 2px solid var(--inverted-bg-color);
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border: 2px solid var(--secondary-color);
 
-  &Button {
+  &-button {
     text-align: right;
   }
 
@@ -30,13 +32,12 @@
 .button {
   &-cancel {
     margin-right: 20px;
+    padding: 10px;
     color: white;
     background: #f61818;
-    border: 1px solid #f61818;
 
     &:hover {
       background: #b12828;
-      border: 1px solid #b12828;
     }
   }
 }
@@ -45,19 +46,30 @@
   margin-bottom: 5px;
 
   input {
-    border: 2px solid transparent;
     border-radius: 4px;
   }
 
   &-edit {
     input {
-      color: black;
+      color: var(--primary-color);
       background: white;
-      border: 2px solid black;
+      border: 2px solid var(--primary-color);
     }
   }
 }
 
 .currency {
   margin-bottom: 7px;
+}
+
+.currency,
+.country {
+  select {
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+  }
+
+  option {
+    color: var(--primary-color);
+  }
 }

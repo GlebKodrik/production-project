@@ -39,6 +39,7 @@ export const ProfileInputs = ({
       value: profileData.avatar, name: 'avatar', translateText: 'form.avatar', onChange: onInputAvatarChange,
     },
   ], [profileData]);
+
   return (
     <>
       {INPUTS.map(({
@@ -59,6 +60,8 @@ export const ProfileInputs = ({
           className={cn(styles.input, { [styles.inputEdit]: !isReadOnly })}
           name={name}
           error={Boolean(errors[name])}
+          variant={isReadOnly ? 'plain' : 'outline'}
+          color="secondary"
         />
       ))}
     </>

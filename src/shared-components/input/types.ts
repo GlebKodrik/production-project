@@ -1,6 +1,16 @@
 import { InputHTMLAttributes } from 'react';
 
-export interface TProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'name'> {
+type TVariantInput = 'outline' | 'plain';
+type TColorInput = 'inverted' | 'primary' | 'secondary';
+type TSizeInput = 'medium' | 'large' | 'extra-large';
+
+export interface TInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>,
+'value'
+| 'onChange'
+| 'name'
+| 'size'
+| 'color'
+> {
   value: string | number,
   onChange: (value: string) => void,
   className?: string,
@@ -8,4 +18,7 @@ export interface TProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'val
   tabIndex?: number,
   name?: string
   error?: boolean
+  size?: TSizeInput
+  color?: TColorInput
+  variant?: TVariantInput
 }

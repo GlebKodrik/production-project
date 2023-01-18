@@ -2,21 +2,24 @@
   display: flex;
   flex-direction: column;
   width: 400px;
-  caret-color: var(--inverted-primary-color);
+  caret-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .title {
   margin-bottom: 20px;
   padding-bottom: 10px;
+  color: var(--primary-color);
   font-size: 20px;
-  border-bottom: 2px solid var(--inverted-primary-color);
+  border-bottom: 2px solid var(--primary-color);
 }
 
 .input {
   margin-bottom: 10px;
+  color: var(--primary-color);
 
   input {
-    color: var(--inverted-primary-color);
+    color: var(--primary-color);
   }
 
   span {

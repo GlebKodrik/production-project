@@ -26,6 +26,7 @@ export const ProfileButton = ({
     isReadOnly ? (
       <Button
         variant="outline"
+        color="secondary"
         onClick={onButtonEdit}
       >
         {translation('form.editProfile')}
@@ -33,7 +34,7 @@ export const ProfileButton = ({
     ) : (
       <>
         <Button
-          variant="outline"
+          variant="text"
           onClick={onButtonCancelEdit}
           className={styles.buttonCancel}
           disabled={isLoading}
@@ -41,6 +42,7 @@ export const ProfileButton = ({
           {translation('form.cancelEditProfile')}
         </Button>
         <Button
+          color="secondary"
           variant="outline"
           disabled={isLoading}
           type="submit"

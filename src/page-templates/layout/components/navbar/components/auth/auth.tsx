@@ -10,7 +10,7 @@ import Loader from '../../../../../../shared-components/loader';
 import { TAuthProps } from './types';
 
 export const AuthByUsernameModal = namedLazy(
-  () => import('../../../../../../feature/auth/auth-by-username-modal'),
+  () => import('feature/auth/auth-by-username-modal'),
   'AuthByUsernameModal',
 );
 
@@ -40,13 +40,13 @@ const Auth: React.FC<TAuthProps> = () => {
   };
 
   const renderButtonLogout = () => (
-    <Button variant="clear" color="inverted" onClick={onLogout}>
+    <Button variant="clear" onClick={onLogout}>
       { translation('navbar.logout') }
     </Button>
   );
 
   const renderButtonLogin = () => (
-    <Button variant="clear" color="inverted" onClick={onToggleAuthModal}>
+    <Button variant="clear" onClick={onToggleAuthModal}>
       { translation('navbar.login') }
     </Button>
   );

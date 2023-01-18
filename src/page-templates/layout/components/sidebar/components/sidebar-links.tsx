@@ -14,7 +14,6 @@ export const SidebarLinks: React.FC = () => {
   const renderLinks = ({ name, link, icon }: TLinks) => (
     <li key={name}>
       <Link
-        color="inverted"
         to={link}
       >
         <div className={styles.item}>

@@ -41,6 +41,7 @@ const Error: React.FC<TErrorProps> = ({ error }) => {
             <Button
               variant="outline"
               onClick={onGoBackButtonClick}
+              color="secondary"
             >
               {translation('goBackButton')}
             </Button>
@@ -50,6 +51,7 @@ const Error: React.FC<TErrorProps> = ({ error }) => {
             <Button
               onClick={onReloadPage}
               variant="outline"
+              color="secondary"
             >
               {translation('reloadPageButton')}
             </Button>

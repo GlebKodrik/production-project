@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from 'react';
 import cn from 'classnames';
 import styles from './input.module.scss';
-import { TProps } from './types';
+import { TInputProps } from './types';
 
 export const Input = React.memo(({
   type = 'text',
@@ -12,11 +12,20 @@ export const Input = React.memo(({
   onChange,
   className,
   error,
+  size = 'medium',
+  color = 'primary',
   name,
+  variant = 'plain',
   ...otherProps
-}: TProps) => {
+}: TInputProps) => {
   const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
+  };
+
+  const classes = {
+    [styles[`variant-${variant}`]]: Boolean(variant),
+    [styles[`color-${color}`]]: Boolean(color),
+    [styles[`size-${size}`]]: Boolean(size),
   };
 
   return (
@@ -32,7 +41,7 @@ export const Input = React.memo(({
         <input
           ref={inputRef}
           tabIndex={tabIndex}
-          className={cn(styles.input, { [styles.inputError]: Boolean(error) })}
+          className={cn(styles.input, classes, { [styles.inputError]: Boolean(error) })}
           type={type}
           value={value}
           onChange={onChangeHandler}

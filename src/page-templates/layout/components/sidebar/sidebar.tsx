@@ -30,7 +30,6 @@ export const Sidebar = () => {
         onClick={onToggleCollapse}
         className={styles.button}
         size="large"
-        color="inverted"
       >
         { renderButtonCollapse() }
       </Button>

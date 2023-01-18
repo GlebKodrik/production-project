@@ -9,8 +9,8 @@ export const Button = React.memo((
     type = 'button',
     className,
     children,
-    color,
-    size,
+    color = 'primary',
+    size = 'medium',
     variant = 'clear',
     disabled = false,
     ...otherProps

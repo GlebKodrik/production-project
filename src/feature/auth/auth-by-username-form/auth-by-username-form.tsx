@@ -55,7 +55,6 @@ export const AuthByUsernameForm: React.FC<TProps> = ({
         />
         <div className={styles.submit}>
           <Button
-            color="inverted"
             variant="outline"
             type="submit"
             disabled={isLoading}

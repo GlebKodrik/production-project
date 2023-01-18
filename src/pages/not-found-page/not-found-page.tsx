@@ -5,6 +5,7 @@ import { TNotFoundProps } from './types';
 
 export const NotFoundPage: React.FC<TNotFoundProps> = ({ text }) => {
   const { translation } = useLanguage();
+
   return (
     <div className={styles.wrapper}>
       {text || translation('notFound')}

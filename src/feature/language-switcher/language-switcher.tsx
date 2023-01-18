@@ -3,7 +3,6 @@ import cls from 'classnames';
 import { Button } from 'shared-components/button';
 import { LANGUAGES } from 'constants/languages';
 import { useLanguage } from 'hooks/use-language';
-import styles from './language-switcher.module.scss';
 import { TLanguageSwitcher } from './types';
 
 export const LanguageSwitcher: React.FC<TLanguageSwitcher> = (
@@ -25,8 +24,7 @@ export const LanguageSwitcher: React.FC<TLanguageSwitcher> = (
     <Button
       variant="clear"
       onClick={onToggleLanguage}
-      className={cls(styles.language, className)}
-      color="inverted"
+      className={cls(className)}
     >
       { renderLanguage() }
     </Button>
