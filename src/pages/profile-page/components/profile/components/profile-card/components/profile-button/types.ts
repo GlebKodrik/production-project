@@ -1,5 +1,8 @@
+import { TButtonEditOrCancel } from '../../types';
+
 export type TProfileButtonProps = {
   isReadOnly: boolean;
   isLoading: boolean;
-  errors: any
-};
+  errors: any;
+  reset: () => void;
+} & TButtonEditOrCancel;

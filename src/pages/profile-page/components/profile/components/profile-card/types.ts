@@ -7,14 +7,23 @@ export type TProfileCardProps = {
   onProfileSave: () => void;
   isLoading: boolean;
   spinner?: ReactElement;
+  profileEditData?: TProfile;
   profileData?: TProfile;
+  onChangeCurrencyValue: (value: TCurrency) => void;
+  onChangeCountryValue: (value: TCountry) => void;
+  isReadOnly?: boolean;
+} & TButtonEditOrCancel & TInputProps;
+
+export type TButtonEditOrCancel = {
+  onButtonEdit: () => void;
+  onButtonCancelEdit: () => void;
+};
+
+export type TInputProps = {
   onInputNameChange: (value: string) => void;
   onInputSurnameChange: (value: string) => void;
   onInputUsernameChange: (value: string) => void;
   onInputCityChange: (value: string) => void;
   onInputAgeChange: (value: string) => void;
   onInputAvatarChange: (value: string) => void;
-  onChangeCurrencyValue: (value: TCurrency) => void;
-  onChangeCountryValue: (value: TCountry) => void;
-  isReadOnly?: boolean;
 };

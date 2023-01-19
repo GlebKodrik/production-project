@@ -1,7 +1,7 @@
-import { getIsLoading } from './getIsLoading';
-import { getEditForm } from './getEditForm';
-import { getReadOnly } from './getReadOnly';
-import { getError } from './getError';
+import { getIsLoading } from './get-is-loading';
+import { getEditForm } from './get-edit-form';
+import { getReadOnly } from './get-read-only';
+import { getError } from './get-error';
 
 export {
   getIsLoading,

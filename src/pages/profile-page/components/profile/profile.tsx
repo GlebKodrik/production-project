@@ -13,6 +13,7 @@ import {
 } from './stores/profile/selectors';
 
 import { saveProfileData } from './stores/profile/requests/save-profile-data';
+import { getProfileData } from './stores/profile/selectors/get-profile-data';
 
 const reducerList: TReducersList[] = [
   { name: 'profile', reducer: profileReducer },
@@ -20,7 +21,8 @@ const reducerList: TReducersList[] = [
 
 export const Profile: React.FC = () => {
   const dispatch = useAppDispatch();
-  const profileData = useSelector(getEditForm);
+  const profileEditData = useSelector(getEditForm);
+  const profileData = useSelector(getProfileData);
   const isLoading = useSelector(getIsLoading);
   const isReadOnly = useSelector(getReadOnly);
   const error = useSelector(getError);
@@ -55,6 +57,15 @@ export const Profile: React.FC = () => {
     dispatch(profileActions.updateProfileData({ country: value }));
   };
 
+  const onButtonEdit = () => {
+    dispatch(profileActions.changeIsReadOnly(false));
+  };
+
+  const onButtonCancelEdit = () => {
+    dispatch(profileActions.cancelEdit());
+    dispatch(profileActions.changeIsReadOnly(true));
+  };
+
   const onProfileSave = () => {
     dispatch(saveProfileData());
   };
@@ -67,6 +78,8 @@ export const Profile: React.FC = () => {
     <DynamicModuleLoader reducers={reducerList}>
       {!error ? (
         <ProfileCard
+          onButtonEdit={onButtonEdit}
+          onButtonCancelEdit={onButtonCancelEdit}
           onProfileSave={onProfileSave}
           onInputAgeChange={onInputAgeChange}
           onInputCityChange={onInputCityChange}
@@ -76,9 +89,10 @@ export const Profile: React.FC = () => {
           onInputAvatarChange={onInputAvatarChange}
           onChangeCurrencyValue={onChangeCurrencyValue}
           onChangeCountryValue={onChangeCountryValue}
-          profileData={profileData}
+          profileEditData={profileEditData}
           isLoading={isLoading}
           isReadOnly={isReadOnly}
+          profileData={profileData}
         />
       )
         : (

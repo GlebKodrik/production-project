@@ -17,6 +17,7 @@ import NoUser from '../../../../../../assets/image/no-user.png';
 import { TInputValue } from './components/profile-inputs/types';
 
 export const ProfileCard = ({
+  profileEditData,
   profileData,
   onInputNameChange,
   onInputSurnameChange,
@@ -26,6 +27,8 @@ export const ProfileCard = ({
   onChangeCurrencyValue,
   onInputAvatarChange,
   onInputAgeChange,
+  onButtonEdit,
+  onButtonCancelEdit,
   onProfileSave,
   isLoading,
   spinner,
@@ -37,7 +40,7 @@ export const ProfileCard = ({
     handleSubmit,
     setValue,
     formState: { errors },
-    getValues,
+    reset,
   } = useForm<TInputValue>({
     resolver: yupResolver(profileYupScheme()),
     mode: 'onChange',
@@ -50,14 +53,14 @@ export const ProfileCard = ({
     <h1 className={styles.title}>{translation('editTitle')}</h1>
   ));
 
-  if (!profileData) {
+  if (!profileEditData) {
     return null;
   }
 
   const renderAvatar = () => (
     <>
       <div className={cn(styles.wrapperAvatar)}>
-        <Avatar src={profileData.avatar || NoUser} alt="user avatar" border classNames={styles.avatar} />
+        <Avatar src={profileEditData.avatar || NoUser} alt="user avatar" border classNames={styles.avatar} />
       </div>
     </>
   );
@@ -67,7 +70,6 @@ export const ProfileCard = ({
   const onSubmit = () => {
     onProfileSave();
   };
-  console.log(errors, getValues('city'));
 
   return (
     <form className={styles.wrapper} onSubmit={handleSubmit(onSubmit)}>
@@ -79,31 +81,34 @@ export const ProfileCard = ({
         onInputAgeChange={onInputAgeChange}
         isReadOnly={isReadOnly}
         onInputNameChange={onInputNameChange}
-        profileData={profileData}
+        profileData={profileEditData}
         onInputSurnameChange={onInputSurnameChange}
         onInputUsernameChange={onInputUsernameChange}
         onInputCityChange={onInputCityChange}
+        isLoading={isLoading}
         setValue={setValue}
         errors={errors}
-        isLoading={isLoading}
       />
       <Currency
         onChange={onChangeCurrencyValue}
-        value={profileData?.currency || 'RUB'}
+        value={profileEditData?.currency || 'RUB'}
         isReadOnly={isReadOnly}
         className={styles.currency}
         disabled={isReadOnly || isLoading}
       />
       <Country
-        value={profileData?.country || 'Russia'}
+        value={profileEditData?.country || 'Russia'}
         onChange={onChangeCountryValue}
         className={styles.country}
         disabled={isReadOnly || isLoading}
       />
       <div className={styles.wrapperButton}>
         <ProfileButton
+          reset={reset}
           isLoading={isLoading}
           isReadOnly={isReadOnly}
+          onButtonEdit={onButtonEdit}
+          onButtonCancelEdit={onButtonCancelEdit}
           errors={errors}
         />
       </div>

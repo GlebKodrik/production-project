@@ -20,24 +20,33 @@ export const ProfileInputs = ({
   isLoading,
 }: TProfileInputProps) => {
   const { translation } = useLanguage(LOCALES.PROFILE);
+  const {
+    first,
+    lastname,
+    age,
+    city,
+    username,
+    avatar,
+  } = profileData;
+
   const INPUTS = useMemo<TInput[]>(() => [
     {
-      value: profileData.first, name: 'first', translateText: 'form.name', onChange: onInputNameChange,
+      value: first, name: 'first', translateText: 'form.name', onChange: onInputNameChange,
     },
     {
-      value: profileData.lastname, name: 'lastname', translateText: 'form.surname', onChange: onInputSurnameChange,
+      value: lastname, name: 'lastname', translateText: 'form.surname', onChange: onInputSurnameChange,
     },
     {
-      value: profileData.age, name: 'age', translateText: 'form.age', onChange: onInputAgeChange,
+      value: age, name: 'age', translateText: 'form.age', onChange: onInputAgeChange,
     },
     {
-      value: profileData.city, name: 'city', translateText: 'form.city', onChange: onInputCityChange,
+      value: city, name: 'city', translateText: 'form.city', onChange: onInputCityChange,
     },
     {
-      value: profileData.username, name: 'username', translateText: 'form.username', onChange: onInputUsernameChange,
+      value: username, name: 'username', translateText: 'form.username', onChange: onInputUsernameChange,
     },
     {
-      value: profileData.avatar, name: 'avatar', translateText: 'form.avatar', onChange: onInputAvatarChange,
+      value: avatar, name: 'avatar', translateText: 'form.avatar', onChange: onInputAvatarChange,
     },
   ], [profileData]);
 
