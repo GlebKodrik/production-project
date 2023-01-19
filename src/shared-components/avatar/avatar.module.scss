@@ -9,12 +9,12 @@
   border-radius: 50%;
 }
 
-.wrapper::after {
+.border::after {
   position: absolute;
   top: -6px;
   right: -6px;
   bottom: 0;
-  left: -6px;
+  left: -7px;
   z-index: -1;
   padding: 0;
   background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);

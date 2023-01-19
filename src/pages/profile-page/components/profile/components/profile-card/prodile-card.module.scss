@@ -16,6 +16,11 @@
   }
 }
 
+.avatar {
+  min-width: 180px;
+  min-height: 187px;
+}
+
 .loader {
   position: absolute;
   top: 0;
@@ -47,14 +52,6 @@
 
   input {
     border-radius: 4px;
-  }
-
-  &-edit {
-    input {
-      color: var(--primary-color);
-      background: white;
-      border: 2px solid var(--primary-color);
-    }
   }
 }
 

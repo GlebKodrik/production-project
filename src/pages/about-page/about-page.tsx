@@ -20,7 +20,7 @@ export const AboutPage = () => {
     <>
       {translation('about')}
       <button onClick={addAlert}>Добавить алерт</button>
-      <Input value={state} onChange={setState} color="secondary" variant="plain" size="extra-large" />
+      <Input value={state} onChange={setState} color="secondary" variant="outline" size="extra-large" />
       <Counter />
     </>
   );

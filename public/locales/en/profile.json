@@ -13,5 +13,15 @@
     "surname": "Your surname",
     "username": "Input name user",
     "avatar": "Insert a link to a new avatar"
+  },
+  "validation": {
+    "required": "Required value.",
+    "firstMax": "Name entered incorrectly (max. number 20)",
+    "ageMax": "Too big number. (max quantity 2)",
+    "ageOnlyNumber": "Must be a number",
+    "url": "Incorrect link",
+    "username": "Invalid username entered (max number 20)",
+    "city": "City entered incorrectly (max. number 20)",
+    "lastname": "Incorrect surname entered (max. number 20)"
   }
 }

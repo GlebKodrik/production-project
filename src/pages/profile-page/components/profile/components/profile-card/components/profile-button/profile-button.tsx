@@ -10,6 +10,7 @@ import { profileActions } from '../../../../stores/profile';
 export const ProfileButton = ({
   isReadOnly,
   isLoading,
+  errors,
 }: TProfileButtonProps) => {
   const { translation } = useLanguage(LOCALES.PROFILE);
   const dispatch = useAppDispatch();
@@ -22,6 +23,9 @@ export const ProfileButton = ({
     dispatch(profileActions.cancelEdit());
     dispatch(profileActions.changeIsReadOnly(true));
   };
+
+  const isDisableButtonSubmit = Object.keys(errors).length > 0 || isLoading;
+
   return (
     isReadOnly ? (
       <Button
@@ -44,7 +48,7 @@ export const ProfileButton = ({
         <Button
           color="secondary"
           variant="outline"
-          disabled={isLoading}
+          disabled={isDisableButtonSubmit}
           type="submit"
         >
           {translation('form.saveProfile')}

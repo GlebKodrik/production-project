@@ -29,15 +29,17 @@ export const Input = React.memo(({
     [styles[`size-${size}`]]: Boolean(size),
   };
 
+  const renderPlaceholder = () => placeholder && (
+  <div className={styles.placeholder}>
+    {`${placeholder}>`}
+  </div>
+  );
+
+  const renderError = () => error && <div className={styles.errorMessage}>{error}</div>;
+
   return (
     <div className={cn(styles.wrapper, className)}>
-      {
-        placeholder && (
-        <div className={styles.placeholder}>
-          {`${placeholder}>`}
-        </div>
-        )
-      }
+      {renderPlaceholder()}
       <div>
         <input
           ref={inputRef}
@@ -50,6 +52,7 @@ export const Input = React.memo(({
           disabled={disabled}
           {...otherProps}
         />
+        {renderError()}
       </div>
     </div>
   );

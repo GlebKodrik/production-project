@@ -1,4 +1,5 @@
 export type TProfileButtonProps = {
-  isReadOnly?: boolean;
+  isReadOnly: boolean;
   isLoading: boolean;
+  errors: any
 };

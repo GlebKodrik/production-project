@@ -29,12 +29,12 @@
 .severity {
   &-success {
     color: #fff;
-    background-color: var(--severity-background-color-success);
+    background-color: var(--color-success);
   }
 
   &-error {
     color: #fff;
-    background-color: var(--severity-background-color-error);
+    background-color: var(--color-error);
   }
 }
 

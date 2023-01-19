@@ -6,17 +6,15 @@ import { Currency } from 'shared-components/currency';
 import { Country } from 'shared-components/country';
 import Loader from 'shared-components/loader';
 import { useForm } from 'react-hook-form';
-import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import cn from 'classnames';
 import styles from './prodile-card.module.scss';
 import { TProfileCardProps } from './types';
 import { ProfileInputs } from './components/profile-inputs';
 import { ProfileButton } from './components/profile-button';
-
-const schema = yup.object({
-  first: yup.string().max(2, 'минимальное значение'),
-  age: yup.number(),
-});
+import { profileYupScheme } from './validation-profile';
+import NoUser from '../../../../../../assets/image/no-user.png';
+import { TInputValue } from './components/profile-inputs/types';
 
 export const ProfileCard = ({
   profileData,
@@ -39,8 +37,9 @@ export const ProfileCard = ({
     handleSubmit,
     setValue,
     formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
+    getValues,
+  } = useForm<TInputValue>({
+    resolver: yupResolver(profileYupScheme()),
     mode: 'onChange',
     values: profileData,
   });
@@ -55,10 +54,10 @@ export const ProfileCard = ({
     return null;
   }
 
-  const renderAvatar = () => profileData.avatar && (
+  const renderAvatar = () => (
     <>
-      <div className={styles.wrapperAvatar}>
-        <Avatar src={profileData.avatar} alt="user avatar" />
+      <div className={cn(styles.wrapperAvatar)}>
+        <Avatar src={profileData.avatar || NoUser} alt="user avatar" border classNames={styles.avatar} />
       </div>
     </>
   );
@@ -68,7 +67,7 @@ export const ProfileCard = ({
   const onSubmit = () => {
     onProfileSave();
   };
-  console.log(errors);
+  console.log(errors, getValues('city'));
 
   return (
     <form className={styles.wrapper} onSubmit={handleSubmit(onSubmit)}>
@@ -105,6 +104,7 @@ export const ProfileCard = ({
         <ProfileButton
           isLoading={isLoading}
           isReadOnly={isReadOnly}
+          errors={errors}
         />
       </div>
     </form>

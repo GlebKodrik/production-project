@@ -4,7 +4,7 @@ import { TThunkConfig } from 'redux-stores/types/thunk-config';
 import i18n from 'configs/i18next';
 import { LOCALES } from 'constants/locales';
 import { TProfile } from '../../types';
-import { getEditForm } from '../../selectors/getEditForm';
+import { getEditForm } from '../../selectors';
 
 export const saveProfileData = createAsyncThunk<TProfile, void, TThunkConfig<string>>(
   'profile/saveProfileData',

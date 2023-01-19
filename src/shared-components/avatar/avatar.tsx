@@ -1,4 +1,5 @@
 import React, { CSSProperties, useMemo } from 'react';
+import cn from 'classnames';
 import styles from './avatar.module.scss';
 import { TAvatarProps } from './types';
 
@@ -7,6 +8,8 @@ export const Avatar = React.memo((
     size = 180,
     alt,
     src,
+    border = false,
+    classNames,
   }: TAvatarProps,
 ) => {
   const customStyles = useMemo<CSSProperties>(() => ({
@@ -15,7 +18,7 @@ export const Avatar = React.memo((
   }), [size]);
 
   return (
-    <div className={styles.wrapper}>
+    <div className={cn(styles.wrapper, { [styles.border]: border }, classNames)}>
       <img
         src={src}
         alt={alt}

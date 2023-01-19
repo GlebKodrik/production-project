@@ -4,7 +4,7 @@ import { Input } from 'shared-components/input';
 import { useLanguage } from 'hooks/use-language';
 import { LOCALES } from 'constants/locales';
 import styles from '../../prodile-card.module.scss';
-import { TInput, TProfileInputProps } from './types';
+import { TInput, TInputChange, TProfileInputProps } from './types';
 
 export const ProfileInputs = ({
   profileData,
@@ -41,6 +41,17 @@ export const ProfileInputs = ({
     },
   ], [profileData]);
 
+  const variantInput = isReadOnly ? 'plain' : 'outline';
+
+  const onChangeInput = ({
+    inputValue,
+    name,
+    onChange,
+  }: TInputChange) => {
+    setValue(name, inputValue, { shouldValidate: true });
+    onChange(inputValue);
+  };
+
   return (
     <>
       {INPUTS.map(({
@@ -52,16 +63,13 @@ export const ProfileInputs = ({
         <Input
           key={index}
           value={value || ''}
-          onChange={(inputValue: string) => {
-            setValue(name, inputValue, { shouldValidate: true });
-            onChange(inputValue);
-          }}
+          onChange={(inputValue) => onChangeInput({ inputValue, name, onChange })}
           placeholder={translation(translateText)}
           readOnly={isReadOnly}
-          className={cn(styles.input, { [styles.inputEdit]: !isReadOnly })}
+          className={cn(styles.input)}
           name={name}
-          error={Boolean(errors[name])}
-          variant={isReadOnly ? 'plain' : 'outline'}
+          error={errors[name]?.message}
+          variant={variantInput}
           color="secondary"
           disabled={isLoading}
         />

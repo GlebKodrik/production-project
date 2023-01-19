@@ -1,10 +1,10 @@
 @import "~../../node_modules/normalize.css/normalize.css";
 @import "reset";
-@import "color/color";
+@import "./color/color";
 @import "variables";
 @import "mixin";
-@import "themes/dark";
-@import "themes/light";
+@import "./themes/dark";
+@import "./themes/light";
 
 body {
   min-height: 100vh;

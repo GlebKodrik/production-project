@@ -18,7 +18,7 @@ const reducerList: TReducersList[] = [
   { name: 'profile', reducer: profileReducer },
 ];
 
-export const Profile = () => {
+export const Profile: React.FC = () => {
   const dispatch = useAppDispatch();
   const profileData = useSelector(getEditForm);
   const isLoading = useSelector(getIsLoading);
