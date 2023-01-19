@@ -1,7 +1,6 @@
 import webpack, { RuleSetRule } from 'webpack';
 import path from 'path';
 
-import { ResolveOptions } from 'dns';
 import { buildStyleLoader } from '../global-loaders/build-style-loader';
 import { ALIAS } from '../constants/alias';
 
@@ -17,8 +16,8 @@ export default ({ config }: { config: webpack.Configuration }) => {
   config!.resolve!.alias = ALIAS;
 
   // eslint-disable-next-line no-param-reassign
-  const rules = config.module!.rules as RuleSetRule[];
-  config.module!.rules = rules.map((rule) => (
+  let rules = config.module!.rules as RuleSetRule[];
+  rules = rules.map((rule) => (
     /svg/.test(rule.test as string)
       ? { ...rule, exclude: /\.svg$/i }
       : rule
@@ -29,6 +28,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
     use: ['@svgr/webpack'],
   });
   rules.push(buildStyleLoader(true));
+  config!.module!.rules = rules;
 
   return config;
 };

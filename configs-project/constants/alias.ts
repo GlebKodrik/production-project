@@ -17,4 +17,5 @@ export const ALIAS = {
   'shared-components': path.resolve(PATHS.SRC_FOLDER, 'shared-components'),
   styles: path.resolve(PATHS.SRC_FOLDER, 'styles'),
   utils: path.resolve(PATHS.SRC_FOLDER, 'utils'),
+  assets: path.resolve(PATHS.SRC_FOLDER, 'assets'),
 };

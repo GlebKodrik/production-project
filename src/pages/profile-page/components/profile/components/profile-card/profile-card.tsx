@@ -8,12 +8,12 @@ import Loader from 'shared-components/loader';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import cn from 'classnames';
+import NoUser from 'assets/image/no-user.png';
 import styles from './prodile-card.module.scss';
 import { TProfileCardProps } from './types';
 import { ProfileInputs } from './components/profile-inputs';
 import { ProfileButton } from './components/profile-button';
 import { profileYupScheme } from './validation-profile';
-import NoUser from '../../../../../../assets/image/no-user.png';
 import { TInputValue } from './components/profile-inputs/types';
 
 export const ProfileCard = ({
