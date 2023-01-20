@@ -7,7 +7,6 @@ import { TCurrency } from 'shared-components/currency/types';
 import { TCountry } from 'shared-components/country/types';
 import { requestGetProfileData } from './stores/profile/requests/request-get-profile-data';
 import { ProfileCard } from './components/profile-card';
-import styles from './styles.modules.scss';
 import {
   getIsLoading, getEditForm, getReadOnly, getError,
 } from './stores/profile/selectors';
@@ -76,27 +75,24 @@ export const Profile: React.FC = () => {
 
   return (
     <DynamicModuleLoader reducers={reducerList}>
-      {!error ? (
-        <ProfileCard
-          onButtonEdit={onButtonEdit}
-          onButtonCancelEdit={onButtonCancelEdit}
-          onProfileSave={onProfileSave}
-          onInputAgeChange={onInputAgeChange}
-          onInputCityChange={onInputCityChange}
-          onInputSurnameChange={onInputSurnameChange}
-          onInputNameChange={onInputNameChange}
-          onInputUsernameChange={onInputUsernameChange}
-          onInputAvatarChange={onInputAvatarChange}
-          onChangeCurrencyValue={onChangeCurrencyValue}
-          onChangeCountryValue={onChangeCountryValue}
-          profileEditData={profileEditData}
-          isLoading={isLoading}
-          isReadOnly={isReadOnly}
-          profileData={profileData}
-        />
-      )
-        : (
-          <div className={styles.errorText}>Ошибка загрузки профиля😔</div>)}
+      <ProfileCard
+        onButtonEdit={onButtonEdit}
+        onButtonCancelEdit={onButtonCancelEdit}
+        onProfileSave={onProfileSave}
+        onInputAgeChange={onInputAgeChange}
+        onInputCityChange={onInputCityChange}
+        onInputSurnameChange={onInputSurnameChange}
+        onInputNameChange={onInputNameChange}
+        onInputUsernameChange={onInputUsernameChange}
+        onInputAvatarChange={onInputAvatarChange}
+        onChangeCurrencyValue={onChangeCurrencyValue}
+        onChangeCountryValue={onChangeCountryValue}
+        profileEditData={profileEditData}
+        isLoading={isLoading}
+        isProfileDataReceivedSuccessfully={Boolean(error)}
+        isReadOnly={isReadOnly}
+        profileData={profileData}
+      />
     </DynamicModuleLoader>
   );
 };

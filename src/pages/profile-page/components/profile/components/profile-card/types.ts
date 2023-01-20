@@ -5,13 +5,14 @@ import { TProfile } from '../../stores/profile/types';
 
 export type TProfileCardProps = {
   onProfileSave: () => void;
-  isLoading: boolean;
+  isLoading?: boolean;
   spinner?: ReactElement;
   profileEditData?: TProfile;
   profileData?: TProfile;
   onChangeCurrencyValue: (value: TCurrency) => void;
   onChangeCountryValue: (value: TCountry) => void;
   isReadOnly?: boolean;
+  isProfileDataReceivedSuccessfully?: boolean;
 } & TButtonEditOrCancel & TInputProps;
 
 export type TButtonEditOrCancel = {

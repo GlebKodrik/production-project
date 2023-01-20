@@ -30,7 +30,8 @@ export const ProfileCard = ({
   onButtonEdit,
   onButtonCancelEdit,
   onProfileSave,
-  isLoading,
+  isLoading = false,
+  isProfileDataReceivedSuccessfully = false,
   spinner,
   isReadOnly = false,
 }: TProfileCardProps) => {
@@ -47,15 +48,19 @@ export const ProfileCard = ({
     values: profileData,
   });
 
+  if (isProfileDataReceivedSuccessfully) {
+    return <div className={styles.errorText}>Ошибка загрузки профиля😔</div>;
+  }
+
+  if (!profileEditData) {
+    return null;
+  }
+
   const renderTitle = () => (isReadOnly ? (
     <h1 className={styles.title}>{translation('title')}</h1>
   ) : (
     <h1 className={styles.title}>{translation('editTitle')}</h1>
   ));
-
-  if (!profileEditData) {
-    return null;
-  }
 
   const renderAvatar = () => (
     <>

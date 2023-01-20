@@ -9,7 +9,7 @@ import { TCreateReduxStore } from 'redux-stores/root-store/types';
 import { TReduxStateScheme } from '../types/redux-state-scheme';
 import { counterReducer } from '../stores/counter';
 import { userReducer } from '../stores/user';
-import { FLAGS } from '../../../configs-project/webpack-configs/mode';
+import { FLAGS } from '../../../configs-project/webpack-configs/constants/variables';
 
 export const createReduxStore = ({
   initialState,
