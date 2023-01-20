@@ -1,11 +1,11 @@
 import React from 'react';
-import { LINKS_FOR_ALL_USERS, LINKS_FOR_AUTH_USERS, TLinks } from 'page-templates/layout/components/sidebar/constants';
 import { Link } from 'shared-components/link';
 import styles from 'page-templates/layout/components/sidebar/sidebar.module.scss';
 import { Icon } from 'shared-components/icon';
 import { useLanguage } from 'hooks/use-language';
 import { useSelector } from 'react-redux';
 import { getUserAuth } from 'redux-stores/stores/user';
+import { LINKS_FOR_ALL_USERS, LINKS_FOR_AUTH_USERS, TLinks } from './constants';
 
 export const SidebarLinks: React.FC = () => {
   const isAuth = useSelector(getUserAuth);

@@ -1,6 +1,5 @@
 import { AxiosInstance } from 'axios';
-import { To } from 'react-router-dom';
-import { NavigateOptions } from 'react-router';
+import { To, NavigateOptions } from 'react-router-dom';
 
 export type TThunkExtraArg = {
   api: AxiosInstance,

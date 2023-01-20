@@ -3,7 +3,7 @@ import cls from 'classnames';
 import { ThemeSwitcher } from 'feature/theme-switcher';
 import { LanguageSwitcher } from 'feature/language-switcher';
 import { Button } from 'shared-components/button';
-import { SidebarLinks } from 'page-templates/layout/components/sidebar/components';
+import { SidebarLinks } from './components/sidebar-link';
 import styles from './sidebar.module.scss';
 
 export const Sidebar = () => {
