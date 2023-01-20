@@ -16,27 +16,15 @@ export default {
 
 const Template: ComponentStory<typeof Link> = (args) => <Link {...args} />;
 
-export const ColorPrimary = Template.bind({});
-ColorPrimary.args = {
-  children: 'Link',
-  color: ELinkColor.PRIMARY,
-};
-
-export const ColorInverted = Template.bind({});
-ColorInverted.args = {
-  children: 'Link',
-  color: ELinkColor.INVERTED,
-};
-
-export const ColorSecondary = Template.bind({});
-ColorSecondary.args = {
+export const LinkComponent = Template.bind({});
+LinkComponent.args = {
   children: 'Link',
   color: ELinkColor.SECONDARY,
 };
 
-export const ColorPrimaryWithThemeDark = Template.bind({});
-ColorPrimaryWithThemeDark.args = {
+export const ColorWithThemeDark = Template.bind({});
+ColorWithThemeDark.args = {
   children: 'Link',
-  color: ELinkColor.PRIMARY,
+  color: ELinkColor.SECONDARY,
 };
-ColorPrimaryWithThemeDark.decorators = [ThemeDecorator(THEMES.DARK)];
+ColorWithThemeDark.decorators = [ThemeDecorator(THEMES.DARK)];

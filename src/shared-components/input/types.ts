@@ -1,7 +1,7 @@
 import { InputHTMLAttributes } from 'react';
 
 type TVariantInput = 'outline' | 'plain';
-type TColorInput = 'inverted' | 'primary' | 'secondary';
+type TColorInput = 'primary' | 'secondary';
 type TSizeInput = 'medium' | 'large' | 'extra-large';
 
 export interface TInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>,

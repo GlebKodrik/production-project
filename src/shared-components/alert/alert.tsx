@@ -1,15 +1,15 @@
 import React, { useEffect, useMemo } from 'react';
 
 import cls from 'classnames';
-import { TProps, TSeverity } from './types';
+import { TAlertProps, TSeverity } from './types';
 import styles from './alert.module.scss';
 import { Button } from '../button';
 import { Icon, TIconNames } from '../icon';
 import { useAlertWithTimer } from './hooks/use-alert-with-timer';
 import { DEFAULT_ANIMATION_IN_SECONDS, DEFAULT_TIME_IN_SECONDS_CLOSING_ALERT, ICON_NAME_SEVERITY } from './constants';
 
-export const Alert: React.FC<TProps> = ({
-  severity,
+export const Alert: React.FC<TAlertProps> = ({
+  severity = 'success',
   onClose = () => {},
   children,
   autoClose = false,

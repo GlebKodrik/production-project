@@ -7,58 +7,22 @@ import { TButtonProps } from './types';
 import { THEMES } from '../../constants/themes';
 
 export default {
-  title: 'shared-components/Select',
+  title: 'shared-components/Button',
   component: Button,
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args: TButtonProps) => <Button {...args} />;
+const Template: ComponentStory<typeof Button> = (args: TButtonProps) => <Button {...args}>Привет</Button>;
 
-export const VariantClear = Template.bind({});
-VariantClear.args = {
-  children: 'Button',
+export const ButtonComponent = Template.bind({});
+ButtonComponent.args = {
   variant: 'clear',
+  color: 'secondary',
 };
 
-export const VariantText = Template.bind({});
-VariantText.args = {
-  children: 'Button',
-  variant: 'text',
-};
-
-export const VariantOutLine = Template.bind({});
-VariantOutLine.args = {
+export const ButtonWithThemeDark = Template.bind({});
+ButtonWithThemeDark.args = {
   children: 'Button',
   variant: 'outline',
+  color: 'secondary',
 };
-
-export const VariantOutLineDisabled = Template.bind({});
-VariantOutLineDisabled.args = {
-  children: 'Button',
-  variant: 'outline',
-  disabled: true,
-};
-
-export const VariantOutLineWithThemeDark = Template.bind({});
-VariantOutLineWithThemeDark.args = {
-  children: 'Button',
-  variant: 'outline',
-};
-VariantOutLineWithThemeDark.decorators = [ThemeDecorator(THEMES.DARK)];
-
-export const SizeMediumWithVariantClear = Template.bind({});
-SizeMediumWithVariantClear.args = {
-  children: 'Button',
-  size: 'medium',
-};
-
-export const SizeLargeWithVariantClear = Template.bind({});
-SizeLargeWithVariantClear.args = {
-  children: 'Button',
-  size: 'large',
-};
-
-export const SizeExtraLargeWithVariantClear = Template.bind({});
-SizeExtraLargeWithVariantClear.args = {
-  children: 'Button',
-  size: 'extra-large',
-};
+ButtonWithThemeDark.decorators = [ThemeDecorator(THEMES.DARK)];

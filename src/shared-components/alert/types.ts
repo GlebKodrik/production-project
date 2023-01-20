@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 export type TSeverity = 'success' | 'error';
 
-export type TProps = {
+export type TAlertProps = {
   onClose?: Function;
   severity: TSeverity;
   children: ReactNode;
