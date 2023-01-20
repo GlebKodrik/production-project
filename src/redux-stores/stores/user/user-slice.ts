@@ -6,6 +6,7 @@ import { TUser, TUserScheme } from './types';
 const initialState: TUserScheme = {
   userData: undefined,
   isAuth: false,
+  mounted: false,
 };
 
 export const userSlice = createSlice({
@@ -24,6 +25,7 @@ export const userSlice = createSlice({
       } else {
         state.isAuth = false;
       }
+      state.mounted = true;
     },
     logout: (state) => {
       state.isAuth = false;
