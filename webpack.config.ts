@@ -18,6 +18,7 @@ const config: Configuration = {
     filename: '[name].js',
     path: PATHS.DIST_FOLDER,
     clean: true,
+    publicPath: '/',
   },
   plugins: buildPlugins(),
   module: {

@@ -8,6 +8,7 @@ import ErrorOutline from '../images/error-outline.svg';
 import ThemeDark from '../images/theme-dark.svg';
 import ThemeLight from '../images/theme-light.svg';
 import Profile from '../images/profile.svg';
+import Article from '../images/article-20-20.svg';
 
 import { ICON_NAMES } from './icon-names';
 
@@ -21,4 +22,5 @@ export const ICONS_COMPONENT: Record<TIconNames, React.VFC<React.SVGProps<SVGSVG
   [ICON_NAMES.THEME_DARK]: ThemeDark,
   [ICON_NAMES.ERROR_OUTLINE]: ErrorOutline,
   [ICON_NAMES.PROFILE]: Profile,
+  [ICON_NAMES.ARTICLE]: Article,
 };

@@ -22,4 +22,7 @@ export const LINKS_FOR_AUTH_USERS: TLinks[] = [
   {
     name: 'sidebar.links.profile', link: ROUTES_PATH.PROFILE, icon: ICON_NAMES.PROFILE,
   },
+  {
+    name: 'sidebar.links.articles', link: ROUTES_PATH.ARTICLE, icon: ICON_NAMES.ARTICLE,
+  },
 ];

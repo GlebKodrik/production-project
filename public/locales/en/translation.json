@@ -6,7 +6,8 @@
     "links": {
       "aboutLink": "About page",
       "mainLink": "Main Page",
-      "profile": "My profile"
+      "profile": "My profile",
+      "articles": "Articles"
     }
   },
   "navbar": {

@@ -3,7 +3,7 @@ import { useRoutes } from 'react-router-dom';
 import { ROUTES_PATH } from 'constants/routers';
 import { LoaderWithOverlay } from 'shared-components/loader-with-overlay';
 import { Layout as PageTemplateLayout } from 'page-templates/layout';
-import { PAGES_COMPONENTS, PAGES_PATH_WITH_COMPONENTS } from './constants/pages';
+import { ASYNC_PAGES, PAGES_COMPONENTS } from './constants/pages';
 import { TPagesPathWithComponents, TRenderElement } from './types';
 import { PrivateWrapper } from './components/private-route';
 
@@ -39,12 +39,12 @@ const Routes = () => useRoutes([
     path: ROUTES_PATH.BASE,
     element: <PageTemplateLayout />,
     children: [
-      ...getPages(PAGES_PATH_WITH_COMPONENTS),
+      ...getPages(PAGES_COMPONENTS),
     ],
   },
   {
     path: ROUTES_PATH.PAGE_404,
-    element: PAGES_COMPONENTS.PAGE_404,
+    element: ASYNC_PAGES.PAGE_404,
   },
 ]);
 
