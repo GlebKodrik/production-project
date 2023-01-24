@@ -29,10 +29,11 @@ export const loginFormSlice = createSlice({
         state.isAuth = false;
         state.isLoading = true;
       })
-      .addCase(requestLoginByUser.fulfilled, (state, action) => {
+      .addCase(requestLoginByUser.fulfilled, (state) => {
         state.isLoading = false;
         state.isAuth = true;
-        console.log(action);
+        state.username = '';
+        state.password = '';
       })
       .addCase(requestLoginByUser.rejected, (state, action) => {
         state.isLoading = false;

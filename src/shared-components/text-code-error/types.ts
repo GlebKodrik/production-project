@@ -1,6 +1,6 @@
 import * as CSS from 'csstype';
 
-export type TextCodeErrorProps = {
+export type TTextCodeErrorProps = {
   children: string,
   maxHeight?: CSS.Property.MaxHeight<string>,
 };

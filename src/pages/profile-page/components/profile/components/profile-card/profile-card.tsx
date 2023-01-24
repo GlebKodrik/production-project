@@ -8,15 +8,14 @@ import Loader from 'shared-components/loader';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import cn from 'classnames';
-import NoUser from 'assets/image/no-user.png';
+import { Typography } from 'shared-components/typography';
+import { LoaderWithOverlay } from 'shared-components/loader-with-overlay';
 import styles from './prodile-card.module.scss';
 import { TProfileCardProps } from './types';
 import { ProfileInputs } from './components/profile-inputs';
 import { ProfileButton } from './components/profile-button';
 import { profileYupScheme } from './validation-profile';
 import { TInputValue } from './components/profile-inputs/types';
-import { Typography } from '../../../../../../shared-components/typography';
-import { LoaderWithOverlay } from '../../../../../../shared-components/loader-with-overlay';
 
 export const ProfileCard = ({
   profileEditData,
@@ -51,7 +50,7 @@ export const ProfileCard = ({
   });
 
   if (isProfileDataReceivedSuccessfully) {
-    return <Typography color="secondary" size="large">Ошибка загрузки профиля😔</Typography>;
+    return <Typography color="secondary" size="medium-large">{translation('errorLoadProfile')}</Typography>;
   }
 
   if (isLoading) {
@@ -72,7 +71,7 @@ export const ProfileCard = ({
     <>
       <div className={cn(styles.wrapperAvatar)}>
         <Avatar
-          src={profileEditData.avatar || NoUser}
+          src={profileEditData.avatar}
           alt="user avatar"
           border
           className={styles.avatar}

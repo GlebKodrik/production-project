@@ -5,11 +5,11 @@ import { useSelector } from 'react-redux';
 import { getArticle, getArticleError, getArticleIsLoading } from 'redux-stores/stores/articles/selectors';
 import { Avatar } from 'shared-components/avatar';
 import { Icon } from 'shared-components/icon';
-import { EArticleBlockType, TArticleBlock } from 'entities/articles/types';
-import { ArticleImageBlock } from 'entities/articles/components/article-image-block';
-import { ArticleCodeBlock } from 'entities/articles/components/article-code-block';
+import { EArticleBlockType, TArticleBlock } from 'pages/articles/types';
+import { ArticleImageBlock } from 'pages/articles/components/article-image-block';
+import { ArticleCodeBlock } from 'pages/articles/components/article-code-block';
 import cn from 'classnames';
-import { ArticleTextBlock } from '../../../../../../entities/articles/components/article-text-block';
+import { ArticleTextBlock } from '../../../../../components/article-text-block';
 import { ArticleDetailContentSkeleton } from './components/article-detail-content-skeleton';
 import styles from './article-detail-content.module.scss';
 
@@ -24,7 +24,7 @@ export const ArticleDetailContent: React.FC = () => {
   }
 
   if (error) {
-    return <Typography color="secondary">{translation('article.errorArticleById')}</Typography>;
+    return <Typography color="secondary" size="medium-large">{translation('article.errorArticleById')}</Typography>;
   }
 
   const renderBlock = (block: TArticleBlock) => {

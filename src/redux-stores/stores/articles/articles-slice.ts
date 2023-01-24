@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { TArticleScheme } from './types';
 import { requestGetArticleById } from './requests/request-get-article-by-id';
-import { TArticle } from '../../../entities/articles/types';
+import { TArticle } from '../../../pages/articles/types';
 
 const initialState: TArticleScheme = {
   isLoading: false,

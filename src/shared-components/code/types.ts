@@ -1,7 +1,8 @@
-import { ReactNode } from 'react';
-
 export type TCodeProps = {
-  children: ReactNode,
-  color?: 'primary' | 'secondary'
-  className?: string
+  children: string,
+  color?: 'primary' | 'secondary',
+  className?: string,
+  isCopy?: boolean,
+  errorMessage?: string,
+  successMessage?: string,
 };

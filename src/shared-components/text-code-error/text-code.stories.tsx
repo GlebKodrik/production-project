@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from '../../../configs-project/storybook/decorators/theme-decorator';
 import { THEMES } from '../../constants/themes';
 import TextCodeError from './text-code-error';
-import { TextCodeErrorProps } from './types';
+import { TTextCodeErrorProps } from './types';
 
 export default {
   title: 'shared-components/TextCodeError',
@@ -12,7 +12,7 @@ export default {
 } as ComponentMeta<typeof TextCodeError>;
 
 const Template: ComponentStory<typeof TextCodeError> = (
-  args: TextCodeErrorProps,
+  args: TTextCodeErrorProps,
 ) => <TextCodeError {...args}>Ошибка загрузки</TextCodeError>;
 
 export const TextCodeErrorComponent = Template.bind({});

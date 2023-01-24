@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { notificationsActions } from 'feature/notifications/stores/notifications';
 import i18n from 'configs/i18next';
 import { TThunkConfig } from 'redux-stores/types/thunk-config';
-import { TArticle } from 'entities/articles/types';
+import { TArticle } from 'pages/articles/types';
 
 export const requestGetArticleById = createAsyncThunk<TArticle, string, TThunkConfig<string>>(
   'article/requestGetArticleByI',

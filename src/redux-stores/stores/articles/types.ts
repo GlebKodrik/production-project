@@ -1,4 +1,4 @@
-import { TArticle } from 'entities/articles/types';
+import { TArticle } from 'pages/articles/types';
 
 export type TArticleScheme = {
   isLoading: boolean,

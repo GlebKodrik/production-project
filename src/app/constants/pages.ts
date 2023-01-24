@@ -5,8 +5,8 @@ import { TPagesPathWithComponents } from '../types';
 export const ASYNC_PAGES = {
   ABOUT: namedLazy(() => import('pages/about-page'), 'AboutPage'),
   PROFILE: namedLazy(() => import('pages/profile-page'), 'ProfilePage'),
-  ARTICLE_DETAIL: namedLazy(() => import('pages/article-detail-page'), 'ArticleDetailPage'),
-  ARTICLE: namedLazy(() => import('pages/articles-page'), 'ArticlesPage'),
+  ARTICLE_DETAIL: namedLazy(() => import('../../pages/articles/article-detail-page'), 'ArticleDetailPage'),
+  ARTICLE: namedLazy(() => import('../../pages/articles/articles-page'), 'ArticlesPage'),
   BASE: namedLazy(() => import('pages/main-page'), 'MainPage'),
   PAGE_404: namedLazy(() => import('pages/not-found-page'), 'NotFoundPage'),
 } as const;

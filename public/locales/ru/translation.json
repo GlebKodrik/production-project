@@ -17,7 +17,10 @@
   },
   "auth": {
     "form": {
-      "authorization": "Форма авторизации"
+      "authorization": "Форма авторизации",
+      "validation": {
+        "maxValue": "Слишнком большое значение (макс. 20)"
+      }
     },
     "placeholder": {
       "username": "Введите логин",
@@ -32,5 +35,8 @@
   "article": {
     "errorRequestGetArticleById": "Ошибка получения статьи",
     "errorArticleById": "Произошла ошибка при получении статьи\uD83D\uDE1E"
+  },
+  "validationGlobal": {
+    "required": "Обязательное поле"
   }
 }

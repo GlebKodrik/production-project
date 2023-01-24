@@ -2,6 +2,7 @@
   "title": "Profile",
   "editTitle": "Edit profile",
   "failedGetProfile": "Error get profile",
+  "errorLoadProfile": "Profile loading error\uD83D\uDE14",
   "form": {
     "editProfile": "Edit profile",
     "failedPutProfile": "Error at change profile",
@@ -15,7 +16,7 @@
     "avatar": "Insert a link to a new avatar"
   },
   "validation": {
-    "required": "Required value.",
+    "required": "Required value",
     "firstMax": "Name entered incorrectly (max. number 20)",
     "ageMax": "Too big number. (max quantity 2)",
     "ageOnlyNumber": "Must be a number",
