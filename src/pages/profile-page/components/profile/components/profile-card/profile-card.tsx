@@ -57,7 +57,7 @@ export const ProfileCard = ({
     return <LoaderWithOverlay />;
   }
 
-  if (!profileEditData) {
+  if (!profileData || !profileEditData) {
     return null;
   }
 
