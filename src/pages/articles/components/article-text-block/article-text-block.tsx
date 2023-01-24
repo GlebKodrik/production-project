@@ -10,6 +10,10 @@ export const ArticleTextBlock = React.memo((
     className,
   }: TArticleTextBlockProps,
 ) => {
+  if (!paragraphs && !title) {
+    return null;
+  }
+
   const renderParagraphs = (paragraph: string, index: number) => (
     <Typography
       key={index}

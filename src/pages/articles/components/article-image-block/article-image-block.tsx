@@ -8,9 +8,15 @@ export const ArticleImageBlock = React.memo(({
   className,
   src,
   title,
-}: TArticleImageBlockProps) => (
-  <section className={cn(styles.wrapper, className)}>
-    <img src={src} alt="article" className={styles.image} />
-    {title && <Typography color="secondary">{title}</Typography>}
-  </section>
-));
+}: TArticleImageBlockProps) => {
+  if (!src && !title) {
+    return null;
+  }
+
+  return (
+    <section className={cn(styles.wrapper, className)}>
+      <img src={src} alt="article" className={styles.image} />
+      {title && <Typography color="secondary">{title}</Typography>}
+    </section>
+  );
+});

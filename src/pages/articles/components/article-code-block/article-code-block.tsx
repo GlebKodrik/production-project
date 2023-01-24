@@ -9,6 +9,11 @@ export const ArticleCodeBlock = React.memo(({
   code,
 }: TArticleCodeBlockProps) => {
   const { translation } = useLanguage(LOCALES.ARTICLE_PAGE);
+
+  if (!code) {
+    return null;
+  }
+
   return (
     <section className={className}>
       <Code
