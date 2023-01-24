@@ -15,6 +15,8 @@ import { ProfileInputs } from './components/profile-inputs';
 import { ProfileButton } from './components/profile-button';
 import { profileYupScheme } from './validation-profile';
 import { TInputValue } from './components/profile-inputs/types';
+import { Typography } from '../../../../../../shared-components/typography';
+import { LoaderWithOverlay } from '../../../../../../shared-components/loader-with-overlay';
 
 export const ProfileCard = ({
   profileEditData,
@@ -35,7 +37,7 @@ export const ProfileCard = ({
   spinner,
   isReadOnly = false,
 }: TProfileCardProps) => {
-  const { translation } = useLanguage(LOCALES.PROFILE);
+  const { translation } = useLanguage(LOCALES.PROFILE_PAGE);
 
   const {
     handleSubmit,
@@ -49,7 +51,11 @@ export const ProfileCard = ({
   });
 
   if (isProfileDataReceivedSuccessfully) {
-    return <div className={styles.errorText}>Ошибка загрузки профиля😔</div>;
+    return <Typography color="secondary" size="large">Ошибка загрузки профиля😔</Typography>;
+  }
+
+  if (isLoading) {
+    return <LoaderWithOverlay />;
   }
 
   if (!profileEditData) {
@@ -65,7 +71,12 @@ export const ProfileCard = ({
   const renderAvatar = () => (
     <>
       <div className={cn(styles.wrapperAvatar)}>
-        <Avatar src={profileEditData.avatar || NoUser} alt="user avatar" border classNames={styles.avatar} />
+        <Avatar
+          src={profileEditData.avatar || NoUser}
+          alt="user avatar"
+          border
+          className={styles.avatar}
+        />
       </div>
     </>
   );

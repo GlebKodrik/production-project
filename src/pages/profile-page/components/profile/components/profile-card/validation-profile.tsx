@@ -3,7 +3,7 @@ import { LOCALES } from 'constants/locales';
 import { useLanguage } from 'hooks/use-language';
 
 const profileYupScheme = () => {
-  const { translation } = useLanguage(LOCALES.PROFILE);
+  const { translation } = useLanguage(LOCALES.PROFILE_PAGE);
 
   return yup.object().shape({
     first: yup.string()

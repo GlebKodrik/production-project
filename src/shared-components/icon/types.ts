@@ -4,7 +4,7 @@ export type TIconNames = typeof ICON_NAMES[keyof typeof ICON_NAMES];
 
 export type TIconProps = {
   name: TIconNames,
-  fill?: string,
+  fill?: 'secondary' | 'primary' | string,
   opacity?: number;
   width?: string;
   height?: string;

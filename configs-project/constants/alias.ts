@@ -18,4 +18,5 @@ export const ALIAS = {
   styles: path.resolve(PATHS.SRC_FOLDER, 'styles'),
   utils: path.resolve(PATHS.SRC_FOLDER, 'utils'),
   assets: path.resolve(PATHS.SRC_FOLDER, 'assets'),
+  entities: path.resolve(PATHS.SRC_FOLDER, 'entities'),
 };

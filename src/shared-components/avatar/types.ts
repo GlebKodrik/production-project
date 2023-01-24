@@ -3,5 +3,5 @@ export type TAvatarProps = {
   alt?: string,
   src: string,
   border?: boolean,
-  classNames?: string
+  className?: string
 };

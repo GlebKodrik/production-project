@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const ArticlePage: React.FC = () => {
+export const ArticlesPage: React.FC = () => {
   console.log();
   return (
     <div>

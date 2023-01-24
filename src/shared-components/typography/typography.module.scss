@@ -1,0 +1,31 @@
+.typography {
+  color: var(--primary-color);
+}
+
+.color {
+  &-primary {
+    color: var(--primary-color);
+  }
+
+  &-secondary {
+    color: var(--secondary-color);
+  }
+}
+
+.size {
+  &-medium {
+    font: var(--font-m);
+  }
+
+  &-medium-large {
+    font: var(--font-ml);
+  }
+
+  &-large {
+    font: var(--font-l);
+  }
+
+  &-extra-large {
+    font: var(--font-xl);
+  }
+}

@@ -10,8 +10,8 @@ export const requestGetProfileData = createAsyncThunk<TProfile, void, TThunkConf
   async (_, { extra, dispatch, rejectWithValue }) => {
     let ERROR_GET_PROFILE: string;
     try {
-      await i18n.loadNamespaces([LOCALES.PROFILE]);
-      const profileTranslate = i18n.getFixedT(null, LOCALES.PROFILE);
+      await i18n.loadNamespaces([LOCALES.PROFILE_PAGE]);
+      const profileTranslate = i18n.getFixedT(null, LOCALES.PROFILE_PAGE);
       ERROR_GET_PROFILE = profileTranslate('failedGetProfile');
     } catch (error) {
       ERROR_GET_PROFILE = 'Error loading profile';

@@ -9,7 +9,7 @@ export const Avatar = React.memo((
     alt,
     src,
     border = false,
-    classNames,
+    className,
   }: TAvatarProps,
 ) => {
   const customStyles = useMemo<CSSProperties>(() => ({
@@ -18,7 +18,7 @@ export const Avatar = React.memo((
   }), [size]);
 
   return (
-    <div className={cn(styles.wrapper, { [styles.border]: border }, classNames)}>
+    <div className={cn(styles.wrapper, { [styles.border]: border }, className)}>
       <img
         src={src}
         alt={alt}

@@ -19,7 +19,7 @@ export const ProfileInputs = ({
   errors,
   isLoading,
 }: TProfileInputProps) => {
-  const { translation } = useLanguage(LOCALES.PROFILE);
+  const { translation } = useLanguage(LOCALES.PROFILE_PAGE);
   const {
     first,
     lastname,

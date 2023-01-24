@@ -1,7 +1,7 @@
 import React from 'react';
 import { TErrorProps } from './types';
 import { Button } from '../../../../shared-components/button';
-import Code from '../../../../shared-components/code';
+import TextCodeError from '../../../../shared-components/text-code-error';
 import styles from './error.module.scss';
 import { ThemeProvider } from '../../../../providers/theme-provider';
 
@@ -31,9 +31,9 @@ const Error: React.FC<TErrorProps> = ({ error }) => {
         </div>
 
         <div className={styles.code}>
-          <Code maxHeight="200px">
+          <TextCodeError maxHeight="200px">
             {`${window.location.href} ${error.stack}`}
-          </Code>
+          </TextCodeError>
         </div>
 
         <div className={styles.buttons}>

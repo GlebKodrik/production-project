@@ -1,1 +1,3 @@
-export type TArticleDetailPageProps = {};
+export type TArticleDetailPageProps = {
+
+};

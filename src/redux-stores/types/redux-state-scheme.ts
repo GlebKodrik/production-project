@@ -3,6 +3,7 @@ import { TNotificationsState } from 'feature/notifications/stores/notifications'
 import { TProfileSchema } from 'pages/profile-page/components/profile/stores/profile';
 import { TCounterState } from '../stores/counter';
 import { TUserScheme } from '../stores/user';
+import { TArticleScheme } from '../stores/articles';
 
 export type TReduxStateScheme = {
   counter: TCounterState,
@@ -11,4 +12,5 @@ export type TReduxStateScheme = {
   notifications: TNotificationsState,
   // async
   profile?: TProfileSchema
+  article?: TArticleScheme
 };

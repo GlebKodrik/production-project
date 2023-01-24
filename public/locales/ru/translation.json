@@ -28,5 +28,9 @@
     "failedLogin": "Неправильный логин или пароль!"
   },
   "selectCurrency": "Выберите валюту",
-  "selectCounter": "Выберите страну"
+  "selectCounter": "Выберите страну",
+  "article": {
+    "errorRequestGetArticleById": "Ошибка получения статьи",
+    "errorArticleById": "Произошла ошибка при получении статьи\uD83D\uDE1E"
+  }
 }

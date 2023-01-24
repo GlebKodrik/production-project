@@ -1,12 +1,14 @@
 import React from 'react';
 
+import cn from 'classnames';
 import { TIconProps } from './types';
 import { ICONS_COMPONENT } from './constants/icon-components';
+import styles from './icon.module.scss';
 
 export const Icon = React.memo((
   {
     name,
-    fill,
+    fill = 'primary',
     opacity = 1,
     width = '24px',
     height = '24px',
@@ -14,14 +16,20 @@ export const Icon = React.memo((
   }: TIconProps,
 ) => {
   const IconComponent = ICONS_COMPONENT[name];
+  // @ts-ignore
+  const isHaveCurrenColorInStyles = styles[`color-${fill}`];
+
+  const classes = {
+    [isHaveCurrenColorInStyles]: Boolean(fill),
+  };
 
   return (
     <IconComponent
-      fill={fill}
+      fill={!isHaveCurrenColorInStyles ? fill : ''}
       width={width}
       height={height}
       opacity={opacity}
-      className={className}
+      className={cn(classes, className)}
     />
   );
 });

@@ -1,7 +1,7 @@
 import { TCounterState } from './types';
 import { counterActions, counterReducer } from './counter-slice';
 
-describe('Test counterSlice reducer', () => {
+describe('Test articlesSlice reducer', () => {
   test('Testing decrement count', () => {
     const state: TCounterState = {
       count: 10,

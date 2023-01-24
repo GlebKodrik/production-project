@@ -28,5 +28,9 @@
     "failedLogin": "Incorrect login or password!"
   },
   "selectCurrency": "Select currency",
-  "selectCounter": "Select country"
+  "selectCounter": "Select country",
+  "article": {
+    "errorRequestGetArticleById": "Error get article",
+    "errorArticleById": "An error occurred while fetching the article\uD83D\uDE1E"
+  }
 }

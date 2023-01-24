@@ -1,6 +1,7 @@
-import * as CSS from 'csstype';
+import { ReactNode } from 'react';
 
 export type TCodeProps = {
-  children: string,
-  maxHeight?: CSS.Property.MaxHeight<string>,
+  children: ReactNode,
+  color?: 'primary' | 'secondary'
+  className?: string
 };

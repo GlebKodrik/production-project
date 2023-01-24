@@ -9,6 +9,9 @@ import ThemeDark from '../images/theme-dark.svg';
 import ThemeLight from '../images/theme-light.svg';
 import Profile from '../images/profile.svg';
 import Article from '../images/article-20-20.svg';
+import Calendar from '../images/calendar-20-20.svg';
+import Eye from '../images/eye-20-20.svg';
+import Copy from '../images/copy-20-20.svg';
 
 import { ICON_NAMES } from './icon-names';
 
@@ -23,4 +26,7 @@ export const ICONS_COMPONENT: Record<TIconNames, React.VFC<React.SVGProps<SVGSVG
   [ICON_NAMES.ERROR_OUTLINE]: ErrorOutline,
   [ICON_NAMES.PROFILE]: Profile,
   [ICON_NAMES.ARTICLE]: Article,
+  [ICON_NAMES.CALENDAR]: Calendar,
+  [ICON_NAMES.EYE]: Eye,
+  [ICON_NAMES.COPY]: Copy,
 };

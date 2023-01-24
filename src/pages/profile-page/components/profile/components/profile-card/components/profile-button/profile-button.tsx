@@ -13,7 +13,7 @@ export const ProfileButton = ({
   onButtonCancelEdit,
   reset,
 }: TProfileButtonProps) => {
-  const { translation } = useLanguage(LOCALES.PROFILE);
+  const { translation } = useLanguage(LOCALES.PROFILE_PAGE);
 
   const isDisableButtonSubmit = Object.keys(errors).length > 0 || isLoading;
 

@@ -8,4 +8,7 @@ export const ICON_NAMES = {
   THEME_LIGHT: 'theme-light',
   THEME_DARK: 'theme-dark',
   ARTICLE: 'article',
+  CALENDAR: 'calendar',
+  EYE: 'eye',
+  COPY: 'copy',
 } as const;

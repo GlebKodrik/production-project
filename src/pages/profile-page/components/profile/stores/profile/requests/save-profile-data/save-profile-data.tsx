@@ -14,7 +14,7 @@ export const saveProfileData = createAsyncThunk<TProfile, void, TThunkConfig<str
     rejectWithValue,
     getState,
   }) => {
-    const profileTranslate = i18n.getFixedT(null, LOCALES.PROFILE);
+    const profileTranslate = i18n.getFixedT(null, LOCALES.PROFILE_PAGE);
     const ERROR_PUT_PROFILE = profileTranslate('failedPutProfile');
     const editForm = getEditForm(getState());
 

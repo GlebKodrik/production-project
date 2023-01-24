@@ -1,10 +1,26 @@
 import React from 'react';
-
-import styles from './code.module.scss';
+import cn from 'classnames';
 import { TCodeProps } from './types';
+import styles from './code.module.scss';
+import { Button } from '../button';
+import { Icon } from '../icon';
 
-const Code: React.FC<TCodeProps> = ({ children, maxHeight = 'auto' }) => (
-  <div className={styles.wrapper} style={{ maxHeight }}>{children}</div>
-);
+export const Code = ({
+  children,
+  className,
+  color = 'primary',
+}: TCodeProps) => {
+  const classes = {
+    [styles[`color-${color}`]]: Boolean(color),
+  };
 
-export default Code;
+  return (
+    <pre className={cn(styles.code, className, classes)}>
+      <Button className={styles.copyButton}><Icon name="copy" fill={color} /></Button>
+      <code>
+        {children}
+      </code>
+    </pre>
+
+  );
+};

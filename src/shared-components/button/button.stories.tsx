@@ -7,7 +7,7 @@ import { TButtonProps } from './types';
 import { THEMES } from '../../constants/themes';
 
 export default {
-  title: 'shared-components/Button',
+  title: 'shared-components/Skeleton',
   component: Button,
 } as ComponentMeta<typeof Button>;
 

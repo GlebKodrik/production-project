@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -117,13 +119,13 @@
     }
   ],
   "profile": {
-    "first": "jgh",
-    "lastname": "asf",
-    "age": 465,
+    "first": "Глеб",
+    "lastname": "Кодрик",
+    "age": "23",
     "currency": "RUB",
     "country": "Belarus",
     "city": "Moscow",
-    "username": "admin213",
-    "avatar": "https://yt3.ggpht.com/ytc/AAUvwngFzM_Rf6MNwOnFcuphoj93k7VFjlIrj-kSMxbh=s900-c-k-c0x00ffffff-no-rj"
+    "username": "admin",
+    "avatar": "https://sun9-62.userapi.com/impg/LHcdw0H9Ah5M3VtmxyazUzgmypJcF078OrZHuQ/jxE8K-tM3as.jpg?size=1620x2160&quality=95&sign=40f55c8d3d7d989590efe8dd8db4d7d7&type=album"
   }
 }
