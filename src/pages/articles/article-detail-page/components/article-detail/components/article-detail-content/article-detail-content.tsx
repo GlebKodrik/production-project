@@ -5,63 +5,33 @@ import { useSelector } from 'react-redux';
 import { getArticle, getArticleError, getArticleIsLoading } from 'redux-stores/stores/articles/selectors';
 import { Avatar } from 'shared-components/avatar';
 import { Icon } from 'shared-components/icon';
-import { EArticleBlockType, TArticleBlock } from 'pages/articles/types';
-import { ArticleImageBlock } from 'pages/articles/components/article-image-block';
-import { ArticleCodeBlock } from 'pages/articles/components/article-code-block';
 import cn from 'classnames';
-import { ArticleTextBlock } from '../../../../../components/article-text-block';
+import { LOCALES } from 'constants/locales';
+import { CommentCard } from 'shared-components/comment-card';
 import { ArticleDetailContentSkeleton } from './components/article-detail-content-skeleton';
 import styles from './article-detail-content.module.scss';
+import { ArticleBlock } from './components/article-block';
 
 export const ArticleDetailContent: React.FC = () => {
   const article = useSelector(getArticle);
   const isLoading = useSelector(getArticleIsLoading);
   const error = useSelector(getArticleError);
-  const { translation } = useLanguage();
+  const { translation } = useLanguage([LOCALES.ARTICLE_PAGE, LOCALES.BASE]);
 
   if (isLoading) {
     return <ArticleDetailContentSkeleton />;
   }
 
   if (error) {
-    return <Typography color="secondary" size="medium-large">{translation('article.errorArticleById')}</Typography>;
+    return (
+      <Typography
+        color="secondary"
+        size="medium-large"
+      >
+        {translation('article.errorArticleById', { ns: LOCALES.BASE })}
+      </Typography>
+    );
   }
-
-  const renderBlock = (block: TArticleBlock) => {
-    if (!block.type) {
-      return null;
-    }
-    switch (block.type) {
-      case EArticleBlockType.TEXT:
-        return (
-          <ArticleTextBlock
-            key={block.id}
-            title={block.title}
-            paragraphs={block.paragraphs}
-            className={styles.block}
-          />
-        );
-      case EArticleBlockType.IMAGE:
-        return (
-          <ArticleImageBlock
-            key={block.id}
-            className={styles.block}
-            src={block.src}
-            title={block.title}
-          />
-        );
-      case EArticleBlockType.CODE:
-        return (
-          <ArticleCodeBlock
-            key={block.id}
-            className={styles.block}
-            code={block.code}
-          />
-        );
-      default:
-        return null;
-    }
-  };
 
   return (
     <>
@@ -76,7 +46,22 @@ export const ArticleDetailContent: React.FC = () => {
         <Icon name="calendar" fill="secondary" />
         <Typography color="secondary">{article?.createdAt}</Typography>
       </div>
-      {article?.blocks?.map(renderBlock)}
+      {article?.blocks?.map(ArticleBlock)}
+      <Typography
+        color="secondary"
+        tag="h3"
+        size="large"
+        className={styles.comment}
+      >
+        {translation('comment')}
+      </Typography>
+      <CommentCard
+        /* eslint-disable-next-line max-len */
+        imageSrc="https://sun9-62.userapi.com/impg/LHcdw0H9Ah5M3VtmxyazUzgmypJcF078OrZHuQ/jxE8K-tM3as.jpg?size=1620x2160&quality=95&sign=40f55c8d3d7d989590efe8dd8db4d7d7&type=album"
+        username="Gleb Kodrik"
+        color="secondary"
+        comment="Очень крутая статья"
+      />
     </>
   );
 };

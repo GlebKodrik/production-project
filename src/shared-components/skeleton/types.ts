@@ -1,6 +1,8 @@
+import * as CSS from 'csstype';
+
 export interface TSkeletonProps {
   className?: string,
-  width: string | number,
+  width?: CSS.Property.Width,
   border?: string,
-  height: string | number,
+  height?: CSS.Property.Height,
 }

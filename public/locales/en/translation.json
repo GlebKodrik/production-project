@@ -37,6 +37,6 @@
     "errorArticleById": "An error occurred while fetching the article\uD83D\uDE1E"
   },
   "validationGlobal": {
-    "required": "Обязательное поле"
+    "required": "Required field"
   }
 }

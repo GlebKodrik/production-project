@@ -6,7 +6,7 @@ import NoUser from '../../assets/image/no-user.png';
 
 export const Avatar = React.memo((
   {
-    size = 180,
+    size,
     alt,
     src,
     border = false,

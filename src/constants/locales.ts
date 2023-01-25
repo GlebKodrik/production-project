@@ -4,4 +4,5 @@ export const LOCALES = {
   ERROR_PAGE: 'error-page',
   PROFILE_PAGE: 'profile-page',
   ARTICLE_PAGE: 'article-page',
+  BASE: 'translation',
 } as const;
