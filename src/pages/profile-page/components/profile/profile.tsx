@@ -5,6 +5,7 @@ import { useAppDispatch } from 'hooks/use-app-dispatch';
 import { useSelector } from 'react-redux';
 import { TCurrency } from 'shared-components/currency/types';
 import { TCountry } from 'shared-components/country/types';
+import { useParams } from 'react-router-dom';
 import { requestGetProfileData } from './stores/profile/requests/request-get-profile-data';
 import { ProfileCard } from './components/profile-card';
 import {
@@ -25,6 +26,9 @@ export const Profile: React.FC = () => {
   const isLoading = useSelector(getIsLoading);
   const isReadOnly = useSelector(getReadOnly);
   const error = useSelector(getError);
+  const params = useParams<{ id: string }>();
+  const { id } = params;
+
   const onInputNameChange = (value: string) => {
     dispatch(profileActions.updateProfileData({ first: value }));
   };
@@ -70,7 +74,9 @@ export const Profile: React.FC = () => {
   };
 
   useEffect(() => {
-    dispatch(requestGetProfileData());
+    if (id) {
+      dispatch(requestGetProfileData(id));
+    }
   }, []);
 
   return (

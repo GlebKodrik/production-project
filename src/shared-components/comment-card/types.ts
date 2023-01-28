@@ -1,7 +1,8 @@
 export type TCommentCardProps = {
-  imageSrc: string,
+  avatar?: string,
   username: string,
   className?: string,
   color?: 'primary' | 'secondary',
-  comment: string
+  comment: string,
+  link?: string
 };

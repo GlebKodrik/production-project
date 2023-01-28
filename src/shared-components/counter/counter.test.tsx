@@ -2,7 +2,7 @@ import { fireEvent, screen } from '@testing-library/react';
 import { componentRender } from '../../providers/component-render';
 import Counter from './counter';
 
-describe('Test component counter', () => {
+describe('Test component comment', () => {
   test('Test default count', () => {
     componentRender({
       component: <Counter />,

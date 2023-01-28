@@ -5,6 +5,7 @@ import Counter from 'shared-components/counter';
 import { Input } from 'shared-components/input';
 import { notificationsActions } from 'feature/notifications/stores/notifications';
 import { useAppDispatch } from 'hooks/use-app-dispatch';
+import { AddComments } from '../../feature/add-comments';
 
 export const AboutPage = () => {
   const { translation } = useLanguage(LOCALES.ABOUT_PAGE);
@@ -18,6 +19,7 @@ export const AboutPage = () => {
   };
   return (
     <>
+      <AddComments onSubmit={() => {}} />
       {translation('about')}
       <button onClick={addAlert}>Добавить алерт</button>
       <Input value={state} onChange={setState} color="secondary" variant="outline" size="extra-large" />

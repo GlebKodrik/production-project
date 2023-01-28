@@ -1,5 +1,6 @@
 {
   "errorMessage": "A copy error has occurred",
   "successMessage": "Text copied successfully",
-  "comment": "Comment"
+  "comment": "Comment",
+  "notComment": "Not comments"
 }

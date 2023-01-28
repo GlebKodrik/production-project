@@ -4,8 +4,8 @@ import i18n from 'configs/i18next';
 import { TThunkConfig } from 'redux-stores/types/thunk-config';
 import { TArticle } from 'pages/articles/types';
 
-export const requestGetArticleById = createAsyncThunk<TArticle, string, TThunkConfig<string>>(
-  'article/requestGetArticleByI',
+export const requestGetArticleDetailById = createAsyncThunk<TArticle, string, TThunkConfig<string>>(
+  'article/requestGetArticleById',
   async (
     articleId,
     { extra, dispatch, rejectWithValue },

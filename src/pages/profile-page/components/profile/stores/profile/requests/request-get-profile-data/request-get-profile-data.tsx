@@ -5,9 +5,9 @@ import { LOCALES } from 'constants/locales';
 import i18n from 'i18next';
 import { TProfile } from '../../types';
 
-export const requestGetProfileData = createAsyncThunk<TProfile, void, TThunkConfig<string>>(
+export const requestGetProfileData = createAsyncThunk<TProfile, string, TThunkConfig<string>>(
   'profile/requestGetProfileData',
-  async (_, { extra, dispatch, rejectWithValue }) => {
+  async (profileId, { extra, dispatch, rejectWithValue }) => {
     let ERROR_GET_PROFILE: string;
     try {
       await i18n.loadNamespaces([LOCALES.PROFILE_PAGE]);
@@ -18,7 +18,7 @@ export const requestGetProfileData = createAsyncThunk<TProfile, void, TThunkConf
     }
 
     try {
-      const response = await extra.api.get<TProfile>('/profile');
+      const response = await extra.api.get<TProfile>(`/profile/${profileId}`);
       return response.data;
     } catch (error) {
       dispatch(notificationsActions.showNotification({

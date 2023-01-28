@@ -14,8 +14,8 @@ export const ASYNC_PAGES = {
 export const PAGES_COMPONENTS: TPagesPathWithComponents[] = [
   { path: ROUTES_PATH.ABOUT, component: ASYNC_PAGES.ABOUT },
   { path: ROUTES_PATH.BASE, component: ASYNC_PAGES.BASE },
-  { path: ROUTES_PATH.PROFILE, component: ASYNC_PAGES.PROFILE, isPrivate: true },
-  { path: ROUTES_PATH.ARTICLE_DETAIL, component: ASYNC_PAGES.ARTICLE_DETAIL, isPrivate: true },
+  { path: `${ROUTES_PATH.PROFILE}/:id`, component: ASYNC_PAGES.PROFILE, isPrivate: true },
+  { path: `${ROUTES_PATH.ARTICLE_DETAIL}/:id`, component: ASYNC_PAGES.ARTICLE_DETAIL, isPrivate: true },
   { path: ROUTES_PATH.ARTICLE, component: ASYNC_PAGES.ARTICLE, isPrivate: true },
   { path: ROUTES_PATH.PAGE_404, component: ASYNC_PAGES.PAGE_404 },
 ];

@@ -4,13 +4,15 @@ import { TCommentCardProps } from './types';
 import { Avatar } from '../avatar';
 import { Typography } from '../typography';
 import styles from './comment-card.module.scss';
+import { Link } from '../link';
 
 export const CommentCard = ({
-  imageSrc,
+  avatar,
   username,
   color = 'primary',
   className,
   comment,
+  link,
 }: TCommentCardProps) => {
   if (!comment) {
     return null;
@@ -19,12 +21,23 @@ export const CommentCard = ({
   const classes = {
     [styles[`color-${color}`]]: Boolean(color),
   };
-  return (
-    <div className={cn(styles.wrapper, className, classes)}>
+
+  const renderContent = () => {
+    const children = (
       <div className={styles.wrapperAvatar}>
-        <Avatar src={imageSrc} alt="avatar" className={styles.avatar} />
+        <Avatar src={avatar} alt="avatar" className={styles.avatar} />
         <Typography color={color}>{username}</Typography>
       </div>
+    );
+    if (link) {
+      return <Link to={link}>{children}</Link>;
+    }
+    return children;
+  };
+
+  return (
+    <div className={cn(className, classes)}>
+      {renderContent()}
       <Typography color={color}>{comment}</Typography>
     </div>
   );
