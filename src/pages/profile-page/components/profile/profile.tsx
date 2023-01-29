@@ -7,6 +7,7 @@ import { TCurrency } from 'shared-components/currency/types';
 import { TCountry } from 'shared-components/country/types';
 import { useParams } from 'react-router-dom';
 import { getUser } from 'redux-stores/stores/user/selectors/get-user';
+import { LoaderWithOverlay } from 'shared-components/loader-with-overlay';
 import { requestGetProfileData } from './stores/profile/requests/request-get-profile-data';
 import { ProfileCard } from './components/profile-card';
 import {
@@ -15,6 +16,7 @@ import {
 
 import { saveProfileData } from './stores/profile/requests/save-profile-data';
 import { getProfileData } from './stores/profile/selectors/get-profile-data';
+import { getIsLoadingSaveProfile } from './stores/profile/selectors/get-is-loading-save-profile';
 
 const reducerList: TReducersList[] = [
   { name: 'profile', reducer: profileReducer },
@@ -29,6 +31,7 @@ export const Profile: React.FC = () => {
   const profileEditData = useSelector(getEditForm);
   const profileData = useSelector(getProfileData);
   const isLoading = useSelector(getIsLoading);
+  const isLoadingSaveProfile = useSelector(getIsLoadingSaveProfile);
   const isReadOnly = useSelector(getReadOnly);
   const error = useSelector(getError);
 
@@ -86,25 +89,31 @@ export const Profile: React.FC = () => {
 
   return (
     <DynamicModuleLoader reducers={reducerList}>
-      <ProfileCard
-        onButtonEdit={onButtonEdit}
-        onButtonCancelEdit={onButtonCancelEdit}
-        onProfileSave={onProfileSave}
-        onInputAgeChange={onInputAgeChange}
-        onInputCityChange={onInputCityChange}
-        onInputSurnameChange={onInputSurnameChange}
-        onInputNameChange={onInputNameChange}
-        onInputUsernameChange={onInputUsernameChange}
-        onInputAvatarChange={onInputAvatarChange}
-        onChangeCurrencyValue={onChangeCurrencyValue}
-        onChangeCountryValue={onChangeCountryValue}
-        profileEditData={profileEditData}
-        isLoading={isLoading}
-        isProfileDataReceivedSuccessfully={Boolean(error)}
-        isReadOnly={isReadOnly}
-        profileData={profileData}
-        isEdit={isEdit}
-      />
+      {
+        isLoading
+          ? <LoaderWithOverlay />
+          : (
+            <ProfileCard
+              onButtonEdit={onButtonEdit}
+              onButtonCancelEdit={onButtonCancelEdit}
+              onProfileSave={onProfileSave}
+              onInputAgeChange={onInputAgeChange}
+              onInputCityChange={onInputCityChange}
+              onInputSurnameChange={onInputSurnameChange}
+              onInputNameChange={onInputNameChange}
+              onInputUsernameChange={onInputUsernameChange}
+              onInputAvatarChange={onInputAvatarChange}
+              onChangeCurrencyValue={onChangeCurrencyValue}
+              onChangeCountryValue={onChangeCountryValue}
+              profileEditData={profileEditData}
+              isLoading={isLoadingSaveProfile}
+              isProfileDataReceivedSuccessfully={Boolean(error)}
+              isReadOnly={isReadOnly}
+              profileData={profileData}
+              isEdit={isEdit}
+            />
+          )
+      }
     </DynamicModuleLoader>
   );
 };

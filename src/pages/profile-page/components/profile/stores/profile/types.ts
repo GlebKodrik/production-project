@@ -19,4 +19,7 @@ export type TProfileSchema = {
   error?: string;
   isReadOnly: boolean;
   editForm?: TProfile
+  saveProfile: {
+    isLoading: boolean
+  }
 };

@@ -9,6 +9,9 @@ const initialState: TProfileSchema = {
   error: undefined,
   data: undefined,
   editForm: undefined,
+  saveProfile: {
+    isLoading: false,
+  },
 };
 
 export const profileSlice = createSlice({
@@ -45,17 +48,17 @@ export const profileSlice = createSlice({
       })
       .addCase(saveProfileData.pending, (state) => {
         state.error = undefined;
-        state.isLoading = true;
+        state.saveProfile.isLoading = true;
       })
       .addCase(saveProfileData.fulfilled, (state, action) => {
-        state.isLoading = false;
+        state.saveProfile.isLoading = false;
         state.isReadOnly = true;
         state.data = action.payload;
         state.editForm = action.payload;
       })
       .addCase(saveProfileData.rejected, (state, action) => {
         state.isReadOnly = false;
-        state.isLoading = false;
+        state.saveProfile.isLoading = false;
         state.error = action.payload;
       });
   },

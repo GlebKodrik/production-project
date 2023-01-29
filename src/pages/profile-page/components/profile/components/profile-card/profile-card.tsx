@@ -9,7 +9,6 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import cn from 'classnames';
 import { Typography } from 'shared-components/typography';
-import { LoaderWithOverlay } from 'shared-components/loader-with-overlay';
 import styles from './prodile-card.module.scss';
 import { TProfileCardProps } from './types';
 import { ProfileInputs } from './components/profile-inputs';
@@ -52,10 +51,6 @@ export const ProfileCard = ({
 
   if (isProfileDataReceivedSuccessfully) {
     return <Typography color="secondary" size="medium-large">{translation('errorLoadProfile')}</Typography>;
-  }
-
-  if (isLoading) {
-    return <LoaderWithOverlay />;
   }
 
   if (!profileData || !profileEditData) {
