@@ -5,6 +5,7 @@ import { saveProfileData } from './requests/save-profile-data';
 
 describe('Test profile-slice', () => {
   const data: TProfile = {
+    id: '1',
     username: 'Kodrik',
     age: '22',
     currency: 'RUB',
@@ -51,7 +52,7 @@ describe('Test profile-slice', () => {
     };
     expect(profileReducer(
       state as TProfileSchema,
-      saveProfileData.fulfilled(data, ''),
+      saveProfileData.fulfilled(data, '1', ''),
     )).toEqual({
       isLoading: false, isReadOnly: true, data, editForm: data,
     });

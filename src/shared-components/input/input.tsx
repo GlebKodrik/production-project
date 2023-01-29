@@ -40,7 +40,7 @@ export const Input = React.memo(({
   return (
     <div className={cn(styles.wrapper, className)}>
       {renderPlaceholder()}
-      <div>
+      <div className={styles.inputWrapper}>
         <input
           ref={inputRef}
           tabIndex={tabIndex}

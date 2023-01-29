@@ -1,48 +1,50 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Input } from 'shared-components/input';
-import { useSelector } from 'react-redux';
-import { TInputValue, TProps } from './types';
+import { Button } from 'shared-components/button';
+import { TComment, TInputValue, TProps } from './types';
 import { commentYupScheme } from './validation-comment';
-import { commentActions, getComment } from './stores/comment';
-import { useAppDispatch } from '../../hooks/use-app-dispatch';
-import { DynamicModuleLoader } from '../../redux-stores/components/dynamic-module-loader';
+import styles from './add-comments.module.scss';
 
 export const AddComments = ({
   onSubmit,
 }: TProps) => {
-  const comment = useSelector(getComment);
-  const dispatch = useAppDispatch();
   const {
+    control,
     handleSubmit,
-    setValue,
+    reset,
     formState: { errors },
   } = useForm<TInputValue>({
     resolver: yupResolver(commentYupScheme()),
     mode: 'onChange',
     defaultValues: {
-      comment,
+      comment: '',
     },
   });
-
-  const onInputCommentChange = (value: string) => {
-    setValue('comment', value);
-    dispatch(commentActions.addComment(value));
+  const onSubmitForm = ({ comment }: TComment) => {
+    onSubmit(comment, { reset });
   };
-
   return (
-    <DynamicModuleLoader reducers={}>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Input
-          placeholder="Введите текст комментария"
-          name="comment"
-          value={comment}
-          onChange={onInputCommentChange}
-          error={errors.comment?.message}
-        />
-      </form>
-    </DynamicModuleLoader>
-
+    <form onSubmit={handleSubmit(onSubmitForm)} className={styles.wrapper}>
+      <Controller
+        control={control}
+        render={({ field: { onChange, value } }) => (
+          <Input
+            placeholder="Введите текст комментария"
+            value={value || ''}
+            onChange={onChange}
+            error={errors.comment?.message}
+            color="secondary"
+            className={styles.input}
+            variant="outline"
+          />
+        )}
+        name="comment"
+      />
+      <div>
+        <Button color="secondary" type="submit" className={styles.button}>Отправить</Button>
+      </div>
+    </form>
   );
 };

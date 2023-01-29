@@ -7,15 +7,27 @@ import { Avatar } from 'shared-components/avatar';
 import { Icon } from 'shared-components/icon';
 import cn from 'classnames';
 import { LOCALES } from 'constants/locales';
+import { AddComments } from 'feature/add-comments';
+import { useAppDispatch } from 'hooks/use-app-dispatch';
+import {
+  requestAddComments,
+} from 'redux-stores/stores/article-detail/requests/request-add-comments';
+import { getUser } from 'redux-stores/stores/user/selectors/get-user';
+import { unwrapResult } from '@reduxjs/toolkit';
 import { ArticleDetailContentSkeleton } from './components/article-detail-content-skeleton';
 import styles from './article-detail-content.module.scss';
 import { ArticleBlock } from './components/article-block';
+import { ArticleDetailComments } from '../article-detail-comments';
+import { TProps } from './types';
+import { TOption } from '../../../../../../../feature/add-comments/types';
 
-export const ArticleDetailContent: React.FC = () => {
+export const ArticleDetailContent = ({ id }: TProps) => {
   const article = useSelector(getArticleDetail);
   const isLoading = useSelector(getArticleIsLoading);
+  const user = useSelector(getUser);
+  const dispatch = useAppDispatch();
   const error = useSelector(getArticleError);
-  const { translation } = useLanguage([LOCALES.ARTICLE_PAGE, LOCALES.BASE]);
+  const { translation } = useLanguage([LOCALES.ARTICLE_DETAIL_PAGE, LOCALES.BASE]);
 
   if (isLoading) {
     return <ArticleDetailContentSkeleton />;
@@ -31,6 +43,14 @@ export const ArticleDetailContent: React.FC = () => {
       </Typography>
     );
   }
+
+  const onSubmit = async (value: string, { reset }: TOption) => {
+    dispatch(requestAddComments({ text: value, userId: user?.id, articleId: id }))
+      .then(unwrapResult)
+      .then(() => {
+        reset();
+      });
+  };
 
   return (
     <>
@@ -54,6 +74,8 @@ export const ArticleDetailContent: React.FC = () => {
       >
         {translation('comment')}
       </Typography>
+      <AddComments onSubmit={onSubmit} />
+      <ArticleDetailComments />
     </>
   );
 };

@@ -3,6 +3,7 @@ import { TArticleDetailScheme, TComment } from './types';
 import { requestGetArticleDetailById } from './requests/request-get-article-detail-by-id';
 import { TArticle } from '../../../pages/articles/types';
 import { requestGetComments } from './requests/request-get-comments';
+import { requestAddComments } from './requests/request-add-comments';
 
 const initialState: TArticleDetailScheme = {
   isLoading: false,
@@ -12,6 +13,9 @@ const initialState: TArticleDetailScheme = {
     data: undefined,
     isLoading: false,
     error: undefined,
+    sendComment: {
+      isLoading: false,
+    },
   },
 };
 
@@ -36,16 +40,25 @@ export const articleDetailSlice = createSlice({
       })
       .addCase(requestGetComments.pending, (state) => {
         state.comments.error = undefined;
-        state.comments.data = undefined;
         state.comments.isLoading = true;
       })
       .addCase(requestGetComments.fulfilled, (state, action: PayloadAction<TComment[]>) => {
+        const initialComments = [...action.payload];
         state.comments.isLoading = false;
-        state.comments.data = action.payload;
+        state.comments.data = initialComments.reverse();
       })
       .addCase(requestGetComments.rejected, (state, action) => {
         state.comments.isLoading = false;
         state.comments.error = action.payload;
+      })
+      .addCase(requestAddComments.pending, (state) => {
+        state.comments.sendComment.isLoading = true;
+      })
+      .addCase(requestAddComments.fulfilled, (state) => {
+        state.comments.sendComment.isLoading = false;
+      })
+      .addCase(requestAddComments.rejected, (state) => {
+        state.comments.sendComment.isLoading = false;
       });
   },
 });

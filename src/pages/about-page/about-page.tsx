@@ -22,7 +22,13 @@ export const AboutPage = () => {
       <AddComments onSubmit={() => {}} />
       {translation('about')}
       <button onClick={addAlert}>Добавить алерт</button>
-      <Input value={state} onChange={setState} color="secondary" variant="outline" size="extra-large" />
+      <Input
+        value={state}
+        onChange={setState}
+        color="secondary"
+        placeholder="Введите сообщение"
+        variant="plain"
+      />
       <Counter />
     </>
   );

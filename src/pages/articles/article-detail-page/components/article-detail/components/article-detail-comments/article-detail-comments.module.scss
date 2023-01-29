@@ -1,7 +1,13 @@
-.comment {
-  margin-bottom: 15px;
+.wrapper {
+  position: relative;
+}
 
-  &:last-child {
-    margin-bottom: 0;
-  }
+.loader {
+  position: absolute;
+  top: 0;
+  right: 100px;
+}
+
+.comment {
+  margin-top: 15px;
 }

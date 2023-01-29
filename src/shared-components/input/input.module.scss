@@ -17,12 +17,17 @@
   outline: none;
 
   &-error {
+    margin-left: 2px;
     color: red !important;
     border-color: red !important;
   }
 
   &:disabled {
     opacity: var(--disabled-opacity);
+  }
+
+  &-wrapper {
+    width: 100%;
   }
 }
 

@@ -35,6 +35,7 @@ export const ProfileCard = ({
   isProfileDataReceivedSuccessfully = false,
   spinner,
   isReadOnly = false,
+  isEdit = false,
 }: TProfileCardProps) => {
   const { translation } = useLanguage(LOCALES.PROFILE_PAGE);
 
@@ -117,16 +118,20 @@ export const ProfileCard = ({
         className={styles.country}
         disabled={isReadOnly || isLoading}
       />
-      <div className={styles.wrapperButton}>
-        <ProfileButton
-          reset={reset}
-          isLoading={isLoading}
-          isReadOnly={isReadOnly}
-          onButtonEdit={onButtonEdit}
-          onButtonCancelEdit={onButtonCancelEdit}
-          errors={errors}
-        />
-      </div>
+      {
+        isEdit && (
+          <div className={styles.wrapperButton}>
+            <ProfileButton
+              reset={reset}
+              isLoading={isLoading}
+              isReadOnly={isReadOnly}
+              onButtonEdit={onButtonEdit}
+              onButtonCancelEdit={onButtonCancelEdit}
+              errors={errors}
+            />
+          </div>
+        )
+      }
     </form>
   );
 };

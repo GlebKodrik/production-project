@@ -1,5 +1,8 @@
 {
   "errorMessage": "A copy error has occurred",
+  "errorGetComments": "Error getting comments",
+  "notId": "Not id",
+  "errorSendComment": "Message sending error",
   "successMessage": "Text copied successfully",
   "comment": "Comment",
   "notComment": "Not comments"

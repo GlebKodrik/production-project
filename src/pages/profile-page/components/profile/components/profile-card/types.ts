@@ -13,6 +13,7 @@ export type TProfileCardProps = {
   onChangeCountryValue: (value: TCountry) => void;
   isReadOnly?: boolean;
   isProfileDataReceivedSuccessfully?: boolean;
+  isEdit?: boolean
 } & TButtonEditOrCancel & TInputProps;
 
 export type TButtonEditOrCancel = {

@@ -4,7 +4,6 @@ import { TProfileSchema } from 'pages/profile-page/components/profile/stores/pro
 import { TCounterState } from '../stores/counter';
 import { TUserScheme } from '../stores/user';
 import { TArticleDetailScheme } from '../stores/article-detail';
-import { TCommentScheme } from '../../feature/add-comments/stores/comment';
 
 export type TReduxStateScheme = {
   counter: TCounterState,
@@ -14,5 +13,4 @@ export type TReduxStateScheme = {
   // async
   profile?: TProfileSchema,
   article?: TArticleDetailScheme,
-  comment?: TCommentScheme,
 };

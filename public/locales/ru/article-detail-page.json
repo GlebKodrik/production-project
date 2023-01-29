@@ -1,6 +1,9 @@
 {
   "errorMessage":  "Произошла ошибка копирования",
+  "errorGetComments": "Ошибка получения комментариев",
+  "notId": "Нет id",
   "successMessage": "Текст успешно cкопировался",
+  "errorSendComment": "Ошибка отправки сообщения",
   "comment": "Коментарии",
   "notComment": "Нет коментариев"
 }

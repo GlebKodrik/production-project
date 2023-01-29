@@ -92,64 +92,64 @@
       "userId": "1"
     },
     {
-      "id": "2",
-      "text": "some comment 2",
-      "articleId": "1",
-      "userId": "1"
-    },
-    {
-      "id": "3",
-      "text": "some comment 3",
-      "articleId": "1",
-      "userId": "1"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "123",
-      "id": "4Cljjzl"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "123asfasf",
-      "id": "AEM4Dvc"
-    },
-    {
-      "articleId": "1",
       "userId": "2",
-      "text": "123asfasf",
-      "id": "IFEOWl0"
+      "articleId": "1",
+      "text": "Мда Глеб",
+      "id": "VjdWEJC"
     },
     {
-      "articleId": "1",
       "userId": "2",
-      "text": "привет мир",
-      "id": "dBacYRZ"
+      "articleId": "1",
+      "text": "as",
+      "id": "q-Sejtg"
     },
     {
-      "articleId": "1",
       "userId": "2",
-      "text": "хехехехе",
-      "id": "rBX_C-e"
+      "articleId": "1",
+      "text": "sad",
+      "id": "QdNP5Ex"
     },
     {
-      "articleId": "1",
       "userId": "2",
-      "text": "фыафыа",
-      "id": "5k0ApX-"
+      "articleId": "1",
+      "text": "sad",
+      "id": "vdbB-6V"
     },
     {
-      "articleId": "1",
       "userId": "2",
-      "text": "sdfsdfsd",
-      "id": "w-HDIRq"
+      "articleId": "1",
+      "text": "ads",
+      "id": "UlV7Sg1"
     },
     {
-      "articleId": "1",
       "userId": "2",
-      "text": "asdasdasd",
-      "id": "MVvGQoZ"
+      "articleId": "1",
+      "text": "fsad",
+      "id": "zQCjmUY"
+    },
+    {
+      "userId": "2",
+      "articleId": "1",
+      "text": "asd",
+      "id": "VjZwRKN"
+    },
+    {
+      "userId": "2",
+      "articleId": "1",
+      "text": "asd",
+      "id": "KduSCsy"
+    },
+    {
+      "userId": "2",
+      "articleId": "1",
+      "text": "Привет моя мама",
+      "id": "rEcfCU9"
+    },
+    {
+      "userId": "2",
+      "articleId": "1",
+      "text": "Загрузка коментария",
+      "id": "XwKXEDp"
     }
   ],
   "users": [
@@ -182,14 +182,14 @@
     },
     {
       "id": "2",
-      "first": "ulbi tv",
-      "lastname": "asf",
-      "age": 465,
+      "first": "Василиса",
+      "lastname": "Андреева",
+      "age": 21,
       "currency": "RUB",
       "country": "Russia",
-      "city": "Moscow",
-      "username": "ulbi tv",
-      "avatar": "https://sun9-42.userapi.com/impg/LJ83gAeKaXqyyXEsE_egKRlTLMAF_QBF6EDWcQ/_U0Z7TQJBGY.jpg?size=908x662&quality=96&sign=45ac91ef131869c5e4f69a756da70dce&type=album"
+      "city": "Санкт-Петербург",
+      "username": "Василиска",
+      "avatar": "https://sun9-64.userapi.com/impg/Uq-87OuCZhgLvTkSLi4N2OTIZn2TT9qmZXj5pQ/OjK72L1099g.jpg?size=1440x1795&quality=95&sign=ced366496a11ba488e7910da9f769370&type=album"
     }
   ]
 }

@@ -62,17 +62,6 @@
 }
 
 .color {
-  &-inverted {
-    color: var(--secondary-color);
-    background-color: var(--secondary-color);
-
-    &.variant {
-      &-outline {
-        border-color: var(--secondary-color);
-      }
-    }
-  }
-
   &-primary {
     color: var(--primary-color);
     background-color: transparent;

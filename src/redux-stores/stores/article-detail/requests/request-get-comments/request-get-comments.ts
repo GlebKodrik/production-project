@@ -1,16 +1,29 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { notificationsActions } from 'feature/notifications/stores/notifications';
 import { TThunkConfig } from 'redux-stores/types/thunk-config';
+import i18n from 'i18next';
 import { TComment } from '../../types';
+import { LOCALES } from '../../../../../constants/locales';
 
 export const requestGetComments = createAsyncThunk<TComment[], string, TThunkConfig<string>>(
-  'article/requestGetComments',
+  'article/requestAddComments',
   async (
     articleId,
     { extra, dispatch, rejectWithValue },
   ) => {
-    const ERROR_GET_ARTICLE_COMMENTS = 'Ошибка коментов';
-    const NOT_ARTICLE_ID = 'Нет id';
+    let ERROR_GET_ARTICLE_COMMENTS: string;
+    let NOT_ARTICLE_ID: string;
+
+    try {
+      await i18n.loadNamespaces([LOCALES.ARTICLE_DETAIL_PAGE]);
+      const profileTranslate = i18n.getFixedT(null, LOCALES.ARTICLE_DETAIL_PAGE);
+      ERROR_GET_ARTICLE_COMMENTS = profileTranslate('errorGetComments');
+      NOT_ARTICLE_ID = profileTranslate('errorGetComments');
+    } catch (error) {
+      ERROR_GET_ARTICLE_COMMENTS = 'Error get comments';
+      NOT_ARTICLE_ID = 'Not id';
+    }
+
     if (!articleId) {
       return rejectWithValue(NOT_ARTICLE_ID);
     }

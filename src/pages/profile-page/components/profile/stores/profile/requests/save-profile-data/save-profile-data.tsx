@@ -6,20 +6,26 @@ import { LOCALES } from 'constants/locales';
 import { TProfile } from '../../types';
 import { getEditForm } from '../../selectors';
 
-export const saveProfileData = createAsyncThunk<TProfile, void, TThunkConfig<string>>(
+export const saveProfileData = createAsyncThunk<TProfile, string, TThunkConfig<string>>(
   'profile/saveProfileData',
-  async (_, {
+  async (profileId, {
     extra,
     dispatch,
     rejectWithValue,
     getState,
   }) => {
-    const profileTranslate = i18n.getFixedT(null, LOCALES.PROFILE_PAGE);
-    const ERROR_PUT_PROFILE = profileTranslate('failedPutProfile');
+    let ERROR_PUT_PROFILE: string;
+    try {
+      const profileTranslate = i18n.getFixedT(null, LOCALES.PROFILE_PAGE);
+      ERROR_PUT_PROFILE = profileTranslate('form.failedPutProfile');
+    } catch (error) {
+      ERROR_PUT_PROFILE = 'Error put data';
+    }
+
     const editForm = getEditForm(getState());
 
     try {
-      const response = await extra.api.put<TProfile>('/profile', editForm);
+      const response = await extra.api.put<TProfile>(`/profile/${profileId}`, editForm);
       return response.data;
     } catch (error) {
       dispatch(notificationsActions.showNotification({

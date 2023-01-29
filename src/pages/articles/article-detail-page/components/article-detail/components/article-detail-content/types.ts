@@ -1,1 +1,3 @@
-export type TArticleDetailContentProps = {};
+export type TProps = {
+  id: string
+};

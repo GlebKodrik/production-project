@@ -7,7 +7,6 @@ import { requestGetArticleDetailById }
 import { articlesReducer } from 'redux-stores/stores/article-detail';
 import { TArticleDetailProps } from './types';
 import { ArticleDetailContent } from './components/article-detail-content';
-import { ArticleDetailComments } from './components/article-detail-comments';
 
 const reducer: TReducersList[] = [
   { name: 'article', reducer: articlesReducer },
@@ -25,8 +24,7 @@ export const ArticleDetail: React.FC<TArticleDetailProps> = ({
 
   return (
     <DynamicModuleLoader reducers={reducer}>
-      <ArticleDetailContent />
-      <ArticleDetailComments />
+      <ArticleDetailContent id={id} />
     </DynamicModuleLoader>
   );
 };

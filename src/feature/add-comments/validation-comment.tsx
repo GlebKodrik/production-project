@@ -7,7 +7,7 @@ const commentYupScheme = () => {
   return yup.object().shape({
     comment: yup.string()
       .required(translation('validationGlobal.required'))
-      .max(20, translation('validationGlobal.comment')),
+      .max(100, translation('validationGlobal.comment')),
   }).required();
 };
 

@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import { TCurrency } from 'shared-components/currency/types';
 import { TCountry } from 'shared-components/country/types';
 import { useParams } from 'react-router-dom';
+import { getUser } from 'redux-stores/stores/user/selectors/get-user';
 import { requestGetProfileData } from './stores/profile/requests/request-get-profile-data';
 import { ProfileCard } from './components/profile-card';
 import {
@@ -20,14 +21,16 @@ const reducerList: TReducersList[] = [
 ];
 
 export const Profile: React.FC = () => {
+  const params = useParams<{ id: string }>();
+  const { id } = params;
+  const user = useSelector(getUser);
+  const isEdit = user?.id === id;
   const dispatch = useAppDispatch();
   const profileEditData = useSelector(getEditForm);
   const profileData = useSelector(getProfileData);
   const isLoading = useSelector(getIsLoading);
   const isReadOnly = useSelector(getReadOnly);
   const error = useSelector(getError);
-  const params = useParams<{ id: string }>();
-  const { id } = params;
 
   const onInputNameChange = (value: string) => {
     dispatch(profileActions.updateProfileData({ first: value }));
@@ -70,7 +73,9 @@ export const Profile: React.FC = () => {
   };
 
   const onProfileSave = () => {
-    dispatch(saveProfileData());
+    if (id) {
+      dispatch(saveProfileData(id));
+    }
   };
 
   useEffect(() => {
@@ -98,6 +103,7 @@ export const Profile: React.FC = () => {
         isProfileDataReceivedSuccessfully={Boolean(error)}
         isReadOnly={isReadOnly}
         profileData={profileData}
+        isEdit={isEdit}
       />
     </DynamicModuleLoader>
   );
