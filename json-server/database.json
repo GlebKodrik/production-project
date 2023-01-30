@@ -92,64 +92,16 @@
       "userId": "1"
     },
     {
-      "userId": "2",
-      "articleId": "1",
-      "text": "Мда Глеб",
-      "id": "VjdWEJC"
-    },
-    {
-      "userId": "2",
-      "articleId": "1",
-      "text": "as",
-      "id": "q-Sejtg"
-    },
-    {
-      "userId": "2",
-      "articleId": "1",
-      "text": "sad",
-      "id": "QdNP5Ex"
-    },
-    {
-      "userId": "2",
-      "articleId": "1",
-      "text": "sad",
-      "id": "vdbB-6V"
-    },
-    {
-      "userId": "2",
+      "userId": "1",
       "articleId": "1",
       "text": "ads",
-      "id": "UlV7Sg1"
+      "id": "WPFtKay"
     },
     {
       "userId": "2",
       "articleId": "1",
-      "text": "fsad",
-      "id": "zQCjmUY"
-    },
-    {
-      "userId": "2",
-      "articleId": "1",
-      "text": "asd",
-      "id": "VjZwRKN"
-    },
-    {
-      "userId": "2",
-      "articleId": "1",
-      "text": "asd",
-      "id": "KduSCsy"
-    },
-    {
-      "userId": "2",
-      "articleId": "1",
-      "text": "Привет моя мама",
-      "id": "rEcfCU9"
-    },
-    {
-      "userId": "2",
-      "articleId": "1",
-      "text": "Загрузка коментария",
-      "id": "XwKXEDp"
+      "text": "Привет",
+      "id": "wPAsuFf"
     }
   ],
   "users": [
@@ -165,7 +117,7 @@
       "username": "user",
       "password": "123",
       "role": "USER",
-      "avatar": "https://sun9-42.userapi.com/impg/LJ83gAeKaXqyyXEsE_egKRlTLMAF_QBF6EDWcQ/_U0Z7TQJBGY.jpg?size=908x662&quality=96&sign=45ac91ef131869c5e4f69a756da70dce&type=album"
+      "avatar": "https://sun9-64.userapi.com/impg/Uq-87OuCZhgLvTkSLi4N2OTIZn2TT9qmZXj5pQ/OjK72L1099g.jpg?size=1440x1795&quality=95&sign=ced366496a11ba488e7910da9f769370&type=album"
     }
   ],
   "profile": [

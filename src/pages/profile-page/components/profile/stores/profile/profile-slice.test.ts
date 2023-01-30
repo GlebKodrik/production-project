@@ -39,22 +39,22 @@ describe('Test profile-slice', () => {
   });
 
   test('Save profile pending', () => {
-    const state: DeepPartial<TProfileSchema> = { isLoading: false };
+    const state: DeepPartial<TProfileSchema> = { saveProfile: { isLoading: true } };
     expect(profileReducer(
       state as TProfileSchema,
       saveProfileData.pending,
-    )).toEqual({ isLoading: true });
+    )).toEqual({ saveProfile: { isLoading: true } });
   });
 
   test('Save profile fulfilled', () => {
     const state: DeepPartial<TProfileSchema> = {
-      isLoading: false, isReadOnly: true, data: undefined, editForm: undefined,
+      saveProfile: { isLoading: true }, isReadOnly: true, data: undefined, editForm: undefined,
     };
     expect(profileReducer(
       state as TProfileSchema,
       saveProfileData.fulfilled(data, '1', ''),
     )).toEqual({
-      isLoading: false, isReadOnly: true, data, editForm: data,
+      saveProfile: { isLoading: false }, isReadOnly: true, data, editForm: data,
     });
   });
 });
