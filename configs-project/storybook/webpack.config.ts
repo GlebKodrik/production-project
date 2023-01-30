@@ -2,7 +2,6 @@ import webpack, { RuleSetRule } from 'webpack';
 import path from 'path';
 
 import { buildStyleLoader } from '../global-loaders/build-style-loader';
-import { ALIAS } from '../constants/alias';
 
 export default ({ config }: { config: webpack.Configuration }) => {
   const paths = {
@@ -13,7 +12,6 @@ export default ({ config }: { config: webpack.Configuration }) => {
   };
   config!.resolve!.modules!.push(paths.src);
   config!.resolve!.extensions!.push('.ts', '.tsx');
-  config!.resolve!.alias = ALIAS;
 
   // eslint-disable-next-line no-param-reassign
   let rules = config.module!.rules as RuleSetRule[];

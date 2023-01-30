@@ -5,7 +5,7 @@ import Counter from 'shared-components/counter';
 import { Input } from 'shared-components/input';
 import { notificationsActions } from 'feature/notifications/stores/notifications';
 import { useAppDispatch } from 'hooks/use-app-dispatch';
-import { AddComments } from '../../feature/add-comments';
+import { AddComments } from 'feature/add-comments';
 
 export const AboutPage = () => {
   const { translation } = useLanguage(LOCALES.ABOUT_PAGE);
