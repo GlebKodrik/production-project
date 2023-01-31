@@ -1,6 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { TVariantView } from '../../../shared-components/card';
-import { TArticle } from '../../../pages/articles/types';
+import { ControlLocalStorage } from 'services/control-local-storage';
+import { LOCAL_STORAGE_KEYS } from 'constants/local-storage-keys';
+import { TVariantView } from 'shared-components/article-card';
+import { TArticle } from 'pages/articles/types';
 import { TArticlesScheme } from './types';
 import { requestGetArticles } from './requests/request-get-articles';
 
@@ -8,7 +10,7 @@ const initialState: TArticlesScheme = {
   isLoading: false,
   data: undefined,
   error: undefined,
-  variantView: 'big',
+  variantView: ControlLocalStorage.getValueLocalStorage(LOCAL_STORAGE_KEYS.VARIANT_VIEW_ARTICLE),
 };
 
 export const articlesSlice = createSlice({
@@ -17,6 +19,7 @@ export const articlesSlice = createSlice({
   reducers: {
     setVariantView(state, action: PayloadAction<TVariantView>) {
       state.variantView = action.payload;
+      ControlLocalStorage.setValueLocalStorage(LOCAL_STORAGE_KEYS.VARIANT_VIEW_ARTICLE, action.payload);
     },
   },
   extraReducers: (builder) => {

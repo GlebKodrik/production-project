@@ -1,11 +1,15 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { getArticles } from 'redux-stores/stores/articles/selectors';
+import { getArticles, getVariantView } from 'redux-stores/stores/articles/selectors';
 import { Typography } from 'shared-components/typography';
 import { useLanguage } from 'hooks/use-language';
 import { getArticlesIsLoading } from 'redux-stores/stores/articles/selectors/get-articles';
 import { ROUTES_PATH } from 'constants/routers';
-import { ArticleCard, ArticleCardBigSkeleton } from '../../../../../shared-components/card';
+import {
+  ArticleCard,
+  ArticleCardBigSkeleton,
+  ArticleCardSmallSkeleton,
+} from 'shared-components/article-card';
 import styles from './article-list.module.scss';
 import { TArticleBlock, TArticleBlockText } from '../../../types';
 
@@ -13,9 +17,12 @@ export const ArticleList = () => {
   const { translation } = useLanguage();
   const articles = useSelector(getArticles);
   const isLoading = useSelector(getArticlesIsLoading);
+  const variantViewArticle = useSelector(getVariantView);
 
   if (isLoading) {
-    return <ArticleCardBigSkeleton />;
+    return variantViewArticle === 'big'
+      ? <ArticleCardBigSkeleton />
+      : <ArticleCardSmallSkeleton />;
   }
 
   if (!articles?.length && !isLoading) {
@@ -39,8 +46,8 @@ export const ArticleList = () => {
           image={article.img}
           createdAt={article.createdAt}
           user={article.user}
-          className={styles.big}
-          variant="big"
+          className={styles[variantViewArticle]}
+          variant={variantViewArticle}
           paragraph={getParagraph(article.blocks)}
           to={`${ROUTES_PATH.ARTICLE_DETAIL}/${article.id}`}
         />
