@@ -12,6 +12,8 @@ import Article from '../images/article-20-20.svg';
 import Calendar from '../images/calendar-20-20.svg';
 import Eye from '../images/eye-20-20.svg';
 import Copy from '../images/copy-20-20.svg';
+import List from '../images/list-24-24.svg';
+import Tiled from '../images/tiled-24-24.svg';
 
 import { ICON_NAMES } from './icon-names';
 
@@ -29,4 +31,6 @@ export const ICONS_COMPONENT: Record<TIconNames, React.VFC<React.SVGProps<SVGSVG
   [ICON_NAMES.CALENDAR]: Calendar,
   [ICON_NAMES.EYE]: Eye,
   [ICON_NAMES.COPY]: Copy,
+  [ICON_NAMES.LIST]: List,
+  [ICON_NAMES.TILED]: Tiled,
 };

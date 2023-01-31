@@ -2,7 +2,6 @@ import React, { CSSProperties, useMemo } from 'react';
 import cn from 'classnames';
 import styles from './avatar.module.scss';
 import { TAvatarProps } from './types';
-import NoUser from '../../assets/image/no-user.png';
 
 export const Avatar = React.memo((
   {
@@ -21,7 +20,7 @@ export const Avatar = React.memo((
   return (
     <div className={cn(styles.wrapper, { [styles.border]: border }, className)}>
       <img
-        src={src || NoUser}
+        src={src}
         alt={alt}
         style={customStyles}
         className={styles.avatar}

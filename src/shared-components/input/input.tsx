@@ -30,9 +30,9 @@ export const Input = React.memo(({
   };
 
   const renderPlaceholder = () => placeholder && (
-  <div className={styles.placeholder}>
+  <span className={styles.placeholder}>
     {`${placeholder}>`}
-  </div>
+  </span>
   );
 
   const renderError = () => error && <div className={styles.errorMessage}>{error}</div>;

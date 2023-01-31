@@ -1,9 +1,13 @@
-.avatar {
-  img {
-    width: 180px;
-    height: 180px;
-  }
+.wrapper {
+  position: relative;
+}
 
+.back {
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
+.avatar {
   text-align: center;
 }
 

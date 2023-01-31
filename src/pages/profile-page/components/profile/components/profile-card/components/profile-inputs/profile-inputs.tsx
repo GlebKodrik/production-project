@@ -46,7 +46,10 @@ export const ProfileInputs = ({
       value: username, name: 'username', translateText: 'form.username', onChange: onInputUsernameChange,
     },
     {
-      value: avatar, name: 'avatar', translateText: 'form.avatar', onChange: onInputAvatarChange,
+      value: avatar,
+      name: 'avatar',
+      translateText: 'form.avatar',
+      onChange: onInputAvatarChange,
     },
   ], [profileData]);
 

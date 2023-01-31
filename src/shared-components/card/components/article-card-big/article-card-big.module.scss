@@ -1,0 +1,70 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    margin-bottom: 5px;
+  }
+
+  &-title-with-views {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-read-more {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+}
+
+.username {
+  margin-right: auto;
+  margin-left: 8px;
+}
+
+.title {
+  margin-bottom: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.created-at {
+  padding: 4px;
+  color: white;
+  background-color: rgb(0 0 0 / 60%);
+}
+
+.image {
+  max-height: 250px;
+  margin-bottom: 8px;
+  object-fit: cover;
+}
+
+.theme {
+  &-wrapper {
+    display: flex;
+    margin-top: 4px;
+  }
+
+  &-type {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &-text {
+    margin-right: 4px;
+    margin-bottom: 8px;
+  }
+}
+
+.paragraph {
+  max-height: 260px;
+  overflow: hidden;
+}

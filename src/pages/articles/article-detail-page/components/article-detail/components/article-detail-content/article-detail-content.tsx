@@ -14,14 +14,17 @@ import {
 } from 'redux-stores/stores/article-detail/requests/request-add-comments';
 import { getUser } from 'redux-stores/stores/user/selectors/get-user';
 import { unwrapResult } from '@reduxjs/toolkit';
+import { TOption } from 'feature/add-comments/types';
+import { Button } from 'shared-components/button';
+import { useNavigate } from 'react-router-dom';
 import { ArticleDetailContentSkeleton } from './components/article-detail-content-skeleton';
 import styles from './article-detail-content.module.scss';
 import { ArticleBlock } from './components/article-block';
 import { ArticleDetailComments } from '../article-detail-comments';
 import { TProps } from './types';
-import { TOption } from '../../../../../../../feature/add-comments/types';
 
 export const ArticleDetailContent = ({ id }: TProps) => {
+  const navigate = useNavigate();
   const article = useSelector(getArticleDetail);
   const isLoading = useSelector(getArticleIsLoading);
   const user = useSelector(getUser);
@@ -52,9 +55,16 @@ export const ArticleDetailContent = ({ id }: TProps) => {
       });
   };
 
+  const onGotoBack = () => {
+    navigate(-1);
+  };
+
   return (
-    <>
-      <Avatar src={article?.img || ''} className={styles.avatar} />
+    <div className={styles.wrapper}>
+      <Button onClick={onGotoBack} color="secondary" className={styles.back}>
+        ← К списку
+      </Button>
+      <Avatar src={article?.img} className={styles.avatar} alt="article" size={180} />
       <Typography color="secondary" size="large" className={styles.title} tag="h1">{article?.title}</Typography>
       <Typography color="secondary" size="medium-large" className={styles.subtitle}>{article?.subtitle}</Typography>
       <div className={styles.wrapperAdditions}>
@@ -76,6 +86,6 @@ export const ArticleDetailContent = ({ id }: TProps) => {
       </Typography>
       <AddComments onSubmit={onSubmit} />
       <ArticleDetailComments />
-    </>
+    </div>
   );
 };

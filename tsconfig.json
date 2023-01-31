@@ -12,12 +12,6 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "plugins": [{
-      "name": "typescript-plugin-css-modules",
-      "options": {
-        "classnameTransform": "camelCase",
-      }
-    }],
     "paths": {
       "*": ["*"]
     }

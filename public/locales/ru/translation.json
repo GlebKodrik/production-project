@@ -39,5 +39,10 @@
   "validationGlobal": {
     "required": "Обязательное поле",
     "comment": "Слишнком большой комментарий (макс. 100)"
-  }
+  },
+  "articles": {
+    "notArticles": "К сожалению статей нет\uD83D\uDE25",
+    "readMore": "Читать далее..."
+  },
+  "theme": "Темы"
 }

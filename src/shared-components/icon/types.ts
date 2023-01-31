@@ -7,7 +7,7 @@ export type TIconProps = {
   name: TIconNames,
   fill?: 'secondary' | 'primary' | CSS.Property.Color,
   opacity?: number;
-  width?: string;
-  height?: string;
+  width?: string | number;
+  height?: string | number;
   className?: string;
 };

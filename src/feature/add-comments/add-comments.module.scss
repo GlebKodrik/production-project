@@ -5,9 +5,15 @@
 .input {
   input {
     width: 480px;
+    height: 46px;
+  }
+
+  span {
+    padding-top: 10px;
   }
 }
 
 .button {
-  padding-top: 3px;
+  margin-left: 2px;
+  padding-top: 10px;
 }

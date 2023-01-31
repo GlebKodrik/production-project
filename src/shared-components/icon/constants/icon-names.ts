@@ -11,4 +11,6 @@ export const ICON_NAMES = {
   CALENDAR: 'calendar',
   EYE: 'eye',
   COPY: 'copy',
+  TILED: 'tiled',
+  LIST: 'list',
 } as const;

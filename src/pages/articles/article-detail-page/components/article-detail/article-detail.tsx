@@ -4,12 +4,12 @@ import { DynamicModuleLoader, TReducersList } from 'redux-stores/components/dyna
 import { requestGetComments } from 'redux-stores/stores/article-detail/requests/request-get-comments';
 import { requestGetArticleDetailById }
   from 'redux-stores/stores/article-detail/requests/request-get-article-detail-by-id';
-import { articlesReducer } from 'redux-stores/stores/article-detail';
+import { articleDetailReducer } from 'redux-stores/stores/article-detail';
 import { TArticleDetailProps } from './types';
 import { ArticleDetailContent } from './components/article-detail-content';
 
 const reducer: TReducersList[] = [
-  { name: 'article', reducer: articlesReducer },
+  { name: 'articleDetail', reducer: articleDetailReducer },
 ];
 
 export const ArticleDetail: React.FC<TArticleDetailProps> = ({

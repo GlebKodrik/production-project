@@ -20,7 +20,7 @@ const initialState: TArticleDetailScheme = {
 };
 
 export const articleDetailSlice = createSlice({
-  name: 'articles',
+  name: 'articleDetail',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -63,5 +63,5 @@ export const articleDetailSlice = createSlice({
   },
 });
 
-export const { actions: articlesActions } = articleDetailSlice;
-export const { reducer: articlesReducer } = articleDetailSlice;
+export const { actions: articleDetailActions } = articleDetailSlice;
+export const { reducer: articleDetailReducer } = articleDetailSlice;

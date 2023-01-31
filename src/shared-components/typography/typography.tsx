@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import cls from 'classnames';
 
 import styles from './typography.module.scss';
@@ -11,6 +11,7 @@ export const Typography = React.memo((
     color = 'primary',
     size = 'medium',
     tag,
+    fontSize,
   }: TTypographyProps,
 ) => {
   const classes = {
@@ -18,10 +19,15 @@ export const Typography = React.memo((
     [styles[`size-${size}`]]: Boolean(size),
   };
 
+  const style: CSSProperties = {
+    fontSize: `${fontSize}px`,
+  };
+
   const Tag = tag || 'p';
   return (
     <Tag
       className={cls(styles.typography, classes, className)}
+      style={style}
     >
       {children}
     </Tag>

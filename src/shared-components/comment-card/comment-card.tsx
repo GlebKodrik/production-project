@@ -18,10 +18,6 @@ export const CommentCard = ({
     return null;
   }
 
-  const classes = {
-    [styles[`color-${color}`]]: Boolean(color),
-  };
-
   const renderContent = () => {
     const children = (
       <div className={styles.wrapperAvatar}>
@@ -36,7 +32,7 @@ export const CommentCard = ({
   };
 
   return (
-    <div className={cn(className, classes)}>
+    <div className={cn(className)}>
       {renderContent()}
       <Typography color={color}>{comment}</Typography>
     </div>

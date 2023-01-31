@@ -6,7 +6,8 @@ type TSizeButton = 'medium' | 'medium-large' | 'large' | 'extra-large';
 export interface TTypographyProps {
   size?: TSizeButton
   className?: string,
-  color?: TColorButton;
+  color?: TColorButton
   children: ReactNode;
-  tag?: React.ElementType
+  tag?: React.ElementType;
+  fontSize?: number;
 }

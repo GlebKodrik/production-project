@@ -40,5 +40,9 @@
     "required": "Required field",
     "comment": "Too big comment (max. 100)"
   },
-
+  "articles": {
+    "notArticles": "Unfortunately there are no articles\uD83D\uDE25",
+    "readMore": "Read more..."
+  },
+  "theme": "Theme"
 }

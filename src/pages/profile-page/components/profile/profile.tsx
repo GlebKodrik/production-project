@@ -56,7 +56,9 @@ export const Profile: React.FC = () => {
   };
 
   const onInputAvatarChange = (value: string) => {
-    dispatch(profileActions.updateProfileData({ avatar: value }));
+    dispatch(profileActions.updateProfileData({
+      avatar: value,
+    }));
   };
 
   const onChangeCurrencyValue = (value: TCurrency) => {
