@@ -1,14 +1,22 @@
-import React, { useRef } from 'react';
+import React, { MutableRefObject, useEffect, useRef } from 'react';
 import { TProps } from './types';
-import styles from './infinite-scroll.module.scss';
 import { useInfiniteScroll } from '../../hooks/use-infinite-scroll';
 
 export const InfiniteScroll = ({
   callbackScrollEnd,
   children,
+  scrollableTarget,
 }: TProps) => {
-  const wrapperRef = useRef<any>(null);
-  const triggerRef = useRef<any>(null);
+  const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
+  const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
+
+  useEffect(() => {
+    if (wrapperRef.current) {
+      // @ts-ignore
+      wrapperRef.current = document.querySelector(`#${scrollableTarget}`);
+    }
+  }, [scrollableTarget]);
+
   useInfiniteScroll({
     callback: callbackScrollEnd,
     wrapperRef,
@@ -16,9 +24,9 @@ export const InfiniteScroll = ({
   });
 
   return (
-    <div className={styles.wrapper} ref={wrapperRef}>
+    <>
       {children}
       <div ref={triggerRef} />
-    </div>
+    </>
   );
 };

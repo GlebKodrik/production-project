@@ -6,6 +6,7 @@ import { Input } from 'shared-components/input';
 import { notificationsActions } from 'feature/notifications/stores/notifications';
 import { useAppDispatch } from 'hooks/use-app-dispatch';
 import { AddComments } from 'feature/add-comments';
+import { Page } from '../../shared-components/page';
 
 export const AboutPage = () => {
   const { translation } = useLanguage(LOCALES.ABOUT_PAGE);
@@ -18,7 +19,7 @@ export const AboutPage = () => {
     ));
   };
   return (
-    <>
+    <Page>
       <AddComments onSubmit={() => {}} />
       {translation('about')}
       <button onClick={addAlert}>Добавить алерт</button>
@@ -30,6 +31,6 @@ export const AboutPage = () => {
         variant="plain"
       />
       <Counter />
-    </>
+    </Page>
   );
 };

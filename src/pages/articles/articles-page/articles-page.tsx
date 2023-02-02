@@ -7,6 +7,7 @@ import { articleActions } from 'redux-stores/stores/articles';
 import { getArticlesPage, getVariantView } from 'redux-stores/stores/articles/selectors';
 import { InfiniteScroll } from 'shared-components/infinite-scroll';
 import { getArticlesIsHowMore, getArticlesIsLoading } from 'redux-stores/stores/articles/selectors/get-articles';
+import { Page } from 'shared-components/page';
 import { ArticleVariantView } from './components/article-variant-view';
 import { ArticleList } from './components/article-list';
 import styles from './articles-page.module.scss';
@@ -35,15 +36,16 @@ export const ArticlesPage: React.FC = () => {
   };
 
   return (
-    <InfiniteScroll callbackScrollEnd={onScrollEnd}>
-      <ArticleVariantView
-        variantView={variantView}
-        onClick={onChangeView}
-        color="secondary"
-        className={styles.variantViewWrapper}
-      />
-      <ArticleList />
-    </InfiniteScroll>
-
+    <Page id="scrollableDiv">
+      <InfiniteScroll callbackScrollEnd={onScrollEnd} scrollableTarget="scrollableDiv">
+        <ArticleVariantView
+          variantView={variantView}
+          onClick={onChangeView}
+          color="secondary"
+          className={styles.variantViewWrapper}
+        />
+        <ArticleList />
+      </InfiniteScroll>
+    </Page>
   );
 };
