@@ -42,7 +42,8 @@
   },
   "articles": {
     "notArticles": "К сожалению статей нет\uD83D\uDE25",
-    "readMore": "Читать далее..."
+    "readMore": "Читать далее...",
+    "errorGetArticles": "Ошибка получения статей"
   },
   "theme": "Темы"
 }

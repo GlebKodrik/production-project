@@ -10,5 +10,5 @@ export type TArticlesScheme = {
   // pagination
   limit: number,
   page: number,
-  isHowMore: boolean
+  isHasMore: boolean
 };

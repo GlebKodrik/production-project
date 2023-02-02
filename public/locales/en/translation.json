@@ -42,7 +42,8 @@
   },
   "articles": {
     "notArticles": "Unfortunately there are no articles\uD83D\uDE25",
-    "readMore": "Read more..."
+    "readMore": "Read more...",
+    "errorGetArticles": "Error get articles"
   },
   "theme": "Theme"
 }

@@ -1,1 +1,1 @@
-export type TProps = { page: number, limit: number };
+export type TProps = { page: number };

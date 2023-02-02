@@ -11,7 +11,7 @@ const initialState: TArticlesScheme = {
   data: [],
   error: undefined,
   isFinished: false,
-  isHowMore: false,
+  isHasMore: false,
   variantView: ControlLocalStorage.getValueLocalStorage<TVariantView>(LOCAL_STORAGE_KEYS.VARIANT_VIEW_ARTICLE),
   page: 1,
   limit: 4,
@@ -22,6 +22,8 @@ export const articlesSlice = createSlice({
   initialState,
   reducers: {
     setVariantView(state, action: PayloadAction<TVariantView>) {
+      state.data = [];
+      state.page = 1;
       state.variantView = action.payload;
       ControlLocalStorage.setValueLocalStorage(LOCAL_STORAGE_KEYS.VARIANT_VIEW_ARTICLE, action.payload);
     },
@@ -40,7 +42,7 @@ export const articlesSlice = createSlice({
         state.isLoading = false;
         state.isFinished = true;
         state.data = [...state.data, ...action.payload];
-        state.isHowMore = action.payload.length > 0;
+        state.isHasMore = action.payload.length > 0;
       })
       .addCase(requestGetArticles.rejected, (state, action) => {
         state.isLoading = false;

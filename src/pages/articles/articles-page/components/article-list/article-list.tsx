@@ -15,7 +15,7 @@ const getSkeletons = (variantView: TVariantView) => {
   const isBigView = variantView === 'big';
   const Component = isBigView ? ArticleCardBigSkeleton : ArticleCardSmallSkeleton;
   const countSkeletonsView = isBigView ? 3 : 9;
-  return new Array(countSkeletonsView).fill(0).map((index) => (
+  return new Array(countSkeletonsView).fill(0).map((_, index) => (
     <Component key={index} className={styles[variantView]} />
   ));
 };
