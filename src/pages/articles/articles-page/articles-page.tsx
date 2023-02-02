@@ -27,7 +27,12 @@ export const ArticlesPage: React.FC = () => {
   };
 
   useEffect(() => {
+    dispatch(articleActions.init());
     dispatch(requestGetArticles({ page: 1 }));
+
+    return () => {
+      dispatch(articleActions.clearArticles());
+    };
   }, [variantView]);
 
   const onChangeView = (name: TVariantView) => {

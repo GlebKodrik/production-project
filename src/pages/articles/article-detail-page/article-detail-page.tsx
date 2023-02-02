@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Typography } from 'shared-components/typography';
 import { useLanguage } from 'hooks/use-language';
 import { ArticleDetail } from './components/article-detail';
+import { Page } from '../../../shared-components/page';
 
 export const ArticleDetailPage: React.FC = () => {
   const { translation } = useLanguage();
@@ -14,8 +15,8 @@ export const ArticleDetailPage: React.FC = () => {
   }
 
   return (
-    <>
+    <Page>
       <ArticleDetail id={id} />
-    </>
+    </Page>
   );
 };
