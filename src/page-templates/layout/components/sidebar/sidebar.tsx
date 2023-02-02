@@ -16,7 +16,7 @@ export const Sidebar = () => {
   const renderButtonCollapse = () => (collapse ? '>' : '<');
 
   return (
-    <div
+    <aside
       data-testid="sidebar"
       className={cls(styles.sidebar, { [styles.collapse]: collapse })}
     >
@@ -41,6 +41,6 @@ export const Sidebar = () => {
           short={collapse}
         />
       </div>
-    </div>
+    </aside>
   );
 };

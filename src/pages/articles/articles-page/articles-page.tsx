@@ -4,25 +4,38 @@ import { useAppDispatch } from 'hooks/use-app-dispatch';
 import { requestGetArticles } from 'redux-stores/stores/articles/requests/request-get-articles';
 import { TVariantView } from 'shared-components/article-card';
 import { articleActions } from 'redux-stores/stores/articles';
-import { getVariantView } from 'redux-stores/stores/articles/selectors';
+import { getArticlesPage, getVariantView } from 'redux-stores/stores/articles/selectors';
+import { InfiniteScroll } from 'shared-components/infinite-scroll';
+import { getArticlesIsHowMore, getArticlesIsLoading } from 'redux-stores/stores/articles/selectors/get-articles';
 import { ArticleVariantView } from './components/article-variant-view';
 import { ArticleList } from './components/article-list';
 import styles from './articles-page.module.scss';
 
 export const ArticlesPage: React.FC = () => {
+  const page = useSelector(getArticlesPage);
+  const isHowMore = useSelector(getArticlesIsHowMore);
+  const isLoading = useSelector(getArticlesIsLoading);
   const dispatch = useAppDispatch();
   const variantView = useSelector(getVariantView);
+  const isLimitedView = variantView === 'big' ? 4 : 9;
+
+  const onScrollEnd = () => {
+    if (isHowMore && !isLoading) {
+      dispatch(requestGetArticles({ page: page + 1, limit: isLimitedView }));
+      dispatch(articleActions.setPage(page + 1));
+    }
+  };
 
   useEffect(() => {
-    dispatch(requestGetArticles());
-  }, []);
+    dispatch(requestGetArticles({ page: 1, limit: isLimitedView }));
+  }, [variantView]);
 
   const onChangeView = (name: TVariantView) => {
     dispatch(articleActions.setVariantView(name));
   };
 
   return (
-    <>
+    <InfiniteScroll callbackScrollEnd={onScrollEnd}>
       <ArticleVariantView
         variantView={variantView}
         onClick={onChangeView}
@@ -30,6 +43,7 @@ export const ArticlesPage: React.FC = () => {
         className={styles.variantViewWrapper}
       />
       <ArticleList />
-    </>
+    </InfiniteScroll>
+
   );
 };

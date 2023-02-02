@@ -1,7 +1,8 @@
-import { getArticles } from './get-articles';
+import { getArticles, getArticlesPage } from './get-articles';
 import { getVariantView } from './get-variant-view';
 
 export {
   getArticles,
   getVariantView,
+  getArticlesPage,
 };

@@ -3,31 +3,41 @@ import { useSelector } from 'react-redux';
 import { getArticles, getVariantView } from 'redux-stores/stores/articles/selectors';
 import { Typography } from 'shared-components/typography';
 import { useLanguage } from 'hooks/use-language';
-import { getArticlesIsLoading } from 'redux-stores/stores/articles/selectors/get-articles';
+import { getArticlesIsFinished, getArticlesIsLoading } from 'redux-stores/stores/articles/selectors/get-articles';
 import { ROUTES_PATH } from 'constants/routers';
 import {
-  ArticleCard,
-  ArticleCardBigSkeleton,
-  ArticleCardSmallSkeleton,
+  ArticleCard, ArticleCardBigSkeleton, ArticleCardSmallSkeleton, TVariantView,
 } from 'shared-components/article-card';
 import styles from './article-list.module.scss';
 import { TArticleBlock, TArticleBlockText } from '../../../types';
 
+const getSkeletons = (variantView: TVariantView) => {
+  const isBigView = variantView === 'big';
+  const Component = isBigView ? ArticleCardBigSkeleton : ArticleCardSmallSkeleton;
+  const countSkeletonsView = isBigView ? 3 : 9;
+  return new Array(countSkeletonsView).fill(0).map((index) => (
+    <Component key={index} className={styles[variantView]} />
+  ));
+};
+
 export const ArticleList = () => {
   const { translation } = useLanguage();
   const articles = useSelector(getArticles);
+  const isFinished = useSelector(getArticlesIsFinished);
   const isLoading = useSelector(getArticlesIsLoading);
   const variantViewArticle = useSelector(getVariantView);
+  const isNotArticles = isFinished && !articles?.length;
 
-  if (isLoading) {
-    return variantViewArticle === 'big'
-      ? <ArticleCardBigSkeleton />
-      : <ArticleCardSmallSkeleton />;
-  }
-
-  if (!articles?.length && !isLoading) {
+  if (isNotArticles) {
     return <Typography color="secondary" size="medium-large">{translation('articles.notArticles')}</Typography>;
   }
+
+  const renderIsLoading = () => {
+    if (isLoading) {
+      return getSkeletons(variantViewArticle);
+    }
+    return null;
+  };
 
   const getParagraph = (blocks: TArticleBlock[]): string => {
     const textBlock = blocks.find(({ type }) => type === 'TEXT') as TArticleBlockText;
@@ -36,9 +46,9 @@ export const ArticleList = () => {
 
   return (
     <div className={styles.wrapper}>
-      {articles?.map((article) => (
+      {articles?.map((article, index) => (
         <ArticleCard
-          key={article.id}
+          key={index}
           color="secondary"
           views={article.views}
           title={article.title}
@@ -52,6 +62,7 @@ export const ArticleList = () => {
           to={`${ROUTES_PATH.ARTICLE_DETAIL}/${article.id}`}
         />
       ))}
+      {renderIsLoading()}
     </div>
   );
 };

@@ -50,9 +50,11 @@ export const SidebarLinks: React.FC = () => {
   );
 
   return (
-    <ul>
-      { LINKS_FOR_ALL_USERS.map(renderLinks) }
-      { isAuth && LINKS_FOR_AUTH_USERS.map(renderLinks) }
-    </ul>
+    <nav>
+      <ul>
+        { LINKS_FOR_ALL_USERS.map(renderLinks) }
+        { isAuth && LINKS_FOR_AUTH_USERS.map(renderLinks) }
+      </ul>
+    </nav>
   );
 };

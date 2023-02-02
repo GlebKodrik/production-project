@@ -8,9 +8,13 @@ import { requestGetArticles } from './requests/request-get-articles';
 
 const initialState: TArticlesScheme = {
   isLoading: false,
-  data: undefined,
+  data: [],
   error: undefined,
-  variantView: ControlLocalStorage.getValueLocalStorage(LOCAL_STORAGE_KEYS.VARIANT_VIEW_ARTICLE),
+  isFinished: false,
+  isHowMore: false,
+  variantView: ControlLocalStorage.getValueLocalStorage<TVariantView>(LOCAL_STORAGE_KEYS.VARIANT_VIEW_ARTICLE),
+  page: 1,
+  limit: 4,
 };
 
 export const articlesSlice = createSlice({
@@ -21,19 +25,26 @@ export const articlesSlice = createSlice({
       state.variantView = action.payload;
       ControlLocalStorage.setValueLocalStorage(LOCAL_STORAGE_KEYS.VARIANT_VIEW_ARTICLE, action.payload);
     },
+    setPage(state, action: PayloadAction<number>) {
+      state.page = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
       .addCase(requestGetArticles.pending, (state) => {
         state.error = undefined;
+        state.isFinished = false;
         state.isLoading = true;
       })
       .addCase(requestGetArticles.fulfilled, (state, action: PayloadAction<TArticle[]>) => {
         state.isLoading = false;
-        state.data = action.payload;
+        state.isFinished = true;
+        state.data = [...state.data, ...action.payload];
+        state.isHowMore = action.payload.length > 0;
       })
       .addCase(requestGetArticles.rejected, (state, action) => {
         state.isLoading = false;
+        state.isFinished = true;
         state.error = action.payload;
       });
   },

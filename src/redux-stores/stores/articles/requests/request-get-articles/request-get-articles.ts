@@ -4,12 +4,15 @@ import { TThunkConfig } from 'redux-stores/types/thunk-config';
 import i18n from 'i18next';
 import { LOCALES } from 'constants/locales';
 import { TArticle } from 'pages/articles/types';
+import { TProps } from './types';
 
-export const requestGetArticles = createAsyncThunk<TArticle[], void, TThunkConfig<string>>(
+export const requestGetArticles = createAsyncThunk<TArticle[], TProps, TThunkConfig<string>>(
   'articles/requestGetArticles',
   async (
-    _,
-    { extra, dispatch, rejectWithValue },
+    { page = 1, limit },
+    {
+      extra, dispatch, rejectWithValue,
+    },
   ) => {
     let ERROR_GET_ARTICLE_COMMENTS: string;
 
@@ -25,6 +28,8 @@ export const requestGetArticles = createAsyncThunk<TArticle[], void, TThunkConfi
       const response = await extra.api.get<TArticle[]>('/articles', {
         params: {
           _expand: 'user',
+          _page: page,
+          _limit: limit,
         },
       });
       return response.data;
