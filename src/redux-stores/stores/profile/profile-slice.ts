@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { TProfile, TProfileSchema } from 'pages/profile-page/components/profile/stores/profile/types';
+import { TProfile, TProfileSchema } from 'redux-stores/stores/profile/types';
 import { requestGetProfileData } from './requests/request-get-profile-data';
 import { saveProfileData } from './requests/save-profile-data';
 

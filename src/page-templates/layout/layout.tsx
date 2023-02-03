@@ -9,7 +9,7 @@ const Layout: React.FC = () => (
     <Navbar />
     <div className={styles.contentPage}>
       <Sidebar />
-      <div className={styles.pageWrapper}>
+      <div className={styles.pageWrapper} id="scrollableDiv">
         <Outlet />
       </div>
     </div>

@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { TCurrency } from 'shared-components/currency/types';
 import { TCountry } from 'shared-components/country/types';
-import { TProfile } from '../../stores/profile/types';
+import { TProfile } from '../../../../../../redux-stores/stores/profile/types';
 
 export type TProfileCardProps = {
   onProfileSave: () => void;

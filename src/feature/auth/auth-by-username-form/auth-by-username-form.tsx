@@ -60,7 +60,7 @@ export const AuthByUsernameForm: React.FC<TProps> = ({
           autoFocus={isOpen}
           onChange={onUsernameChange}
           className={styles.input}
-          placeholder={translation('auth.placeholder.username')}
+          label={translation('auth.placeholder.username')}
           error={errors.username?.message}
         />
         <Input
@@ -69,7 +69,7 @@ export const AuthByUsernameForm: React.FC<TProps> = ({
           value={password}
           onChange={onPasswordChange}
           className={styles.input}
-          placeholder={translation('auth.placeholder.password')}
+          label={translation('auth.placeholder.password')}
           error={errors.password?.message}
         />
         <div className={styles.submit}>

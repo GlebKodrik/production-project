@@ -6,10 +6,12 @@ import { Button } from 'shared-components/button';
 import { TComment, TInputValue, TProps } from './types';
 import { commentYupScheme } from './validation-comment';
 import styles from './add-comments.module.scss';
+import { useLanguage } from '../../hooks/use-language';
 
 export const AddComments = ({
   onSubmit,
 }: TProps) => {
+  const { translation } = useLanguage();
   const {
     control,
     handleSubmit,
@@ -31,19 +33,20 @@ export const AddComments = ({
         control={control}
         render={({ field: { onChange, value } }) => (
           <Input
-            placeholder="Введите текст комментария"
+            label={translation('enterCommentText')}
             value={value || ''}
             onChange={onChange}
             error={errors.comment?.message}
             color="secondary"
             className={styles.input}
+            placeholder={translation('writeMessage')}
             variant="outline"
           />
         )}
         name="comment"
       />
       <div>
-        <Button color="secondary" type="submit" className={styles.button}>Отправить</Button>
+        <Button color="secondary" type="submit" className={styles.button}>{translation('send')}</Button>
       </div>
     </form>
   );

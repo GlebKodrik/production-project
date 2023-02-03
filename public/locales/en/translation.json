@@ -45,5 +45,8 @@
     "readMore": "Read more...",
     "errorGetArticles": "Error get articles"
   },
-  "theme": "Theme"
+  "theme": "Theme",
+  "enterCommentText": "Enter comment text",
+  "writeMessage": "Write a message...",
+  "send": "Send"
 }

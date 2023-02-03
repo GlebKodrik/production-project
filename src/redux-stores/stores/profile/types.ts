@@ -1,5 +1,5 @@
 import { TCurrency } from 'shared-components/currency/types';
-import { TCountry } from '../../../../../../shared-components/country/types';
+import { TCountry } from '../../../shared-components/country/types';
 
 export type TProfile = {
   id?: string;

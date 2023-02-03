@@ -15,9 +15,12 @@ export const DynamicModuleLoader: React.FC<TDynamicModuleLoaderProps> = ({
   const dispatch = useDispatch();
 
   useEffect(() => {
+    const mounted = store.reducerManager.getReducerMap();
     reducers.forEach(({ name, reducer }: TReducersList) => {
-      store.reducerManager.add(name, reducer);
-      dispatch({ type: `@INIT ${name} reducer` });
+      if (!mounted[name]) {
+        store.reducerManager.add(name, reducer);
+        dispatch({ type: `@INIT ${name} reducer` });
+      }
     });
 
     return () => {

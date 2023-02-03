@@ -76,7 +76,7 @@ export const ProfileInputs = ({
           key={index}
           value={value || ''}
           onChange={(inputValue) => onChangeInput({ inputValue, name, onChange })}
-          placeholder={translation(translateText)}
+          label={translation(translateText)}
           readOnly={isReadOnly}
           className={cn(styles.input)}
           name={name}

@@ -1,6 +1,6 @@
 import { UseFormSetValue } from 'react-hook-form/dist/types/form';
 import { FieldErrors } from 'react-hook-form/dist/types/errors';
-import { TProfile } from '../../../../stores/profile/types';
+import { TProfile } from '../../../../../../../../redux-stores/stores/profile/types';
 import { TInputProps } from '../../types';
 
 export type TInputName = 'first' | 'lastname' | 'city' | 'age' | 'username' | 'avatar';

@@ -23,4 +23,5 @@ export interface TInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>,
   color?: TColorInput,
   variant?: TVariantInput,
   disabled?: boolean,
+  label?: string
 }

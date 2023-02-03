@@ -8,7 +8,7 @@ export const Input = React.memo(({
   inputRef,
   tabIndex,
   value,
-  placeholder,
+  label,
   onChange,
   className,
   error,
@@ -29,9 +29,9 @@ export const Input = React.memo(({
     [styles[`size-${size}`]]: Boolean(size),
   };
 
-  const renderPlaceholder = () => placeholder && (
+  const renderPlaceholder = () => label && (
   <span className={styles.placeholder}>
-    {`${placeholder}>`}
+    {`${label}>`}
   </span>
   );
 

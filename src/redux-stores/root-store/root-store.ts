@@ -14,7 +14,6 @@ import { articleReducer } from '../stores/articles';
 
 export const createReduxStore = ({
   initialState,
-  navigation,
 }: TCreateReduxStore) => {
   const rootReducer: ReducersMapObject<TReduxStateScheme> = {
     counter: counterReducer,
@@ -34,7 +33,6 @@ export const createReduxStore = ({
       thunk: {
         extraArgument: {
           api: axiosInterceptors,
-          navigation,
         },
       },
     }),

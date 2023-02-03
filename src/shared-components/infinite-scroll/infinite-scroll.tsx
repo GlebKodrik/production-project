@@ -11,9 +11,10 @@ export const InfiniteScroll = ({
   const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
 
   useEffect(() => {
-    if (wrapperRef.current) {
+    const element = document.querySelector(`#${scrollableTarget}`);
+    if (element) {
       // @ts-ignore
-      wrapperRef.current = document.querySelector(`#${scrollableTarget}`);
+      wrapperRef.current = element;
     }
   }, [scrollableTarget]);
 
