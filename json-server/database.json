@@ -931,6 +931,12 @@
       "articleId": "8",
       "text": "sadasd",
       "id": 9
+    },
+    {
+      "userId": "1",
+      "articleId": "12",
+      "text": "Написал первый коммент",
+      "id": 10
     }
   ],
   "users": [

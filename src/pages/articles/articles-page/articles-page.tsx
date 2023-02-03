@@ -15,7 +15,7 @@ import { InfiniteScroll } from 'shared-components/infinite-scroll';
 import { ArticleVariantView } from './components/article-variant-view';
 import { ArticleList } from './components/article-list';
 import styles from './articles-page.module.scss';
-import { Page } from '../../../shared-components/page';
+import { ScrollToTop } from '../../../feature/scroll-to-top';
 
 export const ArticlesPage: React.FC = () => {
   const page = useSelector(getArticlesPage);
@@ -44,7 +44,7 @@ export const ArticlesPage: React.FC = () => {
   };
 
   return (
-    <Page>
+    <ScrollToTop>
       <InfiniteScroll callbackScrollEnd={onScrollEnd} scrollableTarget="scrollableDiv">
         <ArticleVariantView
           variantView={variantView}
@@ -54,7 +54,7 @@ export const ArticlesPage: React.FC = () => {
         />
         <ArticleList />
       </InfiniteScroll>
-    </Page>
+    </ScrollToTop>
 
   );
 };

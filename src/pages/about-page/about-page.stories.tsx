@@ -6,7 +6,7 @@ import { ThemeDecorator } from '../../../configs-project/storybook/decorators/th
 import { THEMES } from '../../constants/themes';
 
 export default {
-  title: 'page/About',
+  title: 'scroll-to-top/About',
   component: AboutPage,
 } as ComponentMeta<typeof AboutPage>;
 

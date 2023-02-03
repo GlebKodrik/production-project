@@ -6,7 +6,7 @@ import { THEMES } from '../../constants/themes';
 import { ProfilePage } from './profile-page';
 
 export default {
-  title: 'page/ProfilePage',
+  title: 'scroll-to-top/ProfilePage',
   component: ProfilePage,
 } as ComponentMeta<typeof ProfilePage>;
 
