@@ -10,13 +10,14 @@ import { useLanguage } from '../../hooks/use-language';
 
 export const AddComments = ({
   onSubmit,
+  isShowError = false,
 }: TProps) => {
   const { translation } = useLanguage();
   const {
     control,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<TInputValue>({
     resolver: yupResolver(commentYupScheme()),
     mode: 'onChange',
@@ -36,7 +37,7 @@ export const AddComments = ({
             label={translation('enterCommentText')}
             value={value || ''}
             onChange={onChange}
-            error={errors.comment?.message}
+            error={isShowError ? errors.comment?.message : undefined}
             color="secondary"
             className={styles.input}
             placeholder={translation('writeMessage')}
@@ -46,7 +47,14 @@ export const AddComments = ({
         name="comment"
       />
       <div>
-        <Button color="secondary" type="submit" className={styles.button}>{translation('send')}</Button>
+        <Button
+          color="secondary"
+          type="submit"
+          className={styles.button}
+          disabled={!isValid}
+        >
+          {translation('send')}
+        </Button>
       </div>
     </form>
   );
