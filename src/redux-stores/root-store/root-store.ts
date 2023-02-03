@@ -11,6 +11,7 @@ import { counterReducer } from '../stores/counter';
 import { userReducer } from '../stores/user';
 import { FLAGS } from '../../../configs-project/webpack-configs/constants/variables';
 import { articleReducer } from '../stores/articles';
+import { scrollReducer } from '../stores/scroll';
 
 export const createReduxStore = ({
   initialState,
@@ -21,6 +22,7 @@ export const createReduxStore = ({
     loginForm: loginFormReducer,
     notifications: notificationsReducer,
     articles: articleReducer,
+    scroll: scrollReducer,
   };
 
   const reducerManager = createReducerManager(rootReducer);

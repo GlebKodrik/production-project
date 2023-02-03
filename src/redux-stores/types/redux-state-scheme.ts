@@ -5,6 +5,7 @@ import { TCounterState } from '../stores/counter';
 import { TUserScheme } from '../stores/user';
 import { TArticleDetailScheme } from '../stores/article-detail';
 import { TArticlesScheme } from '../stores/articles';
+import { TScrollState } from '../stores/scroll';
 
 export type TReduxStateScheme = {
   counter: TCounterState,
@@ -12,6 +13,7 @@ export type TReduxStateScheme = {
   loginForm: TLoginFormState,
   notifications: TNotificationsState,
   articles: TArticlesScheme,
+  scroll: TScrollState,
   // async
   profile?: TProfileSchema,
   articleDetail?: TArticleDetailScheme,
