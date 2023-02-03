@@ -2,7 +2,12 @@ import React from 'react';
 import { Typography } from 'shared-components/typography';
 import { useLanguage } from 'hooks/use-language';
 import { useSelector } from 'react-redux';
-import { getArticleDetail, getArticleError, getArticleIsLoading } from 'redux-stores/stores/article-detail/selectors';
+import {
+  getArticleDetail,
+  getArticleError,
+  getArticleIsLoading,
+  getIsLoadingSendComment,
+} from 'redux-stores/stores/article-detail/selectors';
 import { Avatar } from 'shared-components/avatar';
 import { Icon } from 'shared-components/icon';
 import cn from 'classnames';
@@ -30,6 +35,7 @@ export const ArticleDetailContent = ({ id }: TProps) => {
   const user = useSelector(getUser);
   const dispatch = useAppDispatch();
   const error = useSelector(getArticleError);
+  const isLoadingSendComment = useSelector(getIsLoadingSendComment);
   const { translation } = useLanguage([LOCALES.ARTICLE_DETAIL_PAGE, LOCALES.BASE]);
 
   if (isLoading) {
@@ -88,7 +94,7 @@ export const ArticleDetailContent = ({ id }: TProps) => {
       >
         {translation('comment')}
       </Typography>
-      <AddComments onSubmit={onSubmit} />
+      <AddComments onSubmit={onSubmit} isLoading={isLoadingSendComment} />
       <ArticleDetailComments />
     </div>
   );

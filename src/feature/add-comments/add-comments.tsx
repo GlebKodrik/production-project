@@ -11,6 +11,7 @@ import { useLanguage } from '../../hooks/use-language';
 export const AddComments = ({
   onSubmit,
   isShowError = false,
+  isLoading = false,
 }: TProps) => {
   const { translation } = useLanguage();
   const {
@@ -51,7 +52,7 @@ export const AddComments = ({
           color="secondary"
           type="submit"
           className={styles.button}
-          disabled={!isValid}
+          disabled={isLoading || !isValid}
         >
           {translation('send')}
         </Button>
