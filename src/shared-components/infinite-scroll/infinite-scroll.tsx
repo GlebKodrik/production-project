@@ -9,11 +9,11 @@ export const InfiniteScroll = ({
 }: TProps) => {
   const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
   const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
+  const elementId = scrollableTarget || '#scrollableTarget';
 
   useEffect(() => {
-    const element = document.querySelector(`#${scrollableTarget}`);
+    const element = document.querySelector(elementId) as HTMLDivElement;
     if (element) {
-      // @ts-ignore
       wrapperRef.current = element;
     }
   }, [scrollableTarget]);

@@ -45,7 +45,9 @@ export const ArticlesPage: React.FC = () => {
 
   return (
     <ScrollToTop>
-      <InfiniteScroll callbackScrollEnd={onScrollEnd} scrollableTarget="scrollableDiv">
+      <InfiniteScroll
+        callbackScrollEnd={onScrollEnd}
+      >
         <ArticleVariantView
           variantView={variantView}
           onClick={onChangeView}
