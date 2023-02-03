@@ -18,7 +18,7 @@ export const requestGetProfileData = createAsyncThunk<TProfile, string, TThunkCo
     }
 
     try {
-      const response = await extra.api.get<TProfile>(`/profile/${profileId}`);
+      const response = await extra.api.get<TProfile>(`/users/${profileId}`);
       return response.data;
     } catch (error) {
       dispatch(notificationsActions.showNotification({

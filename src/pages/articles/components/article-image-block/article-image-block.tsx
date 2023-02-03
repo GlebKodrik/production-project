@@ -16,7 +16,7 @@ export const ArticleImageBlock = React.memo(({
   return (
     <section className={cn(styles.wrapper, className)}>
       <img src={src} alt="article" className={styles.image} />
-      {title && <Typography color="secondary">{title}</Typography>}
+      {title && <Typography>{title}</Typography>}
     </section>
   );
 });

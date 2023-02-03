@@ -50,7 +50,7 @@ export const ProfileCard = ({
   });
 
   if (isProfileDataReceivedSuccessfully) {
-    return <Typography color="secondary" size="medium-large">{translation('errorLoadProfile')}</Typography>;
+    return <Typography size="medium-large">{translation('errorLoadProfile')}</Typography>;
   }
 
   if (!profileData || !profileEditData) {

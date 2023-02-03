@@ -25,7 +25,7 @@ export const saveProfileData = createAsyncThunk<TProfile, string, TThunkConfig<s
     const editForm = getEditForm(getState());
 
     try {
-      const response = await extra.api.put<TProfile>(`/profile/${profileId}`, editForm);
+      const response = await extra.api.put<TProfile>(`/users/${profileId}`, editForm);
       return response.data;
     } catch (error) {
       dispatch(notificationsActions.showNotification({

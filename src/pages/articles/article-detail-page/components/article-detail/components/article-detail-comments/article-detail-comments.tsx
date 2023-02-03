@@ -16,7 +16,14 @@ export const ArticleDetailComments = () => {
 
   if (!comments || !comments.length) {
     if (!isLoading) {
-      return <Typography color="secondary">{translation('notComment')}</Typography>;
+      return (
+        <Typography
+          size="extra-large"
+          className={styles.notComment}
+        >
+          {translation('notComment')}
+        </Typography>
+      );
     }
     return null;
   }
@@ -26,7 +33,7 @@ export const ArticleDetailComments = () => {
       <div className={styles.wrapper}>
         {isLoading && <Loader className={styles.loader} />}
         {comments.map(({ id, user, text }) => {
-          if (user.id) {
+          if (user?.id) {
             return (
               <CommentCard
                 key={id}

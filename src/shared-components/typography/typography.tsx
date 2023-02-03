@@ -8,7 +8,7 @@ export const Typography = React.memo((
   {
     className,
     children,
-    color = 'primary',
+    color = 'secondary',
     size = 'medium',
     tag,
     fontSize,

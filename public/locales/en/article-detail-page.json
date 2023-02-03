@@ -5,5 +5,5 @@
   "errorSendComment": "Message sending error",
   "successMessage": "Text copied successfully",
   "comment": "Comment",
-  "notComment": "Not comments"
+  "notComment": "Not comments\uD83D\uDE22"
 }

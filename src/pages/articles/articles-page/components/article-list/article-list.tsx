@@ -29,7 +29,7 @@ export const ArticleList = () => {
   const isNotArticles = isFinished && !articles?.length;
 
   if (isNotArticles) {
-    return <Typography color="secondary" size="medium-large">{translation('articles.notArticles')}</Typography>;
+    return <Typography size="medium-large">{translation('articles.notArticles')}</Typography>;
   }
 
   const renderIsLoading = () => {

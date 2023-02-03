@@ -10,7 +10,7 @@ export const ArticleDetailPage: React.FC = () => {
   const { id } = params;
 
   if (!id) {
-    return <Typography color="secondary" size="large">{translation('article.errorArticleById')}</Typography>;
+    return <Typography size="large">{translation('article.errorArticleById')}</Typography>;
   }
 
   return (

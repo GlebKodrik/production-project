@@ -65,15 +65,15 @@ export const ArticleDetailContent = ({ id }: TProps) => {
         ← К списку
       </Button>
       <Avatar src={article?.img} className={styles.avatar} alt="article" size={180} />
-      <Typography color="secondary" size="large" className={styles.title} tag="h1">{article?.title}</Typography>
-      <Typography color="secondary" size="medium-large" className={styles.subtitle}>{article?.subtitle}</Typography>
+      <Typography size="large" className={styles.title} tag="h1">{article?.title}</Typography>
+      <Typography size="medium-large" className={styles.subtitle}>{article?.subtitle}</Typography>
       <div className={styles.wrapperAdditions}>
         <Icon name="eye" fill="secondary" />
-        <Typography color="secondary">{article?.views}</Typography>
+        <Typography>{article?.views}</Typography>
       </div>
       <div className={cn(styles.wrapperAdditions, styles.lastWrapperAdditions)}>
         <Icon name="calendar" fill="secondary" />
-        <Typography color="secondary">{article?.createdAt}</Typography>
+        <Typography>{article?.createdAt}</Typography>
       </div>
       {article?.blocks?.map(ArticleBlock)}
       <Typography
