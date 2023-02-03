@@ -1,4 +1,6 @@
-import React, { UIEvent } from 'react';
+import React, {
+  UIEvent, useRef,
+} from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Navbar } from './components/navbar';
 import { Sidebar } from './components/sidebar';
@@ -9,6 +11,7 @@ import { scrollActions } from '../../redux-stores/stores/scroll';
 const Layout: React.FC = () => {
   const dispatch = useAppDispatch();
   const locations = useLocation();
+  const wrapper = useRef<any>();
 
   const onScroll = (event: UIEvent<HTMLElement>) => {
     dispatch(scrollActions.setScrollPosition({
@@ -26,6 +29,7 @@ const Layout: React.FC = () => {
           className={styles.pageWrapper}
           id="scrollableDiv"
           onScroll={onScroll}
+          ref={wrapper}
         >
           <Outlet />
         </div>

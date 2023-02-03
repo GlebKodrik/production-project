@@ -4,17 +4,24 @@ import { useAppDispatch } from 'hooks/use-app-dispatch';
 import { requestGetArticles } from 'redux-stores/stores/articles/requests/request-get-articles';
 import { TVariantView } from 'shared-components/article-card';
 import { articleActions } from 'redux-stores/stores/articles';
-import { getArticlesPage, getVariantView } from 'redux-stores/stores/articles/selectors';
+import {
+  getArticlesPage, getVariantView,
+  getArticlesIsHasMore,
+  getArticlesIsLoading,
+  getArticlesIsInit,
+} from 'redux-stores/stores/articles/selectors';
 import { InfiniteScroll } from 'shared-components/infinite-scroll';
-import { getArticlesIsHasMore, getArticlesIsLoading } from 'redux-stores/stores/articles/selectors/get-articles';
+
 import { ArticleVariantView } from './components/article-variant-view';
 import { ArticleList } from './components/article-list';
 import styles from './articles-page.module.scss';
+import { Page } from '../../../shared-components/page';
 
 export const ArticlesPage: React.FC = () => {
   const page = useSelector(getArticlesPage);
   const isHasMore = useSelector(getArticlesIsHasMore);
   const isLoading = useSelector(getArticlesIsLoading);
+  const isInit = useSelector(getArticlesIsInit);
   const dispatch = useAppDispatch();
   const variantView = useSelector(getVariantView);
 
@@ -26,27 +33,28 @@ export const ArticlesPage: React.FC = () => {
   };
 
   useEffect(() => {
-    dispatch(articleActions.init());
-    dispatch(requestGetArticles({ page: 1 }));
-
-    return () => {
-      dispatch(articleActions.clearArticles());
-    };
-  }, [variantView]);
+    if (!isInit) {
+      dispatch(articleActions.init());
+      dispatch(requestGetArticles({ page: 1 }));
+    }
+  }, []);
 
   const onChangeView = (name: TVariantView) => {
     dispatch(articleActions.setVariantView(name));
   };
 
   return (
-    <InfiniteScroll callbackScrollEnd={onScrollEnd} scrollableTarget="scrollableDiv">
-      <ArticleVariantView
-        variantView={variantView}
-        onClick={onChangeView}
-        color="secondary"
-        className={styles.variantViewWrapper}
-      />
-      <ArticleList />
-    </InfiniteScroll>
+    <Page>
+      <InfiniteScroll callbackScrollEnd={onScrollEnd} scrollableTarget="scrollableDiv">
+        <ArticleVariantView
+          variantView={variantView}
+          onClick={onChangeView}
+          color="secondary"
+          className={styles.variantViewWrapper}
+        />
+        <ArticleList />
+      </InfiniteScroll>
+    </Page>
+
   );
 };

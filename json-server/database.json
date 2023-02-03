@@ -877,7 +877,62 @@
       ]
     }
   ],
-  "comments": [],
+  "comments": [
+    {
+      "userId": "1",
+      "articleId": "5",
+      "text": "Первый комиентарий",
+      "id": 1
+    },
+    {
+      "userId": "1",
+      "articleId": "10",
+      "text": "ыва",
+      "id": 2
+    },
+    {
+      "userId": "1",
+      "articleId": "4",
+      "text": "Первый мой коммент",
+      "id": 3
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "text": "Пер",
+      "id": 4
+    },
+    {
+      "userId": "1",
+      "articleId": "6",
+      "text": "Приве",
+      "id": 5
+    },
+    {
+      "userId": "1",
+      "articleId": "7",
+      "text": "Новый коммент",
+      "id": 6
+    },
+    {
+      "userId": "1",
+      "articleId": "2",
+      "text": "ПРивет мир",
+      "id": 7
+    },
+    {
+      "userId": "1",
+      "articleId": "1",
+      "text": "выа",
+      "id": 8
+    },
+    {
+      "userId": "1",
+      "articleId": "8",
+      "text": "sadasd",
+      "id": 9
+    }
+  ],
   "users": [
     {
       "id": "1",

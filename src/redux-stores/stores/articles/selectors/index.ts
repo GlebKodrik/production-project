@@ -1,7 +1,7 @@
 import {
   getArticles,
   getArticlesIsFinished,
-  getArticlesIsHasMore,
+  getArticlesIsHasMore, getArticlesIsInit,
   getArticlesIsLoading,
   getArticlesLimited,
   getArticlesPage,
@@ -16,4 +16,5 @@ export {
   getArticlesIsLoading,
   getArticlesIsFinished,
   getArticlesLimited,
+  getArticlesIsInit,
 };

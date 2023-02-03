@@ -6,3 +6,4 @@ export const getArticlesIsFinished = (state: TReduxStateScheme) => state.article
 export const getArticlesPage = (state: TReduxStateScheme) => state.articles.page;
 export const getArticlesIsHasMore = (state: TReduxStateScheme) => state.articles.isHasMore;
 export const getArticlesLimited = (state: TReduxStateScheme) => state.articles.limit;
+export const getArticlesIsInit = (state: TReduxStateScheme) => state.articles.isInit;

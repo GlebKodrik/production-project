@@ -13,6 +13,7 @@ const initialState: TArticleDetailScheme = {
     data: undefined,
     isLoading: false,
     error: undefined,
+    isFinish: false,
     sendComment: {
       isLoading: false,
     },
@@ -40,15 +41,18 @@ export const articleDetailSlice = createSlice({
       })
       .addCase(requestGetComments.pending, (state) => {
         state.comments.error = undefined;
+        state.comments.isFinish = false;
         state.comments.isLoading = true;
       })
       .addCase(requestGetComments.fulfilled, (state, action: PayloadAction<TComment[]>) => {
         const initialComments = [...action.payload];
         state.comments.isLoading = false;
+        state.comments.isFinish = true;
         state.comments.data = initialComments.reverse();
       })
       .addCase(requestGetComments.rejected, (state, action) => {
         state.comments.isLoading = false;
+        state.comments.isFinish = false;
         state.comments.error = action.payload;
       })
       .addCase(requestAddComments.pending, (state) => {

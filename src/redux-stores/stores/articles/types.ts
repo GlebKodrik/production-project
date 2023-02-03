@@ -7,6 +7,7 @@ export type TArticlesScheme = {
   data: TArticle[],
   variantView: TVariantView,
   isFinished: boolean,
+  isInit: boolean,
   // pagination
   limit: number,
   page: number,

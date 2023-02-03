@@ -9,6 +9,7 @@ export type TArticleDetailScheme = {
     data?: TComment[],
     isLoading: boolean,
     error?: string,
+    isFinish: boolean,
     sendComment: {
       isLoading: boolean,
     },

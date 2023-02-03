@@ -15,6 +15,7 @@ const initialState: TArticlesScheme = {
   variantView: 'big',
   page: 1,
   limit: 4,
+  isInit: false,
 };
 
 const VIEW_BIG_CARD = 4;
@@ -25,8 +26,6 @@ export const articlesSlice = createSlice({
   initialState,
   reducers: {
     setVariantView(state, action: PayloadAction<TVariantView>) {
-      state.data = [];
-      state.page = 1;
       state.variantView = action.payload;
       ControlLocalStorage.setValueLocalStorage(LOCAL_STORAGE_KEYS.VARIANT_VIEW_ARTICLE, action.payload);
     },
@@ -38,6 +37,7 @@ export const articlesSlice = createSlice({
         .getValueLocalStorage <TVariantView>(LOCAL_STORAGE_KEYS.VARIANT_VIEW_ARTICLE);
       state.variantView = variantView;
       state.limit = variantView === 'big' ? VIEW_BIG_CARD : VIEW_SMALL_CARD;
+      state.isInit = true;
     },
     clearArticles(state) {
       state.data = [];

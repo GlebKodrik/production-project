@@ -59,11 +59,15 @@ export const ArticleDetailContent = ({ id }: TProps) => {
     navigate(-1);
   };
 
+  const renderBack = () => (
+    <Button onClick={onGotoBack} color="secondary" className={styles.back}>
+      ← К списку
+    </Button>
+  );
+
   return (
     <div className={styles.wrapper}>
-      <Button onClick={onGotoBack} color="secondary" className={styles.back}>
-        ← К списку
-      </Button>
+      {renderBack()}
       <Avatar src={article?.img} className={styles.avatar} alt="article" size={180} />
       <Typography size="large" className={styles.title} tag="h1">{article?.title}</Typography>
       <Typography size="medium-large" className={styles.subtitle}>{article?.subtitle}</Typography>

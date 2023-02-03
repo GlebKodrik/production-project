@@ -4,6 +4,6 @@
   "notId": "Нет id",
   "successMessage": "Текст успешно cкопировался",
   "errorSendComment": "Ошибка отправки сообщения",
-  "comment": "Коментарии",
-  "notComment": "Нет коментариев\uD83D\uDE22"
+  "comment": "Комментарии",
+  "notComment": "Нет комментариев\uD83D\uDE22"
 }
