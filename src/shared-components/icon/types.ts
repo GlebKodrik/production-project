@@ -10,4 +10,5 @@ export type TIconProps = {
   width?: string | number;
   height?: string | number;
   className?: string;
+  onClick?: () => void;
 };

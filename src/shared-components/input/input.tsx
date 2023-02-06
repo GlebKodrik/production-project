@@ -30,7 +30,7 @@ export const Input = React.memo(({
   };
 
   const renderPlaceholder = () => label && (
-  <span className={styles.placeholder}>
+  <span className={styles.label}>
     {`${label}>`}
   </span>
   );
@@ -44,7 +44,12 @@ export const Input = React.memo(({
         <input
           ref={inputRef}
           tabIndex={tabIndex}
-          className={cn(styles.input, classes, { [styles.inputError]: Boolean(error) })}
+          className={cn(
+            styles.input,
+            classes,
+            { [styles.inputError]: Boolean(error) },
+            { [styles.notLabel]: !label },
+          )}
           type={type}
           value={value}
           onChange={onChangeHandler}

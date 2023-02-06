@@ -17,11 +17,11 @@
       "title": "Javascript news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
+      "views": 213213,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "it"
       ],
       "blocks": [
         {
@@ -89,11 +89,11 @@
       "title": "HTML CSS",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://denidenx.com/wp-content/uploads/2021/03/kakoj-jazyk-programmirovanija-luchshe-html-i-css-1024x499.png",
-      "views": 1022,
+      "views": 2132,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "it"
       ],
       "blocks": [
         {
@@ -113,11 +113,11 @@
       "title": "C#",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "data:image/png;base64,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",
-      "views": 1022,
+      "views": 4324,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "it"
       ],
       "blocks": [
         {
@@ -137,11 +137,11 @@
       "title": "C++",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWaclk19SdnwFaE2T5a4iEzG0UqOMxlu3Seg&usqp=CAU",
-      "views": 1022,
+      "views": 456,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "it"
       ],
       "blocks": [
         {
@@ -161,11 +161,11 @@
       "title": "Kotlin",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://cdn.worldvectorlogo.com/logos/swift-15.svg",
-      "views": 1022,
+      "views": 67,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "it"
       ],
       "blocks": [
         {
@@ -233,11 +233,11 @@
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://www.kv.by/sites/default/files/styles/post_picture/public/pictures/userpictures/2020/02/17/2359/1_0.png?itok=eIFKHn0w",
-      "views": 1022,
+      "views": 980,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "it"
       ],
       "blocks": [
         {
@@ -257,11 +257,11 @@
       "title": "Node js",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://1ps.ru/files/blog/2021/javascript-peculiarities/3-nodejs.png",
-      "views": 1022,
+      "views": 678,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "it"
       ],
       "blocks": [
         {
@@ -281,11 +281,11 @@
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
-      "views": 1022,
+      "views": 456,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "it"
       ],
       "blocks": [
         {
@@ -305,11 +305,11 @@
       "title": "Javascript news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://studfile.net/html/2706/127/html_DnZevEo8q0.GwRC/img-rlxTrW.png",
-      "views": 1022,
+      "views": 435,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "it"
       ],
       "blocks": [
         {
@@ -377,11 +377,11 @@
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://1ps.ru/files/blog/2021/javascript-peculiarities/4-reactjs.png",
-      "views": 1022,
+      "views": 123123,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "it"
       ],
       "blocks": [
         {
@@ -401,11 +401,11 @@
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://static.tildacdn.com/tild3831-3766-4432-b034-643862663863/scale_1200_5.jpeg",
-      "views": 1022,
+      "views": 43,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "it"
       ],
       "blocks": [
         {
@@ -425,11 +425,11 @@
       "title": "Java news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlNRaDqYezGtYjvmaF4ulVa0vq190FFDKJHg&usqp=CAU",
-      "views": 1022,
+      "views": 7987,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "it"
       ],
       "blocks": [
         {
@@ -449,11 +449,11 @@
       "title": "Javascript news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6uan1gAw-CINDcVb_sLyQJcEheY0rmkODMZ28QQIP03x8Tw2RCogF3oNZw4w38bXpk8&usqp=CAU",
-      "views": 1022,
+      "views": 890,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "it"
       ],
       "blocks": [
         {
@@ -521,11 +521,11 @@
       "title": "Adobee news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://cdn.coursehunter.net/course/super-after-effects-2022.jpg",
-      "views": 1022,
+      "views": 678,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "it"
       ],
       "blocks": [
         {
@@ -545,11 +545,11 @@
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbo76pdeEaszhZLIRUNiZuqwRCvpcdTVJKCA&usqp=CAU",
-      "views": 1022,
+      "views": 567,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "it"
       ],
       "blocks": [
         {
@@ -569,11 +569,11 @@
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmQ19Ru-OGIoErsoJWSGdzrOIvX5f-vxkgGYNTo16iKMosyT729a4C8EaGec9yKmw6hrE&usqp=CAU",
-      "views": 1022,
+      "views": 456,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "it"
       ],
       "blocks": [
         {
@@ -593,11 +593,11 @@
       "title": "Javascript news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://e7.pngegg.com/pngimages/648/746/png-clipart-sabayon-linux-linux-distribution-gentoo-linux-logo-linux-blue-logo.png",
-      "views": 1022,
+      "views": 4356,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "it"
       ],
       "blocks": [
         {
@@ -665,11 +665,11 @@
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk-_61Kn-48AFJUQZfRxpg8LpisTzf1eAICg&usqp=CAU",
-      "views": 1022,
+      "views": 678,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "it"
       ],
       "blocks": [
         {
@@ -693,7 +693,7 @@
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "it"
       ],
       "blocks": [
         {
@@ -713,11 +713,11 @@
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png",
-      "views": 1022,
+      "views": 890,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "it"
       ],
       "blocks": [
         {
@@ -737,11 +737,11 @@
       "title": "Javascript news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
+      "views": 90,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "it"
       ],
       "blocks": [
         {
@@ -809,11 +809,11 @@
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfAH4H3V3jcUzpG-YFSnSZvjqFAclLbbdB9A&usqp=CAU",
-      "views": 1022,
+      "views": 4567,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "it"
       ],
       "blocks": [
         {
@@ -833,11 +833,11 @@
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVuoD9DoGnsSxmJ6EKOh7k8Ln1a0d4QABeGg&usqp=CAU",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 4567,
+      "createdAt": "24.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "it"
       ],
       "blocks": [
         {
@@ -854,14 +854,14 @@
     },
     {
       "id": "4",
-      "title": "Python news",
+      "title": "Gleb Kodrik News",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Fortran_logo.svg/1200px-Fortran_logo.svg.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 234,
+      "createdAt": "22.02.2010",
       "userId": "1",
       "type": [
-        "IT"
+        "it"
       ],
       "blocks": [
         {
@@ -1033,6 +1033,24 @@
       "articleId": "2",
       "text": "213123123123",
       "id": 26
+    },
+    {
+      "userId": "1",
+      "articleId": "1",
+      "text": "qwd",
+      "id": 27
+    },
+    {
+      "userId": "1",
+      "articleId": "1",
+      "text": "ПРивет мир",
+      "id": 28
+    },
+    {
+      "userId": "1",
+      "articleId": "12",
+      "text": "мсис",
+      "id": 29
     }
   ],
   "users": [

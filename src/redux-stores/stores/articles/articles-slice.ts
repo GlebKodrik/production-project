@@ -3,8 +3,11 @@ import { ControlLocalStorage } from 'services/control-local-storage';
 import { LOCAL_STORAGE_KEYS } from 'constants/local-storage-keys';
 import { TVariantView } from 'shared-components/article-card';
 import { TArticle } from 'pages/articles/types';
-import { TArticlesScheme } from './types';
+import {
+  EArticlesSort, TArticlesScheme, TArticlesTypes, TInit,
+} from './types';
 import { requestGetArticles } from './requests/request-get-articles';
+import { TOrderFilter } from '../types';
 
 const initialState: TArticlesScheme = {
   isLoading: false,
@@ -12,10 +15,16 @@ const initialState: TArticlesScheme = {
   error: undefined,
   isFinished: false,
   isHasMore: false,
-  variantView: 'big',
   page: 1,
-  limit: 4,
   isInit: false,
+  limit: 4,
+  filters: {
+    type: 'all',
+    variantView: 'big',
+    order: 'asc',
+    search: '',
+    sortBy: EArticlesSort.VIEWS,
+  },
 };
 
 const VIEW_BIG_CARD = 4;
@@ -26,18 +35,36 @@ export const articlesSlice = createSlice({
   initialState,
   reducers: {
     setVariantView(state, action: PayloadAction<TVariantView>) {
-      state.variantView = action.payload;
+      state.filters.variantView = action.payload;
       ControlLocalStorage.setValueLocalStorage(LOCAL_STORAGE_KEYS.VARIANT_VIEW_ARTICLE, action.payload);
     },
     setPage(state, action: PayloadAction<number>) {
       state.page = action.payload;
     },
-    init(state) {
+    setSearch(state, action: PayloadAction<string>) {
+      state.filters.search = action.payload;
+    },
+    setType(state, action: PayloadAction<TArticlesTypes>) {
+      state.filters.type = action.payload;
+    },
+    setSortBy(state, action: PayloadAction<EArticlesSort>) {
+      state.filters.sortBy = action.payload;
+    },
+    setOrder(state, action: PayloadAction<TOrderFilter>) {
+      state.filters.order = action.payload;
+    },
+    init(state, action: PayloadAction<TInit>) {
+      const searchParams = action.payload.params;
       const variantView = ControlLocalStorage
         .getValueLocalStorage <TVariantView>(LOCAL_STORAGE_KEYS.VARIANT_VIEW_ARTICLE);
-      state.variantView = variantView;
-      state.limit = variantView === 'big' ? VIEW_BIG_CARD : VIEW_SMALL_CARD;
+      const isBigVariantView = variantView === 'big';
+      state.filters.variantView = variantView;
+      state.limit = isBigVariantView ? VIEW_BIG_CARD : VIEW_SMALL_CARD;
       state.isInit = true;
+      state.filters.order = searchParams.order;
+      state.filters.sortBy = searchParams.sort;
+      state.filters.search = searchParams.search;
+      state.filters.type = searchParams.type;
     },
     clearArticles(state) {
       state.data = [];
@@ -55,7 +82,7 @@ export const articlesSlice = createSlice({
         state.isLoading = false;
         state.isFinished = true;
         state.data = [...state.data, ...action.payload];
-        state.isHasMore = action.payload.length > 0;
+        state.isHasMore = action.payload.length >= state.limit;
       })
       .addCase(requestGetArticles.rejected, (state, action) => {
         state.isLoading = false;

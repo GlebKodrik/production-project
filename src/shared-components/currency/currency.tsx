@@ -22,7 +22,7 @@ export const Currency = ({
     <Select
       value={value}
       onChange={onChange}
-      placeholder={translation('selectCurrency')}
+      label={translation('selectCurrency')}
       options={OPTIONS}
       className={className}
       name={name}

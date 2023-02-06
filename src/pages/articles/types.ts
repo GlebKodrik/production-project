@@ -1,10 +1,5 @@
 import { TUser } from '../../redux-stores/stores/user/types';
-
-export enum EArticleType {
-  IT = 'IT',
-  SCIENCE = 'SCIENCE',
-  ECONOMICS = 'ECONOMICS',
-}
+import { TArticlesTypes } from '../../redux-stores/stores/articles/types';
 
 export enum EArticleBlockType {
   TEXT = 'TEXT',
@@ -43,7 +38,7 @@ export type TArticle = {
   img: string,
   views: number,
   createdAt: string,
-  type: EArticleType[],
+  type: TArticlesTypes[],
   blocks: TArticleBlock[],
   user: TUser
 };

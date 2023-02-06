@@ -13,10 +13,10 @@ export const Icon = React.memo((
     width = '24px',
     height = '24px',
     className,
+    onClick,
   }: TIconProps,
 ) => {
   const IconComponent = ICONS_COMPONENT[name];
-  // @ts-ignore
   const isHaveCurrenColorInStyles = styles[`color-${fill}`];
 
   const classes = {
@@ -28,6 +28,7 @@ export const Icon = React.memo((
       fill={!isHaveCurrenColorInStyles ? fill : ''}
       width={width}
       height={height}
+      onClick={onClick}
       opacity={opacity}
       className={cn(classes, className)}
     />

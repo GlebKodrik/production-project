@@ -13,4 +13,5 @@ export const ICON_NAMES = {
   COPY: 'copy',
   TILED: 'tiled',
   LIST: 'list',
+  SORT_UP: 'sort-up',
 } as const;

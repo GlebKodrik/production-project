@@ -48,5 +48,18 @@
   "theme": "Theme",
   "enterCommentText": "Enter comment text",
   "writeMessage": "Write a message...",
-  "send": "Send"
+  "send": "Send",
+  "search": "Enter a search term",
+  "sort": {
+    "sortBy": "Sort by",
+    "date": "date",
+    "name": "name",
+    "views": "views",
+    "types": {
+      "all": "All theme",
+      "it": "IT",
+      "science": "Science",
+      "economics": "Economics"
+    }
+  }
 }

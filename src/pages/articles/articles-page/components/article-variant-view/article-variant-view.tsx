@@ -25,7 +25,7 @@ export const ArticleVariantView = ({
         { icon, variantViewName },
       ) => getIsCurrentView(variantViewName) && (
       <Button onClick={onButtonClick(variantViewName)} color={color} key={variantViewName}>
-        <Icon name={icon} fill={color} />
+        <Icon name={icon} fill={color} width={20} height={20} />
       </Button>
       ))}
     </div>

@@ -40,7 +40,7 @@ export const ProfileCard = ({
 
   const {
     handleSubmit,
-    setValue,
+    control,
     formState: { errors },
     reset,
   } = useForm<TInputValue>({
@@ -97,8 +97,8 @@ export const ProfileCard = ({
         onInputUsernameChange={onInputUsernameChange}
         onInputCityChange={onInputCityChange}
         isLoading={isLoading}
-        setValue={setValue}
         errors={errors}
+        control={control}
       />
       <Currency
         onChange={onChangeCurrencyValue}

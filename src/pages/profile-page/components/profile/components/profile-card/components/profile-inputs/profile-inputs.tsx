@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react';
 import cn from 'classnames';
-import { Input } from 'shared-components/input';
 import { useLanguage } from 'hooks/use-language';
 import { LOCALES } from 'constants/locales';
+import { FormInput } from 'shared-components/form-input';
 import styles from '../../prodile-card.module.scss';
-import { TInput, TInputChange, TProfileInputProps } from './types';
+import { TInput, TProfileInputProps } from './types';
 
 export const ProfileInputs = ({
   profileData,
@@ -15,9 +15,9 @@ export const ProfileInputs = ({
   onInputCityChange,
   onInputUsernameChange,
   onInputAvatarChange,
-  setValue,
   errors,
   isLoading,
+  control,
 }: TProfileInputProps) => {
   const { translation } = useLanguage(LOCALES.PROFILE_PAGE);
   const {
@@ -55,27 +55,19 @@ export const ProfileInputs = ({
 
   const variantInput = isReadOnly ? 'plain' : 'outline';
 
-  const onChangeInput = ({
-    inputValue,
-    name,
-    onChange,
-  }: TInputChange) => {
-    setValue(name, inputValue, { shouldValidate: true });
-    onChange(inputValue);
-  };
-
   return (
     <>
       {INPUTS.map(({
         translateText,
-        onChange,
         name,
         value,
+        onChange,
       }, index) => (
-        <Input
+        <FormInput
+          control={control}
           key={index}
           value={value || ''}
-          onChange={(inputValue) => onChangeInput({ inputValue, name, onChange })}
+          onChange={onChange}
           label={translation(translateText)}
           readOnly={isReadOnly}
           className={cn(styles.input)}

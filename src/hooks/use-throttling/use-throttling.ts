@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef } from 'react';
 
-export const useThrottling = (callback: (...arg: any) => void, delay = 500) => {
+export const useThrottling = (callback: (...arg: any) => void, delay = 100) => {
   const throttling = useRef<boolean>(false);
   const timeout = useRef<ReturnType<typeof setTimeout>>();
 

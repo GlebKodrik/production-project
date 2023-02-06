@@ -1,0 +1,37 @@
+.wrapper {
+  &-filters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+
+  &-search {
+    display: flex;
+    margin: auto;
+
+    input {
+      width: 900px;
+    }
+  }
+
+  &-down {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &-tabs {
+    display: flex;
+    gap: 0 20px;
+    margin-bottom: 40px;
+  }
+}
+
+.revert-icon {
+  transform: scaleY(-1);
+}
+
+.icon {
+  cursor: pointer;
+}

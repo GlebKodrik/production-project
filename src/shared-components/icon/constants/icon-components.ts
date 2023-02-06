@@ -14,6 +14,7 @@ import Eye from '../images/eye-20-20.svg';
 import Copy from '../images/copy-20-20.svg';
 import List from '../images/list-24-24.svg';
 import Tiled from '../images/tiled-24-24.svg';
+import SortUp from '../images/sort_ascending_icon_151090.svg';
 
 import { ICON_NAMES } from './icon-names';
 
@@ -33,4 +34,5 @@ export const ICONS_COMPONENT: Record<TIconNames, React.VFC<React.SVGProps<SVGSVG
   [ICON_NAMES.COPY]: Copy,
   [ICON_NAMES.LIST]: List,
   [ICON_NAMES.TILED]: Tiled,
+  [ICON_NAMES.SORT_UP]: SortUp,
 };

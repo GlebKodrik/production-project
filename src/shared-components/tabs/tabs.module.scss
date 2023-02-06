@@ -1,0 +1,21 @@
+.tab {
+  padding: 6px 20px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+}
+
+.color {
+  &-primary {
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+  }
+
+  &-secondary {
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+  }
+}
+
+.active-tab {
+  border: 2px solid var(--active-link);
+}

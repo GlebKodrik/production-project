@@ -2,28 +2,29 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'hooks/use-app-dispatch';
 import { requestGetArticles } from 'redux-stores/stores/articles/requests/request-get-articles';
-import { TVariantView } from 'shared-components/article-card';
-import { articleActions } from 'redux-stores/stores/articles';
+import { articleActions, EArticlesSort } from 'redux-stores/stores/articles';
+import { useSearchParams } from 'react-router-dom';
 import {
-  getArticlesPage, getVariantView,
+  getArticlesPage,
   getArticlesIsHasMore,
   getArticlesIsLoading,
   getArticlesIsInit,
 } from 'redux-stores/stores/articles/selectors';
 import { InfiniteScroll } from 'shared-components/infinite-scroll';
 
-import { ArticleVariantView } from './components/article-variant-view';
+import { ScrollToTop } from 'feature/scroll-to-top';
+import { TOrderFilter } from 'redux-stores/stores/types';
+import { TArticlesTypes } from 'redux-stores/stores/articles/types';
 import { ArticleList } from './components/article-list';
-import styles from './articles-page.module.scss';
-import { ScrollToTop } from '../../../feature/scroll-to-top';
+import { ArticlesFilters } from './components/articles-filters';
 
 export const ArticlesPage: React.FC = () => {
+  const [searchParams] = useSearchParams();
   const page = useSelector(getArticlesPage);
   const isHasMore = useSelector(getArticlesIsHasMore);
   const isLoading = useSelector(getArticlesIsLoading);
   const isInit = useSelector(getArticlesIsInit);
   const dispatch = useAppDispatch();
-  const variantView = useSelector(getVariantView);
 
   const onScrollEnd = () => {
     if (isHasMore && !isLoading) {
@@ -34,26 +35,24 @@ export const ArticlesPage: React.FC = () => {
 
   useEffect(() => {
     if (!isInit) {
-      dispatch(articleActions.init());
+      dispatch(articleActions.init({
+        params: {
+          order: searchParams.get('order') as TOrderFilter || 'asc',
+          search: searchParams.get('search') || '',
+          sort: searchParams.get('sort') as EArticlesSort || EArticlesSort.VIEWS,
+          type: searchParams.get('type') as TArticlesTypes || 'all',
+        },
+      }));
       dispatch(requestGetArticles({ page: 1 }));
     }
   }, []);
-
-  const onChangeView = (name: TVariantView) => {
-    dispatch(articleActions.setVariantView(name));
-  };
 
   return (
     <ScrollToTop>
       <InfiniteScroll
         callbackScrollEnd={onScrollEnd}
       >
-        <ArticleVariantView
-          variantView={variantView}
-          onClick={onChangeView}
-          color="secondary"
-          className={styles.variantViewWrapper}
-        />
+        <ArticlesFilters />
         <ArticleList />
       </InfiniteScroll>
     </ScrollToTop>

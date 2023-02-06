@@ -3,10 +3,10 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Button } from 'shared-components/button';
 import { useLanguage } from 'hooks/use-language';
-import { Input } from 'shared-components/input';
 import { useAppDispatch } from 'hooks/use-app-dispatch';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
+import { FormInput } from 'shared-components/form-input';
 import { getPassword } from './stores/login-form/selectors/get-password';
 import { getIsLoading } from './stores/login-form/selectors/get-is-loading';
 import { getUsername } from './stores/login-form/selectors/get-username';
@@ -26,7 +26,7 @@ export const AuthByUsernameForm: React.FC<TProps> = ({
   const { translation } = useLanguage();
   const {
     handleSubmit,
-    setValue,
+    control,
     formState: { errors },
   } = useForm<TInputValue>({
     resolver: yupResolver(authYupScheme()),
@@ -37,12 +37,10 @@ export const AuthByUsernameForm: React.FC<TProps> = ({
     },
   });
   const onUsernameChange = (value: string) => {
-    setValue('username', value, { shouldValidate: true });
     dispatch(loginFormActions.setUsername(value));
   };
 
   const onPasswordChange = (value: string) => {
-    setValue('password', value, { shouldValidate: true });
     dispatch(loginFormActions.setPassword(value));
   };
 
@@ -54,7 +52,8 @@ export const AuthByUsernameForm: React.FC<TProps> = ({
     <>
       <h1 className={styles.title}>{ translation('auth.form.authorization') }</h1>
       <form className={styles.wrapper} autoComplete="off" onSubmit={handleSubmit(onHandleSubmit)}>
-        <Input
+        <FormInput
+          control={control}
           name="username"
           value={username}
           autoFocus={isOpen}
@@ -63,7 +62,8 @@ export const AuthByUsernameForm: React.FC<TProps> = ({
           label={translation('auth.placeholder.username')}
           error={errors.username?.message}
         />
-        <Input
+        <FormInput
+          control={control}
           name="password"
           type="password"
           value={password}

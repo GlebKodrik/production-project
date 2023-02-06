@@ -1,12 +1,15 @@
 import {
   getArticles,
   getArticlesIsFinished,
-  getArticlesIsHasMore, getArticlesIsInit,
+  getArticlesIsHasMore,
+  getArticlesIsInit,
   getArticlesIsLoading,
   getArticlesLimited,
   getArticlesPage,
 } from './get-articles';
-import { getVariantView } from './get-variant-view';
+import {
+  getOrder, getSearch, getSortBy, getVariantView,
+} from './get-filters';
 
 export {
   getArticles,
@@ -17,4 +20,7 @@ export {
   getArticlesIsFinished,
   getArticlesLimited,
   getArticlesIsInit,
+  getSearch,
+  getOrder,
+  getSortBy,
 };

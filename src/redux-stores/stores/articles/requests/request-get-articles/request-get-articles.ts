@@ -3,8 +3,13 @@ import { notificationsActions } from 'feature/notifications/stores/notifications
 import { TThunkConfig } from 'redux-stores/types/thunk-config';
 import i18n from 'i18next';
 import { TArticle } from 'pages/articles/types';
+import { addQueryParamsInSearch } from 'utils/search-params/search-params';
 import { TProps } from './types';
-import { getArticlesLimited } from '../../selectors';
+import {
+  getArticlesLimited, getOrder, getSearch, getSortBy,
+} from '../../selectors';
+import { getType } from '../../selectors/get-filters';
+import { TSearchParams } from '../../types';
 
 export const requestGetArticles = createAsyncThunk<TArticle[], TProps, TThunkConfig<string>>(
   'articles/requestGetArticlesNextPage',
@@ -16,6 +21,15 @@ export const requestGetArticles = createAsyncThunk<TArticle[], TProps, TThunkCon
   ) => {
     const ERROR_GET_ARTICLES = i18n.t('articles.errorGetArticles');
     const limit = getArticlesLimited(getState());
+    const sortBy = getSortBy(getState());
+    const order = getOrder(getState());
+    const search = getSearch(getState());
+    const type = getType(getState());
+    const isAll = type === 'all';
+
+    addQueryParamsInSearch<TSearchParams>({
+      search, order, sort: sortBy, type,
+    });
 
     try {
       const response = await extra.api.get<TArticle[]>('/articles', {
@@ -23,6 +37,10 @@ export const requestGetArticles = createAsyncThunk<TArticle[], TProps, TThunkCon
           _expand: 'user',
           _page: page,
           _limit: limit,
+          _sort: sortBy,
+          _order: order,
+          q: search,
+          type: isAll ? undefined : type,
         },
       });
       return response.data;

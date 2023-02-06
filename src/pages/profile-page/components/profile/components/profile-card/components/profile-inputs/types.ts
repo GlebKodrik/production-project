@@ -1,6 +1,5 @@
-import { UseFormSetValue } from 'react-hook-form/dist/types/form';
 import { FieldErrors } from 'react-hook-form/dist/types/errors';
-import { TProfile } from '../../../../../../../../redux-stores/stores/profile/types';
+import { TProfile } from 'redux-stores/stores/profile/types';
 import { TInputProps } from '../../types';
 
 export type TInputName = 'first' | 'lastname' | 'city' | 'age' | 'username' | 'avatar';
@@ -13,16 +12,10 @@ export type TInput = {
   onChange: (value: string) => void
 };
 
-export type TInputChange = {
-  name: string,
-  inputValue: string,
-  onChange: (value: string) => void,
-};
-
 export type TProfileInputProps = {
   errors: FieldErrors<TInputValue>,
-  setValue: UseFormSetValue<any>,
   profileData: TProfile,
   isReadOnly?: boolean,
   isLoading?: boolean,
+  control?: any
 } & TInputProps;

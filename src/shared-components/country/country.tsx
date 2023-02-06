@@ -23,7 +23,7 @@ export const Country = ({
     <Select
       value={value}
       onChange={onChange}
-      placeholder={translation('selectCounter')}
+      label={translation('selectCounter')}
       options={OPTIONS}
       disabled={disabled}
       className={className}
