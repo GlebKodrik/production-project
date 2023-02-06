@@ -11,7 +11,7 @@ import { counterReducer } from '../stores/counter';
 import { userReducer } from '../stores/user';
 import { FLAGS } from '../../../configs-project/webpack-configs/constants/variables';
 import { articleReducer } from '../stores/articles';
-import { scrollReducer } from '../stores/scroll';
+import { scrollReducer } from '../../shared-components/infinite-scroll/stores/scroll';
 
 export const createReduxStore = ({
   initialState,

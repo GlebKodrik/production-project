@@ -1,4 +1,4 @@
-import { type TReduxStateScheme } from '../../../../types/redux-state-scheme';
+import { type TReduxStateScheme } from '../../../../../redux-stores/types/redux-state-scheme';
 
 export const getScroll = (state: TReduxStateScheme) => state.scroll.scroll;
 export const getScrollPositionByPath = (
