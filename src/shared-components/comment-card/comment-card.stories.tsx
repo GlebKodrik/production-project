@@ -13,7 +13,7 @@ export default {
 const Template: ComponentStory<typeof CommentCard> = (args: TCommentCardProps) => (
   <CommentCard
     {...args}
-    username="Глеб"
+    fullName="Глеб"
     comment="Привет мир"
   />
 );

@@ -1,10 +1,10 @@
 import { DeepPartial } from '@reduxjs/toolkit';
-import { TProfile, TProfileSchema } from './types';
+import { TUser, TProfileSchema } from './types';
 import { profileActions, profileReducer } from './profile-slice';
 import { saveProfileData } from './requests/save-profile-data';
 
 describe('Test profile-slice', () => {
-  const data: TProfile = {
+  const data: TUser = {
     id: '1',
     username: 'Kodrik',
     age: '22',

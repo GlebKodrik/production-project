@@ -1,14 +1,14 @@
 import { ReactElement } from 'react';
 import { TCurrency } from 'shared-components/currency/types';
 import { TCountry } from 'shared-components/country/types';
-import { TProfile } from '../../../../../../redux-stores/stores/profile/types';
+import { TUser } from '../../../../../../redux-stores/stores/profile/types';
 
 export type TProfileCardProps = {
   onProfileSave: () => void;
   isLoading?: boolean;
   spinner?: ReactElement;
-  profileEditData?: TProfile;
-  profileData?: TProfile;
+  profileEditData?: TUser;
+  profileData?: TUser;
   onChangeCurrencyValue: (value: TCurrency) => void;
   onChangeCountryValue: (value: TCountry) => void;
   isReadOnly?: boolean;

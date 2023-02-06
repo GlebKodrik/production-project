@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { TProfile, TProfileSchema } from 'redux-stores/stores/profile/types';
+import { TUser, TProfileSchema } from 'redux-stores/stores/profile/types';
 import { requestGetProfileData } from './requests/request-get-profile-data';
 import { saveProfileData } from './requests/save-profile-data';
 
@@ -24,7 +24,7 @@ export const profileSlice = createSlice({
     changeIsReadOnly: (state, action: PayloadAction<boolean>) => {
       state.isReadOnly = action.payload;
     },
-    updateProfileData: (state, action: PayloadAction<TProfile>) => {
+    updateProfileData: (state, action: PayloadAction<TUser>) => {
       state.editForm = {
         ...state.editForm,
         ...action.payload,

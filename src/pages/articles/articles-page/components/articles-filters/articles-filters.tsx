@@ -15,8 +15,9 @@ import { useLanguage } from 'hooks/use-language';
 import { requestGetArticles } from 'redux-stores/stores/articles/requests/request-get-articles';
 import { useDebounce } from 'hooks/use-debounce';
 import { Tabs } from 'shared-components/tabs';
-import { TArticlesTypes } from 'redux-stores/stores/articles/types';
+
 import { getType } from 'redux-stores/stores/articles/selectors/get-filters';
+import { TArticlesTypes } from 'redux-stores/stores/types/articles';
 import { ArticleVariantView } from '../article-variant-view';
 import styles from './articles-filters.module.scss';
 import { TTabs } from './types';

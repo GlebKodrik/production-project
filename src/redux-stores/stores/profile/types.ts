@@ -1,7 +1,7 @@
 import { TCurrency } from 'shared-components/currency/types';
 import { TCountry } from '../../../shared-components/country/types';
 
-export type TProfile = {
+export type TUser = {
   id?: string;
   first?: string;
   lastname?: string;
@@ -14,11 +14,11 @@ export type TProfile = {
 };
 
 export type TProfileSchema = {
-  data?: TProfile;
+  data?: TUser;
   isLoading: boolean;
   error?: string;
   isReadOnly: boolean;
-  editForm?: TProfile
+  editForm?: TUser
   saveProfile: {
     isLoading: boolean
   }

@@ -2,7 +2,7 @@ import React, { useLayoutEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { TReduxStateScheme } from 'redux-stores/types/redux-state-scheme';
-import { getScrollPositionByPath } from 'shared-components/infinite-scroll/stores/selectors/get-scroll/get-scroll';
+import { getScrollPositionByPath } from 'feature/infinite-scroll/stores/scroll/selectors/get-scroll/get-scroll';
 import { TProps } from './types';
 
 export const ScrollToTop = ({ children, scrollableDiv }: TProps) => {

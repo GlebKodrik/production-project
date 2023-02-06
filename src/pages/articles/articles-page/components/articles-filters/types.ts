@@ -1,4 +1,4 @@
-import { TArticlesTypes } from 'redux-stores/stores/articles/types';
+import { TArticlesTypes } from 'redux-stores/stores/types/articles';
 
 export type TTabs = {
   name: TArticlesTypes,

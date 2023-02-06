@@ -5,7 +5,8 @@ import { TCounterState } from '../stores/counter';
 import { TUserScheme } from '../stores/user';
 import { TArticleDetailScheme } from '../stores/article-detail';
 import { TArticlesScheme } from '../stores/articles';
-import { TScrollState } from '../../shared-components/infinite-scroll/stores/scroll';
+import { TScrollState } from '../../feature/infinite-scroll/stores/scroll';
+import { TArticleDetailRecommendScheme } from '../stores/article-detail-recommend';
 
 export type TReduxStateScheme = {
   counter: TCounterState,
@@ -17,4 +18,5 @@ export type TReduxStateScheme = {
   // async
   profile?: TProfileSchema,
   articleDetail?: TArticleDetailScheme,
+  articleDetailRecommend?: TArticleDetailRecommendScheme
 };

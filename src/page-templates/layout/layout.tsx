@@ -7,7 +7,7 @@ import { Navbar } from './components/navbar';
 import { Sidebar } from './components/sidebar';
 import styles from './layout.module.scss';
 import { useAppDispatch } from '../../hooks/use-app-dispatch';
-import { getScroll, scrollActions } from '../../shared-components/infinite-scroll/stores/scroll';
+import { getScroll, scrollActions } from '../../feature/infinite-scroll/stores/scroll';
 import { useThrottling } from '../../hooks/use-throttling';
 
 const Layout: React.FC = () => {

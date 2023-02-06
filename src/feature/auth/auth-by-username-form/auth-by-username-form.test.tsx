@@ -1,11 +1,11 @@
 import { userActions } from 'redux-stores/stores/user';
-import { TUser } from 'redux-stores/stores/user/types';
 import { ControlLocalStorage } from 'services/control-local-storage';
 import { LOCAL_STORAGE_KEYS } from 'constants/local-storage-keys';
 import { notificationsActions } from 'feature/notifications/stores/notifications';
 import i18n from 'configs/i18next';
 import { TestAsyncThunk } from 'services/test-async-thunk';
 import { requestLoginByUser } from './stores/login-form/requests/request-login-by-user';
+import { TUser } from '../../../redux-stores/stores/profile/types';
 
 const userInfo: TUser = {
   id: '2',

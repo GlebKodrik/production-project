@@ -40,7 +40,7 @@ export const ArticleDetailComments = () => {
               <CommentCard
                 key={id}
                 avatar={user?.avatar}
-                username={user?.username}
+                fullName={`${user?.first}  ${user?.lastname}`}
                 comment={text}
                 color="secondary"
                 className={styles.comment}

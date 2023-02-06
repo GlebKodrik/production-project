@@ -10,13 +10,14 @@ import {
   getArticlesIsLoading,
   getArticlesIsInit,
 } from 'redux-stores/stores/articles/selectors';
-import { InfiniteScroll } from 'shared-components/infinite-scroll';
 
 import { ScrollToTop } from 'feature/scroll-to-top';
-import { TOrderFilter } from 'redux-stores/stores/types';
-import { TArticlesTypes } from 'redux-stores/stores/articles/types';
+import { TOrderFilter } from 'redux-stores/stores/types/types';
+
+import { InfiniteScroll } from '../../../feature/infinite-scroll';
 import { ArticleList } from './components/article-list';
 import { ArticlesFilters } from './components/articles-filters';
+import { TArticlesTypes } from '../../../redux-stores/stores/types/articles';
 
 export const ArticlesPage: React.FC = () => {
   const [searchParams] = useSearchParams();

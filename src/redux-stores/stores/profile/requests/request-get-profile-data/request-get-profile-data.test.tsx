@@ -1,11 +1,11 @@
 import { ControlLocalStorage } from 'services/control-local-storage';
 import { TestAsyncThunk } from 'services/test-async-thunk';
 import { notificationsActions } from 'feature/notifications/stores/notifications';
-import { TProfile } from '../../types';
+import { TUser } from '../../types';
 import { requestGetProfileData } from './index';
 
 describe('Component Profile', () => {
-  const data: TProfile = {
+  const data: TUser = {
     username: 'Kodrik',
     age: '22',
     currency: 'RUB',

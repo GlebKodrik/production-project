@@ -31,10 +31,12 @@ export const ArticleCard = ({
 
   return (
     variant !== 'big' ? (
-      <ArticleCardSmall
-        {...props}
-        renderViews={renderViews}
-      />
+      <div className={styles.small}>
+        <ArticleCardSmall
+          {...props}
+          renderViews={renderViews}
+        />
+      </div>
     ) : (
       <ArticleCardBig
         {...props}

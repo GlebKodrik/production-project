@@ -1,5 +1,5 @@
 import { FieldErrors } from 'react-hook-form/dist/types/errors';
-import { TProfile } from 'redux-stores/stores/profile/types';
+import { TUser } from 'redux-stores/stores/profile/types';
 import { TInputProps } from '../../types';
 
 export type TInputName = 'first' | 'lastname' | 'city' | 'age' | 'username' | 'avatar';
@@ -14,7 +14,7 @@ export type TInput = {
 
 export type TProfileInputProps = {
   errors: FieldErrors<TInputValue>,
-  profileData: TProfile,
+  profileData: TUser,
   isReadOnly?: boolean,
   isLoading?: boolean,
   control?: any

@@ -1,6 +1,6 @@
 export type TCommentCardProps = {
   avatar?: string,
-  username: string,
+  fullName: string,
   className?: string,
   color?: 'primary' | 'secondary',
   comment: string,

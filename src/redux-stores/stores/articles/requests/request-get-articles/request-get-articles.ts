@@ -2,7 +2,6 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { notificationsActions } from 'feature/notifications/stores/notifications';
 import { TThunkConfig } from 'redux-stores/types/thunk-config';
 import i18n from 'i18next';
-import { TArticle } from 'pages/articles/types';
 import { addQueryParamsInSearch } from 'utils/search-params/search-params';
 import { TProps } from './types';
 import {
@@ -10,6 +9,7 @@ import {
 } from '../../selectors';
 import { getType } from '../../selectors/get-filters';
 import { TSearchParams } from '../../types';
+import { TArticle } from '../../../types/articles';
 
 export const requestGetArticles = createAsyncThunk<TArticle[], TProps, TThunkConfig<string>>(
   'articles/requestGetArticlesNextPage',

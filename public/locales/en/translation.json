@@ -43,7 +43,8 @@
   "articles": {
     "notArticles": "Unfortunately there are no articles\uD83D\uDE25",
     "readMore": "Read more...",
-    "errorGetArticles": "Error get articles"
+    "errorGetArticles": "Error get articles",
+    "errorGetRecommend": "Error get recommend"
   },
   "theme": "Theme",
   "enterCommentText": "Enter comment text",

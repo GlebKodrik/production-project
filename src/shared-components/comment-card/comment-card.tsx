@@ -8,7 +8,7 @@ import { Link } from '../link';
 
 export const CommentCard = ({
   avatar,
-  username,
+  fullName,
   color = 'primary',
   className,
   comment,
@@ -22,7 +22,7 @@ export const CommentCard = ({
     const children = (
       <div className={styles.wrapperAvatar}>
         <Avatar src={avatar} alt="avatar" className={styles.avatar} />
-        <Typography color={color}>{username}</Typography>
+        <Typography color={color}>{fullName}</Typography>
       </div>
     );
     if (link) {

@@ -5,5 +5,6 @@
   "successMessage": "Текст успешно cкопировался",
   "errorSendComment": "Ошибка отправки сообщения",
   "comment": "Комментарии",
-  "notComment": "Нет комментариев\uD83D\uDE22"
+  "notComment": "Нет комментариев\uD83D\uDE22",
+  "recommend": "Рекомендации"
 }

@@ -43,7 +43,8 @@
   "articles": {
     "notArticles": "К сожалению статей нет\uD83D\uDE25",
     "readMore": "Читать далее...",
-    "errorGetArticles": "Ошибка получения статей"
+    "errorGetArticles": "Ошибка получения статей",
+    "errorGetRecommend": "Ошибка получений рекомендаций"
   },
   "theme": "Темы",
   "enterCommentText": "Введите текст комментария",

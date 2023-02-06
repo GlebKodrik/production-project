@@ -3,10 +3,10 @@ import { notificationsActions } from 'feature/notifications/stores/notifications
 import { TThunkConfig } from 'redux-stores/types/thunk-config';
 import i18n from 'configs/i18next';
 import { LOCALES } from 'constants/locales';
-import { TProfile } from '../../types';
+import { TUser } from '../../types';
 import { getEditForm } from '../../selectors';
 
-export const saveProfileData = createAsyncThunk<TProfile, string, TThunkConfig<string>>(
+export const saveProfileData = createAsyncThunk<TUser, string, TThunkConfig<string>>(
   'profile/saveProfileData',
   async (profileId, {
     extra,
@@ -25,7 +25,7 @@ export const saveProfileData = createAsyncThunk<TProfile, string, TThunkConfig<s
     const editForm = getEditForm(getState());
 
     try {
-      const response = await extra.api.put<TProfile>(`/users/${profileId}`, editForm);
+      const response = await extra.api.put<TUser>(`/users/${profileId}`, editForm);
       return response.data;
     } catch (error) {
       dispatch(notificationsActions.showNotification({

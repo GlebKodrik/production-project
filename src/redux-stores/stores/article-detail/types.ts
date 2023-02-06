@@ -1,5 +1,5 @@
-import { TArticle } from 'pages/articles/types';
-import { TUser } from '../user/types';
+import { TArticle } from '../types/articles';
+import { TUser } from '../profile/types';
 
 export type TArticleDetailScheme = {
   isLoading: boolean,

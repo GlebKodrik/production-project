@@ -1,6 +1,6 @@
-import { TArticle } from 'pages/articles/types';
 import { TVariantView } from '../../../shared-components/article-card';
-import { TOrderFilter } from '../types';
+import { TOrderFilter } from '../types/types';
+import { TArticle, TArticlesTypes } from '../types/articles';
 
 export type TArticlesScheme = {
   isLoading: boolean,
@@ -32,7 +32,6 @@ export type TInit = {
   params: TSearchParams
 };
 
-export type TArticlesTypes = 'all' | 'it' | 'science' | 'economics';
 export type TSearchParams = {
   sort: EArticlesSort,
   order: TOrderFilter,

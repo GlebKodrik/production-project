@@ -18,8 +18,6 @@ export const ArticleDetailPage: React.FC = () => {
   }
 
   return (
-    <>
-      <ArticleDetail id={id} />
-    </>
+    <ArticleDetail id={id} />
   );
 };

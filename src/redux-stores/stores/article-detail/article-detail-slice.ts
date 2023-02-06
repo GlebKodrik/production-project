@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { TArticleDetailScheme, TComment } from './types';
 import { requestGetArticleDetailById } from './requests/request-get-article-detail-by-id';
-import { TArticle } from '../../../pages/articles/types';
 import { requestGetComments } from './requests/request-get-comments';
 import { requestAddComments } from './requests/request-add-comments';
+import { TArticle } from '../types/articles';
 
 const initialState: TArticleDetailScheme = {
   isLoading: false,

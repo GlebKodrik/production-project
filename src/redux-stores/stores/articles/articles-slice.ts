@@ -2,12 +2,12 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ControlLocalStorage } from 'services/control-local-storage';
 import { LOCAL_STORAGE_KEYS } from 'constants/local-storage-keys';
 import { TVariantView } from 'shared-components/article-card';
-import { TArticle } from 'pages/articles/types';
 import {
-  EArticlesSort, TArticlesScheme, TArticlesTypes, TInit,
+  EArticlesSort, TArticlesScheme, TInit,
 } from './types';
 import { requestGetArticles } from './requests/request-get-articles';
-import { TOrderFilter } from '../types';
+import { TOrderFilter } from '../types/types';
+import { TArticle, TArticlesTypes } from '../types/articles';
 
 const initialState: TArticlesScheme = {
   isLoading: false,

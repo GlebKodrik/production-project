@@ -9,7 +9,7 @@ import {
   ArticleCard, ArticleCardBigSkeleton, ArticleCardSmallSkeleton, TVariantView,
 } from 'shared-components/article-card';
 import styles from './article-list.module.scss';
-import { TArticleBlock, TArticleBlockText } from '../../../types';
+import { TArticleBlock, TArticleBlockText } from '../../../../../redux-stores/stores/types/articles';
 
 const getSkeletons = (variantView: TVariantView) => {
   const isBigView = variantView === 'big';

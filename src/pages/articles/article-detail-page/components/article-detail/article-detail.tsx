@@ -5,11 +5,16 @@ import { requestGetComments } from 'redux-stores/stores/article-detail/requests/
 import { requestGetArticleDetailById }
   from 'redux-stores/stores/article-detail/requests/request-get-article-detail-by-id';
 import { articleDetailReducer } from 'redux-stores/stores/article-detail';
+import { articleDetailRecommendReducer } from 'redux-stores/stores/article-detail-recommend';
+import {
+  requestGetArticleDetailRecommend,
+} from 'redux-stores/stores/article-detail-recommend/requests/request-get-article-detail-recommend';
 import { TArticleDetailProps } from './types';
 import { ArticleDetailContent } from './components/article-detail-content';
 
 const reducer: TReducersList[] = [
   { name: 'articleDetail', reducer: articleDetailReducer },
+  { name: 'articleDetailRecommend', reducer: articleDetailRecommendReducer },
 ];
 
 export const ArticleDetail: React.FC<TArticleDetailProps> = ({
@@ -18,9 +23,10 @@ export const ArticleDetail: React.FC<TArticleDetailProps> = ({
   const dispatch = useAppDispatch();
 
   useEffect(() => {
+    dispatch(requestGetArticleDetailRecommend());
     dispatch(requestGetArticleDetailById(id));
     dispatch(requestGetComments(id));
-  }, []);
+  }, [id]);
 
   return (
     <DynamicModuleLoader reducers={reducer}>
