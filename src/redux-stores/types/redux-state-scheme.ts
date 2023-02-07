@@ -3,10 +3,9 @@ import { TNotificationsState } from 'feature/notifications/stores/notifications'
 import { TProfileSchema } from '../stores/profile';
 import { TCounterState } from '../stores/counter';
 import { TUserScheme } from '../stores/user';
-import { TArticleDetailScheme } from '../stores/article-detail';
 import { TArticlesScheme } from '../stores/articles';
 import { TScrollState } from '../../feature/infinite-scroll/stores/scroll';
-import { TArticleDetailRecommendScheme } from '../stores/article-detail/stores/article-detail-recommend';
+import { TArticleScheme } from '../stores/article-detail/types';
 
 export type TReduxStateScheme = {
   counter: TCounterState,
@@ -17,6 +16,5 @@ export type TReduxStateScheme = {
   scroll: TScrollState,
   // async
   profile?: TProfileSchema,
-  articleDetail?: TArticleDetailScheme,
-  articleDetailRecommend?: TArticleDetailRecommendScheme
+  articleDetail?: TArticleScheme,
 };

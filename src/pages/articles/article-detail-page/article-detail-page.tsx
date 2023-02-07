@@ -10,18 +10,14 @@ import { requestGetComments } from 'redux-stores/stores/article-detail/requests/
 import { useAppDispatch } from 'hooks/use-app-dispatch';
 import { DynamicModuleLoader, TReducersList } from 'redux-stores/components/dynamic-module-loader';
 import {
-  articleDetailReducer,
+  articleDetailsReducer,
   requestGetArticleDetailRecommends,
 } from 'redux-stores/stores/article-detail';
 
-import {
-  articleDetailRecommendReducer,
-} from 'redux-stores/stores/article-detail/stores/article-detail-recommend';
 import { ArticleDetailContent } from './components/article-detail-content';
 
 const reducer: TReducersList[] = [
-  { name: 'articleDetail', reducer: articleDetailReducer },
-  { name: 'articleDetailRecommend', reducer: articleDetailRecommendReducer },
+  { name: 'articleDetail', reducer: articleDetailsReducer },
 ];
 
 export const ArticleDetailPage: React.FC = () => {
