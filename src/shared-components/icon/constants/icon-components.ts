@@ -28,7 +28,7 @@ export const ICONS_COMPONENT: Record<TIconNames, React.VFC<React.SVGProps<SVGSVG
   [ICON_NAMES.THEME_DARK]: ThemeDark,
   [ICON_NAMES.ERROR_OUTLINE]: ErrorOutline,
   [ICON_NAMES.PROFILE]: Profile,
-  [ICON_NAMES.ARTICLE]: Article,
+  [ICON_NAMES.ARTICLES]: Article,
   [ICON_NAMES.CALENDAR]: Calendar,
   [ICON_NAMES.EYE]: Eye,
   [ICON_NAMES.COPY]: Copy,

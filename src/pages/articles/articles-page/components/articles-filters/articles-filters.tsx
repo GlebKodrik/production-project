@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Select, TOptions } from 'shared-components/select';
 import { useSelector } from 'react-redux';
 import {
@@ -18,11 +18,13 @@ import { Tabs } from 'shared-components/tabs';
 
 import { getType } from 'redux-stores/stores/articles/selectors/get-filters';
 import { TArticlesTypes } from 'redux-stores/stores/types/articles';
+import { useSearchParams } from 'react-router-dom';
 import { ArticleVariantView } from '../article-variant-view';
 import styles from './articles-filters.module.scss';
 import { TTabs } from './types';
 
 export const ArticlesFilters = () => {
+  const [, setSearchParams] = useSearchParams();
   const { translation } = useLanguage();
   const variantView = useSelector(getVariantView);
   const search = useSelector(getSearch);
@@ -75,6 +77,12 @@ export const ArticlesFilters = () => {
     dispatch(articleActions.setType(name as TArticlesTypes));
     setSortArticles();
   };
+
+  useEffect(() => {
+    setSearchParams({
+      search, order, sort: sortBy, type,
+    });
+  }, [search, order, sortBy, type]);
 
   return (
     <>

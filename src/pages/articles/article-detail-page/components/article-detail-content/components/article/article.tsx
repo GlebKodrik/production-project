@@ -14,12 +14,12 @@ export const Article = () => {
   const navigate = useNavigate();
 
   const article = useSelector(getArticleDetail);
-  const onGotoBack = () => {
+  const onGoToBack = () => {
     navigate(-1);
   };
 
   const renderBack = () => (
-    <Button onClick={onGotoBack} color="secondary" className={styles.back}>
+    <Button onClick={onGoToBack} color="secondary" className={styles.back}>
       ← К списку
     </Button>
   );

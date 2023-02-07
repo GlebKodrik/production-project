@@ -2,13 +2,11 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { notificationsActions } from 'feature/notifications/stores/notifications';
 import { TThunkConfig } from 'redux-stores/types/thunk-config';
 import i18n from 'i18next';
-import { addQueryParamsInSearch } from 'utils/search-params/search-params';
 import { TProps } from './types';
 import {
   getArticlesLimited, getOrder, getSearch, getSortBy,
 } from '../../selectors';
 import { getType } from '../../selectors/get-filters';
-import { TSearchParams } from '../../types';
 import { TArticle } from '../../../types/articles';
 
 export const requestGetArticles = createAsyncThunk<TArticle[], TProps, TThunkConfig<string>>(
@@ -26,10 +24,6 @@ export const requestGetArticles = createAsyncThunk<TArticle[], TProps, TThunkCon
     const search = getSearch(getState());
     const type = getType(getState());
     const isAll = type === 'all';
-
-    addQueryParamsInSearch<TSearchParams>({
-      search, order, sort: sortBy, type,
-    });
 
     try {
       const response = await extra.api.get<TArticle[]>('/articles', {

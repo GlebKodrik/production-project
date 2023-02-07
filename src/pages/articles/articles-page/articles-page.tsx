@@ -20,12 +20,12 @@ import { ArticlesFilters } from './components/articles-filters';
 import { TArticlesTypes } from '../../../redux-stores/stores/types/articles';
 
 export const ArticlesPage: React.FC = () => {
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const dispatch = useAppDispatch();
   const page = useSelector(getArticlesPage);
   const isHasMore = useSelector(getArticlesIsHasMore);
   const isLoading = useSelector(getArticlesIsLoading);
   const isInit = useSelector(getArticlesIsInit);
-  const dispatch = useAppDispatch();
 
   const onScrollEnd = () => {
     if (isHasMore && !isLoading) {
@@ -36,6 +36,7 @@ export const ArticlesPage: React.FC = () => {
 
   useEffect(() => {
     if (!isInit) {
+      setSearchParams({ order: 'asc', sort: 'title', type: 'it' });
       dispatch(articleActions.init({
         params: {
           order: searchParams.get('order') as TOrderFilter || 'asc',

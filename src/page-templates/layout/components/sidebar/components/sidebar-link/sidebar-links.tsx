@@ -32,7 +32,7 @@ export const SidebarLinks: React.FC = () => {
       icon: ICON_NAMES.PROFILE,
     },
     {
-      name: 'sidebar.links.articles', link: ROUTES_PATH.ARTICLE, icon: ICON_NAMES.ARTICLE,
+      name: 'sidebar.links.articles', link: ROUTES_PATH.ARTICLES, icon: ICON_NAMES.ARTICLES,
     },
   ], [user?.id]);
 

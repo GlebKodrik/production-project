@@ -21,7 +21,7 @@ import styles from './article-detail-content.module.scss';
 import { ArticleDetailComments } from '../article-detail-comments';
 import { TProps } from './types';
 import { Article } from './components/article';
-import { ArticlesRecommends } from '../../../../../components/articles-recommends';
+import { ArticlesRecommends } from '../../../components/articles-recommends';
 
 export const ArticleDetailContent = ({ id }: TProps) => {
   const isLoading = useSelector(getArticleIsLoading);

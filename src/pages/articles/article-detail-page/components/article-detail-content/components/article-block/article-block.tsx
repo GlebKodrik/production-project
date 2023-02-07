@@ -1,9 +1,9 @@
 import React from 'react';
-import { ArticleTextBlock } from '../../../../../../../components/article-text-block';
+import { ArticleTextBlock } from '../../../../../components/article-text-block';
 import styles from '../../article-detail-content.module.scss';
-import { ArticleImageBlock } from '../../../../../../../components/article-image-block';
-import { ArticleCodeBlock } from '../../../../../../../components/article-code-block';
-import { EArticleBlockType, TArticleBlock } from '../../../../../../../../../redux-stores/stores/types/articles';
+import { ArticleImageBlock } from '../../../../../components/article-image-block';
+import { ArticleCodeBlock } from '../../../../../components/article-code-block';
+import { EArticleBlockType, TArticleBlock } from '../../../../../../../redux-stores/stores/types/articles';
 
 export const ArticleBlock = (block: TArticleBlock) => {
   if (!block?.type) {

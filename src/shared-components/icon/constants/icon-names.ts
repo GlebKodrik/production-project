@@ -7,7 +7,7 @@ export const ICON_NAMES = {
   ERROR_OUTLINE: 'error-outline',
   THEME_LIGHT: 'theme-light',
   THEME_DARK: 'theme-dark',
-  ARTICLE: 'article',
+  ARTICLES: 'article',
   CALENDAR: 'calendar',
   EYE: 'eye',
   COPY: 'copy',

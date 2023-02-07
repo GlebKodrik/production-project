@@ -2,7 +2,7 @@ export const ROUTES_PATH = {
   ABOUT: '/about',
   BASE: '/',
   PROFILE: '/profile',
-  ARTICLE: '/article',
+  ARTICLES: '/articles',
   ARTICLE_DETAIL: '/article',
   // last scroll-to-top
   PAGE_404: '*',
