@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { TArticleDetailRecommendScheme } from './types';
-import { requestGetArticleDetailRecommend } from './requests/request-get-article-detail-recommend';
-import { TArticle } from '../types/articles';
+import { requestGetArticleDetailRecommends } from './requests/request-get-article-detail-recommend';
+import { TArticle } from '../../../types/articles';
 
 const initialState: TArticleDetailRecommendScheme = {
   isLoading: false,
@@ -10,28 +10,28 @@ const initialState: TArticleDetailRecommendScheme = {
   isFinish: false,
 };
 
-export const articleDetailRecommendSlice = createSlice({
+export const articleDetailRecommendsSlice = createSlice({
   name: 'articleDetailRecommend',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(requestGetArticleDetailRecommend.pending, (state) => {
+      .addCase(requestGetArticleDetailRecommends.pending, (state) => {
         state.data = [];
         state.isLoading = true;
         state.isFinish = false;
       })
-      .addCase(requestGetArticleDetailRecommend.fulfilled, (state, action: PayloadAction<TArticle[]>) => {
+      .addCase(requestGetArticleDetailRecommends.fulfilled, (state, action: PayloadAction<TArticle[]>) => {
         state.data = action.payload;
         state.isFinish = true;
         state.isLoading = false;
       })
-      .addCase(requestGetArticleDetailRecommend.rejected, (state) => {
+      .addCase(requestGetArticleDetailRecommends.rejected, (state) => {
         state.isLoading = false;
         state.isFinish = false;
       });
   },
 });
 
-export const { actions: articleDetailRecommendActions } = articleDetailRecommendSlice;
-export const { reducer: articleDetailRecommendReducer } = articleDetailRecommendSlice;
+export const { actions: articleDetailRecommendActions } = articleDetailRecommendsSlice;
+export const { reducer: articleDetailRecommendReducer } = articleDetailRecommendsSlice;

@@ -2,9 +2,9 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { notificationsActions } from 'feature/notifications/stores/notifications';
 import i18n from 'configs/i18next';
 import { TThunkConfig } from 'redux-stores/types/thunk-config';
-import { TArticle } from '../../../types/articles';
+import { TArticle } from '../../../../../types/articles';
 
-export const requestGetArticleDetailRecommend = createAsyncThunk<TArticle[], void, TThunkConfig<string>>(
+export const requestGetArticleDetailRecommends = createAsyncThunk<TArticle[], void, TThunkConfig<string>>(
   'article/articleDetailRecommend',
   async (
     _,

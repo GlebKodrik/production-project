@@ -1,4 +1,4 @@
-import { TArticle } from '../types/articles';
+import { TArticle } from '../../../types/articles';
 
 export type TArticleDetailRecommendScheme = {
   isLoading: boolean,

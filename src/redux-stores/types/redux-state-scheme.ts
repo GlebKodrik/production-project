@@ -6,7 +6,7 @@ import { TUserScheme } from '../stores/user';
 import { TArticleDetailScheme } from '../stores/article-detail';
 import { TArticlesScheme } from '../stores/articles';
 import { TScrollState } from '../../feature/infinite-scroll/stores/scroll';
-import { TArticleDetailRecommendScheme } from '../stores/article-detail-recommend';
+import { TArticleDetailRecommendScheme } from '../stores/article-detail/stores/article-detail-recommend';
 
 export type TReduxStateScheme = {
   counter: TCounterState,

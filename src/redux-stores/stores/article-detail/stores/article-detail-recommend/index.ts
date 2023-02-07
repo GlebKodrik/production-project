@@ -1,4 +1,4 @@
-import { articleDetailRecommendActions, articleDetailRecommendReducer } from './article-detail-recommend-slice';
+import { articleDetailRecommendActions, articleDetailRecommendReducer } from './article-detail-recommends-slice';
 import { TArticleDetailRecommendScheme } from './types';
 
 export {

@@ -1,4 +1,4 @@
-import { TReduxStateScheme } from '../../../types/redux-state-scheme';
+import { TReduxStateScheme } from '../../../../../types/redux-state-scheme';
 
 export const getArticleDetailRecommend = (state: TReduxStateScheme) => state.articleDetailRecommend?.data || [];
 export const getArticleDetailRecommendIsLoading = (state: TReduxStateScheme) => state.articleDetailRecommend?.isLoading;
