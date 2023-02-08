@@ -1,25 +1,18 @@
 import { TArticle } from '../types/articles';
 import { TUser } from '../profile/types';
-import { TArticleDetailRecommendScheme } from './stores/article-detail-recommend';
+import { TArticleDetailRecommendsScheme } from './stores/article-detail-recommends';
+import type { TArticleDetailCommentsScheme } from './stores/article-detail-comments';
 
 export type TArticleScheme = {
-  recommends: TArticleDetailRecommendScheme,
+  recommends: TArticleDetailRecommendsScheme,
   article: TArticleDetailScheme,
+  comments: TArticleDetailCommentsScheme
 };
 
 export type TArticleDetailScheme = {
   isLoading: boolean,
   error?: string,
   data?: TArticle
-  comments: {
-    data?: TComment[],
-    isLoading: boolean,
-    error?: string,
-    isFinish: boolean,
-    sendComment: {
-      isLoading: boolean,
-    },
-  }
 };
 
 export type TComment = {

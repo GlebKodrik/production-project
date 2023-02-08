@@ -8,7 +8,7 @@ import { useLanguage } from 'hooks/use-language';
 import { LOCALES } from 'constants/locales';
 import {
   getArticleDetailRecommend,
-} from 'redux-stores/stores/article-detail/stores/article-detail-recommend/selectors';
+} from 'redux-stores/stores/article-detail/stores/article-detail-recommends/selectors';
 import styles from './articles-recommends.module.scss';
 
 export const ArticlesRecommends = () => {

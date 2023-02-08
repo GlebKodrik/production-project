@@ -6,7 +6,7 @@ import { useLanguage } from 'hooks/use-language';
 import {
   requestGetArticleDetailById,
 } from 'redux-stores/stores/article-detail/requests/request-get-article-detail-by-id';
-import { requestGetComments } from 'redux-stores/stores/article-detail/requests/request-get-comments';
+
 import { useAppDispatch } from 'hooks/use-app-dispatch';
 import { DynamicModuleLoader, TReducersList } from 'redux-stores/components/dynamic-module-loader';
 import {
@@ -15,6 +15,9 @@ import {
 } from 'redux-stores/stores/article-detail';
 
 import { ArticleDetailContent } from './components/article-detail-content';
+import {
+  requestGetComments,
+} from '../../../redux-stores/stores/article-detail/stores/article-detail-comments';
 
 const reducer: TReducersList[] = [
   { name: 'articleDetail', reducer: articleDetailsReducer },

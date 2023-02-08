@@ -1,23 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { TArticleDetailScheme, TComment } from './types';
+import { TArticleDetailScheme } from './types';
 import { requestGetArticleDetailById } from './requests/request-get-article-detail-by-id';
-import { requestGetComments } from './requests/request-get-comments';
-import { requestAddComments } from './requests/request-add-comments';
 import { TArticle } from '../types/articles';
 
 const initialState: TArticleDetailScheme = {
   isLoading: false,
   data: undefined,
   error: undefined,
-  comments: {
-    data: undefined,
-    isLoading: false,
-    error: undefined,
-    isFinish: false,
-    sendComment: {
-      isLoading: false,
-    },
-  },
 };
 
 export const articleDetailSlice = createSlice({
@@ -38,31 +27,6 @@ export const articleDetailSlice = createSlice({
       .addCase(requestGetArticleDetailById.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
-      })
-      .addCase(requestGetComments.pending, (state) => {
-        state.comments.error = undefined;
-        state.comments.isFinish = false;
-        state.comments.isLoading = true;
-      })
-      .addCase(requestGetComments.fulfilled, (state, action: PayloadAction<TComment[]>) => {
-        const initialComments = [...action.payload];
-        state.comments.isLoading = false;
-        state.comments.isFinish = true;
-        state.comments.data = initialComments.reverse();
-      })
-      .addCase(requestGetComments.rejected, (state, action) => {
-        state.comments.isLoading = false;
-        state.comments.isFinish = false;
-        state.comments.error = action.payload;
-      })
-      .addCase(requestAddComments.pending, (state) => {
-        state.comments.sendComment.isLoading = true;
-      })
-      .addCase(requestAddComments.fulfilled, (state) => {
-        state.comments.sendComment.isLoading = false;
-      })
-      .addCase(requestAddComments.rejected, (state) => {
-        state.comments.sendComment.isLoading = false;
       });
   },
 });

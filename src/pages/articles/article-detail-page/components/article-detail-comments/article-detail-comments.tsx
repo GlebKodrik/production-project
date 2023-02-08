@@ -1,10 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import {
-  getComments,
-  getCommentsIsFinish,
-  getCommentsIsLoading,
-} from 'redux-stores/stores/article-detail/selectors/get-comments';
+
 import { CommentCard } from 'shared-components/comment-card';
 import { useLanguage } from 'hooks/use-language';
 import { LOCALES } from 'constants/locales';
@@ -12,6 +8,10 @@ import { Typography } from 'shared-components/typography';
 import { ROUTES_PATH } from 'constants/routers';
 import Loader from 'shared-components/loader';
 import cn from 'classnames';
+import {
+  getComments, getCommentsIsFinish,
+  getCommentsIsLoading,
+} from 'redux-stores/stores/article-detail/stores/article-detail-comments/selectors';
 import styles from './article-detail-comments.module.scss';
 
 export const ArticleDetailComments = () => {

@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { TArticleDetailRecommendScheme } from './types';
-import { requestGetArticleDetailRecommends } from './requests/request-get-article-detail-recommend';
+import { TArticleDetailRecommendsScheme } from './types';
+import { requestGetArticleDetailRecommends } from './requests/request-get-article-detail-recommends';
 import { TArticle } from '../../../types/articles';
 
-const initialState: TArticleDetailRecommendScheme = {
+const initialState: TArticleDetailRecommendsScheme = {
   isLoading: false,
   data: [],
   error: undefined,
@@ -11,7 +11,7 @@ const initialState: TArticleDetailRecommendScheme = {
 };
 
 export const articleDetailRecommendsSlice = createSlice({
-  name: 'articleDetailRecommend',
+  name: 'articleDetailRecommends',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -33,5 +33,5 @@ export const articleDetailRecommendsSlice = createSlice({
   },
 });
 
-export const { actions: articleDetailRecommendActions } = articleDetailRecommendsSlice;
-export const { reducer: articleDetailRecommendReducer } = articleDetailRecommendsSlice;
+export const { actions: articleDetailRecommendsActions } = articleDetailRecommendsSlice;
+export const { reducer: articleDetailRecommendsReducer } = articleDetailRecommendsSlice;

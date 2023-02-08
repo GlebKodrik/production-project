@@ -10,12 +10,13 @@ import {
 import { LOCALES } from 'constants/locales';
 import { AddComments } from 'feature/add-comments';
 import { useAppDispatch } from 'hooks/use-app-dispatch';
-import {
-  requestAddComments,
-} from 'redux-stores/stores/article-detail/requests/request-add-comments';
+
 import { getUser } from 'redux-stores/stores/user/selectors/get-user';
 import { unwrapResult } from '@reduxjs/toolkit';
 import { TOption } from 'feature/add-comments/types';
+import {
+  requestAddComments,
+} from 'redux-stores/stores/article-detail/stores/article-detail-comments/requests/request-add-comments';
 import { ArticleDetailContentSkeleton } from './components/article-detail-content-skeleton';
 import styles from './article-detail-content.module.scss';
 import { ArticleDetailComments } from '../article-detail-comments';

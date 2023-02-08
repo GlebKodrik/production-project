@@ -1,6 +1,6 @@
 import { TArticle } from '../../../types/articles';
 
-export type TArticleDetailRecommendScheme = {
+export type TArticleDetailRecommendsScheme = {
   isLoading: boolean,
   error?: string,
   data: TArticle[],

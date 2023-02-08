@@ -3,9 +3,10 @@ import { notificationsActions } from 'feature/notifications/stores/notifications
 import { TThunkConfig } from 'redux-stores/types/thunk-config';
 import i18n from 'i18next';
 import { LOCALES } from 'constants/locales';
-import { TComment } from '../../types';
+
 import { TProps } from './types';
 import { requestGetComments } from '../request-get-comments';
+import { TComment } from '../../../../types';
 
 export const requestAddComments = createAsyncThunk<TComment[], TProps, TThunkConfig<string>>(
   'article/addComment',

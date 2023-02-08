@@ -5,7 +5,7 @@ import { TThunkConfig } from 'redux-stores/types/thunk-config';
 import { TArticle } from '../../../../../types/articles';
 
 export const requestGetArticleDetailRecommends = createAsyncThunk<TArticle[], void, TThunkConfig<string>>(
-  'article/articleDetailRecommend',
+  'article/articleDetailRecommends',
   async (
     _,
     { extra, dispatch, rejectWithValue },
