@@ -25,6 +25,7 @@ export const LanguageSwitcher: React.FC<TLanguageSwitcher> = (
       variant="clear"
       onClick={onToggleLanguage}
       className={cls(className)}
+      color="primary"
     >
       { renderLanguage() }
     </Button>
