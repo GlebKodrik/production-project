@@ -16,7 +16,7 @@ const FLAGS = {
 
 const MODE = FLAGS.IS_PRODUCTION ? ENVIRONMENTS.PRODUCTION : ENVIRONMENTS.DEVELOPMENT;
 
-const API_ENDPOINT = FLAGS.IS_DEVELOPMENT ? 'http://localhost:8000/' : process.env.ENDPOINT_PRODUCTION;
+const API_ENDPOINT = FLAGS.IS_DEVELOPMENT ? 'http://localhost:8000/' : 'https://react-blog-server-pink.vercel.app/';
 
 export {
   FLAGS,
