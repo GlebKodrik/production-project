@@ -18,15 +18,14 @@ import { Tabs } from 'shared-components/tabs';
 
 import { getType } from 'redux-stores/stores/articles/selectors/get-filters';
 import { TArticlesTypes } from 'redux-stores/stores/types/articles';
-import { useSearchParams } from 'react-router-dom';
 import { Link } from 'shared-components/link';
 import { ROUTES_PATH } from 'constants/routers';
 import { ArticleVariantView } from '../article-variant-view';
 import styles from './articles-filters.module.scss';
-import { TTabs } from './types';
+import { TProps, TTabs } from './types';
+import { Button } from '../../../../../shared-components/button';
 
-export const ArticlesFilters = () => {
-  const [, setSearchParams] = useSearchParams();
+export const ArticlesFilters = ({ setSearchParams, isLoadingGetArticles }: TProps) => {
   const { translation } = useLanguage();
   const variantView = useSelector(getVariantView);
   const search = useSelector(getSearch);
@@ -89,7 +88,13 @@ export const ArticlesFilters = () => {
   return (
     <>
       <div className={styles.wrapperFilters}>
-        <Select onChange={onSortByChange} value={sortBy} options={OPTIONS} label={translation('sort.sortBy')} />
+        <Select
+          onChange={onSortByChange}
+          value={sortBy}
+          options={OPTIONS}
+          label={translation('sort.sortBy')}
+          disabled={isLoadingGetArticles}
+        />
         <ArticleVariantView
           variantView={variantView}
           onClick={onChangeView}
@@ -97,19 +102,32 @@ export const ArticlesFilters = () => {
         />
       </div>
       <div className={styles.wrapperDown}>
-        <Icon
-          fill="primary"
-          name="sort-up"
-          className={cn(styles.icon, { [styles.revertIcon]: isOrderByDesc })}
+        <Button
           onClick={onOrderClick}
-        />
+          color="secondary"
+          disabled={isLoadingGetArticles}
+        >
+          <Icon
+            fill="primary"
+            name="sort-up"
+            className={cn(
+              styles.icon,
+              { [styles.revertIcon]: isOrderByDesc },
+            )}
+          />
+        </Button>
         <div className={styles.wrapperSearch}>
           <Search value={search} onChange={onSearchChange} />
         </div>
       </div>
       <div className={styles.wrapperTabsWithIcon}>
         <div className={styles.tabs}>
-          <Tabs tabs={TABS} onClick={onTypeChange} activeTab={type} />
+          <Tabs
+            tabs={TABS}
+            onClick={onTypeChange}
+            activeTab={type}
+            disabled={isLoadingGetArticles}
+          />
         </div>
         <Link to={ROUTES_PATH.ARTICLE_DETAIL_NEW}>
           <Icon name="create" />

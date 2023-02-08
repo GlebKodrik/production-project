@@ -5,7 +5,8 @@ export type TProps = {
   onClick: (name: string) => void,
   className?: string,
   color?: TColor,
-  activeTab?: string
+  activeTab?: string,
+  disabled?: boolean
 };
 
 export type TTabs = {

@@ -10,6 +10,7 @@ export const Tabs = ({
   className,
   color = 'secondary',
   activeTab,
+  disabled,
 }: TProps) => {
   const onContentChange = (name: string) => () => {
     onClick(name);
@@ -26,6 +27,7 @@ export const Tabs = ({
       {tabs.map(({ name, content }) => (
         <Button
           onClick={onContentChange(name)}
+          disabled={disabled}
           className={cn(
             styles.tab,
             classes,

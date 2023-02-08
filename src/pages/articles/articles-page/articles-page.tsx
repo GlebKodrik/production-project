@@ -54,7 +54,10 @@ export const ArticlesPage: React.FC = () => {
       <InfiniteScroll
         callbackScrollEnd={onScrollEnd}
       >
-        <ArticlesFilters />
+        <ArticlesFilters
+          isLoadingGetArticles={isLoading}
+          setSearchParams={setSearchParams}
+        />
         <ArticleList />
       </InfiniteScroll>
     </ScrollToTop>
