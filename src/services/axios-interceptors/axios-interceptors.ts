@@ -5,7 +5,11 @@ import { API_ENDPOINT } from '../../../configs-project/webpack-configs/constants
 
 export const axiosInterceptors = axios.create({
   baseURL: API_ENDPOINT,
-  headers: {
-    authorization: ControlLocalStorage.getValueLocalStorage(LOCAL_STORAGE_KEYS.AUTH),
-  },
+});
+
+axiosInterceptors.interceptors.request.use((config) => {
+  if (config.headers) {
+    config.headers.Authorization = ControlLocalStorage.getValueLocalStorage(LOCAL_STORAGE_KEYS.AUTH);
+  }
+  return config;
 });
