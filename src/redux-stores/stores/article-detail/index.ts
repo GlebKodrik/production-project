@@ -7,7 +7,7 @@ import { articleDetailsReducer } from './combine-reducers';
 import { requestGetArticleDetailById } from './requests/request-get-article-detail-by-id';
 import { requestAddComments, requestGetComments } from './stores/article-detail-comments';
 import {
-  getArticleDetail, getArticleError, getArticleIsLoading, getIsLoadingSendComment,
+  getArticleDetail, getArticleError, getArticleIsLoading, getIsCreatorArticle, getIsLoadingSendComment,
 } from './selectors';
 import { getComments, getCommentsIsFinish, getCommentsIsLoading } from './stores/article-detail-comments/selectors';
 import {
@@ -33,4 +33,5 @@ export {
   getArticleDetailRecommend,
   getArticleDetailRecommendIsLoading,
   getArticleDetailRecommendIsFinish,
+  getIsCreatorArticle,
 };

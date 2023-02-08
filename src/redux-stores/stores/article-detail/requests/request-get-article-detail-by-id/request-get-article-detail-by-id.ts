@@ -12,7 +12,11 @@ export const requestGetArticleDetailById = createAsyncThunk<TArticle, string, TT
   ) => {
     const ERROR_GET_ARTICLE = i18n.t('article.errorRequestGetArticleById');
     try {
-      const response = await extra.api.get<TArticle>(`/articles/${articleId}`);
+      const response = await extra.api.get<TArticle>(`/articles/${articleId}`, {
+        params: {
+          _expand: 'user',
+        },
+      });
       return response.data;
     } catch (error) {
       dispatch(notificationsActions.showNotification({

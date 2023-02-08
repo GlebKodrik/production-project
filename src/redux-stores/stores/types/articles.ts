@@ -37,6 +37,7 @@ export type TArticle = {
   createdAt: string,
   type: TArticlesTypes[],
   blocks: TArticleBlock[],
+  userId: string,
   user: TUser
 };
 

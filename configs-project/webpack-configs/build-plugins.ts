@@ -7,6 +7,7 @@ import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import WebpackBar from 'webpackbar';
+import CopyPlugin from 'copy-webpack-plugin';
 import {
   FLAGS,
   scriptExtensions,
@@ -27,6 +28,11 @@ const buildPlugins = (): WebpackPluginInstance[] => {
     new WebpackBar(),
     new MiniCssExtractPlugin({
       filename: 'css/[name].css',
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: PATHS.LOCALES, to: PATHS.IN_DIST_LOCALES },
+      ],
     }),
   ];
 

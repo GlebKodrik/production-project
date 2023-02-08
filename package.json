@@ -59,6 +59,7 @@
     "babel-plugin-i18next-extract": "^0.8.3",
     "classnames": "^2.3.2",
     "concurrently": "^7.5.0",
+    "copy-webpack-plugin": "^11.0.0",
     "cross-env": "^7.0.3",
     "css-loader": "^6.6.0",
     "csstype": "^3.1.1",

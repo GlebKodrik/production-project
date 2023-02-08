@@ -4,6 +4,7 @@ export const ROUTES_PATH = {
   PROFILE: '/profile',
   ARTICLES: '/articles',
   ARTICLE_DETAIL: '/article',
+  ARTICLE_DETAIL_NEW: '/article-new',
   // last scroll-to-top
   PAGE_404: '*',
 } as const;

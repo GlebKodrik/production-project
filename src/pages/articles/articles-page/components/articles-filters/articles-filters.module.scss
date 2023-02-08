@@ -21,9 +21,10 @@
     margin-bottom: 20px;
   }
 
-  &-tabs {
+  &-tabs-with-icon {
     display: flex;
-    gap: 0 20px;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 40px;
   }
 }
@@ -34,4 +35,9 @@
 
 .icon {
   cursor: pointer;
+}
+
+.tabs {
+  display: flex;
+  gap: 0 20px;
 }

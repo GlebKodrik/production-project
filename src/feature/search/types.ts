@@ -4,7 +4,7 @@ import { TColor } from '../../types/color';
 export type TProps = {
   onChange?: (value: string) => void,
   value?: string,
-  onSubmit: (value: string, { reset }: TOption) => void,
+  onSubmit?: (value: string, { reset }: TOption) => void,
   color?: TColor,
   className?: string
 };

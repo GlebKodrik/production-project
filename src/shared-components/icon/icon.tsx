@@ -8,7 +8,7 @@ import styles from './icon.module.scss';
 export const Icon = React.memo((
   {
     name,
-    fill = 'primary',
+    fill = 'secondary',
     opacity = 1,
     width = '24px',
     height = '24px',

@@ -11,7 +11,7 @@ import { useLanguage } from '../../hooks/use-language';
 export const Search = ({
   onChange,
   value,
-  onSubmit,
+  onSubmit = () => {},
   color = 'secondary',
   className,
 }: TProps) => {

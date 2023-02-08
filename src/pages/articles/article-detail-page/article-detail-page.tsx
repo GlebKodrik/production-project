@@ -12,12 +12,11 @@ import { DynamicModuleLoader, TReducersList } from 'redux-stores/components/dyna
 import {
   articleDetailsReducer,
   requestGetArticleDetailRecommends,
+
+  requestGetComments,
 } from 'redux-stores/stores/article-detail';
 
 import { ArticleDetailContent } from './components/article-detail-content';
-import {
-  requestGetComments,
-} from '../../../redux-stores/stores/article-detail/stores/article-detail-comments';
 
 const reducer: TReducersList[] = [
   { name: 'articleDetail', reducer: articleDetailsReducer },

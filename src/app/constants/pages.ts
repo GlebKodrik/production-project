@@ -7,6 +7,14 @@ export const ASYNC_PAGES = {
   PROFILE: namedLazy(() => import('pages/profile-page'), 'ProfilePage'),
   ARTICLE_DETAIL: namedLazy(() => import('../../pages/articles/article-detail-page'), 'ArticleDetailPage'),
   ARTICLES: namedLazy(() => import('../../pages/articles/articles-page'), 'ArticlesPage'),
+  ARTICLE_DETAIL_EDIT: namedLazy(
+    () => import('../../pages/articles/article-detail-edit-page'),
+    'ArticleDetailEditPage',
+  ),
+  ARTICLE_DETAIL_NEW: namedLazy(
+    () => import('../../pages/articles/article-detail-create-new-page'),
+    'ArticleDetailCreateNewPage',
+  ),
   BASE: namedLazy(() => import('pages/main-page'), 'MainPage'),
   PAGE_404: namedLazy(() => import('pages/not-found-page'), 'NotFoundPage'),
 } as const;
@@ -17,5 +25,7 @@ export const PAGES_COMPONENTS: TPagesPathWithComponents[] = [
   { path: `${ROUTES_PATH.PROFILE}/:id`, component: ASYNC_PAGES.PROFILE, isPrivate: true },
   { path: `${ROUTES_PATH.ARTICLE_DETAIL}/:id`, component: ASYNC_PAGES.ARTICLE_DETAIL, isPrivate: true },
   { path: ROUTES_PATH.ARTICLES, component: ASYNC_PAGES.ARTICLES, isPrivate: true },
+  { path: ROUTES_PATH.ARTICLE_DETAIL_NEW, component: ASYNC_PAGES.ARTICLE_DETAIL_NEW, isPrivate: true },
+  { path: `${ROUTES_PATH.ARTICLE_DETAIL}/:id/edit`, component: ASYNC_PAGES.ARTICLE_DETAIL_EDIT, isPrivate: true },
   { path: ROUTES_PATH.PAGE_404, component: ASYNC_PAGES.PAGE_404 },
 ];

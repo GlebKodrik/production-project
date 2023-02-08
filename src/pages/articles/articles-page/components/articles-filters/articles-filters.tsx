@@ -19,6 +19,8 @@ import { Tabs } from 'shared-components/tabs';
 import { getType } from 'redux-stores/stores/articles/selectors/get-filters';
 import { TArticlesTypes } from 'redux-stores/stores/types/articles';
 import { useSearchParams } from 'react-router-dom';
+import { Link } from 'shared-components/link';
+import { ROUTES_PATH } from 'constants/routers';
 import { ArticleVariantView } from '../article-variant-view';
 import styles from './articles-filters.module.scss';
 import { TTabs } from './types';
@@ -96,16 +98,22 @@ export const ArticlesFilters = () => {
       </div>
       <div className={styles.wrapperDown}>
         <Icon
+          fill="primary"
           name="sort-up"
           className={cn(styles.icon, { [styles.revertIcon]: isOrderByDesc })}
           onClick={onOrderClick}
         />
         <div className={styles.wrapperSearch}>
-          <Search onSubmit={() => {}} value={search} onChange={onSearchChange} />
+          <Search value={search} onChange={onSearchChange} />
         </div>
       </div>
-      <div className={styles.wrapperTabs}>
-        <Tabs tabs={TABS} onClick={onTypeChange} activeTab={type} />
+      <div className={styles.wrapperTabsWithIcon}>
+        <div className={styles.tabs}>
+          <Tabs tabs={TABS} onClick={onTypeChange} activeTab={type} />
+        </div>
+        <Link to={ROUTES_PATH.ARTICLE_DETAIL_NEW}>
+          <Icon name="create" />
+        </Link>
       </div>
     </>
   );
