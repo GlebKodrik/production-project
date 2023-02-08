@@ -47,7 +47,6 @@ export const profileSlice = createSlice({
         state.error = action.payload;
       })
       .addCase(saveProfileData.pending, (state) => {
-        state.error = undefined;
         state.saveProfile.isLoading = true;
       })
       .addCase(saveProfileData.fulfilled, (state, action) => {
@@ -56,10 +55,9 @@ export const profileSlice = createSlice({
         state.data = action.payload;
         state.editForm = action.payload;
       })
-      .addCase(saveProfileData.rejected, (state, action) => {
+      .addCase(saveProfileData.rejected, (state) => {
         state.isReadOnly = false;
         state.saveProfile.isLoading = false;
-        state.error = action.payload;
       });
   },
 });
