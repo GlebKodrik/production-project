@@ -40,13 +40,13 @@ const Auth: React.FC<TAuthProps> = () => {
   };
 
   const renderButtonLogout = () => (
-    <Button variant="clear" onClick={onLogout}>
+    <Button variant="clear" onClick={onLogout} color="primary">
       { translation('navbar.logout') }
     </Button>
   );
 
   const renderButtonLogin = () => (
-    <Button variant="clear" onClick={onToggleAuthModal}>
+    <Button variant="clear" onClick={onToggleAuthModal} color="primary">
       { translation('navbar.login') }
     </Button>
   );

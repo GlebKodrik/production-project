@@ -77,6 +77,7 @@ export const AuthByUsernameForm: React.FC<TProps> = ({
             variant="outline"
             type="submit"
             disabled={isLoading}
+            color="primary"
           >
             { translation('auth.buttonLogin') }
           </Button>
