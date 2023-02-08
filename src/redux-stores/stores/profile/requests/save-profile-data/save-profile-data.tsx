@@ -6,6 +6,8 @@ import { LOCALES } from 'constants/locales';
 import { TUser } from '../../types';
 import { getEditForm } from '../../selectors';
 
+const NOT_FOUND_AVATAR = 'https://icon-library.com/images/no-user-image-icon/no-user-image-icon-27.jpg';
+
 export const saveProfileData = createAsyncThunk<TUser, string, TThunkConfig<string>>(
   'profile/saveProfileData',
   async (profileId, {
@@ -25,7 +27,10 @@ export const saveProfileData = createAsyncThunk<TUser, string, TThunkConfig<stri
     const editForm = getEditForm(getState());
 
     try {
-      const response = await extra.api.put<TUser>(`/use/${profileId}`, editForm);
+      const response = await extra.api.put<TUser>(`/users/${profileId}`, {
+        ...editForm,
+        avatar: editForm?.avatar || NOT_FOUND_AVATAR,
+      });
       return response.data;
     } catch (error) {
       dispatch(notificationsActions.showNotification({
