@@ -28,7 +28,7 @@ const initialState: TArticlesScheme = {
 };
 
 const VIEW_BIG_CARD = 4;
-const VIEW_SMALL_CARD = 9;
+const VIEW_SMALL_CARD = 14;
 
 export const articlesSlice = createSlice({
   name: 'articles',

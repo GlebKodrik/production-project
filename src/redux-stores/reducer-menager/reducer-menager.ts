@@ -2,7 +2,7 @@ import {
   AnyAction, combineReducers, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { TReduxStateScheme } from 'redux-stores/types/redux-state-scheme';
-import { TReducerManager, TReduxStateSchemaKey } from 'redux-stores/reducer-menager/types/reducer-menager';
+import { TReducerManager, TReduxStateSchemaKey } from './types/reducer-menager';
 
 export function createReducerManager(initialReducers: ReducersMapObject<TReduxStateScheme>): TReducerManager {
   const reducers = { ...initialReducers };

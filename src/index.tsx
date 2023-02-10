@@ -8,7 +8,7 @@ import { ErrorBoundary } from 'pages/error-boundery-page';
 import { LanguageProvider } from 'providers/language-provider';
 import { ThemeProvider } from 'providers/theme-provider';
 import { ReduxProvider } from 'providers/redux-provider';
-import { App } from './app';
+import { App } from 'app';
 
 render(
   <BrowserRouter>

@@ -1,7 +1,7 @@
 import { Dispatch } from '@reduxjs/toolkit';
 import { TReduxStateScheme } from 'redux-stores/types/redux-state-scheme';
-import { TActionCreate } from 'services/test-async-thunk/types';
 import axios, { AxiosStatic } from 'axios';
+import { TActionCreate } from './types';
 
 jest.mock('axios');
 

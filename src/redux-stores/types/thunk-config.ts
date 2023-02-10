@@ -1,4 +1,4 @@
-import { TThunkExtraArg } from 'redux-stores/types/thunk-extra-arg';
+import { TThunkExtraArg } from './thunk-extra-arg';
 import { TReduxStateScheme } from './redux-state-scheme';
 
 export type TThunkConfig<T> = {

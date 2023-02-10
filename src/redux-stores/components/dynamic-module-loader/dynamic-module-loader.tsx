@@ -4,7 +4,7 @@ import { TReduxStoreWithManager } from 'redux-stores/reducer-menager/types/reduc
 import {
   TDynamicModuleLoaderProps,
   TReducersList,
-} from 'redux-stores/components/dynamic-module-loader/types/dynamic-module-loader';
+} from './types/dynamic-module-loader';
 
 export const DynamicModuleLoader: React.FC<TDynamicModuleLoaderProps> = ({
   children,

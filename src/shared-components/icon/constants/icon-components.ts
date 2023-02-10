@@ -1,5 +1,5 @@
-import { TIconNames } from 'shared-components/icon';
 import React from 'react';
+import { TIconNames } from '../types';
 import Home from '../images/home.svg';
 import ClarityList from '../images/clarity-list.svg';
 import CheckCircleOutline from '../images/check-circle-outline.svg';

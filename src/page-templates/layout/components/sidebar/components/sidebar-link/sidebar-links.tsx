@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import { Link } from 'shared-components/link';
-import styles from 'page-templates/layout/components/sidebar/sidebar.module.scss';
 import { Icon } from 'shared-components/icon';
 import { useLanguage } from 'hooks/use-language';
 import { useSelector } from 'react-redux';
@@ -9,6 +8,7 @@ import { ROUTES_PATH } from 'constants/routers';
 import { ICON_NAMES } from 'shared-components/icon/constants/icon-names';
 import { getUser } from 'redux-stores/stores/user/selectors/get-user';
 import { TRoutesPath } from 'types/routes';
+import styles from '../../sidebar.module.scss';
 import { TLinks } from './types';
 
 export const SidebarLinks: React.FC = () => {
