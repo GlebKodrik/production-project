@@ -1,3 +1,8 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
 .list-box {
   position: relative;
   max-width: fit-content;
@@ -11,7 +16,6 @@
   color: var(--text-color);
   background-color: var(--background-color);
   border: 1px solid #b4b2b0;
-  border-top: none;
   border-radius: 6px;
 }
 
@@ -21,10 +25,13 @@
   justify-content: space-between;
 }
 
+.label {
+  margin-right: 4px;
+}
+
 .item {
   display: flex;
   align-items: center;
-  width: 100%;
   padding: 0 10px;
   cursor: pointer;
 
@@ -35,6 +42,7 @@
 }
 
 .icon {
+  flex: none;
   margin-left: 8px;
 }
 

@@ -1,8 +1,9 @@
 import React from 'react';
 
 import { useLanguage } from 'hooks/use-language';
-import { Select, TOptions } from '../select';
+import { TOptions } from '../select';
 import { CURRENCY, TCurrencyProps } from './types';
+import { ListBox } from '../list-box';
 
 const OPTIONS: TOptions[] = [
   { value: CURRENCY.RUB, content: CURRENCY.RUB },
@@ -18,13 +19,14 @@ export const Currency = ({
 }: TCurrencyProps) => {
   const { translation } = useLanguage();
   return (
-    <Select
-      value={value}
-      onChange={onChange}
+    <ListBox
+      items={OPTIONS}
       label={translation('selectCurrency')}
-      options={OPTIONS}
+      onChange={onChange}
+      value={value}
       className={className}
       disabled={disabled}
+      size="small"
     />
   );
 };

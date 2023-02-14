@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { useLanguage } from 'hooks/use-language';
-import { Select } from '../select';
 import { COUNTRY, TCountryProps, TOptions } from './types';
+import { ListBox } from '../list-box';
 
 const OPTIONS: TOptions[] = [
   { value: COUNTRY.Armenia, content: COUNTRY.Armenia },
@@ -20,13 +20,14 @@ export const Country = ({
 }: TCountryProps) => {
   const { translation } = useLanguage();
   return (
-    <Select
-      value={value}
+    <ListBox
+      items={OPTIONS}
       onChange={onChange}
+      value={value}
       label={translation('selectCounter')}
-      options={OPTIONS}
       disabled={disabled}
       className={className}
+      size="small"
     />
   );
 };

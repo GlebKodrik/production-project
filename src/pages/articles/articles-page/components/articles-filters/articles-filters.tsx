@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Select, TOptions } from 'shared-components/select';
+import { TOptions } from 'shared-components/select';
 import { useSelector } from 'react-redux';
 import {
   getOrder, getSearch, getSortBy, getVariantView,
@@ -24,6 +24,7 @@ import { Button } from 'shared-components/button';
 import { ArticleVariantView } from '../article-variant-view';
 import styles from './articles-filters.module.scss';
 import { TProps, TTabs } from './types';
+import { ListBox } from '../../../../../shared-components/list-box';
 
 export const ArticlesFilters = ({ setSearchParams, isLoadingGetArticles }: TProps) => {
   const { translation } = useLanguage();
@@ -88,12 +89,13 @@ export const ArticlesFilters = ({ setSearchParams, isLoadingGetArticles }: TProp
   return (
     <>
       <div className={styles.wrapperFilters}>
-        <Select
+        <ListBox
           onChange={onSortByChange}
           value={sortBy}
-          options={OPTIONS}
+          items={OPTIONS}
           label={translation('sort.sortBy')}
           disabled={isLoadingGetArticles}
+          className={styles.listBox}
         />
         <ArticleVariantView
           variantView={variantView}

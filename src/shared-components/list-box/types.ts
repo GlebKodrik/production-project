@@ -9,9 +9,10 @@ export type TProps = {
   className?: string,
   value?: string,
   onChange: (value: any) => void,
-  defaultValue: string,
+  defaultValue?: string,
   disabled?: boolean,
-  size?: TSize
+  size?: TSize,
+  label?: string
 };
 
 export type TListBoxItems = {
