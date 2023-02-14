@@ -56,7 +56,7 @@ export const articlesSlice = createSlice({
     init(state, action: PayloadAction<TInit>) {
       const searchParams = action.payload.params;
       const variantView = ControlLocalStorage
-        .getValueLocalStorage <TVariantView>(LOCAL_STORAGE_KEYS.VARIANT_VIEW_ARTICLE);
+        .getValueLocalStorage <TVariantView>(LOCAL_STORAGE_KEYS.VARIANT_VIEW_ARTICLE) || 'big';
       const isBigVariantView = variantView === 'big';
       state.filters.variantView = variantView;
       state.limit = isBigVariantView ? VIEW_BIG_CARD : VIEW_SMALL_CARD;
