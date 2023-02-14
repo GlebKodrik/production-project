@@ -12,7 +12,13 @@
   background-color: var(--background-color);
   border: 1px solid #b4b2b0;
   border-top: none;
-  border-radius: 8px;
+  border-radius: 6px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .item {
@@ -29,11 +35,11 @@
 }
 
 .icon {
-  margin-right: 2px;
+  margin-left: 8px;
 }
 
 .selected {
-  color: var(--secondary-color);
+  color: var(--activer-text-color);
   background-color: var(--active-list-box);
 }
 

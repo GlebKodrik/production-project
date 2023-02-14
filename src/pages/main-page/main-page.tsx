@@ -9,6 +9,7 @@ export const MainPage = () => {
     <div>
       {translation('title')}
       <ListBox
+        size="small"
         items={[{ value: '1', content: '1' },
           { value: '12312', content: 'dasasd', disabled: true },
           { value: '213123', content: '123efdewcwerc' },
