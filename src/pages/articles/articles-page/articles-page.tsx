@@ -20,7 +20,7 @@ import { ArticleList } from './components/article-list';
 import { ArticlesFilters } from './components/articles-filters';
 
 export const ArticlesPage: React.FC = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const dispatch = useAppDispatch();
   const page = useSelector(getArticlesPage);
   const isHasMore = useSelector(getArticlesIsHasMore);
@@ -36,7 +36,6 @@ export const ArticlesPage: React.FC = () => {
 
   useEffect(() => {
     if (!isInit) {
-      setSearchParams({ order: 'asc', sort: 'title', type: 'it' });
       dispatch(articleActions.init({
         params: {
           order: searchParams.get('order') as TOrderFilter || 'asc',
@@ -56,7 +55,6 @@ export const ArticlesPage: React.FC = () => {
       >
         <ArticlesFilters
           isLoadingGetArticles={isLoading}
-          setSearchParams={setSearchParams}
         />
         <ArticleList />
       </InfiniteScroll>

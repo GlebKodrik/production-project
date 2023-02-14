@@ -21,12 +21,16 @@ import { TArticlesTypes } from 'redux-stores/stores/types/articles';
 import { Link } from 'shared-components/link';
 import { ROUTES_PATH } from 'constants/routers';
 import { Button } from 'shared-components/button';
+import { useSearchParams } from 'react-router-dom';
+import { ListBox } from 'shared-components/list-box';
 import { ArticleVariantView } from '../article-variant-view';
 import styles from './articles-filters.module.scss';
 import { TProps, TTabs } from './types';
-import { ListBox } from '../../../../../shared-components/list-box';
 
-export const ArticlesFilters = ({ setSearchParams, isLoadingGetArticles }: TProps) => {
+export const ArticlesFilters = ({
+  isLoadingGetArticles,
+}: TProps) => {
+  const [, setSearchParams] = useSearchParams();
   const { translation } = useLanguage();
   const variantView = useSelector(getVariantView);
   const search = useSelector(getSearch);
