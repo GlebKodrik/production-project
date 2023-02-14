@@ -33,6 +33,7 @@ export const ListBox = ({
     <div className={cn(styles.wrapper, className)}>
       <Label label={label} className={styles.label} />
       <HListBox
+        horizontal
         as="div"
         value={value}
         onChange={onChange}
@@ -52,9 +53,7 @@ export const ListBox = ({
             <ChevronUpDownIcon width={20} height={20} className={styles.icon} />
           </Button>
         </HListBox.Button>
-        <HListBox.Options
-          className={cn(styles.options, classes)}
-        >
+        <HListBox.Options className={cn(styles.options, classes)}>
           {items.map((item) => (
             <HListBox.Option
               key={item.value}
