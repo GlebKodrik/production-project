@@ -2,7 +2,7 @@ import { TArticlesTypes } from 'redux-stores/stores/types/articles';
 
 export type TProps = {
   isLoadingGetArticles: boolean,
-  setSearchParams: any
+  setSearchParams: (value: any) => void
 };
 
 export type TTabs = {

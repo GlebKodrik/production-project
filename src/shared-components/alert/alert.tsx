@@ -52,7 +52,9 @@ export const Alert: React.FC<TAlertProps> = ({
   };
 
   const onMouseOutAlert = () => {
-    startTimerForAutoCloseAlert();
+    if (startTimerForAutoCloseAlert) {
+      startTimerForAutoCloseAlert();
+    }
   };
 
   if ((isOpen && !isOpen) || !showAlert) {
@@ -72,6 +74,8 @@ export const Alert: React.FC<TAlertProps> = ({
       className={cls(styles.alert, classes, classNames)}
       onMouseOver={onMouseOverAlert}
       onMouseOut={onMouseOutAlert}
+      onFocus={onMouseOverAlert}
+      onBlur={onMouseOverAlert}
     >
       <div className={styles.iconWithChildren}>
         <Icon name={getIconDependingOnSeverity(severity)} fill="#fff" />

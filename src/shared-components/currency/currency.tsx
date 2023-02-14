@@ -14,7 +14,6 @@ export const Currency = ({
   value,
   onChange,
   className,
-  name,
   disabled,
 }: TCurrencyProps) => {
   const { translation } = useLanguage();
@@ -25,7 +24,6 @@ export const Currency = ({
       label={translation('selectCurrency')}
       options={OPTIONS}
       className={className}
-      name={name}
       disabled={disabled}
     />
   );

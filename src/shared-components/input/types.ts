@@ -1,4 +1,4 @@
-import { InputHTMLAttributes } from 'react';
+import { InputHTMLAttributes, LegacyRef } from 'react';
 
 type TVariantInput = 'outline' | 'plain';
 type TColorInput = 'primary' | 'secondary';
@@ -15,7 +15,7 @@ export interface TInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>,
   value: string | number,
   onChange: (value: string) => void,
   className?: string,
-  inputRef?: any,
+  inputRef?: LegacyRef<HTMLInputElement>,
   tabIndex?: number,
   name?: string,
   error?: string,

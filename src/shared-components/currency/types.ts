@@ -3,7 +3,6 @@ export type TCurrencyProps = {
   onChange: (value: TCurrency) => void,
   isReadOnly?: boolean,
   className?: string,
-  name?: string,
   disabled?: boolean,
 };
 

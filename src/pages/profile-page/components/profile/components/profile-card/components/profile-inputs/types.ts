@@ -1,5 +1,6 @@
 import { FieldErrors } from 'react-hook-form/dist/types/errors';
 import { TUser } from 'redux-stores/stores/profile/types';
+import { Control } from 'react-hook-form';
 import { TInputProps } from '../../types';
 
 export type TInputName = 'first' | 'lastname' | 'city' | 'age' | 'username' | 'avatar';
@@ -17,5 +18,5 @@ export type TProfileInputProps = {
   profileData: TUser,
   isReadOnly?: boolean,
   isLoading?: boolean,
-  control?: any
+  control: Control<TInputValue>
 } & TInputProps;

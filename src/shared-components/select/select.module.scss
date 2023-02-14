@@ -32,6 +32,7 @@
   &-secondary {
     color: var(--secondary-color);
     background-color: var(--primary-color);
+    border: 1px solid var(--secondary-color);
 
     .option {
       color: var(--secondary-color);

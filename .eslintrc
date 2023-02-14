@@ -16,7 +16,7 @@
   "extends": [
     "airbnb",
     "airbnb/hooks",
-    "airbnb-typescript",
+    "airbnb-typescript"
   ],
   "settings": {
     "react": {
@@ -24,9 +24,10 @@
     }
   },
   "rules": {
+    "no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
     "gkodrik-plugin/path-cheker-gkodrik": "error",
     "linebreak-style": "off",
-    "no-underscore-dangle": "off",
     "max-params": ["error", 2],
     "react/function-component-definition": "off",
     "import/prefer-default-export": "off",
@@ -34,17 +35,12 @@
     "react-hooks/exhaustive-deps": "off",
     "react/jsx-props-no-spreading": "off",
     "react/react-in-jsx-scope": "off",
-    "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/no-static-element-interactions": "off",
     "react/button-has-type": "off",
     "react-hooks/rules-of-hooks": "off",
     "react/jsx-no-useless-fragment": "off",
     "no-param-reassign": "off",
-    "jsx-a11y/mouse-events-have-key-events": "off",
-    "import/no-extraneous-dependencies": "off",
     "react/no-array-index-key": "off",
-    "no-unused-vars": "off",
-    "unused-imports/no-unused-imports": "error",
     "unused-imports/no-unused-vars": [
       "warn",
       { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }

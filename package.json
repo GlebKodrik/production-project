@@ -17,13 +17,15 @@
     "test:loki:report:html": "reg-cli --from .loki/report.json --report .loki/report.html",
     "test:ui-loki:ci": "npm run storybook:build && loki --requireReference --reactUri file:./storybook-static",
     "test:ui-loki-approve": "loki approve",
-    "storybook": "start-storybook -p 6006 -c configs-project/storybook -s public",
+    "storybook": "cross-env NODE_ENV=storybook start-storybook -p 6006 -c configs-project/storybook -s public",
     "storybook:build": "build-storybook -c configs-project/storybook -s public",
     "analyzer:bundle": "cross-env NODE_ENV=analyzer webpack",
     "build:dev": "cross-env NODE_ENV=development webpack",
     "build:production": "cross-env NODE_ENV=production webpack"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.10",
+    "@heroicons/react": "^2.0.15",
     "@babel/core": "^7.17.5",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",

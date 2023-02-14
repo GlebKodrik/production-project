@@ -6,7 +6,7 @@ export type TProps = {
 export type TReturn = {
   showAlert: boolean;
   clearTimerForAutoCloseAlert?: Function;
-  startTimerForAutoCloseAlert?: any;
+  startTimerForAutoCloseAlert?: Function;
   stopTimerForAutoCloseAlert?: Function;
   percentAutoClose?: number;
 };
