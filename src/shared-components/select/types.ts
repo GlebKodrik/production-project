@@ -1,4 +1,4 @@
-import { TColor } from '../../types/color';
+import { TColor } from '../types/color';
 
 export type TSelectProps = {
   className?: string,

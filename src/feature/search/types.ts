@@ -1,5 +1,5 @@
 import { UseFormReset } from 'react-hook-form/dist/types/form';
-import { TColor } from '../../types/color';
+import { TColor } from '../../shared-components/types/color';
 
 export type TProps = {
   onChange?: (value: string) => void,

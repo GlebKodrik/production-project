@@ -1,6 +1,7 @@
 import { ButtonHTMLAttributes, ReactNode } from 'react';
-import { TColor } from '../../types/color';
+
 import { TSize } from '../../types/size';
+import { TColor } from '../types/color';
 
 type TVariantButton = 'outline' | 'text' | 'clear' | 'square';
 

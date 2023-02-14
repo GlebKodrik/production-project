@@ -13,10 +13,15 @@ export const ListBox = ({
   onChange,
   disabled,
   size,
+  color = 'secondary',
 }: TProps) => {
   if (!items?.length) {
     return null;
   }
+
+  const classes = {
+    [styles[`color-${color}`]]: Boolean(color),
+  };
 
   return (
     <HListBox
@@ -37,7 +42,7 @@ export const ListBox = ({
           {value || defaultValue}
         </Button>
       </HListBox.Button>
-      <HListBox.Options className={styles.options}>
+      <HListBox.Options className={cn(styles.options, classes)}>
         {items.map((item) => (
           <HListBox.Option
             key={item.value}
@@ -45,10 +50,10 @@ export const ListBox = ({
             value={item.value}
             as={Fragment}
           >
-            {({ active }) => (
+            {({ selected }) => (
               <li
                 className={cn(
-                  { [styles.active]: active },
+                  { [styles.selected]: selected },
                   { [styles.disabled]: item.disabled },
                   styles.item,
                 )}

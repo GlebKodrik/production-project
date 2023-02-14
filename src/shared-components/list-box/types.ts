@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
-import { TColor } from '../../types/color';
+
 import { TSize } from '../../types/size';
+import { TColor } from '../types/color';
 
 export type TProps = {
   color?: TColor,
