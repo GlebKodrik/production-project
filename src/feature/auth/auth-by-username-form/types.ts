@@ -1,5 +1,5 @@
 export type TProps = {
-  isOpen?: boolean
+  isOpen: boolean
 };
 
 type TInputName = 'username' | 'password';

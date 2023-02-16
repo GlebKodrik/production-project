@@ -6,6 +6,7 @@ import styles from './list-box.module.scss';
 import { TProps } from './types';
 import { Button } from '../button';
 import { Label } from '../label';
+import { useFloating } from '../../hooks/use-floating';
 
 export const ListBox = ({
   items,
@@ -21,6 +22,10 @@ export const ListBox = ({
   if (!items?.length) {
     return null;
   }
+
+  const {
+    x, y, strategy, refs,
+  } = useFloating({ placement: 'bottom' });
 
   const currentContent = items.find((item) => item.value === value);
 
@@ -40,7 +45,7 @@ export const ListBox = ({
         disabled={disabled}
         className={cn(styles.listBox)}
       >
-        <HListBox.Button as="div">
+        <HListBox.Button ref={refs.setReference} as="div">
           <Button
             variant="outline"
             size={size}
@@ -53,7 +58,17 @@ export const ListBox = ({
             <ChevronUpDownIcon width={20} height={20} className={styles.icon} />
           </Button>
         </HListBox.Button>
-        <HListBox.Options className={cn(styles.options, classes)}>
+        <HListBox.Options
+          className={cn(styles.options, classes)}
+          as="ul"
+          ref={refs.setFloating}
+          style={{
+            position: strategy,
+            top: y ?? 0,
+            left: x ?? 0,
+            width: 'max-content',
+          }}
+        >
           {items.map((item) => (
             <HListBox.Option
               key={item.value}

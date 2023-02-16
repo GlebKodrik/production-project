@@ -27,7 +27,7 @@ export const AuthByUsernameForm: React.FC<TProps> = ({
   const {
     handleSubmit,
     control,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<TInputValue>({
     resolver: yupResolver(authYupScheme()),
     mode: 'onChange',
@@ -76,7 +76,7 @@ export const AuthByUsernameForm: React.FC<TProps> = ({
           <Button
             variant="outline"
             type="submit"
-            disabled={isLoading}
+            disabled={isLoading || !isValid}
             color="primary"
           >
             { translation('auth.buttonLogin') }

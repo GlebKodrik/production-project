@@ -5,13 +5,12 @@
 
 .list-box {
   position: relative;
-  max-width: fit-content;
 }
 
 .options {
-  position: absolute;
   z-index: 3;
   width: 100%;
+  min-width: 100%;
   overflow: hidden;
   color: var(--text-color);
   background-color: var(--background-color);

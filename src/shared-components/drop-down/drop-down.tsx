@@ -1,13 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Menu } from '@headlessui/react';
 import cn from 'classnames';
-import {
-  autoUpdate,
-  flip, offset, shift, useFloating,
-} from '@floating-ui/react';
 import { TProps } from './types';
 import styles from './drop-down.module.scss';
 import { Link } from '../link';
+import { useFloating } from '../../hooks/use-floating';
 
 export const DropDown = ({
   className,
@@ -15,16 +12,8 @@ export const DropDown = ({
   items,
 }: TProps) => {
   const {
-    x, y, strategy, refs,
-  } = useFloating({
-    placement: 'bottom-end',
-    middleware: [
-      offset(2),
-      flip(),
-      shift(),
-    ],
-    whileElementsMounted: autoUpdate,
-  });
+    refs, y, strategy, x,
+  } = useFloating({});
   const renderContent = ({ content, href }: any) => {
     if (href) {
       return (
@@ -54,16 +43,14 @@ export const DropDown = ({
         }}
       >
         {items.map((item, index) => (
-          <Menu.Item key={index}>
+          <Menu.Item key={index} as={Fragment}>
             {({ active }) => (
-              <li>
-                <div
-                  onClick={item.onClick}
-                  onKeyDown={item.onClick}
-                  className={cn(styles.item, { [styles.active]: active }, styles.div)}
-                >
-                  {renderContent({ content: item.content, href: item.href })}
-                </div>
+              <li
+                onClick={item.onClick}
+                onKeyDown={item.onClick}
+                className={cn(styles.item, { [styles.active]: active }, styles.div)}
+              >
+                {renderContent({ content: item.content, href: item.href })}
               </li>
             )}
           </Menu.Item>

@@ -9,6 +9,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import cn from 'classnames';
 import { Typography } from 'shared-components/typography';
+import notFoundUser from 'assets/image/no-user.png';
 import styles from './prodile-card.module.scss';
 import { TProfileCardProps } from './types';
 import { ProfileInputs } from './components/profile-inputs';
@@ -63,18 +64,21 @@ export const ProfileCard = ({
     <h1 className={styles.title}>{translation('editTitle')}</h1>
   ));
 
-  const renderAvatar = () => (
-    <>
-      <div className={cn(styles.wrapperAvatar)}>
-        <Avatar
-          src={profileEditData.avatar}
-          alt="user avatar"
-          border
-          className={styles.avatar}
-        />
-      </div>
-    </>
-  );
+  const renderAvatar = () => {
+    const currentAvatar = errors.avatar ? notFoundUser : profileEditData.avatar;
+    return (
+      <>
+        <div className={cn(styles.wrapperAvatar)}>
+          <Avatar
+            src={currentAvatar}
+            alt="user avatar"
+            border
+            className={styles.avatar}
+          />
+        </div>
+      </>
+    );
+  };
 
   const renderLoading = () => isLoading && (spinner || <Loader className={styles.loader} />);
 
