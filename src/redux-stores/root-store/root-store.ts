@@ -15,8 +15,6 @@ import { scrollReducer } from '../../feature/infinite-scroll/stores/scroll';
 
 export const createReduxStore = ({
   initialState,
-  setSearchParams,
-  searchParams,
 }: TCreateReduxStore) => {
   const rootReducer: ReducersMapObject<TReduxStateScheme> = {
     counter: counterReducer,
@@ -37,8 +35,6 @@ export const createReduxStore = ({
       thunk: {
         extraArgument: {
           api: axiosInterceptors,
-          setSearchParams,
-          searchParams,
         },
       },
     }),
