@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Error from './error';
 
 export default {
-  title: 'scroll-to-top/Error',
+  title: 'scroll-to-position/Error',
   component: Error,
 } as ComponentMeta<typeof Error>;
 

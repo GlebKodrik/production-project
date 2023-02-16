@@ -5,6 +5,6 @@ export const ROUTES_PATH = {
   ARTICLES: '/articles',
   ARTICLE_DETAIL: '/article',
   ARTICLE_DETAIL_NEW: '/article-new',
-  // last scroll-to-top
+  // last scroll-to-position
   PAGE_404: '*',
 } as const;

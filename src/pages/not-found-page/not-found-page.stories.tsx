@@ -6,7 +6,7 @@ import { NotFoundPage } from './not-found-page';
 import { ThemeDecorator } from '../../../configs-project/storybook/decorators/theme-decorator';
 
 export default {
-  title: 'scroll-to-top/Not-found',
+  title: 'scroll-to-position/Not-found',
   component: NotFoundPage,
 } as ComponentMeta<typeof NotFoundPage>;
 

@@ -5,7 +5,7 @@ import { TReduxStateScheme } from 'redux-stores/types/redux-state-scheme';
 import { getScrollPositionByPath } from 'feature/infinite-scroll/stores/scroll/selectors/get-scroll/get-scroll';
 import { TProps } from './types';
 
-export const ScrollToTop = ({ children, scrollableDiv }: TProps) => {
+export const ScrollToPosition = ({ children, scrollableDiv }: TProps) => {
   const locations = useLocation();
   const scrollPosition = useSelector(
     (state: TReduxStateScheme) => getScrollPositionByPath(state, locations.pathname),

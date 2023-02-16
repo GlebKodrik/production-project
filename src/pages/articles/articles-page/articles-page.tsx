@@ -5,34 +5,23 @@ import { requestGetArticles } from 'redux-stores/stores/articles/requests/reques
 import { articleActions, EArticlesSort } from 'redux-stores/stores/articles';
 import { useSearchParams } from 'react-router-dom';
 import {
-  getArticlesPage,
-  getArticlesIsHasMore,
   getArticlesIsLoading,
   getArticlesIsInit,
 } from 'redux-stores/stores/articles/selectors';
 
-import { ScrollToTop } from 'feature/scroll-to-top';
 import { TOrderFilter } from 'redux-stores/stores/types/types';
 
-import { InfiniteScroll } from 'feature/infinite-scroll';
 import { TArticlesTypes } from 'redux-stores/stores/types/articles';
+import { ScrollToPosition } from 'feature/scroll-to-position';
 import { ArticleList } from './components/article-list';
 import { ArticlesFilters } from './components/articles-filters';
+import { ArticlesInfiniteScroll } from './components/articles-infinite-scroll';
 
 export const ArticlesPage: React.FC = () => {
   const [searchParams] = useSearchParams();
   const dispatch = useAppDispatch();
-  const page = useSelector(getArticlesPage);
-  const isHasMore = useSelector(getArticlesIsHasMore);
   const isLoading = useSelector(getArticlesIsLoading);
   const isInit = useSelector(getArticlesIsInit);
-
-  const onScrollEnd = () => {
-    if (isHasMore && !isLoading) {
-      dispatch(requestGetArticles({ page: page + 1 }));
-      dispatch(articleActions.setPage(page + 1));
-    }
-  };
 
   useEffect(() => {
     if (!isInit) {
@@ -49,16 +38,14 @@ export const ArticlesPage: React.FC = () => {
   }, []);
 
   return (
-    <ScrollToTop>
-      <InfiniteScroll
-        callbackScrollEnd={onScrollEnd}
-      >
+    <ScrollToPosition>
+      <ArticlesInfiniteScroll>
         <ArticlesFilters
           isLoadingGetArticles={isLoading}
         />
         <ArticleList />
-      </InfiniteScroll>
-    </ScrollToTop>
+      </ArticlesInfiniteScroll>
+    </ScrollToPosition>
 
   );
 };
