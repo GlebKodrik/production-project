@@ -6,7 +6,10 @@ import { useLanguage } from 'hooks/use-language';
 import { getUserAuth, userActions } from 'redux-stores/stores/user';
 import { notificationsActions } from 'feature/notifications/stores/notifications';
 import { namedLazy } from 'shared-components/named-lazy';
-import Loader from '../../../../../../shared-components/loader';
+import Loader from 'shared-components/loader';
+import { DropDown } from 'shared-components/drop-down';
+import { getUser } from 'redux-stores/stores/user/selectors/get-user';
+import { Avatar } from 'shared-components/avatar';
 import { TAuthProps } from './types';
 
 export const AuthByUsernameModal = namedLazy(
@@ -17,6 +20,7 @@ export const AuthByUsernameModal = namedLazy(
 const Auth: React.FC<TAuthProps> = () => {
   const [isOpenAuthModal, setIsOpenAuthModal] = useState(false);
   const isAuth = useSelector(getUserAuth);
+  const user = useSelector(getUser);
   const dispatch = useDispatch();
 
   const { translation } = useLanguage();
@@ -39,11 +43,22 @@ const Auth: React.FC<TAuthProps> = () => {
     ));
   };
 
-  const renderButtonLogout = () => (
-    <Button variant="clear" onClick={onLogout} color="primary">
-      { translation('navbar.logout') }
-    </Button>
-  );
+  const renderButtonLogout = () => {
+    const ButtonLogout = (
+      <Button variant="clear" color="primary">
+        { translation('navbar.logout') }
+      </Button>
+    );
+    return (
+      <DropDown
+        items={[{
+          content: ButtonLogout,
+          onClick: onLogout,
+        }]}
+        trigger={<Avatar src={user?.avatar} size={40} />}
+      />
+    );
+  };
 
   const renderButtonLogin = () => (
     <Button variant="clear" onClick={onToggleAuthModal} color="primary">

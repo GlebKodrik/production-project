@@ -1,0 +1,46 @@
+.wrapper {
+  position: relative;
+}
+
+.trigger {
+  display: block;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.items {
+  position: absolute;
+  z-index: 3;
+  overflow: hidden;
+  background-color: var(--drop-down-background-color);
+  border: 1px solid var(--drop-down-border-color);
+  border-radius: 8px;
+}
+
+.item {
+  width: 100%;
+  padding: 5px 25px;
+  color: var(--drop-down-text-color);
+  list-style-type: none;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.active {
+  background-color: var(--drop-down-active-list-box);
+
+  button,
+  a {
+    color: var(--activer-text-color);
+  }
+}
+
+.div {
+  width: 100%;
+}

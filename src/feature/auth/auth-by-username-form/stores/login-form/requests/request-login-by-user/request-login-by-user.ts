@@ -2,8 +2,6 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { notificationsActions } from 'feature/notifications/stores/notifications';
 import i18n from 'configs/i18next';
 import { userActions } from 'redux-stores/stores/user';
-import { ControlLocalStorage } from 'services/control-local-storage';
-import { LOCAL_STORAGE_KEYS } from 'constants/local-storage-keys';
 import { TThunkConfig } from 'redux-stores/types/thunk-config';
 import { batch } from 'react-redux';
 import { TUser } from 'redux-stores/stores/profile/types';
@@ -16,7 +14,6 @@ export const requestLoginByUser = createAsyncThunk<TUser, TPropsThunk, TThunkCon
 
     try {
       const response = await extra.api.post<TUser>('/login', loginData);
-      ControlLocalStorage.setValueLocalStorage(LOCAL_STORAGE_KEYS.AUTH, response.data);
       batch(() => {
         dispatch(userActions.setUser(response.data));
         dispatch(notificationsActions.showNotification({

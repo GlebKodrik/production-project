@@ -17,6 +17,7 @@ export const userSlice = createSlice({
     setUser: (state, action: PayloadAction<TUser>) => {
       state.userData = action.payload;
       state.isAuth = true;
+      ControlLocalStorage.setValueLocalStorage(LOCAL_STORAGE_KEYS.AUTH, action.payload);
     },
     verificationAuthUser: (state) => {
       const user = ControlLocalStorage.getValueLocalStorage<TUser>(LOCAL_STORAGE_KEYS.AUTH);

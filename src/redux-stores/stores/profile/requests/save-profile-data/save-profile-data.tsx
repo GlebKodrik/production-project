@@ -5,6 +5,7 @@ import i18n from 'configs/i18next';
 import { LOCALES } from 'constants/locales';
 import { TUser } from '../../types';
 import { getEditForm } from '../../selectors';
+import { userActions } from '../../../user';
 
 const NOT_FOUND_AVATAR = 'https://icon-library.com/images/no-user-image-icon/no-user-image-icon-27.jpg';
 
@@ -31,6 +32,7 @@ export const saveProfileData = createAsyncThunk<TUser, string, TThunkConfig<stri
         ...editForm,
         avatar: editForm?.avatar || NOT_FOUND_AVATAR,
       });
+      dispatch(userActions.setUser(response.data));
       return response.data;
     } catch (error) {
       dispatch(notificationsActions.showNotification({

@@ -19,11 +19,10 @@ export const Avatar = React.memo((
   }), [size]);
 
   return (
-    <div className={cn(styles.wrapper, { [styles.border]: border }, className)}>
+    <div className={cn(styles.wrapper, { [styles.border]: border }, className)} style={customStyles}>
       <img
         src={src || notFound}
         alt={alt}
-        style={customStyles}
         className={styles.avatar}
       />
     </div>
