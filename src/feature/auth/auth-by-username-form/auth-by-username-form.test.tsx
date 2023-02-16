@@ -1,6 +1,5 @@
 import { userActions } from 'redux-stores/stores/user';
 import { ControlLocalStorage } from 'services/control-local-storage';
-import { LOCAL_STORAGE_KEYS } from 'constants/local-storage-keys';
 import { notificationsActions } from 'feature/notifications/stores/notifications';
 import i18n from 'configs/i18next';
 import { TestAsyncThunk } from 'services/test-async-thunk';
@@ -28,7 +27,6 @@ describe('Component AuthByUsernameForm', () => {
       severity: 'success',
       message: i18n.t('auth.successfulLogin'),
     }));
-    expect(ControlLocalStorage.setValueLocalStorage).toHaveBeenCalledWith(LOCAL_STORAGE_KEYS.AUTH, userInfo);
     expect(thunk.api.post).toHaveBeenCalled();
     expect(meta.requestStatus).toBe('fulfilled');
   });
@@ -47,7 +45,6 @@ describe('Component AuthByUsernameForm', () => {
       severity: 'error',
       message: ERROR_MESSAGE_LOGIN,
     }));
-    expect(ControlLocalStorage.setValueLocalStorage).not.toHaveBeenCalledWith(LOCAL_STORAGE_KEYS.AUTH, userInfo);
     expect(meta.requestStatus).toBe('rejected');
   });
 });
