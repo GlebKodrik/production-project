@@ -2,11 +2,9 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Typography } from 'shared-components/typography';
 import { useLanguage } from 'hooks/use-language';
-
 import {
   requestGetArticleDetailById,
 } from 'redux-stores/stores/article-detail/requests/request-get-article-detail-by-id';
-
 import { useAppDispatch } from 'hooks/use-app-dispatch';
 import { DynamicModuleLoader, TReducersList } from 'redux-stores/components/dynamic-module-loader';
 import {
@@ -24,7 +22,6 @@ const reducer: TReducersList[] = [
 
 export const ArticleDetailPage: React.FC = () => {
   const dispatch = useAppDispatch();
-
   const { translation } = useLanguage();
   const params = useParams<{ id: string }>();
   const { id } = params;

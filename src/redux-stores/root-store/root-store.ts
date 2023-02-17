@@ -4,7 +4,7 @@ import {
 import { loginFormReducer } from 'feature/auth/auth-by-username-form/stores/login-form';
 import { notificationsReducer } from 'feature/notifications/stores/notifications/slices/notifications-slice';
 import { createReducerManager } from 'redux-stores/reducer-menager/reducer-menager';
-import { axiosInterceptors } from 'services/axios-interceptors/axios-interceptors';
+import { axiosInterceptors } from 'services/api/axios-interceptors/axios-interceptors';
 import { TCreateReduxStore } from './types';
 import { TReduxStateScheme } from '../types/redux-state-scheme';
 import { counterReducer } from '../stores/counter';
@@ -12,6 +12,7 @@ import { userReducer } from '../stores/user';
 import { FLAGS } from '../../../configs-project/webpack-configs/constants/variables';
 import { articleReducer } from '../stores/articles';
 import { scrollReducer } from '../../feature/infinite-scroll/stores/scroll';
+import { rtkQueryApi } from '../../services/api/rtk-query-api';
 
 export const createReduxStore = ({
   initialState,
@@ -23,6 +24,7 @@ export const createReduxStore = ({
     notifications: notificationsReducer,
     articles: articleReducer,
     scroll: scrollReducer,
+    [rtkQueryApi.reducerPath]: rtkQueryApi.reducer,
   };
 
   const reducerManager = createReducerManager(rootReducer);
@@ -37,7 +39,7 @@ export const createReduxStore = ({
           api: axiosInterceptors,
         },
       },
-    }),
+    }).concat(rtkQueryApi.middleware),
   });
 
   // @ts-ignore

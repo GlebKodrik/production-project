@@ -9,7 +9,7 @@ import {
   ArticleCard, ArticleCardBigSkeleton, ArticleCardSmallSkeleton, TVariantView,
 } from 'shared-components/article-card';
 import { TArticleBlock, TArticleBlockText } from 'redux-stores/stores/types/articles';
-import styles from './article-list.module.scss';
+import styles from './articles-lists.module.scss';
 
 const getSkeletons = (variantView: TVariantView) => {
   const isBigView = variantView === 'big';
@@ -20,7 +20,7 @@ const getSkeletons = (variantView: TVariantView) => {
   ));
 };
 
-export const ArticleList = () => {
+export const ArticlesLists = () => {
   const { translation } = useLanguage();
   const articles = useSelector(getArticles);
   const isFinished = useSelector(getArticlesIsFinished);

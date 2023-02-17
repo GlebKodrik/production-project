@@ -13,7 +13,7 @@ import { TOrderFilter } from 'redux-stores/stores/types/types';
 
 import { TArticlesTypes } from 'redux-stores/stores/types/articles';
 import { ScrollToPosition } from 'feature/scroll-to-position';
-import { ArticleList } from './components/article-list';
+import { ArticlesLists } from './components/articles-lists';
 import { ArticlesFilters } from './components/articles-filters';
 import { ArticlesInfiniteScroll } from './components/articles-infinite-scroll';
 
@@ -43,7 +43,7 @@ export const ArticlesPage: React.FC = () => {
         <ArticlesFilters
           isLoadingGetArticles={isLoading}
         />
-        <ArticleList />
+        <ArticlesLists />
       </ArticlesInfiniteScroll>
     </ScrollToPosition>
 
