@@ -13,13 +13,15 @@ export type TArticlesScheme = {
   page: number,
   isHasMore: boolean
   // filter
-  filters: {
-    sortBy: EArticlesSort,
-    order: TOrderFilter,
-    variantView: TVariantView,
-    search: string,
-    type: TArticlesTypes
-  }
+  filters: TFilters
+};
+
+export type TFilters = {
+  sortBy: EArticlesSort,
+  order: TOrderFilter,
+  variantView: TVariantView,
+  search: string,
+  type: TArticlesTypes
 };
 
 export enum EArticlesSort {
