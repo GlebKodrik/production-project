@@ -29,7 +29,7 @@ export const FormInput = ({
         }
       }}
       onBlur={field.onBlur}
-      value={value || field.value}
+      value={value || field.value || ''}
       name={field.name}
       inputRef={field.ref}
       {...params}

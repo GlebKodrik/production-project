@@ -96,7 +96,6 @@ export const ProfileCard = ({
         onInputAgeChange={onInputAgeChange}
         isReadOnly={isReadOnly}
         onInputNameChange={onInputNameChange}
-        profileData={profileEditData}
         onInputSurnameChange={onInputSurnameChange}
         onInputUsernameChange={onInputUsernameChange}
         onInputCityChange={onInputCityChange}

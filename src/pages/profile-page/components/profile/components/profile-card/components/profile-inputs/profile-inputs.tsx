@@ -7,7 +7,6 @@ import styles from '../../prodile-card.module.scss';
 import { TInput, TProfileInputProps } from './types';
 
 export const ProfileInputs = ({
-  profileData,
   isReadOnly,
   onInputNameChange,
   onInputSurnameChange,
@@ -20,38 +19,25 @@ export const ProfileInputs = ({
   control,
 }: TProfileInputProps) => {
   const { translation } = useLanguage(LOCALES.PROFILE_PAGE);
-  const {
-    first,
-    lastname,
-    age,
-    city,
-    username,
-    avatar,
-  } = profileData;
 
   const INPUTS = useMemo<TInput[]>(() => [
     {
-      value: first, name: 'first', translateText: 'form.name', onChange: onInputNameChange,
+      name: 'first', translateText: 'form.name', onChange: onInputNameChange,
     },
     {
-      value: lastname, name: 'lastname', translateText: 'form.surname', onChange: onInputSurnameChange,
+      name: 'lastname', translateText: 'form.surname', onChange: onInputSurnameChange,
     },
     {
-      value: age, name: 'age', translateText: 'form.age', onChange: onInputAgeChange,
+      name: 'age', translateText: 'form.age', onChange: onInputAgeChange,
     },
     {
-      value: city, name: 'city', translateText: 'form.city', onChange: onInputCityChange,
+      name: 'city', translateText: 'form.city', onChange: onInputCityChange,
     },
     {
-      value: username, name: 'username', translateText: 'form.username', onChange: onInputUsernameChange,
+      name: 'username', translateText: 'form.username', onChange: onInputUsernameChange,
     },
-    {
-      value: avatar,
-      name: 'avatar',
-      translateText: 'form.avatar',
-      onChange: onInputAvatarChange,
-    },
-  ], [profileData]);
+    { name: 'avatar', translateText: 'form.avatar', onChange: onInputAvatarChange },
+  ], []);
 
   const variantInput = isReadOnly ? 'plain' : 'outline';
 
@@ -60,13 +46,11 @@ export const ProfileInputs = ({
       {INPUTS.map(({
         translateText,
         name,
-        value,
         onChange,
       }, index) => (
         <FormInput
           control={control}
           key={index}
-          value={value || ''}
           onChange={onChange}
           label={translation(translateText)}
           readOnly={isReadOnly}
