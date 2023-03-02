@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshots of Sidebar component Snapshots of Sidebar component 1`] = `
+<DocumentFragment>
+  <aside
+    class="sidebar"
+    data-testid="sidebar"
+  >
+    <div
+      class="linkWrapper"
+    >
+      <nav>
+        <ul>
+          <li>
+            <a
+              class="link primary"
+              href="/"
+            >
+              <div
+                class="item"
+              >
+                <div />
+                <span
+                  class="linkText"
+                >
+                  sidebar.links.mainLink
+                </span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              class="link primary"
+              href="/about"
+            >
+              <div
+                class="item"
+              >
+                <div />
+                <span
+                  class="linkText"
+                >
+                  sidebar.links.aboutLink
+                </span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <button
+      class="button variant-square color-primary size-large button"
+      type="button"
+    >
+      &lt;
+    </button>
+    <div
+      class="switchers"
+    >
+      <button
+        class="button variant-clear color-primary size-medium"
+        type="button"
+      >
+        <div />
+      </button>
+      <button
+        class="button variant-clear color-primary size-medium languageSwitcher"
+        type="button"
+      >
+        sidebar.language
+      </button>
+    </div>
+  </aside>
+</DocumentFragment>
+`;
