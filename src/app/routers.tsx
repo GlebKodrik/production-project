@@ -6,21 +6,24 @@ import { Layout as PageTemplateLayout } from 'page-templates/layout';
 import { PAGES_COMPONENTS } from './constants/pages';
 import { TPagesPathWithComponents, TRenderElement } from './types';
 
-import { PrivateWrapper } from './components/private-route';
+import { PrivateRoute } from './components/private-route';
 import { NotFoundPage } from '../pages/not-found-page';
+import { WrapperRoute } from './components/wrapper-route';
 
-const renderElement = ({ roles, component: PageComponent }: TRenderElement) => {
+const renderElement = ({ roles, component: PageComponent, path }: TRenderElement) => {
   const children = (
     <Suspense fallback={<LoaderWithOverlay />}>
-      <PageComponent />
+      <WrapperRoute path={path}>
+        <PageComponent />
+      </WrapperRoute>
     </Suspense>
   );
 
   if (roles?.length) {
     return (
-      <PrivateWrapper roles={roles}>
+      <PrivateRoute roles={roles}>
         {children}
-      </PrivateWrapper>
+      </PrivateRoute>
     );
   }
 
@@ -32,7 +35,7 @@ const getPages = (pages: TPagesPathWithComponents[]) => pages.map(({
   ...otherProps
 }) => ({
   path,
-  element: renderElement(otherProps),
+  element: renderElement({ path, ...otherProps }),
 }
 ));
 

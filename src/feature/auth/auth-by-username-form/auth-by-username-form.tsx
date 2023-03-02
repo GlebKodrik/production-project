@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { useSelector } from 'react-redux';
 import { Button } from 'shared-components/button';
@@ -28,6 +28,7 @@ export const AuthByUsernameForm: React.FC<TProps> = ({
   const {
     handleSubmit,
     control,
+    setFocus,
     formState: { errors, isValid },
   } = useForm<TInputValue>({
     resolver: yupResolver(authYupScheme()),
@@ -37,6 +38,11 @@ export const AuthByUsernameForm: React.FC<TProps> = ({
       password,
     },
   });
+
+  useEffect(() => {
+    setFocus('username');
+  }, []);
+
   const onUsernameChange = (value: string) => {
     dispatch(loginFormActions.setUsername(value));
   };

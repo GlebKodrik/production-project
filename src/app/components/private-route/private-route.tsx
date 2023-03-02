@@ -5,7 +5,7 @@ import { ROUTES_PATH } from 'constants/routers';
 import { getUserRole } from 'redux-stores/stores/profile/selectors/get-user-roles/get-user-roles';
 import { TProps } from './types';
 
-export const PrivateWrapper = ({ children, roles }: TProps) => {
+export const PrivateRoute = ({ children, roles }: TProps) => {
   const location = useLocation();
   const isAuth = useSelector(getUserAuth);
   const userRole = useSelector(getUserRole);

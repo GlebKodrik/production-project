@@ -1,3 +1,3 @@
-import { PrivateWrapper } from './private-route';
+import { PrivateRoute } from './private-route';
 
-export { PrivateWrapper };
+export { PrivateRoute };
