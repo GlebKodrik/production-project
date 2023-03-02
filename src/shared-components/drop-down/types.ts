@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export type TDropDown = {
+export type TDropDownItem = {
   disabled?: boolean,
   content: ReactNode,
   onClick?: () => void,
@@ -9,6 +9,6 @@ export type TDropDown = {
 
 export type TProps = {
   className?: string,
-  items: TDropDown[],
+  items: TDropDownItem[],
   trigger: ReactNode,
 };

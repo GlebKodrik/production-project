@@ -8,7 +8,7 @@ export const useThrottling = (callback: (...arg: any) => void, delay = 150) => {
     clearTimeout(timeout.current);
   }, []);
 
-  return useCallback((...args) => {
+  return useCallback((...args: any) => {
     if (!throttling.current) {
       callback(...args);
       throttling.current = true;

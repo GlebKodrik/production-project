@@ -1,5 +1,7 @@
+import { TColor } from 'shared-components/types/color';
+
 export type TProps = {
-  isOpen: boolean
+  color?: TColor
 };
 
 type TInputName = 'username' | 'password';

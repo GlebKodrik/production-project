@@ -4,5 +4,5 @@ import { TIconNames } from 'shared-components/icon';
 export type TLinks = {
   name: string,
   link: TRoutesPath,
-  icon: TIconNames,
+  icon?: TIconNames,
 };

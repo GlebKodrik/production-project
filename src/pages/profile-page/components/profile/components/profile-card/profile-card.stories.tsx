@@ -7,7 +7,7 @@ import { ProfileCard } from './profile-card';
 import { TProfileCardProps } from './types';
 
 export default {
-  title: 'scroll-to-position/ProfilePage/ProfileCard',
+  title: 'feature/ProfilePage',
   component: ProfileCard,
 } as ComponentMeta<typeof ProfileCard>;
 

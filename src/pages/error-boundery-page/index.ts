@@ -1,3 +1,3 @@
-import ErrorBoundary from './error-boundary';
+import ErrorBoundaryPage from './error-boundary-page';
 
-export { ErrorBoundary };
+export { ErrorBoundaryPage };

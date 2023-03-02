@@ -1,7 +1,7 @@
 import { DropDown } from './drop-down';
-import { TDropDown } from './types';
+import { TDropDownItem } from './types';
 
 export {
   DropDown,
-  TDropDown,
+  TDropDownItem,
 };

@@ -6,14 +6,16 @@
       "aboutLink": "О страницу",
       "mainLink": "Основная страница",
       "profile": "Мой профиль",
-      "articles": "Статьи"
+      "articles": "Статьи",
+      "admin": "Админ панель"
     }
   },
   "notFound": "Страница не найдена",
   "navbar": {
     "login": "Войти",
     "logout": "Выйти",
-    "successfullyExited": "Вы успешно вышли!"
+    "successfullyExited": "Вы успешно вышли!",
+    "profile": "Профиль"
   },
   "auth": {
     "form": {
@@ -62,5 +64,10 @@
       "science": "Наука",
       "economics": "Экономика"
     }
+  },
+  "notEnoughRights": "Прав к сожалению нет :(",
+  "loginPage": {
+    "auth": "Авторизоваться",
+    "notAuth": "К сожалению вы не авторизированны\uD83D\uDE25"
   }
 }

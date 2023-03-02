@@ -4,7 +4,6 @@ import { TLanguages } from 'types/languages';
 import { TUseLanguage } from './types';
 
 export const useLanguage = (namePageWithTranslate?: TLocales | TLocales[]): TUseLanguage => {
-  useTranslation();
   const { i18n, t } = useTranslation(namePageWithTranslate);
 
   return {

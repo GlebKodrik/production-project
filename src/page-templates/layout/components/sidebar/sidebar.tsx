@@ -6,7 +6,7 @@ import { Button } from 'shared-components/button';
 import { SidebarLinks } from './components/sidebar-link';
 import styles from './sidebar.module.scss';
 
-export const Sidebar = () => {
+export const Sidebar: React.FC = () => {
   const [collapse, setCollapse] = useState(false);
 
   const onToggleCollapse = () => {

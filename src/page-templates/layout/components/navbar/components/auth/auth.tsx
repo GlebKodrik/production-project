@@ -11,6 +11,7 @@ import { DropDown } from 'shared-components/drop-down';
 import { getUser } from 'redux-stores/stores/user/selectors/get-user';
 import { Avatar } from 'shared-components/avatar';
 import { TAuthProps } from './types';
+import { ROUTES_PATH } from '../../../../../../constants/routers';
 
 export const AuthByUsernameModal = namedLazy(
   () => import('feature/auth/auth-by-username-modal'),
@@ -43,22 +44,18 @@ const Auth: React.FC<TAuthProps> = () => {
     ));
   };
 
-  const renderButtonLogout = () => {
-    const ButtonLogout = (
-      <Button variant="clear" color="primary">
-        { translation('navbar.logout') }
-      </Button>
-    );
-    return (
-      <DropDown
-        items={[{
-          content: ButtonLogout,
-          onClick: onLogout,
-        }]}
-        trigger={<Avatar src={user?.avatar} size={40} />}
-      />
-    );
-  };
+  const renderButtonLogout = () => (
+    <DropDown
+      items={[{
+        content: translation('navbar.profile'),
+        href: `${ROUTES_PATH.PROFILE}/${user?.id}`,
+      }, {
+        content: translation('navbar.logout'),
+        onClick: onLogout,
+      }]}
+      trigger={<Avatar src={user?.avatar} size={40} />}
+    />
+  );
 
   const renderButtonLogin = () => (
     <Button variant="clear" onClick={onToggleAuthModal} color="primary">

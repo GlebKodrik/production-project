@@ -1,9 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Error from './error';
+import Error from './components/error/error';
 
 export default {
-  title: 'scroll-to-position/Error',
+  title: 'page/Error',
   component: Error,
 } as ComponentMeta<typeof Error>;
 

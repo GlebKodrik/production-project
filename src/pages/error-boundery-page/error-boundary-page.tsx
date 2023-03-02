@@ -2,7 +2,7 @@ import React from 'react';
 import Error from './components/error';
 import { TErrorBoundaryProps, TErrorBoundaryStateProps } from './types';
 
-class ErrorBoundary extends React.Component<TErrorBoundaryProps, TErrorBoundaryStateProps> {
+class ErrorBoundaryPage extends React.Component<TErrorBoundaryProps, TErrorBoundaryStateProps> {
   constructor(props: TErrorBoundaryProps) {
     super(props);
     this.state = {
@@ -28,4 +28,4 @@ class ErrorBoundary extends React.Component<TErrorBoundaryProps, TErrorBoundaryS
   }
 }
 
-export default ErrorBoundary;
+export default ErrorBoundaryPage;

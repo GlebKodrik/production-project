@@ -6,19 +6,19 @@ import { TPortalProps } from './types';
 
 const Portal: React.FC<TPortalProps> = ({
   children,
-  propElement,
-  propIdNameElement = 'modal',
+  idPortal,
+  idElement = 'modal',
 }) => {
   const [container] = useState(() => {
     const createdElement = document.createElement('div');
-    createdElement.setAttribute('id', propIdNameElement);
+    createdElement.setAttribute('id', idElement);
     return createdElement;
   });
   const [mounted, setMounted] = useState(false);
   const ref = useRef(null) as React.MutableRefObject<any>;
 
   useEffect(() => {
-    const element = propElement || document.querySelector('#portal-app') || document.body;
+    const element = document.querySelector(idPortal || '#portal-app') || document.body;
     ref.current = element;
     element.appendChild(container);
     setMounted(true);

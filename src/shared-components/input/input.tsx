@@ -2,6 +2,7 @@ import React, { ChangeEvent } from 'react';
 import cn from 'classnames';
 import styles from './input.module.scss';
 import { TInputProps } from './types';
+import { Typography } from '../typography';
 
 export const Input = React.memo(({
   type = 'text',
@@ -30,9 +31,9 @@ export const Input = React.memo(({
   };
 
   const renderPlaceholder = () => label && (
-  <span className={styles.label}>
-    {`${label}>`}
-  </span>
+    <Typography className={styles.label} tag="span" color={color}>
+      {`${label}>`}
+    </Typography>
   );
 
   const renderError = () => error && <div className={styles.errorMessage}>{error}</div>;

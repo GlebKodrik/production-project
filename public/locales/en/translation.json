@@ -7,13 +7,15 @@
       "aboutLink": "About page",
       "mainLink": "Main Page",
       "profile": "My profile",
-      "articles": "Articles"
+      "articles": "Articles",
+      "admin": "Admin panel"
     }
   },
   "navbar": {
     "login": "Login",
     "logout": "Logout",
-    "successfullyExited": "You have successfully logged out!"
+    "successfullyExited": "You have successfully logged out!",
+    "profile": "Profile"
   },
   "auth": {
     "form": {
@@ -62,5 +64,10 @@
       "science": "Science",
       "economics": "Economics"
     }
+  },
+  "notEnoughRights": "Unfortunately no rights :(",
+  "loginPage": {
+    "auth": "Login",
+    "notAuth": "Sorry, you are not logged in\uD83D\uDE25"
   }
 }

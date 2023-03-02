@@ -1,6 +1,11 @@
 import { TCurrency } from 'shared-components/currency/types';
 import { TCountry } from '../../../shared-components/country/types';
 
+export enum EUserRole {
+  'ADMIN' = 'ADMIN',
+  'USER' = 'USER',
+}
+
 export type TUser = {
   id?: string;
   first?: string;
@@ -11,6 +16,7 @@ export type TUser = {
   city?: string;
   username?: string;
   avatar?: string;
+  role?: EUserRole
 };
 
 export type TProfileSchema = {

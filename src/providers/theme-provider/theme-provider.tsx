@@ -35,12 +35,12 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children, initialT
     changeTheme,
   }), [currentTheme]);
 
-  const handlerLocalStorage = useCallback((event) => {
+  const handlerLocalStorage = useCallback((event: StorageEvent) => {
     if (event.key === LOCAL_STORAGE_KEYS.THEME_KEY) {
       const [oldValue, newValue] = [event.oldValue, event.newValue];
 
       if (oldValue && newValue) {
-        changeTheme(newValue);
+        changeTheme(newValue as TThemes);
       }
     }
   }, []);

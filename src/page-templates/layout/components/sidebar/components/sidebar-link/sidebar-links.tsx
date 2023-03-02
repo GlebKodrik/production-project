@@ -8,6 +8,7 @@ import { ROUTES_PATH } from 'constants/routers';
 import { ICON_NAMES } from 'shared-components/icon/constants/icon-names';
 import { getUser } from 'redux-stores/stores/user/selectors/get-user';
 import { TRoutesPath } from 'types/routes';
+import { getIsAdmin } from 'redux-stores/stores/profile/selectors/get-user-roles';
 import styles from '../../sidebar.module.scss';
 import { TLinks } from './types';
 
@@ -15,6 +16,7 @@ export const SidebarLinks: React.FC = () => {
   const user = useSelector(getUser);
   const isAuth = useSelector(getUserAuth);
   const { translation } = useLanguage();
+  const isAdmin = useSelector(getIsAdmin);
 
   const LINKS_FOR_ALL_USERS: TLinks[] = useMemo(() => [
     {
@@ -34,6 +36,10 @@ export const SidebarLinks: React.FC = () => {
     {
       name: 'sidebar.links.articles', link: ROUTES_PATH.ARTICLES, icon: ICON_NAMES.ARTICLES,
     },
+    ...(isAdmin ? [{
+      name: 'sidebar.links.admin',
+      link: `${ROUTES_PATH.ADMIN}` as TRoutesPath,
+    }] : []),
   ], [user?.id]);
 
   const renderLinks = ({ name, link, icon }: TLinks) => (
@@ -42,7 +48,7 @@ export const SidebarLinks: React.FC = () => {
         to={link}
       >
         <div className={styles.item}>
-          <Icon name={icon} className={styles.icon} />
+          {icon && <Icon name={icon} className={styles.icon} />}
           <span className={styles.linkText}>{translation(name)}</span>
         </div>
       </Link>

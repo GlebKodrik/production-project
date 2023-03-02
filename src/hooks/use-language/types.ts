@@ -1,8 +1,7 @@
 import { TLanguages } from 'types/languages';
-import { TFunction } from 'i18next';
 
 export type TUseLanguage = {
-  translation: TFunction,
+  translation: any,
   language?: TLanguages,
   changeLanguage?: (newLanguage: TLanguages) => void
 };

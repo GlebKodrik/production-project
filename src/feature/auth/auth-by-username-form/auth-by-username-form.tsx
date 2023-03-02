@@ -15,9 +15,10 @@ import styles from './auth-by-username-form.module.scss';
 import { loginFormActions } from './stores/login-form/login-form-slice';
 import { requestLoginByUser } from './stores/login-form/requests/request-login-by-user';
 import { authYupScheme } from './validation-auth';
+import { Typography } from '../../../shared-components/typography';
 
 export const AuthByUsernameForm: React.FC<TProps> = ({
-  isOpen,
+  color = 'primary',
 }) => {
   const dispatch = useAppDispatch();
   const username = useSelector(getUsername);
@@ -50,17 +51,19 @@ export const AuthByUsernameForm: React.FC<TProps> = ({
 
   return (
     <>
-      <h1 className={styles.title}>{ translation('auth.form.authorization') }</h1>
+      <Typography tag="h1" className={styles.title} color={color} size="medium-large">
+        { translation('auth.form.authorization') }
+      </Typography>
       <form className={styles.wrapper} autoComplete="off" onSubmit={handleSubmit(onHandleSubmit)}>
         <FormInput
           control={control}
           name="username"
           value={username}
-          autoFocus={isOpen}
           onChange={onUsernameChange}
           className={styles.input}
           label={translation('auth.placeholder.username')}
           error={errors.username?.message}
+          color={color}
         />
         <FormInput
           control={control}
@@ -71,13 +74,14 @@ export const AuthByUsernameForm: React.FC<TProps> = ({
           className={styles.input}
           label={translation('auth.placeholder.password')}
           error={errors.password?.message}
+          color={color}
         />
         <div className={styles.submit}>
           <Button
             variant="outline"
             type="submit"
             disabled={isLoading || !isValid}
-            color="primary"
+            color={color}
           >
             { translation('auth.buttonLogin') }
           </Button>

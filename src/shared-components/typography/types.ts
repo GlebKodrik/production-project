@@ -7,7 +7,7 @@ export interface TTypographyProps {
   size?: TSizeButton
   className?: string,
   color?: TColorButton
-  children: ReactNode;
+  children?: ReactNode | ReactNode[];
   tag?: React.ElementType;
   fontSize?: number;
 }

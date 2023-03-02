@@ -1,19 +1,24 @@
 import React, { Suspense } from 'react';
 import 'styles/global.scss';
 
-import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { LoaderWithOverlay } from 'shared-components/loader-with-overlay';
-import { ErrorBoundary } from 'pages/error-boundery-page';
+import { ErrorBoundaryPage } from 'pages/error-boundery-page';
 import { LanguageProvider } from 'providers/language-provider';
 import { ThemeProvider } from 'providers/theme-provider';
 import { ReduxProvider } from 'providers/redux-provider';
 import { App } from 'app';
+import { createRoot } from 'react-dom/client';
 
-render(
+const container = document.getElementById('root');
+if (!container) {
+  throw new Error('Контейнера нет');
+}
+const root = createRoot(container);
+root.render(
   <BrowserRouter>
     <Suspense fallback={<LoaderWithOverlay />}>
-      <ErrorBoundary>
+      <ErrorBoundaryPage>
         <ReduxProvider>
           <LanguageProvider>
             <ThemeProvider>
@@ -21,8 +26,7 @@ render(
             </ThemeProvider>
           </LanguageProvider>
         </ReduxProvider>
-      </ErrorBoundary>
+      </ErrorBoundaryPage>
     </Suspense>
   </BrowserRouter>,
-  document.getElementById('root'),
 );

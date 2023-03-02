@@ -3,20 +3,22 @@ import { useRoutes } from 'react-router-dom';
 import { ROUTES_PATH } from 'constants/routers';
 import { LoaderWithOverlay } from 'shared-components/loader-with-overlay';
 import { Layout as PageTemplateLayout } from 'page-templates/layout';
-import { ASYNC_PAGES, PAGES_COMPONENTS } from './constants/pages';
+import { PAGES_COMPONENTS } from './constants/pages';
 import { TPagesPathWithComponents, TRenderElement } from './types';
-import { PrivateWrapper } from './components/private-route';
 
-const renderElement = ({ isPrivate, component: PageComponent }: TRenderElement) => {
+import { PrivateWrapper } from './components/private-route';
+import { NotFoundPage } from '../pages/not-found-page';
+
+const renderElement = ({ roles, component: PageComponent }: TRenderElement) => {
   const children = (
     <Suspense fallback={<LoaderWithOverlay />}>
       <PageComponent />
     </Suspense>
   );
 
-  if (isPrivate) {
+  if (roles?.length) {
     return (
-      <PrivateWrapper>
+      <PrivateWrapper roles={roles}>
         {children}
       </PrivateWrapper>
     );
@@ -44,7 +46,7 @@ const Routes = () => useRoutes([
   },
   {
     path: ROUTES_PATH.PAGE_404,
-    element: ASYNC_PAGES.PAGE_404,
+    element: <NotFoundPage />,
   },
 ]);
 

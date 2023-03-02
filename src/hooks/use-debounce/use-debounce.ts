@@ -7,7 +7,7 @@ export const useDebounce = (callback: (...arg: any) => void, delay = 500) => {
     clearTimeout(timeout.current);
   }, []);
 
-  return useCallback((...args) => {
+  return useCallback((...args: any) => {
     if (timeout.current) {
       clearTimeout(timeout.current);
     }
