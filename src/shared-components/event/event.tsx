@@ -4,7 +4,9 @@ import { Typography } from '../typography';
 import { Link } from '../link';
 import styles from './event.module.scss';
 
-export const Event = ({ title, description, href }: TProps) => {
+export const Event = ({
+  title, description, href, className,
+}: TProps) => {
   const renderContent = () => (
     <>
       <Typography size="medium-large" className={styles.title}>{title}</Typography>
@@ -26,6 +28,8 @@ export const Event = ({ title, description, href }: TProps) => {
   };
 
   return (
-    renderBody()
+    <div className={className}>
+      { renderBody()}
+    </div>
   );
 };

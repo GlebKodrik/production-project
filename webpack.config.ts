@@ -19,11 +19,11 @@ const config: Configuration = {
   },
   optimization: {
     usedExports: true,
-    minimizer: [
+    minimizer: FLAGS.IS_PRODUCTION ? [
       new TerserPlugin({ parallel: true, extractComments: true }),
       new CssMinimizerPlugin(),
-    ],
-    minimize: true,
+    ] : undefined,
+    minimize: FLAGS.IS_PRODUCTION,
   },
   output: {
     filename: '[name].js',

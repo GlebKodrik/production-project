@@ -9,11 +9,13 @@ export const Popover = ({
   trigger,
   className,
   children,
+  placement = 'bottom',
+  indent = 0,
 }: TProps) => {
   const {
     refs, y, strategy, x,
-  } = useFloating({ placement: 'bottom' });
-  console.log(y, x);
+  } = useFloating({ placement, indent });
+
   return (
     <HPopover className={className} as="div">
       <HPopover.Button className={styles.trigger} as={Button} ref={refs.setReference}>

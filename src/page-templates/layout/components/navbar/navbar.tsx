@@ -23,11 +23,12 @@ export const Navbar: React.FC<TProps> = ({
       <div className={cls(styles.navbar)}>
         <Popover
           trigger={renderTrigger()}
-          className={styles.popover}
         >
           <Events />
         </Popover>
-        <Auth />
+        <div className={styles.auth}>
+          <Auth />
+        </div>
       </div>
     </header>
   );

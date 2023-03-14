@@ -1,5 +1,6 @@
 export type TProps = {
   title: string,
   description: string,
-  href?: string
+  href?: string,
+  className?: string
 };
