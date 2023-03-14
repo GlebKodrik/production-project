@@ -2,8 +2,10 @@
   display: flex;
   width: 310px;
   min-height: 150px;
+  max-height: 400px;
   padding-top: 10px;
   padding-bottom: 10px;
+  overflow: auto;
 }
 
 .event-with-link {
