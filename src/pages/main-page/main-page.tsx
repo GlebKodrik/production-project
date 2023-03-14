@@ -2,11 +2,15 @@ import React from 'react';
 import { LOCALES } from 'constants/locales';
 import { useLanguage } from 'hooks/use-language';
 import { ListBox } from '../../shared-components/list-box';
+import { Popover } from '../../shared-components/popover';
 
 export const MainPage = () => {
   const { translation } = useLanguage(LOCALES.MAIN_PAGE);
   return (
     <div>
+      <Popover trigger="Привет">
+        Привет мир
+      </Popover>
       {translation('title')}
       <ListBox
         size="small"

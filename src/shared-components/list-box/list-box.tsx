@@ -27,7 +27,6 @@ export const ListBox = ({
   const {
     x, y, strategy, refs,
   } = useFloating({ placement: 'bottom' });
-
   const currentContent = items.find((item) => item.value === value);
 
   const classes = {

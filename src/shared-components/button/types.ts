@@ -12,4 +12,5 @@ export interface TButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: TVariantButton;
   disabled?: boolean;
   children?: ReactNode;
+  ref?: any
 }

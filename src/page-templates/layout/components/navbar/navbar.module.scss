@@ -1,4 +1,5 @@
-.navbar {
+.wrapper {
+  position: relative;
   display: flex;
   align-items: center;
   width: 100%;
@@ -12,6 +13,17 @@
   margin-left: 15px;
 }
 
-.links {
+.navbar {
+  display: flex;
+  align-items: center;
   margin-left: auto;
+}
+
+.icon {
+  align-self: flex-end;
+  margin-right: 200px;
+}
+
+.popover {
+  align-self: flex-end;
 }

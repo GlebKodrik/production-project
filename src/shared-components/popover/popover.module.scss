@@ -1,0 +1,18 @@
+.trigger {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.panel {
+  padding: 15px;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border: 2px solid var(--secondary-color);
+  border-radius: 8px;
+}

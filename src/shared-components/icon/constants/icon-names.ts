@@ -16,4 +16,5 @@ export const ICON_NAMES = {
   SORT_UP: 'sort-up',
   REDACTOR: 'redactor',
   CREATE: 'create',
+  NOTIFICATION: 'notification',
 } as const;

@@ -19,14 +19,14 @@ export const DropDown = ({
   const renderContent = ({ content, href }: TDropDownItem) => {
     if (href) {
       return (
-        <Link to={href} className={styles.item}>
+        <Link to={href} className={styles.item} color="secondary">
           {content}
         </Link>
       );
     }
 
     return (
-      <Button className={styles.item}>
+      <Button className={styles.item} color="secondary">
         {content}
       </Button>
     );

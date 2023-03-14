@@ -15,7 +15,7 @@
 .items {
   z-index: 3;
   overflow: hidden;
-  background-color: var(--drop-down-background-color);
+  background-color: var(--primary-color);
   border: 1px solid var(--drop-down-border-color);
   border-radius: 8px;
 }
@@ -23,7 +23,6 @@
 .item {
   width: 100%;
   padding: 3px 25px;
-  color: var(--drop-down-text-color);
   list-style-type: none;
   background: none;
   border: none;
