@@ -1,24 +1,16 @@
-import React, { useEffect } from 'react';
-import { useAppDispatch } from 'hooks/use-app-dispatch';
-import { requestGetEvents } from 'redux-stores/stores/events/requests/request-get-events';
-import { useSelector } from 'react-redux';
-import { getEventsIsFinished, getEventsList, getEventsLoading } from 'redux-stores/stores/events/selectors/get-events';
+import React from 'react';
 import { Event } from 'shared-components/event';
 import Loader from 'shared-components/loader';
 import cn from 'classnames';
 import { Typography } from 'shared-components/typography';
 import styles from './events.module.scss';
+import { useEvents } from '../../../../../../api/events/events';
 
 export const Events = () => {
-  const dispatch = useAppDispatch();
-  const eventsList = useSelector(getEventsList);
-  const isLoading = useSelector(getEventsLoading);
-  const isFinished = useSelector(getEventsIsFinished);
-  const isEmpty = isFinished && !eventsList?.length;
-
-  useEffect(() => {
-    dispatch(requestGetEvents());
-  }, []);
+  const { data: eventsList, isLoading, isFetching } = useEvents(null, {
+    pollingInterval: 10000,
+  });
+  const isEmpty = !isLoading && isFetching && !eventsList?.length;
 
   const renderEventsList = () => eventsList && (
   <div className={styles.eventsList}>

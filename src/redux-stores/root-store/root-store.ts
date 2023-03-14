@@ -13,7 +13,6 @@ import { FLAGS } from '../../../configs-project/webpack-configs/constants/variab
 import { articleReducer } from '../stores/articles';
 import { scrollReducer } from '../../feature/infinite-scroll/stores/scroll';
 import { rtkQueryApi } from '../../services/api/rtk-query-api';
-import { eventsReducer } from '../stores/events';
 
 export const createReduxStore = ({
   initialState,
@@ -25,7 +24,6 @@ export const createReduxStore = ({
     notifications: notificationsReducer,
     articles: articleReducer,
     scroll: scrollReducer,
-    events: eventsReducer,
     [rtkQueryApi.reducerPath]: rtkQueryApi.reducer,
   };
 

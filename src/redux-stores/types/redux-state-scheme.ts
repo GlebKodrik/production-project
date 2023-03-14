@@ -7,7 +7,6 @@ import { TArticlesScheme } from '../stores/articles';
 import { TScrollState } from '../../feature/infinite-scroll/stores/scroll';
 import type { TArticleScheme } from '../stores/article-detail';
 import { rtkQueryApi } from '../../services/api/rtk-query-api';
-import { TEventsScheme } from '../stores/events';
 
 export type TReduxStateScheme = {
   counter: TCounterState,
@@ -16,7 +15,6 @@ export type TReduxStateScheme = {
   notifications: TNotificationsState,
   articles: TArticlesScheme,
   scroll: TScrollState,
-  events: TEventsScheme,
   [rtkQueryApi.reducerPath]: ReturnType<typeof rtkQueryApi.reducer>,
   // async
   profile?: TProfileSchema,
