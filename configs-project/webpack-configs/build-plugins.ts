@@ -8,6 +8,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import WebpackBar from 'webpackbar';
 import CopyPlugin from 'copy-webpack-plugin';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import {
   FLAGS,
   scriptExtensions,
@@ -33,6 +34,15 @@ const buildPlugins = (): WebpackPluginInstance[] => {
       patterns: [
         { from: PATHS.LOCALES, to: PATHS.IN_DIST_LOCALES },
       ],
+    }),
+    new ForkTsCheckerWebpackPlugin({
+      typescript: {
+        diagnosticOptions: {
+          semantic: true,
+          syntactic: true,
+        },
+        mode: 'write-references',
+      },
     }),
   ];
 

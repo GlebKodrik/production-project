@@ -1,23 +1,9 @@
 import { RuleSetRule } from 'webpack';
 import { buildStyleLoader } from '../global-loaders/build-style-loader';
+import { buildBabelLoader } from './loaders/build-babel-loader';
 
 const buildLoaders = (): RuleSetRule[] => {
-  const typeScriptLoader = {
-    test: /\.tsx?$/,
-    loader: 'ts-loader',
-    exclude: /node_modules/,
-  };
-
-  const babelLoader = {
-    test: /\.tsx?$/,
-    exclude: /node_modules/,
-    use: {
-      loader: 'babel-loader',
-      options: {
-        presets: ['@babel/preset-env'],
-      },
-    },
-  };
+  const typescriptBabelLoader = buildBabelLoader();
 
   const svgLoader = {
     test: /\.svg$/i,
@@ -37,8 +23,7 @@ const buildLoaders = (): RuleSetRule[] => {
   };
 
   return [
-    babelLoader,
-    typeScriptLoader,
+    typescriptBabelLoader,
     cssLoader,
     svgLoader,
     fileLoader,
