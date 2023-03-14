@@ -4,7 +4,7 @@ import Loader from 'shared-components/loader';
 import cn from 'classnames';
 import { Typography } from 'shared-components/typography';
 import styles from './events.module.scss';
-import { useEvents } from '../../../../../../api/events/events';
+import { useEvents } from '../../../../../../redux-stores/stores/events/api/events';
 
 export const Events = () => {
   const { data: eventsList, isLoading, isFetching } = useEvents(null, {

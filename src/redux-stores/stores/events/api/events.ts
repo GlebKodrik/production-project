@@ -1,5 +1,5 @@
 import { TEvents } from './types';
-import { rtkQueryApi } from '../../services/api/rtk-query-api';
+import { rtkQueryApi } from '../../../../services/api/rtk-query-api';
 
 const notificationApi = rtkQueryApi.injectEndpoints({
   endpoints: (build) => ({
