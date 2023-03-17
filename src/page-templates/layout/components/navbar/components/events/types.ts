@@ -1,1 +1,3 @@
-export type TProps = {};
+export type TProps = {
+  className?: string
+};
