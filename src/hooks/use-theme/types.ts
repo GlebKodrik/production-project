@@ -1,4 +1,4 @@
-import { TThemes } from 'types/themes';
+import { TThemes } from '@/types/themes';
 
 export type TUseTheme = {
   toggleTheme?: () => void,

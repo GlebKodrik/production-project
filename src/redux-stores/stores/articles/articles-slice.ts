@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ControlLocalStorage } from 'services/control-local-storage';
-import { LOCAL_STORAGE_KEYS } from 'constants/local-storage-keys';
-import { TVariantView } from 'shared-components/article-card';
+import { ControlLocalStorage } from '@/services/control-local-storage';
+import { LOCAL_STORAGE_KEYS } from '@/constants/local-storage-keys';
+import { TVariantView } from '@/shared-components/article-card';
 import {
   EArticlesSort, TArticlesScheme, TInit,
 } from './types';

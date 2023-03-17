@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import { useLanguage } from 'hooks/use-language';
+import { useLanguage } from '@/hooks/use-language';
 import { Link } from '../../../link';
 import styles from './article-card-big.module.scss';
 import { Typography } from '../../../typography';

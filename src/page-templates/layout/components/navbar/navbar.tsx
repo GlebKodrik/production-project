@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import cls from 'classnames';
-import { useMatchMedia } from 'hooks/use-match-media';
-import { Icon } from 'shared-components/icon';
-import { Popover } from 'shared-components/popover';
+import { useMatchMedia } from '@/hooks/use-match-media';
+import { Icon } from '@/shared-components/icon';
+import { Popover } from '@/shared-components/popover';
 
-import { Button } from 'shared-components/button';
+import { Button } from '@/shared-components/button';
 
 import styles from './navbar.module.scss';
 import { Auth } from './components/auth';

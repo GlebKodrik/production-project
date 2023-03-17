@@ -1,14 +1,14 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { getArticles, getVariantView } from 'redux-stores/stores/articles/selectors';
-import { Typography } from 'shared-components/typography';
-import { useLanguage } from 'hooks/use-language';
-import { getArticlesIsFinished, getArticlesIsLoading } from 'redux-stores/stores/articles/selectors/get-articles';
-import { ROUTES_PATH } from 'constants/routers';
+import { getArticles, getVariantView } from '@/redux-stores/stores/articles/selectors';
+import { Typography } from '@/shared-components/typography';
+import { useLanguage } from '@/hooks/use-language';
+import { getArticlesIsFinished, getArticlesIsLoading } from '@/redux-stores/stores/articles/selectors/get-articles';
+import { ROUTES_PATH } from '@/constants/routers';
 import {
   ArticleCard, ArticleCardBigSkeleton, ArticleCardSmallSkeleton, TVariantView,
-} from 'shared-components/article-card';
-import { TArticleBlock, TArticleBlockText } from 'redux-stores/stores/types/articles';
+} from '@/shared-components/article-card';
+import { TArticleBlock, TArticleBlockText } from '@/redux-stores/stores/types/articles';
 import styles from './articles-lists.module.scss';
 
 const getSkeletons = (variantView: TVariantView) => {

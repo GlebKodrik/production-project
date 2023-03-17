@@ -26,6 +26,8 @@ export default {
       '<rootDir>configs-project/jest/file-mock.tsx',
     '\\.s?css$': 'identity-obj-proxy',
     '\\.svg': '<rootDir>configs-project/jest/jest-empty-component.tsx',
+    // для alias
+    '^@/(.*)$': '<rootDir>/src/$1',
   },
   transformIgnorePatterns: ['node_modules/(?!axios)'],
 };

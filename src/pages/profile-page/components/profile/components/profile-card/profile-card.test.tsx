@@ -1,6 +1,6 @@
-import { componentRender } from 'providers/component-render';
-import { TUser } from 'redux-stores/stores/profile/types';
 import { act, fireEvent } from '@testing-library/react';
+import { componentRender } from '@/providers/component-render';
+import { TUser } from '@/redux-stores/stores/profile/types';
 import { ProfileCard } from './profile-card';
 
 let mockOnSubmit: () => void;

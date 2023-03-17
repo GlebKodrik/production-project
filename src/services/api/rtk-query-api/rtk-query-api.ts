@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { LOCAL_STORAGE_KEYS } from 'constants/local-storage-keys';
+import { LOCAL_STORAGE_KEYS } from '@/constants/local-storage-keys';
 import { API_ENDPOINT } from '../../../../configs-project/webpack-configs/constants/variables';
 import { ControlLocalStorage } from '../../control-local-storage';
 

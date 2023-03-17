@@ -1,5 +1,5 @@
-import { TLoginFormState } from 'feature/auth/auth-by-username-form/stores/login-form';
-import { TNotificationsState } from 'feature/notifications/stores/notifications';
+import { TLoginFormState } from '@/feature/auth/auth-by-username-form/stores/login-form';
+import { TNotificationsState } from '@/feature/notifications/stores/notifications';
 import { TProfileSchema } from '../stores/profile';
 import { TCounterState } from '../stores/counter';
 import { TUserScheme } from '../stores/user';

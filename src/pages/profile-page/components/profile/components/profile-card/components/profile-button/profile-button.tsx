@@ -1,7 +1,7 @@
 import React from 'react';
-import { useLanguage } from 'hooks/use-language';
-import { LOCALES } from 'constants/locales';
-import { Button } from 'shared-components/button';
+import { useLanguage } from '@/hooks/use-language';
+import { LOCALES } from '@/constants/locales';
+import { Button } from '@/shared-components/button';
 import styles from '../../prodile-card.module.scss';
 import { TProfileButtonProps } from './types';
 

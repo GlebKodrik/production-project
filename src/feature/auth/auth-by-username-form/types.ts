@@ -1,4 +1,4 @@
-import { TColor } from 'shared-components/types/color';
+import { TColor } from '@/shared-components/types/color';
 
 export type TProps = {
   color?: TColor

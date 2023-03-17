@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
-import { getUserAuth } from 'redux-stores/stores/user';
 import { Navigate, useLocation } from 'react-router-dom';
-import { ROUTES_PATH } from 'constants/routers';
-import { getUserRole } from 'redux-stores/stores/profile/selectors/get-user-roles/get-user-roles';
+import { getUserAuth } from '@/redux-stores/stores/user';
+import { ROUTES_PATH } from '@/constants/routers';
+import { getUserRole } from '@/redux-stores/stores/profile/selectors/get-user-roles/get-user-roles';
 import { TProps } from './types';
 
 export const PrivateRoute = ({ children, roles }: TProps) => {

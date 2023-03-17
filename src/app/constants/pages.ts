@@ -1,5 +1,5 @@
-import { namedLazy } from 'shared-components/named-lazy';
-import { ROUTES_PATH } from 'constants/routers';
+import { namedLazy } from '@/shared-components/named-lazy';
+import { ROUTES_PATH } from '@/constants/routers';
 import { TPagesPathWithComponents } from '../types';
 import { EUserRole } from '../../redux-stores/stores/profile/types';
 

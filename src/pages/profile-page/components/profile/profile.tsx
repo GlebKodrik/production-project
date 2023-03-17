@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
-import { DynamicModuleLoader, TReducersList } from 'redux-stores/components/dynamic-module-loader';
-import { useAppDispatch } from 'hooks/use-app-dispatch';
 import { useSelector } from 'react-redux';
-import { TCurrency } from 'shared-components/currency/types';
-import { TCountry } from 'shared-components/country/types';
 import { useParams } from 'react-router-dom';
-import { getUser } from 'redux-stores/stores/user/selectors/get-user';
-import { LoaderWithOverlay } from 'shared-components/loader-with-overlay';
-import { profileActions, profileReducer } from 'redux-stores/stores/profile';
-import { requestGetProfileData } from 'redux-stores/stores/profile/requests/request-get-profile-data';
+import { DynamicModuleLoader, TReducersList } from '@/redux-stores/components/dynamic-module-loader';
+import { useAppDispatch } from '@/hooks/use-app-dispatch';
+import { TCurrency } from '@/shared-components/currency/types';
+import { TCountry } from '@/shared-components/country/types';
+import { getUser } from '@/redux-stores/stores/user/selectors/get-user';
+import { LoaderWithOverlay } from '@/shared-components/loader-with-overlay';
+import { profileActions, profileReducer } from '@/redux-stores/stores/profile';
+import { requestGetProfileData } from '@/redux-stores/stores/profile/requests/request-get-profile-data';
 import {
   getIsLoading,
   getEditForm,
@@ -16,8 +16,8 @@ import {
   getError,
   getProfileData,
   getIsLoadingSaveProfile,
-} from 'redux-stores/stores/profile/selectors';
-import { saveProfileData } from 'redux-stores/stores/profile/requests/save-profile-data';
+} from '@/redux-stores/stores/profile/selectors';
+import { saveProfileData } from '@/redux-stores/stores/profile/requests/save-profile-data';
 import { ProfileCard } from './components/profile-card';
 
 const reducerList: TReducersList[] = [

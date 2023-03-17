@@ -1,6 +1,6 @@
 import React from 'react';
-import { Typography } from 'shared-components/typography';
 import cn from 'classnames';
+import { Typography } from '@/shared-components/typography';
 import { TArticleImageBlockProps } from './types';
 import styles from './article-image-block.module.scss';
 

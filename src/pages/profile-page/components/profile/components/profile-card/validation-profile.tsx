@@ -1,6 +1,6 @@
 import * as yup from 'yup';
-import { LOCALES } from 'constants/locales';
-import { useLanguage } from 'hooks/use-language';
+import { LOCALES } from '@/constants/locales';
+import { useLanguage } from '@/hooks/use-language';
 
 const profileYupScheme = () => {
   const { translation } = useLanguage(LOCALES.PROFILE_PAGE);

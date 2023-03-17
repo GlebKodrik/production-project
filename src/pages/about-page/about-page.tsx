@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { LOCALES } from 'constants/locales';
-import { useLanguage } from 'hooks/use-language';
-import Counter from 'shared-components/counter';
-import { Input } from 'shared-components/input';
-import { notificationsActions } from 'feature/notifications/stores/notifications';
-import { useAppDispatch } from 'hooks/use-app-dispatch';
-import { AddComments } from 'feature/add-comments';
+import { LOCALES } from '@/constants/locales';
+import { useLanguage } from '@/hooks/use-language';
+import Counter from '@/shared-components/counter';
+import { Input } from '@/shared-components/input';
+import { notificationsActions } from '@/feature/notifications/stores/notifications';
+import { useAppDispatch } from '@/hooks/use-app-dispatch';
+import { AddComments } from '@/feature/add-comments';
 import { Event } from '../../shared-components/event';
 
 export const AboutPage = () => {

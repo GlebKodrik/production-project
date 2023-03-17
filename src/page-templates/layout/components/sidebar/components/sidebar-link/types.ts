@@ -1,5 +1,5 @@
-import { TRoutesPath } from 'types/routes';
-import { TIconNames } from 'shared-components/icon';
+import { TRoutesPath } from '@/types/routes';
+import { TIconNames } from '@/shared-components/icon';
 
 export type TLinks = {
   name: string,

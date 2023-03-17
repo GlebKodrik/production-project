@@ -1,15 +1,15 @@
 import React, { useState, Suspense } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { Button } from 'shared-components/button';
-import { useLanguage } from 'hooks/use-language';
-import { getUserAuth, userActions } from 'redux-stores/stores/user';
-import { notificationsActions } from 'feature/notifications/stores/notifications';
-import { namedLazy } from 'shared-components/named-lazy';
-import Loader from 'shared-components/loader';
-import { DropDown } from 'shared-components/drop-down';
-import { getUser } from 'redux-stores/stores/user/selectors/get-user';
-import { Avatar } from 'shared-components/avatar';
+import { Button } from '@/shared-components/button';
+import { useLanguage } from '@/hooks/use-language';
+import { getUserAuth, userActions } from '@/redux-stores/stores/user';
+import { notificationsActions } from '@/feature/notifications/stores/notifications';
+import { namedLazy } from '@/shared-components/named-lazy';
+import Loader from '@/shared-components/loader';
+import { DropDown } from '@/shared-components/drop-down';
+import { getUser } from '@/redux-stores/stores/user/selectors/get-user';
+import { Avatar } from '@/shared-components/avatar';
 import { TAuthProps } from './types';
 import { ROUTES_PATH } from '../../../../../../constants/routers';
 

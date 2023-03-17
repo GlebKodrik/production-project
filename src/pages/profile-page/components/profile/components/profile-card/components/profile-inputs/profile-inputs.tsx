@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
 import cn from 'classnames';
-import { useLanguage } from 'hooks/use-language';
-import { LOCALES } from 'constants/locales';
-import { FormInput } from 'shared-components/form-input';
+import { useLanguage } from '@/hooks/use-language';
+import { LOCALES } from '@/constants/locales';
+import { FormInput } from '@/shared-components/form-input';
 import styles from '../../prodile-card.module.scss';
 import { TInput, TProfileInputProps } from './types';
 

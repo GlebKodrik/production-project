@@ -1,8 +1,8 @@
 import React, { Suspense } from 'react';
 import { useRoutes } from 'react-router-dom';
-import { ROUTES_PATH } from 'constants/routers';
-import { LoaderWithOverlay } from 'shared-components/loader-with-overlay';
-import { Layout as PageTemplateLayout } from 'page-templates/layout';
+import { ROUTES_PATH } from '@/constants/routers';
+import { LoaderWithOverlay } from '@/shared-components/loader-with-overlay';
+import { Layout as PageTemplateLayout } from '@/page-templates/layout';
 import { PAGES_COMPONENTS } from './constants/pages';
 import { TPagesPathWithComponents, TRenderElement } from './types';
 

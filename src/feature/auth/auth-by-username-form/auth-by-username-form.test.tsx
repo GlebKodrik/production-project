@@ -1,8 +1,8 @@
-import { userActions } from 'redux-stores/stores/user';
-import { ControlLocalStorage } from 'services/control-local-storage';
-import { notificationsActions } from 'feature/notifications/stores/notifications';
-import i18n from 'configs/i18next';
-import { TestAsyncThunk } from 'services/test-async-thunk';
+import { userActions } from '@/redux-stores/stores/user';
+import { ControlLocalStorage } from '@/services/control-local-storage';
+import { notificationsActions } from '@/feature/notifications/stores/notifications';
+import i18n from '@/configs/i18next';
+import { TestAsyncThunk } from '@/services/test-async-thunk';
 import { requestLoginByUser } from './stores/login-form/requests/request-login-by-user';
 import { TUser } from '../../../redux-stores/stores/profile/types';
 

@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
-import { getUserAuth } from 'redux-stores/stores/user';
 import { Navigate } from 'react-router-dom';
-import { ROUTES_PATH } from 'constants/routers';
+import { getUserAuth } from '@/redux-stores/stores/user';
+import { ROUTES_PATH } from '@/constants/routers';
 import { TProps } from './types';
 
 export const WrapperRoute = ({ children, path }: TProps) => {

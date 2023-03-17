@@ -1,13 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { InfiniteScroll } from 'feature/infinite-scroll';
-import { requestGetArticles } from 'redux-stores/stores/articles/requests/request-get-articles';
-import { articleActions } from 'redux-stores/stores/articles';
+import { InfiniteScroll } from '@/feature/infinite-scroll';
+import { requestGetArticles } from '@/redux-stores/stores/articles/requests/request-get-articles';
+import { articleActions } from '@/redux-stores/stores/articles';
 import {
   getArticlesIsHasMore,
   getArticlesIsLoading, getArticlesPage,
-} from 'redux-stores/stores/articles/selectors';
-import { useAppDispatch } from 'hooks/use-app-dispatch';
+} from '@/redux-stores/stores/articles/selectors';
+import { useAppDispatch } from '@/hooks/use-app-dispatch';
 import { TProps } from './types';
 
 export const ArticlesInfiniteScroll = ({ children }: TProps) => {

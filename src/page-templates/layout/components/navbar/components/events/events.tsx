@@ -1,9 +1,9 @@
 import React from 'react';
 import cn from 'classnames';
-import { Event } from 'shared-components/event';
-import Loader from 'shared-components/loader';
-import { Typography } from 'shared-components/typography';
-import { useEvents } from 'redux-stores/stores/events/api/events';
+import { Event } from '@/shared-components/event';
+import Loader from '@/shared-components/loader';
+import { Typography } from '@/shared-components/typography';
+import { useEvents } from '@/redux-stores/stores/events/api/events';
 import styles from './events.module.scss';
 import { TProps } from './types';
 

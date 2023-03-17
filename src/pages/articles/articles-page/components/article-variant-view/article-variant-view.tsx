@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button } from 'shared-components/button';
-import { Icon } from 'shared-components/icon';
-import { TVariantView } from 'shared-components/article-card';
+import { Button } from '@/shared-components/button';
+import { Icon } from '@/shared-components/icon';
+import { TVariantView } from '@/shared-components/article-card';
 import { TProps, TVariantViewTypes } from './types';
 
 const variantViewTypes: TVariantViewTypes[] = [

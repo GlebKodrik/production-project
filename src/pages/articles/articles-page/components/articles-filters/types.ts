@@ -1,4 +1,4 @@
-import { TArticlesTypes } from 'redux-stores/stores/types/articles';
+import { TArticlesTypes } from '@/redux-stores/stores/types/articles';
 
 export type TProps = {
   isLoadingGetArticles: boolean,

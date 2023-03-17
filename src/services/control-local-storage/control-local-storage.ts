@@ -1,4 +1,4 @@
-import { TLocalStorageKeys } from 'types/local-storage-keys';
+import { TLocalStorageKeys } from '@/types/local-storage-keys';
 
 export class ControlLocalStorage {
   static getValueLocalStorage<T = string>(localStorageKey: TLocalStorageKeys): T {

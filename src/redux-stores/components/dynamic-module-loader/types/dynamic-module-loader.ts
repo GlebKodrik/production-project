@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
-import { TReduxStateSchemaKey } from 'redux-stores/reducer-menager/types/reducer-menager';
 import { Reducer } from '@reduxjs/toolkit';
+import { TReduxStateSchemaKey } from '@/redux-stores/reducer-menager/types/reducer-menager';
 
 export type TReducersList = {
   name: TReduxStateSchemaKey,

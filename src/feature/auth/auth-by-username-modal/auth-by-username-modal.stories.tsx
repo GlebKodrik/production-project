@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { THEMES } from 'constants/themes';
+import { THEMES } from '@/constants/themes';
 
 import { ThemeDecorator } from '../../../../configs-project/storybook/decorators/theme-decorator';
 import { AuthByUsernameModal } from './auth-by-username-modal';

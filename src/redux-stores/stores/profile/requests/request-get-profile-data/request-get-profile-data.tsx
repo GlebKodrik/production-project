@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { notificationsActions } from 'feature/notifications/stores/notifications';
-import { TThunkConfig } from 'redux-stores/types/thunk-config';
-import { LOCALES } from 'constants/locales';
 import i18n from 'i18next';
+import { notificationsActions } from '@/feature/notifications/stores/notifications';
+import { TThunkConfig } from '@/redux-stores/types/thunk-config';
+import { LOCALES } from '@/constants/locales';
 import { TUser } from '../../types';
 
 export const requestGetProfileData = createAsyncThunk<TUser, string, TThunkConfig<string>>(

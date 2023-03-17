@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
-import { TReduxStoreWithManager } from 'redux-stores/reducer-menager/types/reducer-menager';
+import { TReduxStoreWithManager } from '@/redux-stores/reducer-menager/types/reducer-menager';
 import {
   TDynamicModuleLoaderProps,
   TReducersList,

@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
-import { TCurrency } from 'shared-components/currency/types';
-import { TCountry } from 'shared-components/country/types';
+import { TCurrency } from '@/shared-components/currency/types';
+import { TCountry } from '@/shared-components/country/types';
 import { TUser } from '../../../../../../redux-stores/stores/profile/types';
 
 export type TProfileCardProps = {

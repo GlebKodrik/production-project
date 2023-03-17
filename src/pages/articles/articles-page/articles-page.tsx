@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'hooks/use-app-dispatch';
-import { requestGetArticles } from 'redux-stores/stores/articles/requests/request-get-articles';
-import { articleActions, EArticlesSort } from 'redux-stores/stores/articles';
 import { useSearchParams } from 'react-router-dom';
+import { useAppDispatch } from '@/hooks/use-app-dispatch';
+import { requestGetArticles } from '@/redux-stores/stores/articles/requests/request-get-articles';
+import { articleActions, EArticlesSort } from '@/redux-stores/stores/articles';
 import {
   getArticlesIsLoading,
   getArticlesIsInit,
-} from 'redux-stores/stores/articles/selectors';
+} from '@/redux-stores/stores/articles/selectors';
 
-import { TOrderFilter } from 'redux-stores/stores/types/types';
+import { TOrderFilter } from '@/redux-stores/stores/types/types';
 
-import { TArticlesTypes } from 'redux-stores/stores/types/articles';
-import { ScrollToPosition } from 'feature/scroll-to-position';
+import { TArticlesTypes } from '@/redux-stores/stores/types/articles';
+import { ScrollToPosition } from '@/feature/scroll-to-position';
 import { ArticlesLists } from './components/articles-lists';
 import { ArticlesFilters } from './components/articles-filters';
 import { ArticlesInfiniteScroll } from './components/articles-infinite-scroll';

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useLanguage } from 'hooks/use-language';
+import { useLanguage } from '@/hooks/use-language';
 import { COUNTRY, TCountryProps, TOptions } from './types';
 import { ListBox } from '../list-box';
 

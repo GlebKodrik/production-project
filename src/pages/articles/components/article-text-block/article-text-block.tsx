@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography } from 'shared-components/typography';
+import { Typography } from '@/shared-components/typography';
 import styles from './article-text-block.module.scss';
 import { TArticleTextBlockProps } from './types';
 

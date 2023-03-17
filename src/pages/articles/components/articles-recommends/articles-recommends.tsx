@@ -1,14 +1,14 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import { ArticleCard } from 'shared-components/article-card';
-import { ROUTES_PATH } from 'constants/routers';
-import { Typography } from 'shared-components/typography';
-import { useLanguage } from 'hooks/use-language';
-import { LOCALES } from 'constants/locales';
+import { ArticleCard } from '@/shared-components/article-card';
+import { ROUTES_PATH } from '@/constants/routers';
+import { Typography } from '@/shared-components/typography';
+import { useLanguage } from '@/hooks/use-language';
+import { LOCALES } from '@/constants/locales';
 import {
   getArticleDetailRecommend,
-} from 'redux-stores/stores/article-detail/stores/article-detail-recommends/selectors';
+} from '@/redux-stores/stores/article-detail/stores/article-detail-recommends/selectors';
 import styles from './articles-recommends.module.scss';
 
 export const ArticlesRecommends = () => {

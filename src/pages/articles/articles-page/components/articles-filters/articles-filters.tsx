@@ -1,28 +1,28 @@
 import React, { useEffect } from 'react';
-import { TOptions } from 'shared-components/select';
 import { useSelector } from 'react-redux';
+import cn from 'classnames';
+import { useSearchParams } from 'react-router-dom';
+import { TOptions } from '@/shared-components/select';
 import {
   getOrder, getSearch, getSortBy, getVariantView,
-} from 'redux-stores/stores/articles/selectors';
-import { articleActions, EArticlesSort } from 'redux-stores/stores/articles';
-import { useAppDispatch } from 'hooks/use-app-dispatch';
-import { TVariantView } from 'shared-components/article-card';
-import { Search } from 'feature/search';
-import cn from 'classnames';
-import { Icon } from 'shared-components/icon';
-import { ORDER } from 'constants/sort-order';
-import { useLanguage } from 'hooks/use-language';
-import { requestGetArticles } from 'redux-stores/stores/articles/requests/request-get-articles';
-import { useDebounce } from 'hooks/use-debounce';
-import { Tabs } from 'shared-components/tabs';
+} from '@/redux-stores/stores/articles/selectors';
+import { articleActions, EArticlesSort } from '@/redux-stores/stores/articles';
+import { useAppDispatch } from '@/hooks/use-app-dispatch';
+import { TVariantView } from '@/shared-components/article-card';
+import { Search } from '@/feature/search';
+import { Icon } from '@/shared-components/icon';
+import { ORDER } from '@/constants/sort-order';
+import { useLanguage } from '@/hooks/use-language';
+import { requestGetArticles } from '@/redux-stores/stores/articles/requests/request-get-articles';
+import { useDebounce } from '@/hooks/use-debounce';
+import { Tabs } from '@/shared-components/tabs';
 
-import { getType } from 'redux-stores/stores/articles/selectors/get-filters';
-import { TArticlesTypes } from 'redux-stores/stores/types/articles';
-import { Link } from 'shared-components/link';
-import { ROUTES_PATH } from 'constants/routers';
-import { Button } from 'shared-components/button';
-import { useSearchParams } from 'react-router-dom';
-import { ListBox } from 'shared-components/list-box';
+import { getType } from '@/redux-stores/stores/articles/selectors/get-filters';
+import { TArticlesTypes } from '@/redux-stores/stores/types/articles';
+import { Link } from '@/shared-components/link';
+import { ROUTES_PATH } from '@/constants/routers';
+import { Button } from '@/shared-components/button';
+import { ListBox } from '@/shared-components/list-box';
 import { ArticleVariantView } from '../article-variant-view';
 import styles from './articles-filters.module.scss';
 import { TProps, TTabs } from './types';

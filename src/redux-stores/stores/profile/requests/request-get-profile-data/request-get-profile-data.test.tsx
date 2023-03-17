@@ -1,6 +1,6 @@
-import { ControlLocalStorage } from 'services/control-local-storage';
-import { TestAsyncThunk } from 'services/test-async-thunk';
-import { notificationsActions } from 'feature/notifications/stores/notifications';
+import { ControlLocalStorage } from '@/services/control-local-storage';
+import { TestAsyncThunk } from '@/services/test-async-thunk';
+import { notificationsActions } from '@/feature/notifications/stores/notifications';
 import { TUser } from '../../types';
 import { requestGetProfileData } from './index';
 

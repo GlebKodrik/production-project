@@ -1,7 +1,7 @@
 import {
   AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { TReduxStateScheme } from 'redux-stores/types/redux-state-scheme';
+import { TReduxStateScheme } from '@/redux-stores/types/redux-state-scheme';
 
 export type TReduxStateSchemaKey = keyof TReduxStateScheme;
 

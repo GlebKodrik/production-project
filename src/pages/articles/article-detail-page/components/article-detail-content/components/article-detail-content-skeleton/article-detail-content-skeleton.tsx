@@ -1,5 +1,5 @@
 import React from 'react';
-import { Skeleton } from 'shared-components/skeleton';
+import { Skeleton } from '@/shared-components/skeleton';
 import styles from './article-detail-content-skeleton.module.scss';
 
 export const ArticleDetailContentSkeleton: React.FC = () => (

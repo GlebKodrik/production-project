@@ -1,8 +1,8 @@
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Input } from 'shared-components/input';
-import { Button } from 'shared-components/button';
+import { Input } from '@/shared-components/input';
+import { Button } from '@/shared-components/button';
 import { TComment, TInputValue, TProps } from './types';
 import { commentYupScheme } from './validation-comment';
 import styles from './add-comments.module.scss';

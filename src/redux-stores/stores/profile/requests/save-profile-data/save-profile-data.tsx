@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { notificationsActions } from 'feature/notifications/stores/notifications';
-import { TThunkConfig } from 'redux-stores/types/thunk-config';
-import i18n from 'configs/i18next';
-import { LOCALES } from 'constants/locales';
+import { notificationsActions } from '@/feature/notifications/stores/notifications';
+import { TThunkConfig } from '@/redux-stores/types/thunk-config';
+import i18n from '@/configs/i18next';
+import { LOCALES } from '@/constants/locales';
 import { TUser } from '../../types';
 import { getEditForm } from '../../selectors';
 import { userActions } from '../../../user';

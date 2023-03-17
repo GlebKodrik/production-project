@@ -1,6 +1,6 @@
 import React, { CSSProperties, useMemo } from 'react';
 import cn from 'classnames';
-import notFound from 'assets/image/no-user.png';
+import notFound from '@/assets/image/no-user.png';
 import styles from './avatar.module.scss';
 import { TAvatarProps } from './types';
 

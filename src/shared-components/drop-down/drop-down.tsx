@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Menu } from '@headlessui/react';
 import cn from 'classnames';
-import { useFloating } from 'hooks/use-floating';
+import { useFloating } from '@/hooks/use-floating';
 import { TDropDownItem, TProps } from './types';
 import styles from './drop-down.module.scss';
 import { Link } from '../link';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { THEMES } from 'constants/themes';
+import { THEMES } from '@/constants/themes';
 import { CommentCard } from './comment-card';
 import { TCommentCardProps } from './types';
 import { ThemeDecorator } from '../../../configs-project/storybook/decorators/theme-decorator';

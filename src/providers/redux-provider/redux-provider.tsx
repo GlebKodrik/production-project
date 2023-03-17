@@ -1,6 +1,6 @@
 import React from 'react';
-import { createReduxStore } from 'redux-stores/root-store';
 import { Provider } from 'react-redux';
+import { createReduxStore } from '@/redux-stores/root-store';
 import { TProps } from './types';
 
 export const ReduxProvider = ({ children }:TProps) => {

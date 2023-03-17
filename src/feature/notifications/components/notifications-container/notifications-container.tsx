@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Alert } from 'shared-components/alert';
-import { useAppDispatch } from 'hooks/use-app-dispatch';
+import { Alert } from '@/shared-components/alert';
+import { useAppDispatch } from '@/hooks/use-app-dispatch';
 import { TProps } from './types';
 import { notificationsActions } from '../../stores/notifications';
 import styles from './notifications-container.module.scss';

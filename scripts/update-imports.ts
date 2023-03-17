@@ -1,0 +1,30 @@
+import { Project } from 'ts-morph';
+
+const project = new Project({});
+
+project.addSourceFilesAtPaths('src/**/*.ts');
+project.addSourceFilesAtPaths('src/**/*.tsx');
+
+const files = project.getSourceFiles();
+
+function isAbsolute(value: string) {
+  const layers = ['app', 'assets', 'configs', 'feature', 'constants', 'contexts',
+    'hooks', 'page-templates', 'pages', 'providers', 'redux-stores',
+    'services',
+    'shared-components', 'styles', 'types', 'utils'];
+
+  return layers.some((layer) => value.startsWith(layer));
+}
+
+files.forEach((sourceFile) => {
+  const importDeclarations = sourceFile.getImportDeclarations();
+  importDeclarations.forEach((importDeclaration) => {
+    const value = importDeclaration.getModuleSpecifierValue();
+
+    if (isAbsolute(value)) {
+      importDeclaration.setModuleSpecifier(`@/${value}`);
+    }
+  });
+});
+
+project.save();

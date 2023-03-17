@@ -1,6 +1,6 @@
 import React from 'react';
-import { Code } from 'shared-components/code';
-import { useLanguage } from 'hooks/use-language';
+import { Code } from '@/shared-components/code';
+import { useLanguage } from '@/hooks/use-language';
 import { TArticleCodeBlockProps } from './types';
 import { LOCALES } from '../../../../constants/locales';
 

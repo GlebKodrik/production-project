@@ -1,5 +1,5 @@
 import * as yup from 'yup';
-import { useLanguage } from 'hooks/use-language';
+import { useLanguage } from '@/hooks/use-language';
 
 const searchYupScheme = () => {
   const { translation } = useLanguage();
