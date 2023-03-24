@@ -11,10 +11,10 @@ import { DropDown } from '@/shared-components/drop-down';
 import { getUser } from '@/redux-stores/stores/user/selectors/get-user';
 import { Avatar } from '@/shared-components/avatar';
 import { TAuthProps } from './types';
-import { ROUTES_PATH } from '@/constants/routers';
+import { ROUTES_PATH } from '../../../../../../constants/routers';
 
 export const AuthByUsernameModal = namedLazy(
-  () => import('@/feature/auth/auth-by-username-modal'),
+  () => import('feature/auth/auth-by-username-modal'),
   'AuthByUsernameModal',
 );
 
