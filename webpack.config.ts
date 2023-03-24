@@ -1,7 +1,5 @@
 import { Configuration } from 'webpack';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
-// @ts-ignore
-import TerserPlugin from 'terser-webpack-plugin';
 import buildPlugins from './configs-project/webpack-configs/build-plugins';
 import buildLoaders from './configs-project/webpack-configs/build-loaders';
 import buildDevServer from './configs-project/webpack-configs/build-dev-server';
@@ -19,10 +17,9 @@ const config: Configuration = {
   },
   optimization: {
     usedExports: true,
-    minimizer: FLAGS.IS_PRODUCTION ? [
-      new TerserPlugin({ parallel: true, extractComments: true }),
+    minimizer: [
       new CssMinimizerPlugin(),
-    ] : undefined,
+    ],
     minimize: FLAGS.IS_PRODUCTION,
   },
   output: {

@@ -1,7 +1,5 @@
+import { WebpackPluginInstance, DefinePlugin } from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import {
-  WebpackPluginInstance,
-} from 'webpack';
 import ESLintPlugin from 'eslint-webpack-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
@@ -20,6 +18,9 @@ const buildPlugins = (): WebpackPluginInstance[] => {
     new HtmlWebpackPlugin({
       template: PATHS.INDEX_HTML_FILE,
       hash: true,
+    }),
+    new DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
     }),
     new ESLintPlugin({
       extensions: scriptExtensions,
@@ -56,6 +57,7 @@ const buildPlugins = (): WebpackPluginInstance[] => {
 
   if (FLAGS.IS_ANALYZER) {
     plugins.push(
+      // @ts-ignore
       new BundleAnalyzerPlugin({
         openAnalyzer: true,
       }),
