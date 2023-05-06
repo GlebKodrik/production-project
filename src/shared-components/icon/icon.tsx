@@ -14,6 +14,7 @@ export const Icon = React.memo((
     height = '24px',
     className,
     onClick,
+    ...otherProps
   }: TIconProps,
 ) => {
   const IconComponent = ICONS_COMPONENT[name];
@@ -31,6 +32,7 @@ export const Icon = React.memo((
       onClick={onClick}
       opacity={opacity}
       className={cn(classes, className)}
+      {...otherProps}
     />
   );
 });

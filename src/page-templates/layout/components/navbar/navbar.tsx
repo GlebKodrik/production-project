@@ -10,7 +10,7 @@ import styles from './navbar.module.scss';
 import { Auth } from './components/auth';
 import { TProps } from './types';
 import { Events } from './components/events';
-import { Drawer } from '../../../../shared-components/components/drawer';
+import { Drawer } from '@/shared-components/components/drawer';
 
 export const Navbar: React.FC<TProps> = ({
   classNames,

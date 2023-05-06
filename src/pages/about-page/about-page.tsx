@@ -6,12 +6,23 @@ import { Input } from '@/shared-components/input';
 import { notificationsActions } from '@/feature/notifications/stores/notifications';
 import { useAppDispatch } from '@/hooks/use-app-dispatch';
 import { AddComments } from '@/feature/add-comments';
-import { Event } from '../../shared-components/event';
+import { RatingCard } from '@/shared-components/rating-card';
 
 export const AboutPage = () => {
+  const [star, setStar] = useState(1);
+  const [isOpen, setIsOpen] = useState(false);
   const { translation } = useLanguage(LOCALES.ABOUT_PAGE);
   const [state, setState] = useState('');
   const dispatch = useAppDispatch();
+
+  const onChangeStar = (starId: number) => {
+    setIsOpen(true);
+    setStar(starId);
+  };
+
+  const onCloseModal = () => {
+    setIsOpen(false);
+  };
 
   const addAlert = () => {
     dispatch(notificationsActions.showNotification(
@@ -20,7 +31,6 @@ export const AboutPage = () => {
   };
   return (
     <>
-      <Event title="ПРивет" description="Мир" />
       <AddComments onSubmit={() => {}} />
       {translation('about')}
       <button onClick={addAlert}>Добавить алерт</button>
@@ -32,6 +42,15 @@ export const AboutPage = () => {
         variant="plain"
       />
       <Counter />
+      <RatingCard
+        selectStar={star}
+        onSelect={onChangeStar}
+        isOpen={isOpen}
+        onClose={onCloseModal}
+        onSubmit={() => {}}
+        onChangeFeedback={() => {}}
+        feedback="s"
+      />
     </>
   );
 };

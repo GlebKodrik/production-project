@@ -15,7 +15,7 @@ import styles from './auth-by-username-form.module.scss';
 import { loginFormActions } from './stores/login-form/login-form-slice';
 import { requestLoginByUser } from './stores/login-form/requests/request-login-by-user';
 import { authYupScheme } from './validation-auth';
-import { Typography } from '../../../shared-components/typography';
+import { Typography } from '@/shared-components/typography';
 
 export const AuthByUsernameForm: React.FC<TProps> = ({
   color = 'primary',

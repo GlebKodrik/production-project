@@ -1,11 +1,11 @@
 import { ButtonHTMLAttributes, ReactNode } from 'react';
 
-import { TSize } from '../../types/size';
+import { TSize } from '@/types/size';
 import { TColor } from '../types/color';
 
 type TVariantButton = 'outline' | 'text' | 'clear' | 'square';
 
-export interface TButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export type TButtonProps = {
   size?: TSize
   className?: string,
   color?: TColor;
@@ -13,4 +13,4 @@ export interface TButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   disabled?: boolean;
   children?: ReactNode;
   ref?: any
-}
+} & ButtonHTMLAttributes<HTMLButtonElement>;

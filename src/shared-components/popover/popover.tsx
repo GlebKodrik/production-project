@@ -1,6 +1,6 @@
 import { Popover as HPopover } from '@headlessui/react';
 import { TProps } from './types';
-import { useFloating } from '../../hooks/use-floating';
+import { useFloating } from '@/hooks/use-floating';
 import styles from './popover.module.scss';
 import { Button } from '../button';
 import Portal from '../portal';

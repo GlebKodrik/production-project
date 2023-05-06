@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { ThemeDecorator } from '../../../configs-project/storybook/decorators/theme-decorator';
-import { THEMES } from '../../constants/themes';
+import { THEMES } from '@/constants/themes';
 import { Icon } from './icon';
 import { TIconProps } from './types';
 
@@ -11,6 +11,7 @@ export default {
   component: Icon,
 } as ComponentMeta<typeof Icon>;
 
+// @ts-ignore
 const Template: ComponentStory<typeof Icon> = (args: TIconProps) => <Icon {...args} />;
 
 export const IconComponent = Template.bind({});

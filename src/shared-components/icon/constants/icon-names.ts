@@ -17,4 +17,5 @@ export const ICON_NAMES = {
   REDACTOR: 'redactor',
   CREATE: 'create',
   NOTIFICATION: 'notification',
+  STAR: 'star',
 } as const;
