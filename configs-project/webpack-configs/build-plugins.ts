@@ -1,6 +1,5 @@
 import { WebpackPluginInstance, DefinePlugin } from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import ESLintPlugin from 'eslint-webpack-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
@@ -9,7 +8,6 @@ import CopyPlugin from 'copy-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import {
   FLAGS,
-  scriptExtensions,
 } from './constants/variables';
 import { PATHS } from './constants/path';
 
@@ -21,11 +19,6 @@ const buildPlugins = (): WebpackPluginInstance[] => {
     }),
     new DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-    }),
-    new ESLintPlugin({
-      extensions: scriptExtensions,
-      exclude: 'node_modules',
-      context: 'src',
     }),
     new WebpackBar(),
     new MiniCssExtractPlugin({

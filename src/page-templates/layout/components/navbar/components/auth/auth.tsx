@@ -14,7 +14,7 @@ import { TAuthProps } from './types';
 import { ROUTES_PATH } from '../../../../../../constants/routers';
 
 export const AuthByUsernameModal = namedLazy(
-  () => import('feature/auth/auth-by-username-modal'),
+  () => import('@/feature/auth/auth-by-username-modal'),
   'AuthByUsernameModal',
 );
 

@@ -1,5 +1,5 @@
 import { ThemeContext } from './theme-context';
-import { ThemeContextProps } from './types';
+import type { ThemeContextProps } from './types';
 
 export {
   ThemeContext,

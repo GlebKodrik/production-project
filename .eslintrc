@@ -8,7 +8,7 @@
     },
     "project": "./tsconfig.json"
   },
-  "plugins": ["unused-imports",  "gkodrik-plugin"],
+  "plugins": ["unused-imports"],
   "env": {
     "browser": true,
     "jest": true
@@ -25,7 +25,6 @@
   },
   "rules": {
     "import/no-extraneous-dependencies": "off",
-    "gkodrik-plugin/path-cheker-gkodrik": "error",
     "linebreak-style": "off",
     "max-params": ["error", 2],
     "react/function-component-definition": "off",

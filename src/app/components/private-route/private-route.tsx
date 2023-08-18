@@ -10,7 +10,6 @@ export const PrivateRoute = ({ children, roles }: TProps) => {
   const isAuth = useSelector(getUserAuth);
   const userRole = useSelector(getUserRole);
   const validUserRole = roles?.some((role) => role === userRole);
-
   if (!isAuth) {
     return <Navigate to={ROUTES_PATH.LOGIN} state={{ form: location }} />;
   }

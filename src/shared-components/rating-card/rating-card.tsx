@@ -13,6 +13,7 @@ export const RatingCard = ({
   onSelect,
   title = 'Как вам статья?',
   className,
+  onSubmit,
   ...props
 }: TProps) => {
   const onChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -29,13 +30,26 @@ export const RatingCard = ({
       </div>
       {props.isOpen && (
         <Modal isOpen={props.isOpen} onClose={props.onClose}>
-          <form onSubmit={props.onSubmit}>
+          <form onSubmit={onSubmit}>
             <Typography className={styles.titleModal} size="large" color="primary">
               Оставьте пожалуйста
               отзыв😃
             </Typography>
-            <Textarea value={props.feedback} onChange={onChange} className={styles.textarea} error />
-            <Button color="primary" variant="outline" className={styles.button}>Отправить</Button>
+            <Textarea
+              value={props.feedback || ''}
+              onChange={onChange}
+              className={styles.textarea}
+              placeholder="Оставьте свой отзыв"
+            />
+            <Button
+              type="submit"
+              color="primary"
+              variant="outline"
+              className={styles.button}
+              disabled={!props.feedback}
+            >
+              Отправить
+            </Button>
           </form>
         </Modal>
       )}

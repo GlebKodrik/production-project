@@ -18,7 +18,7 @@ type WhenExist = {
   onClose: Function,
   onSubmit: (data: any) => void,
   onChangeFeedback: (feedback: string) => void,
-  feedback: string,
+  feedback?: string,
 } & BaseType;
 
 type WhenClosed = {

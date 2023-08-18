@@ -1,4 +1,4 @@
-import { createReduxStore, TAppDispatch } from './root-store';
+import { createReduxStore, type TAppDispatch } from './root-store';
 
 export {
   createReduxStore,

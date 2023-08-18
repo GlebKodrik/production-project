@@ -1,5 +1,5 @@
 import { loginFormSlice, loginFormReducer } from './login-form-slice';
-import { TLoginFormState } from './types';
+import type { TLoginFormState } from './types';
 
 export {
   loginFormSlice,

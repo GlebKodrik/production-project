@@ -1,4 +1,4 @@
 import { Alert } from './alert';
-import { TSeverity } from './types';
+import type { TSeverity } from './types';
 
 export { Alert, TSeverity };

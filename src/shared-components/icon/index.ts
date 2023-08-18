@@ -1,5 +1,5 @@
 import { Icon } from './icon';
-import { TIconNames } from './types';
+import type { TIconNames } from './types';
 
 export {
   Icon,

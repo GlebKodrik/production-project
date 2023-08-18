@@ -23,6 +23,7 @@ import { ArticleDetailComments } from '../article-detail-comments';
 import { TProps } from './types';
 import { Article } from './components/article';
 import { ArticlesRecommends } from '../../../components/articles-recommends';
+import { ArticleRating } from '@/feature/article-rating';
 
 export const ArticleDetailContent = ({ id }: TProps) => {
   const isLoading = useSelector(getArticleIsLoading);
@@ -58,6 +59,7 @@ export const ArticleDetailContent = ({ id }: TProps) => {
   return (
     <div className={styles.wrapper}>
       <Article />
+      <ArticleRating id={id} className={styles.articleRating} />
       <ArticlesRecommends />
       <Typography
         color="secondary"
